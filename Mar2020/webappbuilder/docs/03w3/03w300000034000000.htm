@@ -1,0 +1,27 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="This topic describes the differences between in-panel and off-panel widgets."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+In-panel and off-panel widgets</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-13619CEF-1008-43E7-BFAA-E67D35C8D140]--><body><div id="content"><div class="header"><h1>
+In-panel and off-panel widgets</h1><div id="breadcrumb"></div></div>
+<p id="GUID-EDE096E7-2ED9-4A27-B0A1-58A64B13F8BE">Two types of widgets are supported: off-panel widgets (such as the Scalebar widget) and in-panel widgets (such as the Query widget). Before you begin coding, determine whether or not your widget needs a panel. The differences between the two panels are as follows: </p><p id="GUID-B5791D98-63EA-4539-A170-3923337B6290"><ul purpose="ul" id="UL_10390516CD364F8BA50724EAD29E6392"><li purpose="li" id="LI_0B0BFFCB85A7489CA03E2B4A0DAD5FA5">As the names imply, off-panel widgets cannot open in a panel, while  in-panel widgets must open in a panel.</li><li purpose="li" id="LI_9FB15FD686DF445F99DE08E3DC59AA30">
+Off-panel widgets have a <span class="usertext">closeable</span> property when configured as an on-screen  widget. If <span class="usertext">closeable</span> is set to true, the app container creates an icon to open and close the widget; if it's set to false, the app container loads and opens the widget by default.</li><li purpose="li" id="LI_55F32C7F5F4441679122C2A92D7A7107">Off-panel widgets cannot  be put into a group.</li></ul></p><p id="GUID-88ED81F5-A254-45C3-B8B3-A10EC2F75ADB">All widgets have an initial state  to indicate whether the <span class="usertext">openAtStart</span> property is set to  true or false.</p><p id="GUID-C9C4670C-8130-4296-9845-6FB69AB02490">You can set the <span class="usertext">inPanel</span> property in a widget’s manifest.json file. For details, see <a class="xref" rel="03w3/03w300000078000000.htm" href="03w3/03w300000078000000.htm">Widget manifest</a>.</p>
+
+<p id="GUID-40E7A458-E8AE-462C-A24C-8A690FDBC880">
+For more information on panels, see   <a class="xref" rel="03w3/03w300000045000000.htm" href="03w3/03w300000045000000.htm">Create a theme</a>.
+</p>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

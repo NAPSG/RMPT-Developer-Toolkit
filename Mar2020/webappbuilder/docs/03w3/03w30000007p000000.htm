@@ -1,0 +1,88 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn about the Image Measurement widget's configurable
+attributes."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Image Measurement</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-3FE5CEC6-8790-4F8A-8885-E9E500B2B999]--><body><div id="content"><div class="header"><h1>
+Image Measurement</h1><div id="breadcrumb"></div></div>
+<p id="GUID-5BF0637D-B917-4043-AC60-ACB01EADEC1A">
+  The Image Measurement widget allows you to perform measure operations (supported by the image service) on an image service layer.</p>
+<p id="GUID-8FE7A397-B22B-4F8E-825C-6093F3DB8010">The following table lists the configurable attributes of the Image Measurement widget:</p><div class="block_table" id="TABLE_0C79918A705044FE9BCD0E59B550ABE2" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-A77BDF12-B0FB-4048-828B-8AB2850A5341">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-16E658FB-C8CB-40F0-84DC-CF4720F240A4">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97268B88-43D8-412D-8F01-98E810710232"><span class="usertext">  ImageMeasurement</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EE1A751C-1548-4ECA-9A94-DC827BB1FCAC"> Object array. The properties of the array item
+are as follows:</p>
+<ul purpose="ul" id="UL_FC91C9D821854976B33D39884C7D32A3"><li purpose="li" id="LI_DE36AF867C234DA4A6D18953D4260A5B"> <span class="usertext">layerTitle</span>—String: Title of the image service
+layer in the web map.</li><li purpose="li" id="LI_163F9D24E80A4292B8181EEDE4FCB9B5"><span class="usertext"> displayMeasureResultInPopup</span>—Boolean. Determines whether the
+measure result should be displayed on a pop-up in the map. The default
+is false.</li><li purpose="li" id="LI_5B821342885F4E1EB934123D404CAEBC"><span class="usertext"> linearUnit</span>—String. The default linear unit for the
+widget. The available values are as follows:<ul purpose="ul" id="UL_56529D5C0E114805ADA56FBCDBA88FF5"><li purpose="li" id="LI_9DD1320ADE0B474F8E6CACDEDDEB458B"> esriInches</li><li purpose="li" id="LI_7E0C9F83A6E2480F9AB13DC7185D77B1">  esriFeet</li><li purpose="li" id="LI_27974E38D5AD40B9B38CADC8F3F304AC">  esriYards</li><li purpose="li" id="LI_B1497DE1FF924A1FA8D79CF9248BED6F">  esriMiles</li><li purpose="li" id="LI_0729B969A3A74DC7B5FB11DA633EA7F8"> esriNauticalMiles</li><li purpose="li" id="LI_7DB1F0274900452188B8E591095F978E"> esriMillimeters</li><li purpose="li" id="LI_35472772F10841DE825FE26244E3DDA4"> esriCentimeters</li><li purpose="li" id="LI_B0619CFC271542A8A1ECB7ACE06C8677">  esriMeters</li><li purpose="li" id="LI_99A9BAE5CF2F4226BA75323AB99DFAF6">  esriKilometers</li></ul></li><li purpose="li" id="LI_2B51C8FDA82E4C81A6EFD62443F42016"> <span class="usertext">angularUnit</span>—String. The default angular unit for the
+widget. The available values are as follows:<ul purpose="ul" id="UL_85A3EFA034544364B3B498C1B8A5B276"><li purpose="li" id="LI_4EC7252F2E7E434FB78570B4E591FE5B"> esriDURadians</li><li purpose="li" id="LI_C8D5C6ADC39D472E8C1BB1FE862307C4"> esriDUDecimalDegrees</li></ul></li><li purpose="li" id="LI_1883A0A5D09647D9A0B686B42BEA0E26"><span class="usertext"> areaUnit</span>—String. The default area unit for the
+widget. The available values are as follows:<ul purpose="ul" id="UL_C6D5CE132C144FAEBD6A2990D76247B1"><li purpose="li" id="LI_471958793FAE4D91845AC8E8098807F5"> esriSquareInches</li><li purpose="li" id="LI_EF40B39C36A44754B4323758C4440C39">  esriSquareFeet</li><li purpose="li" id="LI_27BE93D416974D21B561927665818DCE">  esriSquareYards</li><li purpose="li" id="LI_752C2A775A5B42519538D2F610C0F561">  esriAcres</li><li purpose="li" id="LI_204AB9FA0CFE4B048A02155E41E018F2">  esriSquareMiles</li><li purpose="li" id="LI_E371B9999DEF4004AF9E0303CEF562B9">  esriSquareMillimeters</li><li purpose="li" id="LI_759CE5D900B04E70938A33B59A3795E7">  esriSquareCentimeters</li><li purpose="li" id="LI_0FDAEDBF22AD4173925C130B90A85C34">  esriSquareDecimeters</li><li purpose="li" id="LI_4B846E69024A45AA83B1C61A8548ADB2">  esriSquareMeters</li><li purpose="li" id="LI_7AD0D93B896C493F80135D2BB19DC26D">  esriAres</li><li purpose="li" id="LI_78079C236454462294D2CAD0CD951997">  esriHectares</li><li purpose="li" id="LI_734E6EFE045C49B689846DE1D6661CD9"> esriSquareKilometers</li></ul></li><li purpose="li" id="LI_0DB336F19B8640E0B65BD15E9857B2B0"> <span class="usertext">displayOperations</span>—Array. An array of operation
+strings that displays on the widget. The available values
+are as follows:<ul purpose="ul" id="UL_BAD5C6DA7E9B4E36BC6F2BB760088A26"><li purpose="li" id="LI_5A4A0982B64B41E0B0ECE3A038ECC58C">  esriMensurationDistanceAndAngle</li><li purpose="li" id="LI_CB7D137137774AE0992D428E32136262">  esriMensurationAreaAndPerimeter</li><li purpose="li" id="LI_984EAB018BAA46A3B8D0D9AF9580B074">  esriMensurationHeightFromBaseAndTop</li><li purpose="li" id="LI_272F5A0E51454BE2A8178E2E9587EA48">  esriMensurationHeightFromBaseAndTopShadow</li><li purpose="li" id="LI_F99229F311034B35988AB51FE21EA11E">  esriMensurationHeightFromTopAndTopShadow</li><li purpose="li" id="LI_3F3330948D5049119989C2CD964F4E0D">  esriMensurationCentroid</li><li purpose="li" id="LI_D8EFBBF91BE4481BB2807EB6686B2CB3">  esriMensurationPoint3D</li><li purpose="li" id="LI_774D107C726E4FF3BE36034FE651A231">  esriMensurationDistanceAndAngle3D</li><li purpose="li" id="LI_193E5CF3FAE94E5F8ABA866B3C7DD07D">  esriMensurationAreaAndPerimeter3D</li><li purpose="li" id="LI_15DE558CB0774A1F90651F1451DF52C3">esriMensurationCentroid3D</li></ul></li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><p id="GUID-AC0D260C-F408-46BF-93B4-3D1F92104346">Example:</p><p id="GUID-A7DDB027-8751-46AF-8BC8-07B771E59642"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;ImageMeasurement&quot;: {
+    &quot;layerTitle&quot;: &quot;Dubai&quot;,
+    &quot;displayMeasureResultInPopup&quot; : false,
+    &quot;linearUnit&quot;: &quot;esriKilometers&quot;,
+    &quot;angularUnit&quot;: &quot;esriDUDecimalDegrees&quot;,
+    &quot;areaUnit&quot;: &quot;esriSquareKilometers&quot;,
+    &quot;displayOperations&quot;: [&quot;esriMensurationPoint&quot;, &quot;esriMensurationDistanceAndAngle&quot;]
+  }
+}
+</code></pre></div>
+</div></p>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,60 @@
+.jimu-widget-filter .filter-list .filter-item .header:hover{
+  background-color: #444;
+}
+
+.jimu-widget-filter .filter-list .filter-item .header .done{
+  background: url('../images/done.svg') no-repeat center;
+}
+
+.jimu-widget-filter .filter-list .filter-item .header .setting{
+  background: url('../images/settings_white.svg') no-repeat center;
+}
+
+.jimu-widget-filter .filter-list .filter-item .header .setting:hover{
+  background: url('../images/settings_white_hover.svg') no-repeat center;
+}
+
+.jimu-widget-filter .filter-list .filter-item{
+  border-bottom: 1px solid #444;
+}
+
+.jimu-widget-filter .filter-list .filter-item.config-parameters{
+  background-color: #000;
+}
+
+.jimu-widget-filter .custom-filter .title-part .back-list{
+  background: url(../images/arrow_left_normal.svg);
+}
+.jimu-widget-filter .custom-filter .title-part .back-list:hover{
+  background: url(../images/arrow_left_hover.svg);
+}
+
+/*filter - unique/multiple & predefined*/
+.jimu-filter-value-provider .checkBtn{
+  background-color: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  -o-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  -ms-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+.jimu-filter-value-provider .checkBtn .checkBtnDownIcon{
+  background-image: url("./../images/v-white.png");
+  background-position: 0 0;
+}
+.jimu-widget-filter .jimu-filter-value-provider .jimu-multiple-items-expanded-list{
+  background-color: rgba(0,0,0,0.25);
+}
+.jimu-widget-filter .jimu-filter-value-provider .jimu-multiple-items-expanded-list .item{
+  background: #333;
+  border-bottom: none;
+}
+.jimu-widget-filter .filter-list .filter-layer-name{
+  background: #222;
+  border-bottom: 1px solid #444;
+}

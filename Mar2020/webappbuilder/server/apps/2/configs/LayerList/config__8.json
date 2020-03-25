@@ -1,0 +1,918 @@
+{
+  "showTitle": true,
+  "showBasemap": false,
+  "showLegend": true,
+  "expandAllLayersByDefault": false,
+  "contextMenu": {
+    "ZoomTo": false,
+    "Transparency": false,
+    "SetVisibilityRange": false,
+    "EnableOrDisablePopup": false,
+    "ControlLabels": false,
+    "MoveupOrMovedown": false,
+    "OpenAttributeTable": false,
+    "DescriptionOrShowItemDetailsOrDownload": false
+  },
+  "layerOptions": {
+    "Overall_2014_Tracts_4854": {
+      "display": true
+    },
+    "Public_Schools_4826": {
+      "display": true
+    },
+    "Private_Schools_9071": {
+      "display": true
+    },
+    "Prison_Boundaries_774": {
+      "display": true
+    },
+    "NursingHomes_950": {
+      "display": true
+    },
+    "Child_Care_Centers_1134": {
+      "display": true
+    },
+    "Mobile_Home_Parks_9077": {
+      "display": true
+    },
+    "Cellular_Towers_4606": {
+      "display": true
+    },
+    "Cellular_Service_Areas_9126": {
+      "display": true
+    },
+    "PowerPlants_4516": {
+      "display": true
+    },
+    "Electric_Power_Transmission_Lines_1075": {
+      "display": true
+    },
+    "Natural_Gas_Liquid_Pipelines_6684": {
+      "display": true
+    },
+    "Electric_Holding_Company_Areas_9187": {
+      "display": true
+    },
+    "Hospitals_1_34": {
+      "display": true
+    },
+    "DialysisCenters_7546": {
+      "display": true
+    },
+    "EPA_Emergency_Response_ER_Facility_Response_Plan_FRP_Facilities_5727": {
+      "display": true
+    },
+    "EPA_Emergency_Response_ER_Risk_Management_Plan_RMP_Facilities_6796": {
+      "display": true
+    },
+    "Local_Law_Enforcement_Locations_812": {
+      "display": true
+    },
+    "Local_Emergency_Operations_Centers_EOC_4980": {
+      "display": true
+    },
+    "Fire_Stations_9828": {
+      "display": true
+    },
+    "Public_Transit_Routes_3124": {
+      "display": true
+    },
+    "Public_Transit_Stations_6031": {
+      "display": true
+    },
+    "IncidentLocations_active_6b07c78cc3364b4989da0c48e5d6794a_4794": {
+      "display": true
+    },
+    "USA_Counties_4320": {
+      "display": true
+    },
+    "World_Countries__Generalized__8559": {
+      "display": true
+    },
+    "USA_Freeway_System_1417": {
+      "display": true
+    },
+    "USA_Freeway_System_7585": {
+      "display": true
+    },
+    "USA_Census_Populated_Places_9888": {
+      "display": true
+    },
+    "USA_Counties_Generalized_327": {
+      "display": true
+    },
+    "USA_States_Generalized_6644": {
+      "display": true
+    },
+    "USA_Flood_Hazard_Reduced_Set_gdb_1266": {
+      "display": false
+    },
+    "Earthquake_Hazard_8923": {
+      "display": false
+    },
+    "Flood_Hazard_9536": {
+      "display": false
+    },
+    "Hazmat_Hazard_2682": {
+      "display": false
+    },
+    "Hurricane_Hazard_9686": {
+      "display": false
+    },
+    "Landslide_Hazard_4216": {
+      "display": false
+    },
+    "Storm_Hazard_9752": {
+      "display": false
+    },
+    "Tornado_Hazard_6272": {
+      "display": false
+    },
+    "Tsunami_Hazard_8823": {
+      "display": false
+    },
+    "Volcano_Hazard_3561": {
+      "display": false
+    },
+    "Wildfire_Hazard_2084": {
+      "display": false
+    },
+    "geomac_dyn_2976": {
+      "display": false
+    },
+    "geomac_dyn_2976_0": {
+      "display": true
+    },
+    "geomac_dyn_2976_1": {
+      "display": true
+    },
+    "geomac_dyn_2976_2": {
+      "display": true
+    },
+    "geomac_dyn_2976_3": {
+      "display": true
+    },
+    "geomac_dyn_2976_4": {
+      "display": true
+    },
+    "geomac_dyn_2976_5": {
+      "display": true
+    },
+    "geomac_dyn_2976_6": {
+      "display": true
+    },
+    "geomac_dyn_2976_7": {
+      "display": true
+    },
+    "geomac_dyn_2976_8": {
+      "display": true
+    },
+    "geomac_dyn_2976_9": {
+      "display": true
+    },
+    "geomac_dyn_2976_10": {
+      "display": true
+    },
+    "geomac_dyn_2976_11": {
+      "display": true
+    },
+    "geomac_dyn_2976_12": {
+      "display": true
+    },
+    "geomac_dyn_2976_13": {
+      "display": true
+    },
+    "geomac_dyn_2976_14": {
+      "display": true
+    },
+    "geomac_dyn_2976_15": {
+      "display": true
+    },
+    "geomac_dyn_2976_16": {
+      "display": true
+    },
+    "geomac_dyn_2976_17": {
+      "display": true
+    },
+    "geomac_dyn_2976_18": {
+      "display": true
+    },
+    "geomac_dyn_2976_19": {
+      "display": true
+    },
+    "geomac_dyn_2976_20": {
+      "display": true
+    },
+    "geomac_dyn_2976_21": {
+      "display": true
+    },
+    "geomac_dyn_2976_22": {
+      "display": true
+    },
+    "geomac_dyn_2976_23": {
+      "display": true
+    },
+    "geomac_dyn_2976_24": {
+      "display": true
+    },
+    "geomac_dyn_2976_25": {
+      "display": true
+    },
+    "geomac_dyn_2976_26": {
+      "display": true
+    },
+    "geomac_dyn_2976_27": {
+      "display": true
+    },
+    "geomac_dyn_2976_28": {
+      "display": true
+    },
+    "geomac_dyn_2976_29": {
+      "display": true
+    },
+    "geomac_dyn_2976_30": {
+      "display": true
+    },
+    "geomac_dyn_2976_31": {
+      "display": true
+    },
+    "geomac_dyn_2976_32": {
+      "display": true
+    },
+    "geomac_dyn_2976_33": {
+      "display": true
+    },
+    "USDA_USFS_2014_Wildfire_Hazard_Potential_3422": {
+      "display": false
+    },
+    "USDA_USFS_2014_Wildfire_Hazard_Potential_3422_0": {
+      "display": true
+    },
+    "CIKRScore_8560": {
+      "display": false
+    },
+    "CIKRScore_8560_0": {
+      "display": true
+    },
+    "CIKRScore_8560_1": {
+      "display": true
+    },
+    "CIKRScore_8560_2": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502": {
+      "display": false
+    },
+    "obs_meteocean_insitu_sfc_time_3502_0": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_1": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_2": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_3": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_4": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_5": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_6": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_7": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_8": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_9": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_10": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_11": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_12": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_13": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_14": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_15": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_16": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_17": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_18": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_19": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_20": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_21": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_22": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_23": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_24": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_25": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_26": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_27": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_28": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_29": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_30": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_31": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_32": {
+      "display": true
+    },
+    "obs_meteocean_insitu_sfc_time_3502_33": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416": {
+      "display": false
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416_0": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416_1": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416_2": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416_3": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416_4": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416_5": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416_6": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416_7": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_watches_time_1271": {
+      "display": false
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_watches_time_1271_0": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_watches_time_1271_1": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_watches_time_1271_2": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882": {
+      "display": false
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_0": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_1": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_2": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_3": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_4": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_5": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_6": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_7": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_8": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_9": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_10": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_11": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_12": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_13": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_14": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_15": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_16": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_17": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_18": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_19": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_20": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_21": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_22": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_23": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_24": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_25": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_26": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_27": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_28": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_29": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_30": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_31": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_32": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_33": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_34": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_35": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_36": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_37": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_38": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_39": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_40": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_41": {
+      "display": true
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882_42": {
+      "display": true
+    },
+    "radar_meteo_imagery_nexrad_time_4358": {
+      "display": false
+    },
+    "radar_meteo_imagery_nexrad_time_4358_0": {
+      "display": true
+    },
+    "radar_meteo_imagery_nexrad_time_4358_1": {
+      "display": true
+    },
+    "radar_meteo_imagery_nexrad_time_4358_2": {
+      "display": true
+    },
+    "radar_meteo_imagery_nexrad_time_4358_3": {
+      "display": true
+    },
+    "NationalWaterModel_Short_Anomaly_3702": {
+      "display": false
+    },
+    "NationalWaterModel_Short_Anomaly_3702_0": {
+      "display": true
+    },
+    "NationalWaterModel_Medium_Anomaly_1512": {
+      "display": false
+    },
+    "NationalWaterModel_Medium_Anomaly_1512_0": {
+      "display": true
+    },
+    "NDFD_Precipitation_1862": {
+      "display": false
+    },
+    "NDFD_Precipitation_1862_0": {
+      "display": true
+    },
+    "NDFD_Precipitation_1862_1": {
+      "display": true
+    },
+    "NDFD_Precipitation_1862_2": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485": {
+      "display": false
+    },
+    "NGA_US_National_Grid_4485_0": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_1": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_2": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_3": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_4": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_5": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_6": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_7": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_8": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_9": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_10": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_11": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_12": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_13": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_14": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_15": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_16": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_17": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_18": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_19": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_20": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_21": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_22": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_23": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_24": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_25": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_26": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_27": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_28": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_29": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_30": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_31": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_32": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_33": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_34": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_35": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_36": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_37": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_38": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_39": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_40": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_41": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_42": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_43": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_44": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_45": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_46": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_47": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_48": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_49": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_50": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_51": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_52": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_53": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_54": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_55": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_56": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_57": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_58": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_59": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_60": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_61": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_62": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_63": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_64": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_65": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_66": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_67": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_68": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_69": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_70": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_71": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_72": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_73": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_74": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_75": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_76": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_77": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_78": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_79": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_80": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_81": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_82": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_83": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_84": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_85": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_86": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_87": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_88": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_89": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_90": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_91": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_92": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_93": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_94": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_95": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_96": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_97": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_98": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_99": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_100": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_101": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_102": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_103": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_104": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_105": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_106": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_107": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_108": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_109": {
+      "display": true
+    },
+    "NGA_US_National_Grid_4485_110": {
+      "display": true
+    },
+    "Hospitals_1_4106": {
+      "display": false
+    }
+  }
+}

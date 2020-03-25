@@ -1,0 +1,123 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to use a report class in Web AppBuilder for ArcGIS that enables you to print a file with a map, tables, and other supporting elements."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Create a custom widget using the Report dijit
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-369634D6-66FF-4178-B14E-22FE77E0505B]--><body><div id="content"><div class="header"><h1>
+Create a custom widget using the Report dijit
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-623BCC67-5472-4FD3-BF1E-FC083B718AB8">This tutorial presents the basic steps to extend the <a class="xref" rel="03w3/03w3000000m8000000.htm" href="03w3/03w3000000m8000000.htm">Report class</a> to create your own custom widget.</p><div class="notes" id="GUID-9E263403-7471-464E-A93E-9E56210D8EB0"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-77E3649A-084D-4C6C-861F-59985B120BAB">To develop a custom widget for <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>, sufficient knowledge and experience using JavaScript and HTML are recommended, as well as a level of familiarity with the <a target="_blank" class="xref" href="https://developers.arcgis.com/javascript/" rel="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a> and the <span purpose="ph" varref="Esri100">Esri</span> samples. </p></div></div><div class="section1" id="GUID-37854158-BD9E-4490-8359-53A875500AD5" purpose="section1"><h2>
+Enable a custom widget
+</h2><p id="GUID-C012BF64-085B-4172-B42D-B0EBAD227B00">
+To create a new custom widget with the Report class, use the Demo widget, which can be found in the <span class="usertext">client\stemapp\widgets\samplewidgets</span> subfolder of the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> Developer Edition installation directory. To do this, complete the following steps:
+</p></div>
+<div class="wfsteps" purpose="wfsteps"><h4></h4><div class="context" id="GUID-89E6BB6B-CCBB-44EC-805C-44694178B432" purpose="context">
+
+</div><div class="steps" id="GUID-4AC7EAE3-718D-4960-9285-A0BEA6F7BBD8"><div class="step_title">Steps:</div><ol>
+<li purpose="step" cid="1plIcu" id="ESRI_STEP_3287FC2ABF8547BDB972DB0E905654EC">
+<span purpose="cmd">
+Copy the Demo folder found in the <span class="usertext">client\stemapp\widgets\samplewidgets</span> subfolder of the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> directory.
+</span>
+<div class="info" purpose="info"><img purpose="img" placement="inline" alt="Demo folder" title="Demo folder" src="03w3/GUID-73AAB4B9-7CC5-4002-AE30-BCFF2DD07919-web.png"></div></li><li purpose="step" id="ESRI_STEP_3E150984594B46638206F52F764D0052"><span purpose="cmd">Paste the folder in <span class="usertext">client\stemapp\widgets</span> and rename it <span class="usertext">Report</span>, or something similar.</span></li><li purpose="step" id="ESRI_STEP_EF7C063B3D0A411F968974B8573F6107"><span purpose="cmd">Browse to the Report widget folder, open the manifest.json file, and change the following:</span><div class="substeps" id="ESRI_SUBSTEPS_85BE7ACAF6DF419E95D7EE2FC8828056" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_E67F144DC1514A7C97952148A4D979C1"><span purpose="cmd">Change the name property to <span class="usertext">Report</span>.</span></li><li purpose="substep" id="ESRI_SUBSTEP_9D23D97FB10843CC9718D1527ADF7243"><span purpose="cmd">Change any other properties (for example, author or description).</span></li><li purpose="substep" id="ESRI_SUBSTEP_3399EA3E4B30475A806C9CAB5C508873"><span purpose="cmd">Remove the featureActions array as it will not be used in this example.</span></li><li purpose="substep" id="ESRI_SUBSTEP_51CE327647BC459FB11F1C7D9F0BD874"><span purpose="cmd">Add the properties attribute and include <span class="usertext">"hasConfig":false</span>.</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_D396622777374E98BE67929E8534B419"><span purpose="cmd">Save the manifest.json file.</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>{
+  &quot;name&quot;: &quot;Report&quot;,
+  &quot;platform&quot;: &quot;HTML&quot;,
+  &quot;version&quot;: &quot;2.4&quot;,
+  &quot;wabVersion&quot;: &quot;2.4&quot;,
+  &quot;author&quot;: &quot;Artemis F.&quot;,
+  &quot;description&quot;: &quot;This is the Report Widget&quot;,
+  &quot;copyright&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;http://www.apache.org/licenses/LICENSE-2.0&quot;,
+  &quot;properties&quot;: {
+    &quot;hasConfig&quot;: false
+  }
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_3992B7A255E34A4E8BFF308E83CF5156"><span purpose="cmd">Next, browse to the nls subfolder and open the strings.js file.</span></li><li purpose="step" id="ESRI_STEP_025CF16B99C04033AF204E885F4E828A"><span purpose="cmd">Change the _widgetLabel to <span class="usertext">Report</span>. </span><div class="info" purpose="info"><p id="GUID-35DAC562-CD11-496D-B2F5-8BC507FEC7E5">Making this change enables the widget to have this name when it's selected in the Builder environment. Remove the rest of the attributes in the root object and save the file.</p><p id="GUID-E3A9C224-8908-47CB-A850-83552B19C24A">The code should look like this:</p><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>define({
+  root: ({
+    _widgetLabel: &quot;Report&quot;
+  }),
+</code></pre></div>
+</div><p id="GUID-AE48C88C-C151-405D-8060-D088ABB6A313">Once the changes are applied, the widget is deployed in the Builder environment and you should be able to choose it from the list of widgets. To test, you can create a new app in <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>. The widget is an in-panel widget on the <span class="uicontrol">Widget</span> tab. Select it within the <span class="uicontrol">Header Controller</span> as shown below:</p><p id="GUID-71E5986C-328F-427B-B4BD-CD27B202617C"><img purpose="img" placement="inline" alt="Header Controller" title="Header Controller" src="03w3/GUID-E71731CD-5A39-42D0-A1F2-064F946AF195-web.png"></p><p id="GUID-D8A989AD-4FCA-402D-8F3E-FA97013AA6A3">When you add a new widget, you'll see a list of widgets to choose from. This list includes the Report Feature widget:</p><p id="GUID-FC580A10-1AEC-462E-AEED-42B44F46804F"><img purpose="img" placement="inline" alt="Choose widget" title="Choose widget" src="03w3/GUID-289CF114-A50D-4610-A3C4-35ECD532656C-web.png"></p><p id="GUID-E09EB28D-2E94-4D1E-AF7A-1AB179E30B4B">The widget will be deployed to your app once you select it and click <span class="uicontrol">OK</span>. Save the app.</p></div></li>
+</ol></div></div>
+<div class="section1" id="ESRI_SECTION1_9E23A0959B894EAAB1097E11698FB3AB" purpose="section1"><h2>Add code for the custom widget</h2><p id="GUID-83D4B894-4576-49AD-BBAE-FFCE39221C36">The next step for the custom widget is to change the underlying code to incorporate the functionality for the Report class.</p><p id="GUID-1793B6F9-F84B-499D-9FE7-86A866FC4204">Open the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> Developer Edition installation folder. The widget is already deployed in the app, and you can continue working on the app’s folder directly without having to redeploy the widget every time you want to test the changes. To find the widget in the app folder, browse to <span class="usertext">server\apps\ID\widgets</span> and open the Report subfolder.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_1C1A5F419ED54734826E9921EF43F9C4"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_D9EC14A2C072427D9D4614A89AE33582"><span purpose="cmd">Open the <span class="uicontrol">widget.js</span> file in this subfolder. Change the baseClass property to match the folder’s name, so it will be baseClass: ‘jimu-widget-report’.</span></li><li purpose="step" id="ESRI_STEP_28C45E321D1E439BBAF33468504EDA83"><span purpose="cmd">Include the Report and PageUtils modules in the require statement. The defined statement should look like the following:</span><div class="info" purpose="info"><p id="GUID-1C72C2D5-D0CC-4881-806D-2810784BA6E0"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>define([&#39;dojo/_base/declare&#39;, &#39;jimu/BaseWidget&#39;, &#39;jimu/dijit/Report&#39;, &#39;jimu/dijit/PageUtils&#39;],
+function(declare, BaseWidget, Report, PageUtils)
+</code></pre></div>
+</div></p></div></li><li purpose="step" id="ESRI_STEP_9B326982297E499D971AACD67B7578A0"><span purpose="cmd">Now examine the code. There is a set of standard widget event handlers defined here that you can start plugging code into to see how things work. You will use the startup function to initialize the report. Delete the existing code and add the following code:</span><div class="info" purpose="info"><p id="GUID-80E8566D-FA0C-4192-8B25-011FB694AF9E"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>startup: function() {
+      this.inherited(arguments);
+      
+	  this.report = new Report({
+            footNotes: &quot;Report Generated by Artemis&quot;,
+            printTaskUrl: &quot;http://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task&quot;,
+            reportLayout: {
+              &quot;pageSize&quot;: PageUtils.PageSizes.A4,
+              &quot;orientation&quot;: PageUtils.Orientation.Landscape
+            }
+          });
+		  
+      console.log(&#39;startup&#39;);
+    }
+</code></pre></div>
+</div></p></div></li><li purpose="step" id="ESRI_STEP_AF6F7D230B574742BF10129515A0A097"><span purpose="cmd">At this point, you have used the Report class to create a new report, but you are missing the UI for the widget. The widget needs to have a button that the end user will click to generate the report. Go to the widget.html file to see how to add it. Delete all the content in this file and add the following code:</span><div class="info" purpose="info"><p id="GUID-C036F236-5D0D-4468-A7A8-479BEBB7D61C"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>&lt;div&gt;
+	&lt;div class=&quot;jimu-btn&quot; data-dojo-attach-point=&quot;btnPrint&quot; data-dojo-attach-event=&quot;onclick:_onBtnPrintClicked&quot;&gt;Generate Report&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+</div></p></div></li><li purpose="step" id="ESRI_STEP_5403B14278724D61AAEFE27F5533FD74"><span purpose="cmd">The above code creates a button with name btnPrint. When this button is clicked, the _onBtnPrintClicked function is called. Go back to the widget.js file and define this function. The code to define the function is as follows: </span><div class="info" purpose="info"><p id="GUID-2C53C86B-4A23-4155-B6CF-572D3E72773C"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>_onBtnPrintClicked: function(){
+		var printData = [
+		{
+		  addPageBreak: true,
+		  type: &quot;map&quot;,
+		  map: this.map
+		},
+		{
+		  title: &quot;List of parks&quot;,
+		  addPageBreak: false,
+		  type: &quot;table&quot;,
+		  tableCols: 3,
+		  data: {
+			showRowIndex: false,
+			rows:  [[&quot;Brookside Park&quot;, &quot;1630 Brookside Avenue, Redlands, CA 92373&quot;, &quot;34.045347, -117.209909&quot;],
+			        [&quot;Crafton Park&quot;, &quot;Wabash Ave &amp; Independence Ave, Redlands, CA 92374&quot;, &quot;34.060946, -117.140118&quot;],
+					[&quot;Ford Park&quot;, &quot;Parkford Dr &amp; Redlands Blvd, Redlands, CA 92374&quot;, &quot;34.043828, -117.160692&quot;],
+					[&quot;Prospect Park&quot;, &quot;352 Prospect Dr., Redlands, CA 92373&quot;, &quot;34.039145, -117.172582&quot;],
+					[&quot;Sylvan Park&quot;, &quot;601 N University St, Redlands, CA 92374&quot;, &quot;34.059977, -117.168179&quot;]],
+			cols: [&quot;Name&quot;, &quot;Address&quot;, &quot;Lat/Lon&quot;]
+		  }
+		},
+		{
+			title: &quot;Photos&quot;,
+			type: &quot;html&quot;,
+			data: &#39;&lt;div style=&quot;height: 450px;&quot;&gt;&lt;div style=&quot;width: 250px; margin-left: 10px; float: left;&quot;&gt;&lt;div&gt;&lt;img style=&quot;width: 250px; height: 200px; float: left;&quot; src=&quot;http://cityofredlands.org/sites/default/files/rda/Landmarks/brookside.jpg&quot; /&gt;&lt;/div&gt;&lt;div style=&quot;text-align:center; margin-bottom: 10px;&quot;&gt;Brookside Park&lt;/div&gt;&lt;/div&gt;&#39;+
+			      &#39;&lt;div style=&quot;width: 250px; margin-left: 10px; float: left;&quot;&gt;&lt;div&gt;&lt;img style=&quot;width: 250px; height: 200px; float: left;&quot; src=&quot;http://cityofredlands.org/sites/default/files/rda/Landmarks/Crafton.jpg&quot; /&gt;&lt;/div&gt;&lt;div style=&quot;text-align:center; margin-bottom: 10px;&quot;&gt;Crafton Park&lt;/div&gt;&lt;/div&gt;&#39;+
+				  &#39;&lt;div style=&quot;width: 250px; margin-left: 10px; float: left;&quot;&gt;&lt;div&gt;&lt;img style=&quot;width: 250px; height: 200px; float: left;&quot; src=&quot;http://cityofredlands.org/sites/default/files/rda/Landmarks/ford-park.jpg&quot; /&gt;&lt;/div&gt;&lt;div style=&quot;text-align:center; margin-bottom: 10px;&quot;&gt;Ford Park&lt;/div&gt;&lt;/div&gt;&#39;+
+				  &#39;&lt;div style=&quot;width: 250px; margin-left: 10px; float: left; clear:left;&quot;&gt;&lt;div&gt;&lt;img style=&quot;width: 250px; height: 200px; float: left;&quot; src=&quot;http://cityofredlands.org/sites/default/files/rda/Landmarks/Prospect%20park.jpg&quot; /&gt;&lt;/div&gt;&lt;div style=&quot;text-align:center; margin-bottom: 10px;&quot;&gt;Prospect Park&lt;/div&gt;&lt;/div&gt;&#39;+
+				  &#39;&lt;div style=&quot;width: 250px; margin-left: 10px; float: left;&quot;&gt;&lt;div&gt;&lt;img style=&quot;width: 250px; height: 200px; float: left;&quot; src=&quot;http://cityofredlands.org/sites/default/files/rda/Landmarks/Sylvan%20Park.jpg&quot; /&gt;&lt;/div&gt;&lt;div style=&quot;text-align:center; margin-bottom: 10px;&quot;&gt;Sylvan Park&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&#39;
+		}];
+        this.report.print(&quot;Redlands Parks&quot;, printData);
+      },
+</code></pre></div>
+</div></p><p id="GUID-E901E146-7EFB-4973-A389-B3A66876F6AC">This code will create the data that you want to view in the report. It consists of three parts: map, table, and HTML. The map will inherit the same map that is used by the app. The table is a list of information that you want to show. In this example, you are showing a list of the parks in Redlands, California. The last part will display some photos of these parks using HTML.</p></div></li><li purpose="step" id="ESRI_STEP_0CAB77941EAB44A1972688AB783D1F57"><span purpose="cmd"> Currently, the <span class="uicontrol">Generate Report</span> button text is hard-coded in the widget.html file. If you want to internationalize the UI, you need to isolate this string in a separate language-specific resource file. By default, the strings.js file in the nls folder is the file for the English language. Depending on the language of the localized string, you need to use the appropriate subfolder in the nls folder.</span><div class="info" purpose="info"><p id="GUID-3D399F5D-15AD-4671-8EC7-0FB02D00614F"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>define({
+  root: ({
+    _widgetLabel: &quot;Report&quot;,
+    generateReport: &quot;Generate Report&quot;
+  }),
+</code></pre></div>
+</div></p></div><div class="substeps" id="ESRI_SUBSTEPS_17245C31364A40D4B8E552BED415A471" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_83949B063BE2402DB540FED96EFA6FB8"><span purpose="cmd">Once the string.js file is updated, change the widget.html file to reference this string as shown below:</span><div class="stepexample" purpose="stepexample"><p id="GUID-09949A66-CDE9-48DC-88B4-03DE89DD37B2"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>&lt;div&gt;
+	&lt;div class=&quot;jimu-btn&quot; data-dojo-attach-point=&quot;btnPrint&quot; data-dojo-attach-event=&quot;onclick:_onBtnPrintClicked&quot;&gt;${nls.generateReport}&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+</div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_BCAB8074A9674D1F87AE74EFCCFA9C21"><span purpose="cmd">Run the app to use the new custom Report widget.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-D193C28A-7E72-47A0-BA58-72EBF5AEA4AB-web.png" purpose="img" alt="Custom Report widget" title="Custom Report widget"></td></tr></table></div></span><div class="stepresult" purpose="stepresult"><p id="GUID-3831C071-5769-41D3-978B-9D97375738D1">Once you click the button, you will see the report page. The figure below shows how the map appears in the report.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-9778D229-CFFC-42D6-A407-2A9FF299D6AB-web.png" purpose="img" alt="Report map" title="Report map"></td></tr></table></div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_410ABE6B3CF64FEE9B07BA2FA9AC52E3"><span purpose="cmd">Scroll down to  see the table along with the HTML.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-065A21DA-390A-47E0-B423-6C1DCF2CDED3-web.png" purpose="img" alt="Report table with HTML" title="Report table with HTML"></td></tr></table></div></span></li></ol></div></li></ol></div></div></div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,30 @@
+/********** Styles for pocket panel ***********/
+
+@import url("panels/PocketPanel/style.css");
+.jimu-widget-zoomslider {
+    background-color: transparent !important;
+}
+
+.jimu-widget-zoomslider.vertical .zoom-in {
+    margin-bottom: 2px;
+    border-bottom: 0;
+}
+
+.jimu-widget-zoomslider.vertical .zoom {
+    border-radius: 4px !important;
+}
+
+/* override Fullscreen button opacity to match with other controls*/
+
+.jimu-widget-fullScreen:not(.jimu-main-background) {
+    opacity: 1;
+    color: rgba(0, 0, 0, 1);
+}
+
+.jimu-widget-homebutton,
+.jimu-widget-fullScreen,
+.jimu-widget-zoomslider,
+.jimu-widget-mylocation,
+.jimu-widget-extent-navigate{
+  border: 0;
+}

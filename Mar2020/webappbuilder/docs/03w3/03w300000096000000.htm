@@ -1,0 +1,29 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="This topic describes how to add help for  a custom widget."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Add help for your widget</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-BDAFA266-604F-4EE1-B1EB-03F3E1D0E771]--><body><div id="content"><div class="header"><h1>
+Add help for your widget</h1><div id="breadcrumb"></div></div>
+<p id="GUID-8C8FD6D8-D437-46E8-B499-29BF4115F5F4">Your custom widget can link to the help file   in <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> in the same way as out-of-the-box widgets. To prepare your help <span class="usertext">.html</span> file appropriately, complete the following steps:</p>
+<div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-8DED51A8-F7D1-4256-9A85-D67EB98E268D"><div class="step_title">Steps:</div><ol>
+<li purpose="step" id="GUID-76DA50AC-E86D-4482-B5CB-AA39B5C42E8F">
+<span purpose="cmd" id="GUID-5116E0F6-186E-4DF3-AD90-6DEF5CD6D476">
+ Copy your widget folder to the widgets repository. </span>
+<div class="info" purpose="info"><p id="GUID-4C9D49CF-713D-4335-A0FA-8FC2F5E63732">By default, the widgets repository is located in the <span class="usertext">~\client\stemapp\widgets</span> folder.</p></div></li><li purpose="step" id="ESRI_STEP_8AC41A9079C343B9AA0F28B623E4E289"><span purpose="cmd" id="GUID-BE602BFF-857B-4B9F-8580-E34B3BDE24C5"> Copy your help <span class="usertext">.html</span> file, for example, myWidget.html, to the <span class="usertext">~\docs</span> folder.</span></li><li purpose="step" id="ESRI_STEP_13E2E0C9320348F683E7FFF26B592699"><span purpose="cmd" id="GUID-E427B006-CDC6-45B2-9123-447045919B79">Open the widgetHelp.json file under <span class="usertext">~\client\builder</span>, and add a new key/value pair to widget2d or widget3d under the dev property.</span><div class="info" purpose="info"><p id="GUID-C109CB62-CC98-468D-AA8E-E1FA9AD393DB"> In this case, key is your widget name in lowercase letters, and value is the name of your help <span class="usertext">.html</span> file.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-1A76E542-7183-41DD-990E-45E6C32239A4-web.png" purpose="img" alt="Add key/value pair" title="Add key/value pair"></td></tr></table></div></p></div></li><li purpose="step" id="ESRI_STEP_E3F19F04561B48CEB01161B3BC210E32"><span purpose="cmd" id="GUID-A510BA25-243A-4920-9F79-7BAD7F96C137">Start the node server, type <span class="usertext">http://[your hostname:3344]/webappbuilder/help/[your help file].html</span> in the browser, and determine if you can access the help document for your widget.</span></li><li purpose="step" id="ESRI_STEP_87B20E83FA9F406A889DB6A29C075850"><span purpose="cmd" id="GUID-C44C0F1D-4377-4A32-AA98-4E29A4A3A76D">In <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>, create an app and add your widget. </span></li><li purpose="step" id="ESRI_STEP_AB1C3DF417A2496CBA22D2ED9509BE4D"><span purpose="cmd">Open the widget setting page, and click the <span class="uicontrol">Learn more about the widget</span> link.</span><div class="stepresult" purpose="stepresult"><p id="GUID-6392AE1D-50FB-4B75-8486-BE4E7C8B72E2">Your help file appears.</p></div></li>
+</ol></div></div>
+
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

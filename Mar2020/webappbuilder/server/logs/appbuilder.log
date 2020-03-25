@@ -1,0 +1,430 @@
+[2019-07-26T12:52:00.495] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\WebAppBuilderForArcGIS\client\stemapp\widgets
+[2019-07-26T12:52:15.686] [INFO] app - Find 6 predfinded apps.
+[2019-07-26T12:52:15.690] [INFO] repo - insert HTML.About
+[2019-07-26T12:52:15.690] [INFO] repo - insert HTML.AddData
+[2019-07-26T12:52:15.691] [INFO] repo - insert HTML.Analysis
+[2019-07-26T12:52:15.715] [INFO] repo - insert HTML.AttributeTable
+[2019-07-26T12:52:15.716] [INFO] repo - insert HTML.BasemapGallery
+[2019-07-26T12:52:15.716] [INFO] repo - insert HTML.BatchAttributeEditor
+[2019-07-26T12:52:15.717] [INFO] repo - insert HTML.Bookmark
+[2019-07-26T12:52:15.718] [INFO] repo - insert HTML.Chart
+[2019-07-26T12:52:15.719] [INFO] repo - insert HTML.Coordinate
+[2019-07-26T12:52:15.720] [INFO] repo - insert HTML.CoordinateConversion
+[2019-07-26T12:52:15.720] [INFO] repo - insert HTML.CostAnalysis
+[2019-07-26T12:52:15.721] [INFO] repo - insert HTML.DataAggregation
+[2019-07-26T12:52:15.722] [INFO] repo - insert HTML.Directions
+[2019-07-26T12:52:15.723] [INFO] repo - insert HTML.DistanceAndDirection
+[2019-07-26T12:52:15.723] [INFO] repo - insert HTML.DistrictLookup
+[2019-07-26T12:52:15.724] [INFO] repo - insert HTML.Draw
+[2019-07-26T12:52:15.726] [INFO] repo - insert HTML.Edit
+[2019-07-26T12:52:15.728] [INFO] repo - insert HTML.EmergencyResponseGuide
+[2019-07-26T12:52:15.730] [INFO] repo - insert HTML.ExtentNavigate
+[2019-07-26T12:52:15.731] [INFO] repo - insert HTML.Filter
+[2019-07-26T12:52:15.732] [INFO] repo - insert HTML.FullScreen
+[2019-07-26T12:52:15.733] [INFO] repo - insert HTML.GeoLookup
+[2019-07-26T12:52:15.733] [INFO] repo - insert HTML.Geoprocessing
+[2019-07-26T12:52:15.734] [INFO] repo - insert HTML.GriddedReferenceGraphic
+[2019-07-26T12:52:15.737] [INFO] repo - insert HTML.GridOverlay
+[2019-07-26T12:52:15.738] [INFO] repo - insert HTML.GroupFilter
+[2019-07-26T12:52:15.739] [INFO] repo - insert HTML.HomeButton
+[2019-07-26T12:52:15.740] [INFO] repo - insert HTML.ImageMeasurement
+[2019-07-26T12:52:15.742] [INFO] repo - insert HTML.IncidentAnalysis
+[2019-07-26T12:52:15.747] [INFO] repo - insert HTML.Infographic
+[2019-07-26T12:52:15.748] [INFO] repo - insert HTML.InfoSummary
+[2019-07-26T12:52:15.749] [INFO] repo - insert HTML.LayerList
+[2019-07-26T12:52:15.750] [INFO] repo - insert HTML.Legend
+[2019-07-26T12:52:15.751] [INFO] repo - insert HTML.Measurement
+[2019-07-26T12:52:15.752] [INFO] repo - insert HTML.MyLocation
+[2019-07-26T12:52:15.754] [INFO] repo - insert HTML.NearMe
+[2019-07-26T12:52:15.756] [INFO] repo - insert HTML.ObliqueViewer
+[2019-07-26T12:52:15.757] [INFO] repo - insert HTML.OverviewMap
+[2019-07-26T12:52:15.759] [INFO] repo - insert HTML.ParcelDrafter
+[2019-07-26T12:52:15.760] [INFO] repo - insert HTML.Print
+[2019-07-26T12:52:15.764] [INFO] repo - insert HTML.PublicNotification
+[2019-07-26T12:52:15.766] [INFO] repo - insert HTML.Query
+[2019-07-26T12:52:15.767] [INFO] repo - insert HTML.RelatedTableCharts
+[2019-07-26T12:52:15.768] [INFO] repo - insert HTML.ReportFeature
+[2019-07-26T12:52:15.770] [INFO] repo - insert HTML.ReviewerDashboard
+[2019-07-26T12:52:15.772] [INFO] repo - insert HTML.Scalebar
+[2019-07-26T12:52:15.773] [INFO] repo - insert HTML.Screening
+[2019-07-26T12:52:15.776] [INFO] repo - insert HTML.Search
+[2019-07-26T12:52:15.779] [INFO] repo - insert HTML.Select
+[2019-07-26T12:52:15.780] [INFO] repo - insert HTML.Share
+[2019-07-26T12:52:15.781] [INFO] repo - insert HTML.SituationAwareness
+[2019-07-26T12:52:15.783] [INFO] repo - insert HTML.SmartEditor
+[2019-07-26T12:52:15.785] [INFO] repo - insert HTML.Splash
+[2019-07-26T12:52:15.787] [INFO] repo - insert HTML.Stream
+[2019-07-26T12:52:15.788] [INFO] repo - insert HTML.SuitabilityModeler
+[2019-07-26T12:52:15.789] [INFO] repo - insert HTML.Summary
+[2019-07-26T12:52:15.790] [INFO] repo - insert HTML.Swipe
+[2019-07-26T12:52:15.791] [INFO] repo - insert HTML.ThreatAnalysis
+[2019-07-26T12:52:15.793] [INFO] repo - insert HTML.TimeSlider
+[2019-07-26T12:52:15.796] [INFO] repo - insert HTML.Visibility
+[2019-07-26T12:52:15.798] [INFO] repo - insert HTML.ZoomSlider
+[2019-07-26T12:52:15.824] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\WebAppBuilderForArcGIS\client\stemapp\themes
+[2019-07-26T12:52:18.860] [INFO] repo - insert HTML.BillboardTheme
+[2019-07-26T12:52:18.875] [INFO] repo - insert HTML.BoxTheme
+[2019-07-26T12:52:18.878] [INFO] repo - insert HTML.DartTheme
+[2019-07-26T12:52:18.884] [INFO] repo - insert HTML.DashboardTheme
+[2019-07-26T12:52:18.894] [INFO] repo - insert HTML.FoldableTheme
+[2019-07-26T12:52:18.904] [INFO] repo - insert HTML.LaunchpadTheme
+[2019-07-26T12:52:18.908] [INFO] repo - insert HTML.PlateauTheme
+[2019-07-26T12:52:18.911] [INFO] repo - insert HTML.PocketTheme
+[2019-07-26T12:52:18.913] [INFO] repo - insert HTML.TabTheme
+[2019-07-26T12:52:18.916] [INFO] repo - insert HTML.JewelryBoxTheme
+[2019-07-26T12:52:18.918] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\WebAppBuilderForArcGIS\client\stemapp3d\widgets
+[2019-07-26T12:52:22.326] [INFO] repo - insert HTML3D.3DFx
+[2019-07-26T12:52:22.333] [INFO] repo - insert HTML3D.About
+[2019-07-26T12:52:22.335] [INFO] repo - insert HTML3D.Coordinate
+[2019-07-26T12:52:22.343] [INFO] repo - insert HTML3D.BasemapGallery
+[2019-07-26T12:52:22.350] [INFO] repo - insert HTML3D.Daylight
+[2019-07-26T12:52:22.355] [INFO] repo - insert HTML3D.Compass
+[2019-07-26T12:52:22.357] [INFO] repo - insert HTML3D.Home
+[2019-07-26T12:52:22.362] [INFO] repo - insert HTML3D.Legend
+[2019-07-26T12:52:22.366] [INFO] repo - insert HTML3D.LayerList
+[2019-07-26T12:52:22.368] [INFO] repo - insert HTML3D.FullScreen
+[2019-07-26T12:52:22.382] [INFO] repo - insert HTML3D.Measurement3D
+[2019-07-26T12:52:22.400] [INFO] repo - insert HTML3D.MyLocation
+[2019-07-26T12:52:22.403] [INFO] repo - insert HTML3D.Navigate
+[2019-07-26T12:52:22.410] [INFO] repo - insert HTML3D.Search
+[2019-07-26T12:52:22.412] [INFO] repo - insert HTML3D.Slides
+[2019-07-26T12:52:22.413] [INFO] repo - insert HTML3D.Share
+[2019-07-26T12:52:22.414] [INFO] repo - insert HTML3D.ZoomSlider
+[2019-07-26T12:52:22.416] [INFO] repo - insert HTML3D.Splash
+[2019-07-26T12:52:22.417] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\WebAppBuilderForArcGIS\client\stemapp3d\themes
+[2019-07-26T12:52:23.655] [INFO] repo - insert HTML3D.BillboardTheme
+[2019-07-26T12:52:23.670] [INFO] repo - insert HTML3D.LaunchpadTheme
+[2019-07-26T12:52:23.670] [INFO] repo - insert HTML3D.BoxTheme
+[2019-07-26T12:52:23.670] [INFO] repo - insert HTML3D.DashboardTheme
+[2019-07-26T12:52:23.670] [INFO] repo - insert HTML3D.DartTheme
+[2019-07-26T12:52:23.670] [INFO] repo - insert HTML3D.TabTheme
+[2019-07-26T12:52:23.670] [INFO] repo - insert HTML3D.FoldableTheme
+[2019-07-26T12:52:23.670] [INFO] repo - insert HTML3D.JewelryBoxTheme
+[2019-07-26T12:55:08.511] [INFO] default - No portal URL is set, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-07-26T13:02:51.923] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:03:05.296] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:03:07.573] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:03:10.698] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:04:39.966] [INFO] default - No portal URL is set, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-07-26T13:09:12.364] [INFO] default - No portal URL is set, redirect /webappbuilder/webappbuilder to /webappbuilder/webappbuilder?action=setportalurl
+[2019-07-26T13:12:28.051] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\jimu.js
+[2019-07-26T13:12:36.890] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\images
+[2019-07-26T13:12:36.954] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\libs
+[2019-07-26T13:12:37.926] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\index.html
+[2019-07-26T13:12:37.975] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\env.js
+[2019-07-26T13:12:37.995] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\simpleLoader.js
+[2019-07-26T13:12:38.016] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\init.js
+[2019-07-26T13:12:38.045] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\web.config
+[2019-07-26T13:12:38.067] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\dynamic-modules
+[2019-07-26T13:12:38.168] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\readme.html
+[2019-07-26T13:12:38.179] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\config-readme.txt
+[2019-07-26T13:12:38.215] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\configs
+[2019-07-26T13:12:38.269] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\.jshintrc
+[2019-07-26T13:12:38.317] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\.jshintignore
+[2019-07-26T13:12:38.353] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\3rd-party-license.txt
+[2019-07-26T13:12:38.394] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes\FoldableTheme
+[2019-07-26T13:12:39.736] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Scalebar
+[2019-07-26T13:12:40.311] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Search
+[2019-07-26T13:12:41.224] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Coordinate
+[2019-07-26T13:12:42.135] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\OverviewMap
+[2019-07-26T13:12:42.693] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\HomeButton
+[2019-07-26T13:12:42.846] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\MyLocation
+[2019-07-26T13:12:43.479] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\AttributeTable
+[2019-07-26T13:12:44.629] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Splash
+[2019-07-26T13:12:45.793] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ZoomSlider
+[2019-07-26T13:12:45.944] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ExtentNavigate
+[2019-07-26T13:12:46.117] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\FullScreen
+[2019-07-26T13:12:46.330] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Legend
+[2019-07-26T13:12:46.897] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\LayerList
+[2019-07-26T13:14:04.288] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:14:08.303] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:14:08.853] [INFO] default - No portal URL is set, redirect /webappbuilder to /webappbuilder?action=setportalurl
+[2019-07-26T13:14:09.680] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:14:11.648] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:14:47.710] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:14:51.501] [INFO] default - No token is found, redirect /webappbuilder to /webappbuilder?action=setportalurl
+[2019-07-26T13:14:52.092] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:14:53.664] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:14:54.866] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:16:45.585] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:16:48.678] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:16:49.054] [INFO] default - No token is found, redirect /webappbuilder to /webappbuilder?action=setportalurl
+[2019-07-26T13:16:49.780] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:16:51.093] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:17:21.632] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:17:24.788] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:17:26.188] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:17:27.456] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:17:33.524] [INFO] default - redirect  /webappbuilder/stemapp/index.html?id=2 to /webappbuilder/apps/2
+[2019-07-26T13:19:17.006] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:19:20.115] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:19:21.762] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:19:23.716] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:19:30.467] [INFO] default - redirect  /webappbuilder/stemapp/index.html?id=2 to /webappbuilder/apps/2
+[2019-07-26T13:45:34.038] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:45:39.837] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:45:41.962] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:45:44.970] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:45:45.599] [INFO] repo - theme changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes\JewelryBoxTheme\manifest.json
+[2019-07-26T13:45:49.089] [INFO] repo - theme changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes\LaunchpadTheme\manifest.json
+[2019-07-26T13:45:52.824] [INFO] repo - theme changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes\PlateauTheme\manifest.json
+[2019-07-26T13:45:56.766] [INFO] repo - theme changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes\PocketTheme\manifest.json
+[2019-07-26T13:45:58.084] [INFO] repo - theme changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes\TabTheme\manifest.json
+[2019-07-26T13:46:02.875] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\About\manifest.json
+[2019-07-26T13:46:03.687] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\AddData\manifest.json
+[2019-07-26T13:46:05.350] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Analysis\manifest.json
+[2019-07-26T13:46:06.916] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\AttributeTable\manifest.json
+[2019-07-26T13:46:08.160] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\BasemapGallery\manifest.json
+[2019-07-26T13:46:09.865] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\BatchAttributeEditor\manifest.json
+[2019-07-26T13:46:11.178] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Bookmark\manifest.json
+[2019-07-26T13:46:12.633] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Chart\manifest.json
+[2019-07-26T13:46:13.857] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Coordinate\manifest.json
+[2019-07-26T13:46:14.999] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\CoordinateConversion\manifest.json
+[2019-07-26T13:46:16.381] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\CostAnalysis\manifest.json
+[2019-07-26T13:46:18.459] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\DataAggregation\manifest.json
+[2019-07-26T13:46:19.315] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Directions\manifest.json
+[2019-07-26T13:46:20.377] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\DistanceAndDirection\manifest.json
+[2019-07-26T13:46:22.053] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\DistrictLookup\manifest.json
+[2019-07-26T13:46:23.912] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Draw\manifest.json
+[2019-07-26T13:46:24.881] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Edit\manifest.json
+[2019-07-26T13:46:25.896] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\EmergencyResponseGuide\manifest.json
+[2019-07-26T13:46:29.021] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ExtentNavigate\manifest.json
+[2019-07-26T13:46:29.678] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Filter\manifest.json
+[2019-07-26T13:46:31.053] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\FullScreen\manifest.json
+[2019-07-26T13:46:31.490] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\GeoLookup\manifest.json
+[2019-07-26T13:46:32.568] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Geoprocessing\manifest.json
+[2019-07-26T13:46:34.382] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\GriddedReferenceGraphic\manifest.json
+[2019-07-26T13:46:36.335] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\GridOverlay\manifest.json
+[2019-07-26T13:46:38.085] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\GroupFilter\manifest.json
+[2019-07-26T13:46:39.622] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\HomeButton\manifest.json
+[2019-07-26T13:46:40.288] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ImageMeasurement\manifest.json
+[2019-07-26T13:46:41.962] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\IncidentAnalysis\manifest.json
+[2019-07-26T13:46:43.772] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Infographic\manifest.json
+[2019-07-26T13:46:48.428] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\InfoSummary\manifest.json
+[2019-07-26T13:46:49.819] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\LayerList\manifest.json
+[2019-07-26T13:46:51.241] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Legend\manifest.json
+[2019-07-26T13:46:52.116] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Measurement\manifest.json
+[2019-07-26T13:46:53.209] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\MyLocation\manifest.json
+[2019-07-26T13:46:54.444] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\NearMe\manifest.json
+[2019-07-26T13:46:56.756] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ObliqueViewer\manifest.json
+[2019-07-26T13:46:58.772] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\OverviewMap\manifest.json
+[2019-07-26T13:47:00.006] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ParcelDrafter\manifest.json
+[2019-07-26T13:47:02.756] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Print\manifest.json
+[2019-07-26T13:47:04.709] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\PublicNotification\manifest.json
+[2019-07-26T13:47:08.458] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Query\manifest.json
+[2019-07-26T13:47:11.553] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\RelatedTableCharts\manifest.json
+[2019-07-26T13:47:14.178] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ReportFeature\manifest.json
+[2019-07-26T13:47:15.950] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ReviewerDashboard\manifest.json
+[2019-07-26T13:47:20.475] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Scalebar\manifest.json
+[2019-07-26T13:47:22.084] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Screening\manifest.json
+[2019-07-26T13:47:26.256] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Search\manifest.json
+[2019-07-26T13:47:27.803] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Select\manifest.json
+[2019-07-26T13:47:29.531] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Share\manifest.json
+[2019-07-26T13:47:30.538] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\SituationAwareness\manifest.json
+[2019-07-26T13:47:33.596] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\SmartEditor\manifest.json
+[2019-07-26T13:47:36.244] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Splash\manifest.json
+[2019-07-26T13:47:38.654] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Stream\manifest.json
+[2019-07-26T13:47:41.310] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\SuitabilityModeler\manifest.json
+[2019-07-26T13:47:42.749] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Summary\manifest.json
+[2019-07-26T13:47:43.598] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Swipe\manifest.json
+[2019-07-26T13:47:44.822] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ThreatAnalysis\manifest.json
+[2019-07-26T13:47:46.878] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\TimeSlider\manifest.json
+[2019-07-26T13:47:48.192] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\Visibility\manifest.json
+[2019-07-26T13:47:49.722] [INFO] repo - widget changed: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\ZoomSlider\manifest.json
+[2019-07-26T13:52:27.837] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:52:42.927] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:52:44.977] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:52:46.943] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:54:03.705] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:54:06.815] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:54:08.182] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:54:09.971] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T12:01:42.031] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T12:01:55.921] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T12:01:57.952] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T12:02:01.093] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:09:32.394] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T13:09:46.284] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T13:09:48.378] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T13:09:51.565] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T13:16:59.939] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\EmergencyResponseGuide
+[2019-07-26T13:24:24.180] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\AddData
+[2019-07-26T13:25:07.710] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\GridOverlay
+[2019-07-26T13:27:32.970] [INFO] app - remove widget LayerList from app 2
+[2019-07-26T13:28:52.112] [DEBUG] utils - copy D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets\LayerList
+[2019-07-26T13:57:04.440] [INFO] app - remove widget About from app 2
+[2019-07-26T13:57:04.506] [INFO] app - remove widget Share from app 2
+[2019-07-26T14:02:02.948] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T14:02:16.546] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T14:02:19.506] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T14:02:24.194] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-26T14:11:20.416] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-26T14:11:23.510] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-26T14:11:24.870] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-26T14:11:26.192] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-29T10:11:32.442] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-29T10:11:46.973] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-29T10:11:49.067] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-29T10:11:52.192] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-29T11:12:59.824] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-29T11:13:14.292] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-29T11:13:16.370] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-29T11:13:19.495] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-29T11:18:43.206] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-29T11:18:47.107] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-29T11:18:47.962] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-29T11:18:49.567] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-07-29T11:22:58.059] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-07-29T11:23:01.153] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-07-29T11:23:02.611] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-07-29T11:23:04.228] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-08-12T13:59:24.958] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-08-12T13:59:40.598] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-08-12T13:59:42.707] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-08-12T13:59:45.910] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-08-12T14:00:30.894] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-08-12T14:00:55.633] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-08-12T14:01:00.257] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-08-12T14:01:00.638] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-08-12T14:01:01.877] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-08-12T14:01:03.822] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-08-12T15:07:46.313] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-08-12T15:08:03.177] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-08-12T15:08:05.692] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-08-12T15:08:09.666] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-02T12:16:52.005] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-02T12:17:09.150] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-02T12:17:11.888] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-02T12:17:16.035] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-02T12:17:17.088] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-02T12:21:30.964] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-02T12:21:34.151] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-02T12:21:34.555] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-02T12:21:35.512] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-02T12:21:37.261] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-02T15:43:25.151] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-02T15:43:39.665] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-02T15:43:42.819] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-02T15:43:45.596] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-02T15:43:48.401] [DEBUG] default - on tcp proxy error
+[2019-09-02T15:43:48.401] [DEBUG] default - on tcp proxy error
+[2019-09-02T15:43:48.838] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-02T15:51:34.158] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-02T15:51:48.105] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-02T15:51:50.738] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-02T15:51:54.649] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-02T16:18:33.369] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-02T16:18:36.760] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-02T16:18:37.876] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-02T16:18:38.457] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-02T16:18:39.530] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-02T16:20:58.050] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-04T08:43:24.712] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-04T08:43:40.870] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-04T08:43:43.472] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-04T08:43:47.002] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-04T16:19:28.452] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-04T16:19:42.515] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-04T16:19:44.640] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-04T16:19:47.827] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:40:03.610] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T11:40:17.740] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-06T11:40:19.998] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T11:40:22.656] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T11:40:26.470] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:46:20.872] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T11:46:33.920] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T11:46:35.857] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T11:46:39.029] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:46:45.731] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-06T11:49:32.009] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T11:49:43.746] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-06T11:49:45.383] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T11:49:47.578] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T11:49:51.383] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:52:03.665] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T11:52:06.582] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T11:52:06.920] [INFO] default - No token is found, redirect /webappbuilder to /webappbuilder?action=setportalurl
+[2019-09-06T11:52:07.999] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T11:52:09.581] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:52:17.745] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-06T11:53:29.704] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T11:53:32.595] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T11:53:34.274] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T11:53:34.782] [INFO] default - No token is found, redirect /webappbuilder to /webappbuilder?action=setportalurl
+[2019-09-06T11:53:36.438] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:55:14.233] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T11:55:17.186] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T11:55:18.428] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T11:55:19.117] [INFO] default - No token is found, redirect /webappbuilder to /webappbuilder?action=setportalurl
+[2019-09-06T11:55:19.921] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:56:59.261] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T11:57:02.245] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T11:57:03.631] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T11:57:04.364] [INFO] default - No token is found, redirect /webappbuilder to /webappbuilder?action=setportalurl
+[2019-09-06T11:57:04.864] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:58:20.756] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T11:58:23.694] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T11:58:24.334] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T11:58:25.162] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:58:58.895] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T11:59:01.770] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T11:59:02.395] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T11:59:03.254] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T11:59:59.799] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T12:00:02.768] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T12:00:04.081] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T12:00:05.363] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T12:00:24.814] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T12:00:27.751] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T12:00:29.130] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T12:00:30.573] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T19:19:09.071] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T19:19:22.758] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T19:19:24.821] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T19:19:27.883] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T19:24:01.823] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T19:24:18.399] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T19:24:21.029] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T19:24:24.400] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T19:36:02.168] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T19:36:05.277] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T19:36:06.940] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T19:36:09.773] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-06T19:38:01.541] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-06T19:38:04.697] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-06T19:38:06.002] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-06T19:38:07.541] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-20T16:43:25.789] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-20T16:43:41.070] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-20T16:43:43.741] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-20T16:43:47.366] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-09-20T16:44:15.299] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2019-09-20T16:54:25.399] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-09-20T16:54:41.008] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-09-20T16:54:43.414] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-09-20T16:54:46.930] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-10-11T15:45:52.627] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2019-10-11T15:46:09.908] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2019-10-11T15:46:13.017] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2019-10-11T15:46:16.986] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2019-10-11T15:47:55.850] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2020-01-24T15:02:32.082] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2020-01-24T15:02:52.743] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2020-01-24T15:02:55.553] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2020-01-24T15:02:59.585] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2020-01-24T15:05:45.127] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2020-02-25T15:04:42.786] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2020-02-25T15:05:00.619] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2020-02-25T15:05:03.450] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2020-02-25T15:05:07.682] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2020-02-25T15:08:17.616] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl
+[2020-03-10T11:09:30.135] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2020-03-10T11:09:46.041] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2020-03-10T11:09:48.479] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2020-03-10T11:09:52.213] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2020-03-12T09:15:01.525] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\widgets
+[2020-03-12T09:15:27.305] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp\themes
+[2020-03-12T09:15:33.274] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\widgets
+[2020-03-12T09:15:42.180] [INFO] repo - Read repository items: D:\Users\NAPSG_TLawson\webappbuilder\client\stemapp3d\themes
+[2020-03-12T09:16:03.578] [INFO] default - No token is found, redirect /webappbuilder/ to /webappbuilder/?action=setportalurl

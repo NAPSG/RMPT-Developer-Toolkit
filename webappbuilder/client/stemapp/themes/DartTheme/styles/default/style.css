@@ -1,0 +1,23 @@
+.dart-bgcolor {
+  background-color: #646464;
+}
+
+.esriSimpleSlider div {
+  color: #646464;
+}
+
+.jimu-widget-fullScreen .fullScreen,
+.esriPopup .titlePane {
+  background-color: #646464;
+}
+.dart-controller-extent-navigate .jimu-widget-extent-navigate .operation.jimu-state-disabled,
+.dart-controller-extent-navigate .jimu-widget-extent-navigate .operation.jimu-state-disabled:hover{
+  background-color: #fff;
+  color: #646464;
+  opacity: 0.6;
+}
+.dart-controller-extent-navigate .jimu-widget-extent-navigate .operation,
+.dart-controller-extent-navigate .jimu-widget-extent-navigate .operation:hover{
+  background-color: #fff;
+  color: #646464;
+}

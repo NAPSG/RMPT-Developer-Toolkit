@@ -1,0 +1,32 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Share widget provides tools that generate a short link so you can share your app with others."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Share</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-C46097D5-8B69-4DD3-AF35-82AA594E1254]--><body><div id="content"><div class="header"><h1>
+Share</h1><div id="breadcrumb"></div></div>
+<p id="GUID-44E2FE60-8284-47C3-A1F3-006CFE94FCC4">The Share widget provides tools that generate a short link so you can share your app with others. When the short link is accessed, the Share widget can restore the extent or query a feature depending on your settings.</p><p id="GUID-43689F64-3A63-4D8C-8FD3-3FEF2ED07923">The following table lists the configurable attributes of the Share widget:</p>
+
+<div class="block_table" id="TABLE_BE6B259CE9F847A398F913688B5190DB" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-E0E25DEF-036D-4717-A652-56D699185A26">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-8C2DB94D-F117-4A15-85F7-60100F5CE702">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E35F2F47-C532-4101-9089-5629B8D06C33"><span class="usertext">socialMedias</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0DF378A1-7AAA-4F74-8982-932AE9EF6225">Object. It has the following properties:</p><ul purpose="ul" id="UL_180DE6B7C0164D60A1B6459F3FC65379"><li purpose="li" id="LI_7B315C0D9EEC4C88B792E1BAA8F6324F"><span class="usertext">email</span>—Boolean. The default is true. Determines whether the email icon is displayed. If true, it generates an email template to share.</li><li purpose="li" id="LI_B4ADD89650044C20BD57B4FA5984F4D4"><span class="usertext">facebook</span>—Boolean. The default is true. Determines whether the Facebook icon is displayed. If true, it generates a Facebook template to share and redirects to this URL.</li><li purpose="li" id="LI_6FDE44D226C147CCB1C61BFC61C5F21C"><span class="usertext">twitter</span>—Boolean. The default is true. Determines whether the Twitter icon is displayed. If true, it generates a Twitter template to share and redirects to this URL.</li><li purpose="li" id="LI_A7A529D4FBF54913B547EDEEDB8D6D8B"><span class="usertext">googlePlus</span>—Boolean. The default is true. Determines whether the Google+ icon is displayed. If true, it generates a Google Plus template to share and redirects to this URL.</li></ul></td></tr></tbody><caption class="table_desc"></caption></table></div><p id="GUID-D7B3AF9F-AB40-4B24-80CB-54733DD34BC9">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="s2">&quot;socialMedias&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;facebook&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;twitter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;googlePlus&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div>
+</div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

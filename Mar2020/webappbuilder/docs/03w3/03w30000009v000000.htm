@@ -1,0 +1,80 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to create a feature action in your custom widget."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Create a feature action in your widget
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-95BD8100-569F-49BF-8279-D405EFA36D79]--><body><div id="content"><div class="header"><h1>
+Create a feature action in your widget
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-543015F4-31CF-4B1C-8C96-6462F4E47B13">A feature action is a piece of code that is requested to execute on one feature or a set of features. <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> provides some out-of-the-box feature actions, such as <span class="uicontrol">Zoom To</span>, <span class="uicontrol">Export to CSV File</span>, and <span class="uicontrol">View in Attribute Table</span>. Additionally,  you can create your custom feature action by extending the <span class="usertext">BaseFeatureAction</span> class.  The following steps demonstrate how to create a feature action in the Demo widget that shows the count of vertexes for  a selected feature set.</p><div class="notes" id="GUID-5E647812-9C3C-4E70-8A11-772EFD011D5C"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-B6727C67-3388-46BE-BBA7-25A06B2C11BE"> The complete code  is available in the Demo widget.  Access the following URL to play the  feature action in the Demo widget:</p><p id="GUID-3FC5D895-2CEF-41B8-87BE-139A9ADA3F5A"><span class="usertext">http://&lt;your host machine&gt;:3344/webappviewer/?config=sample-configs/config-demo.json</span></p></div></div><div class="section1" id="GUID-649BF364-24AA-41FA-AE2A-2571603B7570" purpose="section1"><h2>
+Create a feature action class
+</h2></div>
+<div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-B4952B10-5AD4-4258-99B8-8A7CD09F2E39"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_AD3B604A6F3146D5990A97DFD8766532"><span purpose="cmd" id="GUID-EAD69148-A51D-45D8-8EB8-B7B835AE20D2">Browse to the <span class="usertext">~\client\stemapp\widgets\samplewidgets</span> folder under the <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> installation.</span></li>
+<li purpose="step" id="GUID-8EB47465-F4E2-4528-BF03-FCA47162F902">
+<span purpose="cmd" id="GUID-8C014C4A-B43F-48F3-A045-47BC6B4C71FF">Under the Demo widget folder, create a new  text file named <span class="usertext">ShowVertexFeatureAction.js</span>.
+</span>
+</li><li purpose="step" id="ESRI_STEP_DA269B878D0D402D8B390005E394ECB4"><span purpose="cmd" id="GUID-1D3D02D8-182C-4FBF-B818-A3F06CCD0452">Copy and paste the following code snippet into the file. It creates a feature action class by extending the <span class="usertext">BaseFeatureAction</span> class.</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">define</span><span class="p">([</span>
+  <span class="s1">&#39;dojo/_base/declare&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;jimu/BaseFeatureAction&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;jimu/WidgetManager&#39;</span>
+<span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">declare</span><span class="p">,</span> <span class="nx">BaseFeatureAction</span><span class="p">,</span> <span class="nx">WidgetManager</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">clazz</span> <span class="o">=</span> <span class="nx">declare</span><span class="p">(</span><span class="nx">BaseFeatureAction</span><span class="p">,</span> <span class="p">{</span>
+
+    <span class="nx">iconFormat</span><span class="o">:</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span>
+
+    <span class="nx">isFeatureSupported</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">featureSet</span><span class="p">){</span>
+      <span class="k">return</span> <span class="nx">featureSet</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">featureSet</span><span class="p">.</span><span class="nx">features</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">type</span> <span class="o">!==</span> <span class="s1">&#39;point&#39;</span><span class="p">;</span>
+    <span class="p">},</span>
+
+    <span class="nx">onExecute</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">featureSet</span><span class="p">){</span>
+      <span class="nx">WidgetManager</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">().</span><span class="nx">triggerWidgetOpen</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">widgetId</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">myWidget</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">vertexCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="nx">featureSet</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">){</span>
+          <span class="nx">f</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">rings</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">){</span>
+            <span class="nx">vertexCount</span> <span class="o">+=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+          <span class="p">});</span>
+        <span class="p">});</span>
+        <span class="nx">myWidget</span><span class="p">.</span><span class="nx">showVertexCount</span><span class="p">(</span><span class="nx">vertexCount</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">clazz</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+</div></div></li><div class="stepinfo" purpose="stepinfo"><ul purpose="ul" id="UL_E068CA06C71F4C288A37DC6157A1E814"><li purpose="li" id="LI_D2FE6B6FA1E94C9BA81CA76364B78FC6">There are two important methods regarding a feature action: <span class="usertext">isFeatureSupported()</span> and <span class="usertext">onExecute()</span>. Both of them accept a feature set parameter and an optional layer parameter. The former  is invoked to test whether the feature action is supported for the given feature set. Make sure it is returned true or  a promise that resolves true if the feature action is supported. The latter is invoked when the feature action is executed. The type of feature set parameter is the  <span class="usertext">FeatureSet</span> class. See <a target="_blank" class="xref" rel="https://developers.arcgis.com/javascript/3/jsapi/featureset-amd.html" href="https://developers.arcgis.com/javascript/3/jsapi/featureset-amd.html">FeatureSet class</a> for details.  In this example, the feature action does not support point  feature sets.</li><li purpose="li" id="LI_E11C808883E24779946DBA78A67F41C7">If a  feature action in a widget  intends  to open another   widget, for example, the <span class="uicontrol">Directions to here</span> feature action in the Select widget is  to invoke the Directions widget, use the <span class="usertext">WidgetManager.getInstance().triggerWidgetOpen(this.widgetId)</span> method.</li></ul></div>
+</ol></div></div>
+<div class="section1" id="ESRI_SECTION1_3425887D179E4EB682708B21402E1DE2" purpose="section1"><h2>Declare the feature action in the widget manifest</h2><p id="GUID-7FE6E011-BAB6-4136-B1FD-793F016243D8">Open Demo/manifest.json and add the <span class="usertext">featureActions</span> property.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;featureActions&quot;: [{
+    &quot;name&quot;: &quot;ShowVertex&quot;,
+    &quot;uri&quot;: &quot;ShowVertexFeatureAction&quot;
+  }]
+</code></pre></div>
+</div></div><div class="section1" id="ESRI_SECTION1_9E7006DF578A4EFF9BEFD465D8F9E836" purpose="section1"><h2>Label the feature action</h2><p id="GUID-A0963C72-9107-4798-BE23-33F96EA36D50">Open the string.js file in the Demo/nls folder, and add the following string:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>_featureAction_ShowVertex: &quot;Show Vertex Count&quot;,
+</code></pre></div>
+</div><div class="notes" id="GUID-651EEC45-49FD-4219-974E-81D96CD64247"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-829DA04B-3171-4F64-8075-8F70A822E491">The pattern of the string key is <span class="usertext">_featureAction_&lt;feature action name&gt;</span>.</p></div></div></div><div class="section1" id="ESRI_SECTION1_75F80DD3352C47618EC3CF4ABBB32D8F" purpose="section1"><h2>Provide  an icon for the feature action</h2><p id="GUID-4D0E6BEF-C602-4B48-84E1-D53FF5D6F0F0">There are two states associated with each feature action: the normal state and the mouse over state. As a result, two images are required for each action.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_0C3A42653A10488597D0B4B486EA5B78"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_FE34F03BD52446A6B5F582E0AC30FF21"><span purpose="cmd" id="GUID-5E1E29E3-12F5-4342-977E-477AB0F45BD3">Copy your image files into the Demo/images folder and name them <span class="usertext">ShowVertex_default.png</span> and <span class="usertext">ShowVertex_hover.png</span>. </span><div class="info" purpose="info"><p id="GUID-7A996019-6F6E-4377-83AD-D9533EF933B0">The name pattern for the image file is  <span class="usertext">&lt;feature action name&gt;_&lt;state&gt;.&lt;image format&gt;</span>. The default image is for the normal state, and hover is for the mouse over state. In addition to PNG, the image format can be JPG or SVG.</p></div></li><li purpose="step" id="ESRI_STEP_32F4D9B2BA8A4A1E8F1A33AC164B622E"><span purpose="cmd" id="GUID-0A590C56-FB37-44C2-879B-1EA49FEBF063">Modify the <span class="usertext">iconFormat</span> property in the feature action class file depending on your image format.</span></li></ol></div></div><div class="section1" id="ESRI_SECTION1_EA1CEDDF9DEA4CA09E89B8B0BA093D45" purpose="section1"><h2>Display the count number</h2></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_98BB0E90A55441CAB9E76D42139CBB2D"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_A138D0AB6BAD403B8B5325F6F73D1367"><span purpose="cmd" id="GUID-C2C30D71-38CF-46CC-95B4-D32A515F1A9A">Open the Widget.js file in the Demo folder and add the following function:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">showVertexCount</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">count</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">vertexCount</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;The vertex count is: &#39;</span> <span class="o">+</span> <span class="nx">count</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_FA39EA71695947669BF1FDF911C1D29B"><span purpose="cmd" id="GUID-4D6E268D-7E2C-4608-ACF1-640F07787854">Open the Widget.html file and  add the following line:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&lt;div data-dojo-attach-point=&quot;vertexCount&quot;&gt;&lt;/div&gt;
+</code></pre></div>
+</div></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_22252D831455431486C8A0AA001C1A8A" purpose="section1"><h2>Use the feature action</h2><p id="GUID-50DB3A43-85D4-4B56-BDB6-F9910F41A3C2">You can use the feature action as an out-of-the-box function or by making calls to the <span class="usertext">FeatureActionManager</span> API. </p><p id="GUID-CD269A30-21AB-4C6D-A0E2-4E9A27F86B2D">For out-of-the-box functions, the feature actions are available in the Select widget, map pop-up, and the result of the Query widget. Using the Select widget as an example, after selecting  features, you can click the ellipsis button to see the list of feature actions.</p><p id="GUID-86D96131-DB53-4CA6-808C-D89AA8A834CA">The most important method in the <span class="usertext">FeatureActionManager</span> API is <span class="usertext">getSupportedActions()</span>. When you get a feature or feature set,  call this method to get all supported feature actions as shown in the following  code snippet. You can display them in various formats , such as a link, button, or menu.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">FeatureActionManager</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">().</span><span class="nx">getSupportedActions</span><span class="p">(</span><span class="nx">myFeatureSet</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">actions</span><span class="p">){</span>
+          <span class="c1">//create some DOMs to show the actions</span>
+<span class="p">}));</span>
+</code></pre></div>
+</div></div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,82 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn about the Search widget's configurable attributes."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Search</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-C7371D03-4F83-409B-9424-39349F68112B]--><body><div id="content"><div class="header"><h1>
+Search</h1><div id="breadcrumb"></div></div>
+    <p id="GUID-78D954A7-D31E-4E27-BA9E-17B9E8C731CD"> The Search widget provides a way to perform
+search capabilities based on locator services, map service feature layers, and feature
+service feature layers. These specified sources determine what is
+searchable in the search box. If you're using a locator with a
+geocoding service, the <a target="_blank" class="xref" href="https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm" rel="https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm">findAddressCandidates</a> operation is used, whereas queries are used on feature
+layers.</p>
+    <p id="GUID-55A9491F-7733-4FEE-B52B-71EB5208F740"> The Search widget replaces the Geocoder widget. The
+main difference is that the Search widget provides additional functionality that
+allows searching and suggestions on multiple sources.</p>
+    <p id="GUID-4DE5CA2B-BE45-4F25-896E-F2C9AE3B600D">The following table lists the configurable attributes of the Search widget:</p>
+    <p id="GUID-C3522001-D25B-4117-BEB0-4F58323EB8E8">
+      <div class="block_table" id="TABLE_402A38F35AA449C68485F0FEBEAE49DD" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1">
+                <p id="GUID-39E71BE5-FB32-43EF-B26B-81878DF37D4D">Attribute</p>
+              </th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1">
+                <p id="GUID-BC39738E-F908-4D1D-9DF7-0C6ED30FAA6C">Description</p>
+              </th></tr><tbody>
+            <tr><td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                  <span class="usertext">allPlaceholder</span>
+                </td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A3688D1E-DD04-45C5-A6C3-C0DA4EE53CE1">String. Displays the placeholder text when users select All from the source list.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                  <span class="usertext">showInfoWindowOnSelect</span>
+                </td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C5A5C371-FFA6-47DE-9295-68A41A7AD8E7">Boolean. Indicates whether to show the infoWindow when a
+result is selected.</p>
+
+</td></tr><tr>
+              <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                
+                  <span class="usertext">Sources</span>
+                
+              </td>
+              <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                <p id="GUID-DDC6D551-3D79-48EF-9A04-3B69B604B556">Object[]. There is no default.  An array of source objects used to find search results. See the ArcGIS API for Java Script <a target="_blank" class="xref" href="https://developers.arcgis.com/javascript/jsapi/search-amd.html#sources" rel="https://developers.arcgis.com/javascript/jsapi/search-amd.html#sources">sources property</a> for details.<ul purpose="ul" id="UL_9CC266235C5B4429BF3A78799A0FF6A0"><li purpose="li" id="LI_97CA458EDDDB411D96291F4E39E1CF39"> <span class="usertext">type</span>—String. Applies to both locators and feature layer sources. This is the type of the source. Currently supports locator and query only. </li><li purpose="li" id="LI_5DE5DAE2A2CA4DD8BD01CE95460A2430"><span class="usertext">name</span>—String. Applies to both locators and feature layer sources. This is the name of the source for display.   </li><li purpose="li" id="LI_AC3D87E28054404EAC9B50503A73C4D3"><span class="usertext"> url</span>—String. Applies to both locators and feature layer sources. This is the URL of the source for search. </li><li purpose="li" id="LI_DB7A1C0DC7AA4D51A4EA4A4AB2AA75C2"> <span class="usertext">placeholder</span>—String. Applies to both locators and feature layer sources. This is used as a hint for the source input text. </li><li purpose="li" id="LI_76015ED36FB64424982F6473B42890AE"> <span class="usertext">maxResults</span>—Number. Applies to both locators and feature layer sources. This indicates the maximum number of results to return. The default value is 6. </li><li purpose="li" id="LI_06B06E0ADEA545C9A2F5A8EA80AF7027"><span class="usertext"> singleLineFieldName</span>—String. Applies only when working with locator sources. The <span class="usertext">singleLineFieldName</span> of geocode service. </li><li purpose="li" id="LI_177674BF59DD45B0BE9BD9EC397ACE0E"><span class="usertext"> countryCode</span>—String. Applies only when working with locator sources. This constricts search results to a specified country code. For example, "US" for United States or "SE" for Sweden. Only applies to the World Geocode Service. </li><li purpose="li" id="LI_7E9CBF6E35B5435488F2E5C4B68E8D58"><span class="usertext"> searchFields</span>—String[]. Applies only to feature layer sources. It is an array of string values to search for results in these feature layer fields. </li><li purpose="li" id="LI_318EAC7465754C9199E649F98E2215EF"> <span class="usertext">displayField</span>—String. Applies only to feature layer sources. The results are displayed using this field. The default is the layer's <span class="usertext">displayField </span>or the first string field. </li><li purpose="li" id="LI_A7233AF038EF4B308C321FD5B4993086"> <span class="usertext">exactMatch</span>—Boolean. Applies only to feature layer sources. This returns results that match the search value exactly. The default is false. </li><li purpose="li" id="LI_2573C936D18C4076B9F4FA407B74D394"> <span class="usertext">layerId</span>—String. Applies only to feature layer sources. The ID of the  layer in the  current map. If the feature layer isn't from the map, this property will be deleted. </li></ul></p>
+              </td>
+            </tr>
+          </tbody><caption class="table_desc"></caption></table></div>
+    </p>
+    <p id="GUID-4082CBE0-E126-4485-845F-A7EC50F5535D"></p>
+    <p id="GUID-99179021-E73A-4BB2-AB67-BDA070E0DD09">Example: <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+		&quot;allPlaceholder&quot;: &quot;All Cities&quot;,
+  &quot;showInfoWindowOnSelect&quot;: true,
+  &quot;sources&quot;: [{
+    &quot;url&quot;: &quot;https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer&quot;,
+    &quot;name&quot;: &quot;Esri World Geocoder&quot;,
+    &quot;singleLineFieldName&quot;: &quot;SingleLine&quot;,
+    &quot;placeholder&quot;: &quot;Esri World Geocoder&quot;,
+    &quot;countryCode&quot;: &quot;&quot;,
+    &quot;maxResults&quot;: 6,
+    &quot;type&quot;: &quot;locator&quot;
+  }, {
+    &quot;layerId&quot;: &quot;DistributionFacilities_4577&quot;,
+    &quot;url&quot;: &quot;http://tmelectric.esri.com/arcgis/rest/services/DistributionFacilities/MapServer/13&quot;,
+    &quot;name&quot;: &quot;DistributionFacilities - Pole&quot;,
+    &quot;placeholder&quot;: &quot;Pole&quot;,
+    &quot;searchFields&quot;: [&quot;FACILITYID&quot;],
+    &quot;displayField&quot;: &quot;FACILITYID&quot;,
+    &quot;exactMatch&quot;: false,
+    &quot;maxResults&quot;: 6,
+    &quot;type&quot;: &quot;query&quot;
+  }]
+}
+</code></pre></div>
+</div></p>
+  <div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

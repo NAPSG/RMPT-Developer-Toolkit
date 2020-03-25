@@ -1,0 +1,106 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Coordinate widget displays xy coordinates dynamically when the pointer is moved around the map."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Coordinate</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-F10D34F0-A621-4AD2-97CC-6F4CFBDEFC9E]--><body><div id="content"><div class="header"><h1>
+Coordinate</h1><div id="breadcrumb"></div></div>
+    <p id="GUID-0C6653D5-559F-4136-B434-2FB6612200F6">
+The Coordinate widget displays xy coordinates dynamically when the pointer is moved around the map. By default, the coordinate values are based on the spatial reference of the first basemap.
+</p>
+    <p id="GUID-298B6C11-275A-40C9-A407-67F15486EE59">The following table lists the configurable attributes of the Coordinate widget:</p>
+    <p id="GUID-D9122A55-2362-4040-956D-778374442624">
+      <div class="block_table" id="TABLE_2C06912409474582A380CD37D8F37737" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1">
+                <p id="GUID-06618E57-5F6E-4856-A04E-D9C4AFBF91A8">Attribute</p>
+              </th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1">
+                <p id="GUID-E7A67668-3DE3-48B4-84AF-9E730E688C62">Description</p>
+              </th></tr><tbody>
+            <tr>
+              <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                <p id="GUID-95D0EFD4-B41D-45FF-87F9-3AEB45D763B4">
+                  <span class="usertext">spatialReferences</span>
+                </p>
+              </td>
+              <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                <p id="GUID-6F074108-E2F0-425A-A899-FE55136F7F47">Object[]. There is no default. Shows a pop-up menu containing all configured spatial references when you hover the pointer over the widget.<ul purpose="ul" id="UL_53CE8ADAF5B44CA09A569E132B7A0F42"><li purpose="li" id="LI_B99AB3E28BCC457B9692D340EDA30FB0"><span class="usertext">wkid</span>—Number. There is no default. Well-known ID (WKID). See  <a target="_blank" class="xref" href="https://developers.arcgis.com/javascript/3/jshelp/ref_coordsystems.html" rel="https://developers.arcgis.com/javascript/3/jshelp/ref_coordsystems.html">Coordinate system IDs</a> for details..</li><li purpose="li" id="LI_EE390FAC95C64CBF80282BE664444299"><span class="usertext">label</span>—String. There is no default. A label for the specified WKID.</li><li purpose="li" id="LI_1C40D7F34E60419CBC295347913AAFE5"><span class="usertext">transformationWkid</span>—Number. There is no default. The WKID <span class="usertext">{wkid:number}</span> for the datum transformation to apply to projected geometries.</li><li purpose="li" id="LI_17DCEE11A9DB429F9E93AEF20F51E738"><span class="usertext">transformationLabel</span>—String. There is no default. The well-known text <span class="usertext">{wkt:string}</span> for the datum transformation to apply to projected geometries.</li><li purpose="li" id="LI_3CE1D18747C54E87BC71BC88131D4120"><span class="usertext">options</span>—Object. There is no default. The auxiliary information of spatial reference. It has the following properties:<ul purpose="ul" id="UL_FAC00B835CEC4C89A1A6D8619D5DDBC4"><li purpose="li" id="LI_983CF4F102E8451BB19B3C2598149E6F"><span class="usertext">defaultUnit</span>—String. There is no default.  The unit of spatial reference.</li><li purpose="li" id="LI_172234B404074F0D99157E60674664EF"> <span class="usertext">isGeographicCS</span>—Boolean. There is no default.   Indicates whether or not the spatial reference is a geographic coordinate system.</li><li purpose="li" id="LI_84636389DF174F29A5E6ED645F3F317A"><span class="usertext"> isGeographicUnit</span>—Boolean. There is no default.  Indicates whether or not the output unit is a geographic coordinate unit.</li><li purpose="li" id="LI_A75964E3041D4CA394AEA7169AEE6E51"><span class="usertext"> isProjectedCS</span>—Boolean. There is no default. Indicates whether  or not the spatial reference is a projected coordinate system.</li><li purpose="li" id="LI_8E8104FEFC474FD09F14C604B9CF0969"><span class="usertext"> isProjectUnit</span>—Boolean. There is no default.  Indicates whether  or not the output unit is a projected coordinate unit.</li><li purpose="li" id="LI_EAC7D90710A94965971C0D1ACD3328A4"> <span class="usertext">sameSRWithMap</span>—Boolean. There is no default.  Indicates whether  or not the output WKID is the same as the map.</li><li purpose="li" id="LI_DDFD6132DF724008A2603B250689BA50"><span class="usertext"> spheroidCS</span>—Number. There is no default. The WKID of the reference ellipsoid.</li><li purpose="li" id="LI_B0C6766A411F4EE4975F00F6A251F07F"> <span class="usertext">unitRate</span>—Number. There is no default. The rate from default unit to output unit.</li></ul></li><li purpose="li" id="LI_37943C402F7D4A868D1D612A8F166057"><span class="usertext"> transformForward</span>—Boolean. There is no default. Indicates whether or not to transform forward. The forward or reverse direction of transformation is implied in the name of the transformation.</li><li purpose="li" id="LI_356031DBB26E4D30B25C1B049251FC4C"> <span class="usertext">outputunit</span>—String. Valid values are Default, INCHES, FOOT, YARDS, MILES, NAUTICAL_MILES, MILLIMETERS, CENTIMETERS, METER, KILOMETERS, DECIMETERS, DECIMAL_DEGREES, DEGREE_MINUTE_SECONDS, MGRS, and USNG. The default value is an empty string, which means using the default unit of <span class="usertext">wkid</span>.</li></ul></p>
+              </td>
+            </tr>
+            <tr>
+              <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                <span class="usertext"> decimalPlaces</span>
+              </td>
+              <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                <p id="GUID-6E6FBAF3-94AD-40AF-AF7B-A0F5D42C60EA"> Number. The numeric precision of the coordinates.</p>
+              </td>
+            </tr>
+            <tr>
+              <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                <span class="usertext"> addSeparator</span>
+              </td>
+              <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+                <p id="GUID-2188DFB1-391E-425F-B1F8-734764C6FDAC">  Boolean. The default is false. Indicates whether to display thousand separators.</p>
+              </td>
+            </tr>
+          </tbody><caption class="table_desc"></caption></table></div>
+    </p>
+    <p id="GUID-C73FF5FA-4BB2-4023-AC0D-AD4D43CFED06">Example:</p>
+    <p id="GUID-CD544525-EF75-4E13-BB1F-5BBF1EDD4873">
+      <div class="codeblock" purpose="codeblock">
+        
+        <div class="highlight"><pre><code><span class="p">{</span>
+  <span class="err">addSeparator:</span> <span class="err">true,</span>
+  <span class="err">decimalPlaces:</span> <span class="err">3,</span>
+  <span class="nt">&quot;spatialReferences&quot;</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="nt">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">,</span>
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;transformForward&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;transformationLabel&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;transformationWkid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;defaultUnit&quot;</span><span class="p">:</span> <span class="s2">&quot;Meter&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;isGeographicCS&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isGeographicUnit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isProjectUnit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;isProjectedCS&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;sameSRWithMap&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;spheroidCS&quot;</span><span class="p">:</span> <span class="mi">4326</span><span class="p">,</span>
+      <span class="nt">&quot;unitRate&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;outputUnit&quot;</span><span class="p">:</span> <span class="s2">&quot;Meter&quot;</span>
+  <span class="p">},{</span>
+    <span class="nt">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">2285</span><span class="p">,</span>
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;NAD_1983_StatePlane_Washington_North_FIPS_4601_Feet&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;transformForward&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;transformationLabel&quot;</span><span class="p">:</span> <span class="s2">&quot;WGS_1984_(ITRF00)_To_NAD_1983&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;transformationWkid&quot;</span><span class="p">:</span> <span class="mi">108190</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;defaultUnit&quot;</span><span class="p">:</span> <span class="s2">&quot;Foot_US&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;isGeographicCS&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isGeographicUnit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isProjectUnit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;isProjectedCS&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;sameSRWithMap&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;spheroidCS&quot;</span><span class="p">:</span> <span class="mi">4269</span><span class="p">,</span>
+      <span class="nt">&quot;unitRate&quot;</span><span class="p">:</span> <span class="mf">0.00018939431818257576</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;outputUnit&quot;</span><span class="p">:</span> <span class="s2">&quot;MILES&quot;</span>
+  <span class="p">}]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+      </div>
+    </p>
+  <div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

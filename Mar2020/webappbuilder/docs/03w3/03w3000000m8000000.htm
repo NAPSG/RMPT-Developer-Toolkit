@@ -1,0 +1,155 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Report class allows you to print a file with a map, tables, and supporting elements."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Report class
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-622C23BE-F04C-4AEE-AF65-8019B5091357]--><body><div id="content"><div class="header"><h1>
+Report class
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-224621A2-17CF-4DB9-963D-AE663E8BB36E">
+ The <span class="usertext">Report</span> class allows you to print a file with a map, tables, and supporting elements.
+</p>
+<div class="section1" id="ESRI_SECTION1_93BE91CC6DD14E669534C5A3319C9138" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-C64F8E7D-DD82-407D-859F-4EA4775F9573"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/dijit/Report&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Report</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_AEF97777E8CA48B284C76FCA0A6D6711" purpose="section1"><h2>Constructor</h2><p id="GUID-B9616AF3-D98E-43EC-B644-79D374C51FBE"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext"> new Report(params)</span></p><p id="GUID-FB97692F-C7CC-4B82-94CE-515F58AF4239">  Creates a new Report dijit.</p><p id="GUID-66547053-0F13-493E-B31A-DBA963576D1A">Parameters:</p><p id="GUID-AE1CFE7F-AEBD-4722-957D-DA174231A482"> <span class="usertext">&lt;String&gt; printTaskUrl</span>—Required. URL of the print task.</p><p id="GUID-F2636975-00BD-4405-B615-071686016CBF"><span class="usertext"> &lt;String&gt; reportLogo</span>—Optional. URL of the logo image. The report logo placeholder is hidden unless a value is provided.</p><p id="GUID-A3CD2FCD-3379-4952-9444-E5BC83AC5ACA"><span class="usertext">&lt;Object&gt; reportLayout</span>—Optional. Contains details for page size and orientation. The default is as follows: </p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="s2">&quot;pageSize&quot;</span><span class="o">:</span> <span class="nx">PageUtils</span><span class="p">.</span><span class="nx">PageSizes</span><span class="p">.</span><span class="nx">A4</span><span class="p">,</span>
+  <span class="s2">&quot;orientation&quot;</span><span class="o">:</span> <span class="nx">PageUtils</span><span class="p">.</span><span class="nx">Orientation</span><span class="p">.</span><span class="nx">Portrait</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-C308BD15-0134-46E3-B5B4-8CF3D643B5F7"><span class="usertext">&lt;Number&gt;  tableCols</span>—Optional. Can be used to define a set number of table columns for the report. It is overridden by <span class="usertext">tableCols</span> specified for individual print data objects. The default is 3.</p><p id="GUID-B8B668CC-6AAA-48BE-B890-1F1CA06E8F1E"><span class="usertext">&lt;Boolean&gt;  alignNumbersToRight</span>—Optional. Supports RTL and LTR. The default is false.</p><p id="GUID-3DC73021-04D0-4FC4-9276-383724ED43AD"><span class="usertext">&lt;Array&gt;  styleSheets</span>—Optional. Collection of style sheets to override default report styling. Default values are defined in the provided HTML template at <span class="usertext">jimu/dijit/templates/ReportTemplate.html</span>.</p><p id="GUID-F8008EB5-B436-4D09-9873-5075CBADEAB3"><span class="usertext">&lt;String&gt;  styleText</span>—Optional. CSS style text to be applied to the report header.</p><p id="GUID-70190791-0AC5-480A-A940-AD600A71E1B2"><span class="usertext">&lt;String&gt;  footNotes</span>—Optional. Values to add to the report footer.</p>
+
+
+<p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example 1:</p><p id="GUID-52CEEF7F-94C2-435A-9733-DBCFDB1FFFFF">Use the <span purpose="ph" varid="ArcGISOnline" translate="no">ArcGIS Online</span> print task within the report to generate a printer-ready version of the map.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/Report&#39;</span><span class="p">,</span> <span class="s1">&#39;jimu/dijit/PageUtils&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Report</span><span class="p">,</span> <span class="nx">PageUtils</span><span class="p">){</span>
+             <span class="kd">var</span> <span class="nx">report</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Report</span><span class="p">({</span>
+            <span class="nx">reportLogo</span><span class="o">:</span> <span class="s2">&quot;http://myserver/images/CompanyLogo.png&quot;</span><span class="p">,</span>
+            <span class="nx">footNotes</span><span class="o">:</span> <span class="s2">&quot;Report Generated by My Department&quot;</span><span class="p">,</span>
+            <span class="nx">printTaskUrl</span><span class="o">:</span> <span class="s2">&quot;http://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task&quot;</span><span class="p">,</span>
+            <span class="nx">reportLayout</span><span class="o">:</span> <span class="p">{</span>
+              <span class="s2">&quot;pageSize&quot;</span><span class="o">:</span> <span class="nx">PageUtils</span><span class="p">.</span><span class="nx">PageSizes</span><span class="p">.</span><span class="nx">A4</span><span class="p">,</span>
+              <span class="s2">&quot;orientation&quot;</span><span class="o">:</span> <span class="nx">PageUtils</span><span class="p">.</span><span class="nx">Orientation</span><span class="p">.</span><span class="nx">Landscape</span>
+            <span class="p">},</span>
+            <span class="nx">styleSheets</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;http://myserver/css/reportDijitOverrides.css&quot;</span><span class="p">]</span>
+          <span class="p">});</span>
+          
+          <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[];</span>
+          <span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+            <span class="nx">addPageBreak</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;map&quot;</span><span class="p">,</span>
+            <span class="nx">map</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span>
+          <span class="p">}</span>
+
+          <span class="p">...</span>
+
+          <span class="nx">report</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;MyTitle&quot;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+
+    <span class="p">});</span>
+</code></pre></div>
+</div><p id="GUID-B29C2AE4-D5F7-44D4-AB63-DE07144C0E5D">Example 2: </p><p id="GUID-150BC775-810D-4F85-9FF4-89AFE3D93144">Use a custom print task within the report to generate a printer-ready version of the map based on the defined <a target="_blank" class="xref" href="https://developers.arcgis.com/javascript/3/jsapi/printtemplate-amd.html" rel="https://developers.arcgis.com/javascript/3/jsapi/printtemplate-amd.html">ArcGIS PrintTemplate</a>.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>require([&#39;jimu/dijit/Report&#39;, &#39;jimu/dijit/PageUtils&#39;, &#39;esri/tasks/PrintTemplate&#39;], function(Report, PageUtils, PrintTemplate){
+          var report = new Report({
+            reportLogo: &quot;http://myserver/images/CompanyLogo.png&quot;,
+            footNotes: &quot;Report Generated by My Department&quot;,
+            printTaskUrl: &quot; http://myserver/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task&quot;,
+            reportLayout: {
+              &quot;pageSize&quot;: PageUtils.PageSizes.A4,
+              &quot;orientation&quot;: PageUtils.Orientation.Landscape
+            },
+            styleSheets: [&quot;http://myserver/css/reportDijitOverrides.css&quot;]
+          });
+
+          var printTemplate = new PrintTemplate(); 
+          printTemplate.layout = &quot;Custom Template From My Print Service&quot;;
+          printTemplate.format = &quot;PNG32&quot;;
+         
+          var data = [];
+          data.push({
+            addPageBreak: true,
+            type: &quot;map&quot;,
+            map: this.map,
+            printTemplate: printTemplate
+          }
+
+          ...
+
+          report.print(&quot;MyTitle&quot;, data);
+
+    });
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div>
+</p></div><div class="section1" id="ESRI_SECTION1_DB717A20F24448299F74F6A35B9A1FA4" purpose="section1"><h2>Methods</h2><p id="GUID-2016CAD4-4421-456E-A04A-D08542A85AD6"><div class="block_table" id="TABLE_DB92988E224542E48B6881BBF7F131F9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BBF3EB9-3720-4AB0-BB91-0B574C737BB4"><span class="usertext"> print (reportTitle, printData)</span></p><p id="GUID-6278B44B-06E3-4D1F-89C4-D3BBF1151367"> Prints the provided data to an HTML page. The default HTML template is provided at <span class="usertext">jimu/dijit/templates/ReportTemplate.html</span>.</p><p id="GUID-C33A77C2-CB2C-4A95-B78C-2DD580176B9F">Parameters:</p><p id="GUID-85EC72BA-0CA3-4611-A327-CF264609E527"><span class="usertext"> &lt;reportTitle&gt; String</span>—Optional. The value to be displayed as the report title.</p><p id="GUID-4667695C-65F1-4A6B-BC55-816AD682BE39"><span class="usertext">  &lt;printData&gt; Array</span>—Required. Array of data objects that will be printed to the map. Supported types are map, table, and html.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="section1" id="ESRI_SECTION1_4C24C944D0BD43DEAE5BB7F102582C38" purpose="section1"><h2>Data objects</h2><p id="GUID-CF19CF25-A1B6-4F52-B646-C8C9EC959F2D"><div class="block_table" id="TABLE_0CA76B8797464D0F88B52226B48A2826" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2DB6CFEE-BAB5-471F-92BF-0E16E1CB12FB">MAP</p><p id="GUID-41F97CD2-9C98-4F31-B6AE-FFDB6F5FB6F1">A map object provides a way for you print an ArcGIS JavaScript map object in the report. When using a custom print service, provide an ArcGIS PrintTemplate to the MAP object to define the appropriate layout options to be used in the report.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  addPageBreak: Boolean,
+  type: String,
+  map: Object
+}
+ 
+{
+  addPageBreak: true,
+  type: &quot;map&quot;,
+  map: this.map
+}
+</code></pre></div>
+</div>
+
+
+<p id="GUID-99BD51E6-B2AD-4081-B835-2968B008E6A6">TABLE</p><p id="GUID-876FBA97-D112-4A62-8B9C-A89F575D6BB8">A table object provides a way for you print rows and columns of data in the report.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  title: String,
+  addPageBreak: Boolean,
+  type: String,
+  tableCols: Number,
+  data: {
+    showRowIndex: Boolean,
+    rows: Array,
+    cols: Array
+  }
+}
+ 
+ 
+{
+  title: “Impact Area by State”,
+  addPageBreak: false,
+  type: &quot;table&quot;,
+  tableCols: 3,
+  data: {
+    showRowIndex: false,
+    rows: [[“Colorado”, “14526”, “45”],[“California”, “32076”, “67”]],
+    cols: [“Name”, “Area”, “Count”]
+  }
+}
+</code></pre></div>
+</div><p id="GUID-B2BE5D93-CC36-4802-A195-A6424D5DCA0D">HTML</p><p id="GUID-380A2AAB-E0A4-4F51-8717-A12B5325CEA5">An HTML object provides a way for you to add HTML elements to the report.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  title: String
+  type: String,
+  data: String
+}
+ 
+{
+  title: &quot;Distribution of Impact by State&quot;,
+  type: &quot;html&quot;,
+  data: &#39;&lt;img id=&quot;chartImage&quot; style=&quot;width: 250px; height: 200px;&quot; src=&quot;http://myserver/images/graphic.png&quot;&gt;&#39;
+}
+</code></pre></div>
+</div><p id="GUID-D5030E6F-81C9-4982-83D5-909C0A8E4521">NOTE</p><p id="GUID-725F0460-96AB-4F35-8BDC-06B9EEA26152">A note object provides an editable text area that can be updated dynamically by the user in the report preview window prior to printing.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  type: String,
+}
+ 
+{
+  type: &quot;note&quot;,
+}
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div> </p><p id="GUID-F244B1EC-487B-4C1B-A7F4-73D2707F5FEA">The following is the list of CSS class selectors that can be overridden to control aspects of report styling.</p><p id="GUID-9D15F7C9-6659-4715-B853-706289FB1269"> <div class="notes" id="GUID-177EFB5D-3B63-4F74-99B6-64131E16ACDE"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-B8FECE84-696C-4879-8476-A31C7BB16B91">Defaults are provided with the HTML template at <span class="usertext">jimu/dijit/templates/ReportTemplate.html</span>.</p></div></div> </p><p id="GUID-9AE9148C-AC8F-42E2-84A4-E6D12DC8898B"> .esriCTSectionTitle</p><p id="GUID-54F8A7EA-0DB8-410B-9D3F-F5611FC830AF"> .esriCTReportMapImg</p><p id="GUID-44D5DF43-9C17-483E-853F-F3727C489CA9"> .esriCTTable</p><p id="GUID-8B13312B-594F-42CD-A2AE-9BEB17265F9D"> .esriCTTable th</p><p id="GUID-7207B0AF-AFA2-4E9F-91CC-03AAB17EE7D9"> .esriCTTable td</p><p id="GUID-85992E03-C64E-4014-8C55-8E6F3F1E0756"> .esriCTDateContainer</p><p id="GUID-82AFCF19-619A-449C-AD2C-3082CDBAC286"> .esriCTAOIInfoDiv</p><p id="GUID-753DE706-B544-4761-AFCA-4431B3B93F9D"> .esriAOITitle</p><p id="GUID-80157337-5EF4-4B7D-ABEB-501897A86204"> .esriCTAOIArea</p><p id="GUID-128AD0D1-036E-4DA1-B07D-DF9E6DB96066"> .esriCTHTMLData</p><p id="GUID-570F628F-F00B-440F-99D5-0B834E995CAB"> .esriCTReportLogo</p><p id="GUID-9B9D3E5A-9AB9-494C-AE07-E542F3099AB7"> .esriCTPrintTitleDiv</p><p id="GUID-A2266A52-586E-4E4B-B3C4-C90AC178BD1C"> .esriCTReportMain</p><p id="GUID-6EDCF71A-61A8-4AB7-9619-8714BA9F6E9E"> .esriCTReportMap</p><p id="GUID-4FE4F16C-F9A5-4F65-B718-BC3CF67301A9"> .esriCTReportFooter</p><p id="GUID-397AEAAC-3DD7-4E72-AAFD-BD789A756D9B"> .esriCTReportHeader</p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

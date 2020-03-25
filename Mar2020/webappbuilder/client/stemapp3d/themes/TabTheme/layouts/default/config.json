@@ -1,0 +1,121 @@
+{
+  "widgetOnScreen": {
+    "widgets": [{
+      "uri": "themes/TabTheme/widgets/Header/Widget",
+      "position": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "height": 44,
+        "paddingRight": 240,
+        "relativeTo": "browser"
+      },
+      "version": "2.11"
+    }, {
+      "uri": "themes/TabTheme/widgets/Footer/Widget",
+      "position": {
+        "left": 0,
+        "right": 0,
+        "bottom": 0,
+        "height": 24,
+        "relativeTo": "browser"
+      },
+      "version": "2.11"
+    }, {
+      "uri": "themes/TabTheme/widgets/SidebarController/Widget",
+      "position": {
+        "left": 0,
+        "top": 44,
+        "bottom": 24,
+        "relativeTo": "browser"
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Search/Widget",
+      "position": {
+        "right": 10,
+        "top": 5,
+        "zIndex": 102,
+        "relativeTo": "browser"
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/ZoomSlider/Widget",
+      "position": {
+        "left": 10,
+        "top": 10
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Home/Widget",
+      "position": {
+        "left": 10,
+        "top": 85
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/MyLocation/Widget",
+      "position": {
+        "left": 10,
+        "top": 123
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Navigate/Widget",
+      "position": {
+        "left": 10,
+        "top": 161
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Compass/Widget",
+      "position": {
+        "right": 10,
+        "top": 10
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/FullScreen/Widget",
+      "position": {
+        "right": 10,
+        "top": 52
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Coordinate/Widget",
+      "position": {
+        "left": 0,
+        "bottom": 16
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Splash/Widget",
+      "visible": false,
+      "position": {
+        "relativeTo": "browser"
+      },
+      "version": "2.11"
+    }]
+  },
+
+  "widgetPool": {
+    "panel": {
+      "uri": "themes/TabTheme/panels/TabPanel/Panel",
+      "position": {
+        "top": 44,
+        "left": 0,
+        "bottom": 22,
+        "relativeTo": "browser"
+      }
+    }
+  },
+
+  "map": {
+    "position": {
+      "top": 44,
+      "right": 0,
+      "bottom": 24,
+      "left": 55
+    }
+  }
+}

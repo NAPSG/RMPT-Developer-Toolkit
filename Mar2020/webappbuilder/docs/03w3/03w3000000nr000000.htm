@@ -1,0 +1,30 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Web AppBuilder for ArcGIS (Developer Edition) 2.6   includes the following features."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+What's new in version 2.6
+
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-9C91E8AC-8C25-4F7E-813E-65E1D7146FC8]--><body><div id="content"><div class="header"><h1>
+What's new in version 2.6
+
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-FB54E7F9-262D-4370-9AE4-693BAF144A50"><span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> (Developer Edition) 2.6  was released in October 2017. It includes the following features and enhancements:</p>
+ 
+
+<div class="section1" id="ESRI_SECTION1_46954FE37C7D43D593E011A2C0571936" purpose="section1"><h2>Widgets</h2><p id="GUID-3AF4F6AF-DFC2-43B1-9576-0A78CEE98D4D">Enhancements have been made to the following widgets:</p><ul purpose="ul" id="UL_C8E7F611058D4722AB7EFCF2B70346CB"><li purpose="li" id="LI_9BAD8987FF9A45BB8C05DEA3CE231C90">Infographic—Now supports using a layer's symbol as chart colors when applicable; parsing a date field as a category field into user-selected units including year, month, day, hour, minute, and second; and  sorting charts by value and label. Options were added to specify the maximum categories to display and determine whether or not to ignore null values.</li><li purpose="li" id="LI_C636C530329A423097D5FA9F3E1EB4C9">Bookmark—New configuration options have been added to display bookmarks in cards and list views, reorder bookmarks, and control whether or not end users can add bookmarks. Predefined bookmarks during configuration can no longer be removed at run time.</li><li purpose="li" id="LI_B9E3CD76F7B144EFA51717244D96FCC0">Smart Editor—New options have been added to show a list of valid drawing options for the selected template and to display the preset value list above the template picker. It also supports feature action, so you can open it from the pop-up once it's configured in the app.</li><li purpose="li" id="LI_8FEDA474C7E342C3A081F1D5A8418F9B">Filter—A new option has been added to collapse filters that have <span class="uicontrol">Ask for values</span> checked or more than one expressions when the widget first opens.</li></ul></div><div class="section1" id="ESRI_SECTION1_3F517CEB202A4C52859458297DC98B01" purpose="section1"><h2>SDK</h2><p id="GUID-CED7868F-0415-4887-96C2-69C80CE4A03B">The following classes and methods have been added:</p><ul purpose="ul" id="UL_4AEE165574BE4C0BB3278FA27DFDB246"><li purpose="li" id="LI_F5B5A769321243DA91C435D26D59F7DC">LayerNode—This class is an abstraction of the layer object from <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span>. It contains the reference to the parent or child layers and allows you to access layers using a unified interface regardless  of a root layer, sublayer, or layer type such as FeatureLayer, ArcGISDynamicMapServiceLayer, KMLLayer, and so on. It replaces the  LayerInfo class, which has been deprecated.</li><li purpose="li" id="LI_E6EAF7BFEE1B4C19AA150B9B0A325FDD">LayerStructure—This class reflects the structure of the operational layers in the current map. It can be used to traverse and operate each layer and sublayer abstracted as a LayerNode in the LayerStructure. 
+It replaces the  LayerInfos class, which has been deprecated.</li><li purpose="li" id="LI_9F0556F41487409DBED7F57C703C6432">Utiis—The getDisplayValueForCodedValueOrSubtype method gets the best display value for coded value and subtype field.</li></ul></div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,30 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Web AppBuilder Developer Edition is built on two versions of ArcGIS API for JavaScript."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+3D development guide
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-EAEC79E2-6B62-4BDD-AD5F-0D40E2872C07]--><body><div id="content"><div class="header"><h1>
+3D development guide
+</h1><div id="breadcrumb"></div></div>
+<div class="section1" id="GUID-32D8BEDE-9D56-48DB-9EBA-DFD1737B5887" purpose="section1"><h2><span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span></h2><p id="GUID-927B74EE-CED7-454B-9A4C-4DE95AE4E361"><span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> Developer Edition is built on two versions of <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span>: 3.x and 4.x. The builder and the 2D app are built on version 3.x, while the 3D app is built on version 4.x. There is one exception: because the settings page runs in the builder, the 3D widget settings page is built on 3.x.</p></div>
+<div class="section1" id="ESRI_SECTION1_E33B461C0ECF469599BB092894988FA4" purpose="section1"><h2>3D widgets</h2><p id="GUID-2A49F9E0-86A5-4695-89BB-1C54CE9E8F3E">The 3D widgets are very similar to the 2D widgets. Consequently,  you can follow the 2D widget development guide to create 3D widgets, with the following exceptions: </p><ul purpose="ul" id="UL_C2F4FCF2550D49A89F72839DFAD0FFE1"><li purpose="li" id="LI_9727314E2B824322B738E179BD92351E">Because the map property uses <span class="usertext">sceneView</span>, use <span class="usertext">this.sceneView</span> to access the scene view in your widget.</li><li purpose="li" id="LI_C664F7C467044B80930D58DC74BB89B0">Use the <span class="usertext">stemapp3d/widgets</span> folder for your 3D widgets.</li><li purpose="li" id="LI_830B477C33A44F838C762568137517EA">In the widget manifest.json file, set 3D as <span class="usertext">True</span> and Platform as <span class="usertext">HTML3D</span>.<div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>&quot;3D&quot;: true
+“platform”: “HTML3D”
+</code></pre></div>
+</div></li><li purpose="li" id="LI_A545E69143E748BDB800EEB0AE9E32B3">Use <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span> 4.0 to develop 3D widgets at run time, but use  3.17 to create  the 3D widgets setting page in the builder.</li></ul></div><div class="section1" id="ESRI_SECTION1_95701E0104FF44489E7D905143508D90" purpose="section1"><h2>3D themes</h2><p id="GUID-710250DB-754E-4D1A-B5F3-5E8794FE547B">The 3D themes are very similar to the 2D themes. Consequently, you can follow the 2D theme development guide to create 3D themes, with the following exceptions:</p><ul purpose="ul" id="UL_0911D45F9AB0480FAF8EC46577DD11E7"><li purpose="li" id="LI_76F29777BB794C009E8C93A57BFADA6F">Because the map property uses <span class="usertext">sceneView</span>,  use <span class="usertext">this.sceneView</span> to access the scene view in your widget and panels.</li><li purpose="li" id="LI_DFB274D988304CC1913AC59E1EF8D774">Save your theme in the <span class="usertext">stemapp3d/themes</span> folder.</li><li purpose="li" id="LI_EB98842FD49D4561B8A064362252B1CE">In the theme manifest.json file, set <span class="usertext">“platform”: “HTML3D”</span>.</li></ul></div>
+
+
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

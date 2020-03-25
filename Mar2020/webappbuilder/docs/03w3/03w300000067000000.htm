@@ -1,0 +1,87 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Stream widget provides a way to display a stream layer with real-time data."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Stream</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-FB093774-094C-4FD8-B17A-4B57AAEF289C]--><body><div id="content"><div class="header"><h1>
+Stream</h1><div id="breadcrumb"></div></div>
+<p id="GUID-5A33CF51-EEB4-452A-AB97-197123D8AE9B">The Stream widget provides a way to display a stream layer with real-time data.</p><p id="GUID-4B8856F6-EA62-4ADC-AEDE-95414C08F034">The following table lists the configurable attributes of the Stream widget:</p>
+
+<div class="block_table" id="TABLE_3FD536389AEB41D8A03D3B44FB122B28" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-A77BDF12-B0FB-4048-828B-8AB2850A5341">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-16E658FB-C8CB-40F0-84DC-CF4720F240A4">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97268B88-43D8-412D-8F01-98E810710232"><span class="usertext">streamLayers</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-51B86610-5B50-41FE-B000-B0454AE1DD2C">Object array. The default is empty. The properties of the array item are as follows:</p><ul purpose="ul" id="UL_4FDEDDF6F64740CF93AF1BD6423B1D27"><li purpose="li" id="LI_699787BCF0164515B8623CA3ADA095E5"><span class="usertext">layerId</span>—String. The layer ID of the stream layer. The layer can be fetched by the<span class="usertext">map.getLayer(layerId)</span> method.</li><li purpose="li" id="LI_DB98E640D1D94DD9A3CAC5281B60820B"><span class="usertext">layerName</span>—String. The layer name of the stream layer appears in the layer list.</li><li purpose="li" id="LI_F8D85BE1F9D74C32BCBAE7D2D9E63675"><span class="usertext">startstop</span>—Boolean. Indicates whether to provide the <span class="uicontrol">Start streaming</span> and <span class="uicontrol">Stop streaming</span> controls in the widget.
+</li><li purpose="li" id="LI_288CB7216A9C49C8B20260429072CBE6"><span class="usertext">clear</span>—Boolean. Indicates whether to provide the <span class="uicontrol">Clear</span> button  in the widget to clear the stream data.</li><li purpose="li" id="LI_0E6B37B7FC514EE9B062110921350514"><span class="usertext">drawPrevious</span>—Boolean. Indicates whether to provide the <span class="uicontrol">Draw previous observations</span> option in the widget. The option is affected by the stream layer configuration in the map. If the <span class="uicontrol">Draw Previous observations</span> option in the map is not configured, it is set to false and the option  is unavailable on the settings page. </li><li purpose="li" id="LI_1C843251D2EA4725B26CA20245ED3278"><span class="usertext">spatialFilter</span>—Boolean. Indicates whether to show the spatial filter in the widget. If <span class="usertext">mapExtentFilter</span> and <span class="usertext">drawExtentFilter</span> are both set to false, this configuration is  ignored.</li><li purpose="li" id="LI_3AC9138511FC4BCC9996C2A68F7802E5"><span class="usertext">mapExtentFilter</span>—Boolean. Indicates whether to provide the <span class="uicontrol">Limit observations to current map area</span> option in the widget.
+</li><li purpose="li" id="LI_EEBB5BE5091449A98C941551531157F2"><span class="usertext">drawExtentFilter</span>—Boolean. Indicates whether to provide the <span class="uicontrol">Limit observations by drawing on the map</span> option in the widget.
+</li><li purpose="li" id="LI_E254C1ED4AAE440C87B53ED3777363BE"><span class="usertext">attrFilter</span>—Boolean. Indicates whether to provide the attribute filter in the stream.</li><li purpose="li" id="LI_AF6281B60A8842C2A4AFFF9ACE912095"><span class="usertext">filterList</span>—Array of object. Each array item is a filter item defined on the settings page. The content of the filter item is the same as <a class="xref" rel="03w3/03w300000026000000.htm" href="03w3/03w300000026000000.htm">Query widget</a>.</li></ul></td></tr></tbody><caption class="table_desc"></caption></table></div><p id="GUID-787692D6-D78C-4EA7-946E-7771B1AB7A81"></p><p id="GUID-F97156C2-80D1-42EB-B662-F41F5D8EF89E">Example:</p><p id="GUID-0B2C3559-FED4-434D-84A6-2E78CD738950"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;streamLayers&quot;: [
+    {
+      &quot;layerId&quot;: &quot;stream_2684&quot;,
+      &quot;layerName&quot;: &quot;Flights&quot;,
+      &quot;startStop&quot;: true,
+      &quot;clear&quot;: true,
+      &quot;drawPrevious&quot;: true,
+      &quot;spatialFilter&quot;: false,
+      &quot;mapExtentFilter&quot;: false,
+      &quot;drawExtentFilter&quot;: false,
+      &quot;attrFilter&quot;: true,
+      &quot;filterList&quot;: [
+        {
+          &quot;name&quot;: &quot;New Filter&quot;,
+          &quot;filterInfo&quot;: {
+            &quot;logicalOperator&quot;: &quot;AND&quot;,
+            &quot;parts&quot;: [
+              {
+                &quot;fieldObj&quot;: {
+                  &quot;name&quot;: &quot;AltitudeFeet&quot;,
+                  &quot;label&quot;: &quot;AltitudeFeet&quot;,
+                  &quot;shortType&quot;: &quot;number&quot;,
+                  &quot;type&quot;: &quot;esriFieldTypeInteger&quot;
+                },
+                &quot;operator&quot;: &quot;numberOperatorIsLessThan&quot;,
+                &quot;valueObj&quot;: {
+                  &quot;isValid&quot;: true,
+                  &quot;type&quot;: &quot;value&quot;,
+                  &quot;value&quot;: 1000
+                },
+                &quot;interactiveObj&quot;: &quot;&quot;,
+                &quot;caseSensitive&quot;: false,
+                &quot;expr&quot;: &quot;AltitudeFeet &lt; 1000&quot;
+              },
+              {
+                &quot;fieldObj&quot;: {
+                  &quot;name&quot;: &quot;ACID&quot;,
+                  &quot;label&quot;: &quot;ACID&quot;,
+                  &quot;shortType&quot;: &quot;string&quot;,
+                  &quot;type&quot;: &quot;esriFieldTypeString&quot;
+                },
+                &quot;operator&quot;: &quot;stringOperatorIsNot&quot;,
+                &quot;valueObj&quot;: {
+                  &quot;isValid&quot;: true,
+                  &quot;type&quot;: &quot;value&quot;,
+                  &quot;value&quot;: &quot;&#39;a&#39;&quot;
+                },
+                &quot;interactiveObj&quot;: &quot;&quot;,
+                &quot;caseSensitive&quot;: false,
+                &quot;expr&quot;: &quot;ACID &lt;&gt; &#39;&#39;&#39;a&#39;&#39;&#39;&quot;
+              }
+            ],
+            &quot;expr&quot;: &quot;(AltitudeFeet &lt; 1000) AND (ACID &lt;&gt; &#39;&#39;&#39;a&#39;&#39;&#39;)&quot;
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre></div>
+</div></p><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,32 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Time Slider widget visualizes map content that contains time-aware layers."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Time Slider</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-E2293144-0334-43B9-9901-F8170E588375]--><body><div id="content"><div class="header"><h1>
+Time Slider</h1><div id="breadcrumb"></div></div>
+<p id="GUID-771A259D-A398-43CD-8C9B-D6751AFE315E">
+The Time Slider widget allows you to  visualizes map content containing time-aware layers. 
+
+</p>
+
+<p id="GUID-298B6C11-275A-40C9-A407-67F15486EE59">The following table lists the configurable attributes of the Time Slider widget.</p><p id="GUID-7BFFBFAE-A7BA-46AE-BB01-E1603B18E0EB"><div class="block_table" id="TABLE_D39131F1CFDB4A9294B37B7997F9D058" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-18BDEED9-621E-4D43-93F9-DCB783D7E5FC">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-A27F0252-BCFD-434A-A5FE-CCFEBC7DD278">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0DE9FB71-A0DC-4DA6-AD88-B9285C55DB32"><span class="usertext">showLabels</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-507050C4-3AD7-4659-AA6F-610D3299E083"> Boolean. The default is false. Displays the name of the time-aware layer.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A1AE49C5-5B99-403D-B659-023229BA2212"><span class="usertext">timeFormat</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0041E872-3130-4E6C-AB85-02869237BD72">String. The default is "auto". Date and time format of the time slider. Several options are available such as "M/DD/YYYY". </p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B8453FBE-A938-4ECC-BAE3-E53DA1100433"><span class="usertext">customDateFormat</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0E92928E-C423-4A91-8DF6-4513BE89168C">String. The default is "". It works when <span class="usertext">timeFormat</span> is set to "Custom". It takes a string of tokens and replaces them with their corresponding values. For more information, see <a target="_blank" class="xref" href="http://momentjs.com/docs/#/displaying/format/" rel="http://momentjs.com/docs/#/displaying/format/">#Format 1.0.0+</a>.</p></td></tr></tbody><caption class="table_desc"></caption></table></div></p><p id="GUID-61001419-FD26-4364-98E4-09CAC11D7595">Example:</p><p id="GUID-858B0A7F-6F5C-4053-B447-F6A93B0F671A"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+	&quot;showLabels&quot;: false,
+	&quot;timeFormat&quot;: &quot;M/DD/YYYY&quot;,
+  	&quot;customDateFormat&quot;: &quot;&quot;
+}
+</code></pre></div>
+</div></p><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,52 @@
+<div>
+  <div class="proxy-check" data-dojo-attach-point="useProxyCheckBox"
+      data-dojo-type="jimu/dijit/CheckBox">
+  </div>
+  <div class="layer-title" title="${title}">
+    <div class="layer-name">${title}</div>
+    <div class="access-limit">
+        ${nls.requestLimit}: <span data-dojo-attach-point="requestLimitNode"></span>&nbsp;&nbsp;
+        ${nls.interval}: <span data-dojo-attach-point="intervalNode"></span>
+    </div>
+  </div>
+  <div data-dojo-attach-point="consumeCreditsContent" title="${nls.consumeCredits}" class="credits"></div>
+  <div data-dojo-attach-point="settingBtn" class="setting" title="${nls.settings}"></div>
+  <div data-dojo-attach-point="loading" class="loading-content"></div>
+
+  <div class="setting-dialog hidden" data-dojo-attach-point="settingDialog" title="">
+    <div class="input-section">
+      <div class="half">
+        <div class="label">${nls.requestLimit}:</div>
+        <div>
+          <input data-dojo-attach-point="limitSpinner"
+            data-dojo-type="dijit/form/NumberSpinner"
+            data-dojo-props="constraints:{min:0,places:0}"
+            value="0" class="limit-spinner">
+        </div>
+      </div>
+      <div class="half">
+        <div class="label">${nls.interval}:</div>
+        <div class="input">
+          <select data-dojo-attach-point="intervalSelect" data-dojo-type="dijit/form/Select"
+            class="interval-select">
+            <option value="0">${nls.none}</option>
+            <option value="1">${nls.second}</option>
+            <option value="60">${nls.minute}</option>
+            <option value="3600">${nls.hour}</option>
+            <option value="86400">${nls.day}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="button-section">
+      <div class="jimu-btn jimu-btn-vacation jimu-popup-action-btn jimu-float-trailing"
+        data-dojo-attach-point="cancelBtn">
+        ${nls.cancel}
+      </div>
+      <div class="jimu-btn jimu-popup-action-btn jimu-float-trailing jimu-trailing-margin1"
+          data-dojo-attach-point="okBtn">
+        ${nls.ok}
+      </div>
+    </div>
+  </div>
+</div>

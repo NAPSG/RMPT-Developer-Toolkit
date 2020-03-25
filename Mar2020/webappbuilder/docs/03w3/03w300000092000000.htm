@@ -1,0 +1,194 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn  how to create a style for   a theme."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Create a new style for a theme
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-8D83E4FF-5F8F-478F-A6C7-5A10A3E97B4D]--><body><div id="content"><div class="header"><h1>
+Create a new style for a theme
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-0F9C5B80-0E98-494A-AFE6-8101BECD0D6A">You can create a basic style in <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> to customize brand colors, fonts, and other basic UI properties in a theme. Although this topic uses a Jewelry Box theme, it applies to other themes in <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> as well.</p><p id="GUID-06CE8A4A-EFFB-4325-BFCE-06C69FD63B8B"> The new style modifies the
+following CSS properties of UI elements:</p>
+<ul purpose="ul" id="UL_F3B0A461E1E04B969BA97883FC541367"><li purpose="li" id="LI_27383131077245B28E52384FEC12C69A"> Background color</li><li purpose="li" id="LI_EA882497387240B3B575BB6BAB9019DC"> Text color</li><li purpose="li" id="LI_C84DEF9EFBA54AC384FB9E8FF1C38957"> Font family</li><li purpose="li" id="LI_D280BCEE61FE45D89D27AD3788F09C96"> Font size</li><li purpose="li" id="LI_E1648B64D14242A4915CB3F80BF622B7"> Padding</li></ul>
+
+
+
+
+<p id="GUID-9CD0F030-FEDE-4610-90FA-BF6773AA78BB"> The UI components to be styled in the Jewelry Box theme are the HeaderController widget, a foldable panel, and a map pop-up.<div class="notes" id="GUID-01985C51-7B98-4D9D-8CE7-805B2F5BB9C0"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-DDDB30B8-3246-4C3C-8C37-F9F36DB994DD"> The above list of to-be-styled components can vary from theme to theme depending on  the available widgets, panels, and other UI elements in the theme. </p></div></div></p>
+<div class="section1" id="GUID-2CFED3B5-657B-480A-9E15-A7D43ADFCBB9" purpose="section1"><h2>
+Create a new style folder
+</h2><p id="GUID-51A881E2-4E0A-4DF0-BBD2-D4CE99DD2405"> 
+Create a new folder by completing the following steps.</p></div>
+<div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-D97C0F43-D6EA-4EAC-9D14-A91D1EF2180E"><div class="step_title">Steps:</div><ol>
+<li purpose="step" id="GUID-38E55624-D1A6-4794-8FF4-A6B7013E950A">
+<span purpose="cmd" id="GUID-0BF48387-5ECA-4553-9A0B-BDB87044E44B">
+Go to  the <span class="usertext">styles</span> folder in the theme, for example, <span class="usertext">~/client/stemapp/themes/JewelryBoxTheme/styles</span>.</span>
+</li><li purpose="step" id="ESRI_STEP_5F8DB7055AF9459C83FD031D39903BF6"><span purpose="cmd" id="GUID-DADD2C1F-8904-4B0A-8861-6E1AF76C82A6"> Create a new folder and name it <span class="usertext">myStyle</span>. </span></li><li purpose="step" id="ESRI_STEP_722DD56C601A4C208FC861355A3CA363"><span purpose="cmd" id="GUID-29E1A177-994D-4765-944B-8B2DA6031D85">Create a new style.css file in the myStyle folder.</span><div class="info" purpose="info"><p id="GUID-9373B6E6-CC6B-4169-8A8D-792A143F9067">Optionally, you can add more folders and style sheets, such as images or <span class="usertext">.lib</span> files, in the myStyle folder. Keep in mind that  all resources must be referenced in the style.css file.</p></div><div class="stepresult" purpose="stepresult"><p id="GUID-5AD1499D-E22A-467D-A9C9-AFBAE187C290">The folder structure should look like this:<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-1F9AEAFD-5AF8-4114-913D-DAB6B54F861A-web.png" purpose="img" alt="myStyle folder structure" title="myStyle folder structure"></td></tr></table></div></p></div></li>
+</ol></div></div>
+<div class="section1" id="ESRI_SECTION1_4488B919156A47F1A3B9479FAABE099F" purpose="section1"><h2> Register the style in the manifest.json file</h2><p id="GUID-0C4E0E9C-4BFA-4F51-88CB-3921FD63B173"> To display the new style in  <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span>, register it in the theme's manifest.json file.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_1A92015332624EE7BF3D8EDDE6A79FD9"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_23A0A8EC75E64ED6AD112EDBA1E0862C"><span purpose="cmd" id="GUID-86462AD7-7766-484F-A553-5751508775C5">Open the manifest.json file from <span class="usertext">~/client/stemapp/themes/JewelryBoxTheme/manifest.json</span>.</span></li><li purpose="step" id="ESRI_STEP_BED4BF22138C448086FBD26550FC8820"><span purpose="cmd" id="GUID-6A0DE97B-9CE7-414D-ACF0-144F0735BA2F">Add the following myStyle properties to the <span class="usertext">styles:</span></span><div class="substeps" id="ESRI_SUBSTEPS_7663B4F61ACB445793635AB47DFEAF23" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_F7D97655D6994960978F179B56D0AB77"><span purpose="cmd" id="GUID-0958A89A-BE90-408E-96AC-190B50903756">"name"—Must match the name of the style folder.</span></li><li purpose="substep" id="ESRI_SUBSTEP_1B48AA3053B34106B72CFB26209C7EE7"><span purpose="cmd" id="GUID-2E8818A9-9D92-4824-974A-EC17BC41C8BE">“description”—The style description.</span></li><li purpose="substep" id="ESRI_SUBSTEP_4E6544728A12434BBB7E210B6DC403F1"><span purpose="cmd" id="GUID-AEF3EF75-EDCF-4B00-B920-779A66F73451"> “styleColor”—Defines the background of the style’s representative swatch in the <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> UI. The value can be a valid color name or a HEX.</span></li></ol></div><div class="stepexample" purpose="stepexample"><p id="GUID-AB18952F-56AC-4446-83E8-0AB559124FD3">The code snippet in the manifest.json file should look similar to the following:<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+      &quot;name&quot;: &quot;myStyle&quot;,
+      &quot;description&quot;: &quot;this is demo style&quot;,
+      &quot;styleColor&quot;: &quot;#eee&quot;
+    }
+</code></pre></div>
+</div></p></div></li><li purpose="step" id="ESRI_STEP_A2520C3EF5D44A1EBBD81FBDCB1A4721"><span purpose="cmd" id="GUID-872996C1-174F-4DAF-B4F6-41A28132FDB6">Reload  the  app. The new style appears under the Jewelry Box theme as shown below.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-793354B6-B6EB-406E-951F-990837CF3C21-web.png" purpose="img" alt="New style" title="New style"></td></tr></table></div></span></li></ol></div></div><div class="section1" id="ESRI_SECTION1_882C49F3F58A4484AB5A417DA4D4FC51" purpose="section1"><h2> Override brand colors for the HeaderController widget</h2><p id="GUID-F58C8EEE-5A75-48CE-B64C-4BD2A2E94E44">To update
+the main color scheme with black and white for the HeaderController widget, you'll add CSS styles to the style.css file.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_9BFF18A9BFD14367BBBC6975693694B1"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_40E8461596874A9AA6D0C2F935D7878E"><span purpose="cmd" id="GUID-4771308C-95E7-49E4-B461-48382B544ECC">Make the background color white (#fff).</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-main-background {
+  background-color: #fff;
+}
+</code></pre></div>
+</div></div><div class="info" purpose="info"><p id="GUID-BD939C8B-C49D-4DA4-BE5C-C6A81A8C5B84">The class name for the <span class="usertext">background-color</span> property is <span class="usertext">jimu-main-background</span>. It is a common class name from the Jimu CSS framework and may have an impact on other UI elements. For a full list of Jimu CSS class names,  see <a class="xref" rel="03w3/03w30000006t000000.htm" href="03w3/03w30000006t000000.htm">CSS framework</a>.</p></div></li><li purpose="step" id="ESRI_STEP_269FBE73D6D84D9AB52F2DB3C798E80B"><span purpose="cmd" id="GUID-3F7B72A4-8DDF-4C27-86D3-29C293473DE9">Change the title and subtitle colors in the header to dark gray (#323232).</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-title,
+.jimu-subtitle {
+  color: #323232;
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_68F257FE6E39471FA715E5EF9B6DBAF9"><span purpose="cmd" id="GUID-B4CB3CA8-15C1-48F6-B6DE-96648574769B">Remove the shadow and add a border at the bottom. Unlike the class names in steps 1 and 2 from Jimu CSS framework,  a widget-specific class name is used here.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 3px solid #323232;
+}
+</code></pre></div>
+</div></div><div class="info" purpose="info"><p id="GUID-AE4483A8-806B-43FA-AD4F-3C514ED2BB50">A widget-specific class name follows the pattern of <span class="usertext">jimu-widget-{widgetname}</span>.</p></div></li><li purpose="step" id="ESRI_STEP_4EDD243843E14F61ABD66FE2DF4F6994"><span purpose="cmd" id="GUID-3D1908AA-4EA8-4B04-ACC4-188E2269428D">Change the background color, remove the right border, and change the opacity of the icon nodes.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .icon-node {
+  opacity: 1;
+  background: #323232;
+  border-right: 0;
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-79260EC8-62E5-46B5-B90E-C6ED00C8E042">Now the HeaderController should look like this:<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-C87A2991-1355-4E36-A714-DE4C70F23997-web.png" purpose="img" alt="New background color for HeaderController widget" title="New background color for HeaderController widget"></td></tr></table></div></p></div></li><li purpose="step" id="ESRI_STEP_7F8FCF3D018149B9A077217B7CA7AF6A"><span purpose="cmd" id="GUID-8B789C2B-DE07-4EFA-B00E-F22CD52D6EAB">Add styles to resize and align the icon nodes properly.</span><div class="substeps" id="ESRI_SUBSTEPS_B018F754639646429044A5A9A0D3F983" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_EF25D1EE33584C2CA87F0DEFB8FC3AEA"><span purpose="cmd" id="GUID-C0D77468-2420-4A36-84EB-BDF6FE1E91F4">Make the icon nodes smaller.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .icon-node {
+  opacity: 1;
+  background: #323232;
+  border-right: 0;
+  height: 30px !important;
+  width: 30px !important;
+}
+</code></pre></div>
+</div></div><div class="info" purpose="info"><p id="GUID-1F7B842F-15F5-45A6-B2BB-55C828859294">With <span class="usertext">!important</span>, the HeaderController widget  dynamically adds inline styles and calculates the height of the icon nodes by reading the height property defined in the layout.json file.</p></div></li><li purpose="substep" id="ESRI_SUBSTEP_E1E64B126846408A8764E8BEB88672FC"><span purpose="cmd" id="GUID-D7E2AF24-F88E-44B1-B80B-F26B5D1AFBAB">Add margin properties to align the icon nodes.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .icon-node {
+  opacity: 1;
+  background: #323232;
+  border-right: 0;
+  height: 30px !important;
+  width: 30px !important;
+  margin-top: 4px;
+  margin-right: 10px;
+}
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_9D7808AA559D4E44B61BD62CE690197B"><span purpose="cmd" id="GUID-415EA6F6-9DE1-4732-B83F-5207DA72E621">Add additional styles, such as border-radius.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .icon-node {
+  opacity: 1;
+  background: #323232;
+  border-right: 0;
+  height: 30px !important;
+  width: 30px !important;
+  margin-top: 4px;
+  margin-right: 10px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_11221965C43E4983B003F49119572634"><span purpose="cmd" id="GUID-57F977BE-FACA-48A0-A779-3326163FF078">Make the icon images smaller.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .icon-node img {
+  height: 14px;
+  width: 14px;
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-6384B710-CF2C-43A4-913F-7F9638D64FF2">The HeaderController widget should now look like this:<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-EC5C4033-6FA6-4430-A23D-19295D6BD70F-web.png" purpose="img" alt="New icon images for HeaderController widget" title="New icon images for HeaderController widget"></td></tr></table></div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_0DAB0FCD497E4DE79590EE844BF6181B"><span purpose="cmd" id="GUID-39E1B06A-5C66-46F3-A67A-A154BEFB4134">Add selected state styles.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .icon-node.jimu-state-selected {
+  border-top: 0;
+  background-color: #2196f3;
+}
+</code></pre></div>
+</div></div><div class="info" purpose="info"><p id="GUID-827F2CB9-11D9-427E-B7DA-0C1495A45915">Jimu defines a list of state classes. In this example, <span class="usertext">jimu-state-selected</span> is used.</p></div></li><li purpose="substep" id="ESRI_SUBSTEP_680BF707F7E249AFB2E086887922F839"><span purpose="cmd" id="GUID-B471E91F-CDB6-4BA0-BE41-EE0BDD4A0E10">Add the CSS rule to override widget group icons when the group display mode is <span class="usertext">show in Dropdown Menu</span>. See <a class="xref" rel="03w3/03w300000015000000.htm" href="03w3/03w300000015000000.htm">Controller widget</a> for more information.</span><div class="stepexample" purpose="stepexample"><p id="GUID-BC189093-EFE0-43F6-97B6-6036C0F913A9">To align the drop-down arrow correctly in a widget group icon node, place the drop-down arrow at the bottom center of the icon node.<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .drop-triangle {
+    bottom: 5px;
+    margin-left: -5px;
+}
+</code></pre></div>
+</div></p></div><div class="stepexample" purpose="stepexample"><p id="GUID-37351901-11A0-4CD0-B2FD-041D99320DE8">Make the background color of the drop-down menu   dark gray (#323232).<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .jimu-drop-menu {
+  background-color: #323232;
+}
+</code></pre></div>
+</div></p></div><div class="stepexample" purpose="stepexample"><p id="GUID-646A7AAE-EA4F-4CF0-AAD0-46FD9DD3A506">Make the widget icons in the drop-down menu the same size as other widget icons to  align them correctly.<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .jimu-drop-menu .menu-item img {
+  width: 14px;
+  height: 14px;
+  margin-top: 13px;
+}
+</code></pre></div>
+</div></p></div><div class="stepexample" purpose="stepexample"><p id="GUID-C9CDFF7B-8317-41EB-B676-C7D9C8DA6EEC">Make the text labels in the drop-down menu smaller.<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-header-controller .jimu-drop-menu .menu-item .label {
+    font-size: 12px;
+}
+</code></pre></div>
+</div></p></div><div class="stepresult" purpose="stepresult"><p id="GUID-E8848B8F-C9B9-42DF-B0D4-B587435D604E">The widget group icon should look something like this when opened: <div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-D7419EBD-8B78-4491-9B8A-AAB8AD12CAE8-web.png" purpose="img" alt="New widget group icon" title="New widget group icon"></td></tr></table></div></p></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_5D43B3141C0A4D1094971F320F1ED30F"><span purpose="cmd" id="GUID-AE1F5E3D-C609-4146-AE28-5BD3EF387A49">Change the link color in the header to  gray (#666), and  add a few links in <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span>.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-link:link, .jimu-link:visited {
+  color: #666;
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-D668CC97-5280-432A-B609-A79FD3DE9A6B">The links display in gray in the HeaderController widget.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-612CD7E4-9616-4192-984E-9BB8950A4D7A-web.png" purpose="img" alt="Updated links" title="Updated links"></td></tr></table></div></p></div></li><li purpose="step" id="ESRI_STEP_8B33E455BF5F4A1F8AC321150285D039"><span purpose="cmd" id="GUID-483FBC3A-7F1C-48E2-A8AB-4BC936AADB67">The controllers in themes such as Foldable, Jewelry Box, and LaunchPad have the ability to wrap any widget icons into  more widget pop-ups when there is not enough space. Complete the following steps to add a  <span class="usertext">more</span> widgets icon <img purpose="img" placement="inline" alt="More widgets icon" title="More widgets icon" src="03w3/GUID-68FB415D-01B8-44BF-ADAD-B8A92E30D54E-web.png">   and restyle the pop-up.</span><div class="substeps" id="ESRI_SUBSTEPS_083DB23216D548DFA70A5D2003E2D8FB" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_FFFC92E317174A6383B0D264CC4B07BE"><span purpose="cmd" id="GUID-56B3CEF2-8927-420A-9119-5861FC8812D3">Make the overlay DIV, which covers the entire screen when the pop-up opens, opaque white.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-more-icon-cover {
+  background-color: #323232;
+  opacity: .65;
+}
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_23AD5A4FC6324A6D98D4C8D0003C305A"><span purpose="cmd" id="GUID-4C99C7F7-09D6-424D-989F-460B5826F549">Change the background color of the pop-up to black (#000).</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-header-more-popup {
+  background: #000;
+}
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_DF07450982FF4CDABD550F70466C78B2"><span purpose="cmd" id="GUID-71B83189-05F1-4475-92D4-EBF1BE27D2A3">Change the background color of the icon tiles to dark gray (#323232).</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-header-more-popup .icon-node {
+  background-color: #323232;
+}
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_5EBBF9E97C79426196242DFE70FA7724"><span purpose="cmd" id="GUID-DF995246-2FF9-4E67-851F-6AEF620A5F44">Change the background color of the pop-up footer (pagination)  to black (#000).</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-header-more-popup .points {
+  background: #000;
+}
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_C111BA2714B346CAA89FC20DDD2F47B8"><span purpose="cmd" id="GUID-E12FA6B6-DC50-4F35-B4A5-025066FDD761">Adjust the <span class="uicontrol">Close</span> button and pagination dots styles.</span><div class="stepexample" purpose="stepexample"><p id="GUID-1E859496-044C-4DFA-B220-1E0245C966C4"> Use blue (#2196f3) for the <span class="uicontrol">Close</span> button.<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-header-more-popup .close,
+.jimu-header-more-popup .close-inner {
+  background-color: #2196f3;
+}
+</code></pre></div>
+</div> </p></div><div class="stepexample" purpose="stepexample"><p id="GUID-DCFC3FBF-4B83-4D54-B471-1447CB8CC743"> Make the pagination dots smaller and apply gray (#9e9e9e—normal state) and white (#fff—active state) to the background colors. <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-header-more-popup .points-inner {
+  position: relative;
+  top: -3px;
+}
+.jimu-header-more-popup .point {
+  width: 5px;
+  height: 5px;
+  background-color: #9e9e9e;
+}
+.jimu-header-more-popup .point-selected {
+  background-color: #fff;
+}
+</code></pre></div>
+</div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_CA67B5F27C8740D3A17FC0C38A01BC70"><span purpose="cmd" id="GUID-4C716D55-97D1-40F7-88B6-6F3776A01251">Resize the icon images to make them smaller.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-header-more-popup img {
+  height: 30px !important;
+  width: 30px !important;
+}
+</code></pre></div>
+</div></div></li></ol></div><div class="stepresult" purpose="stepresult"><p id="GUID-5F91A975-254B-400E-9C85-AB801E2CD381"> Now the pop-up looks like this:<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-691CED9E-97D5-457A-8726-BCA0FCDF2EC5-web.png" purpose="img" alt="New pop-up for the More widget" title="New pop-up for the More widget"></td></tr></table></div></p></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_0A98F147B9CB4602AF8C271AF0AE83D6" purpose="section1"><h2> Override brand colors for panel widgets</h2><p id="GUID-46530E67-9A2C-4A8A-99AD-C2DF3FB47F82">The panel widgets include foldable panels and on-screen panels. For  the title panes in panel widgets in myStyle, the background colors will be updated in blue, and the borders will be removed.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_102BF58CF23C42A391EC570B45B84AB4"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_C76FDAC81D2B496E84BA5777A72A4DDA"><span purpose="cmd" id="GUID-D26CD820-4A0C-407D-A22A-1B8E8AC9FC26"> For both on-screen and foldable panels, change the background color of the title panes to blue (#2196F3).</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-on-screen-widget-panel&gt;.jimu-panel-title,
+.jimu-foldable-panel&gt;.jimu-panel-title {
+  background-color: #2196F3;
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_2DF379F631A84E86AD061A4D9B424D13"><span purpose="cmd" id="GUID-7E3717B1-0A2D-4CA9-8271-625FB27531A0">Remove the borders.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-panel {
+  border: 0;
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-57D9A3C8-6982-4D79-9B01-996BD5FED8FA-web.png" purpose="img" alt="New style for panel widgets" title="New style for panel widgets"></td></tr></table></div></div></li><div class="stepinfo" purpose="stepinfo">All of the panel widgets share  the same class name, <span class="usertext">jimu-panel</span>, at the root level of  the <span class="usertext">.html</span> structure.</div></ol></div></div><div class="section1" id="ESRI_SECTION1_CF68FDD1303740B9A66A12979DD47B06" purpose="section1"><h2>Override brand colors for the map pop-up widget</h2><p id="GUID-E4E642B8-AE5A-4E5F-BD8A-3F112200C0FD">Similar to the panel widgets, change the background colors of the pop-up's title pane.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_31C72762CA734661B83F36C50FA5B875"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_7B82BECE6D214146B1927C6F587289A6"><span purpose="cmd" id="GUID-EFFD50FA-E140-4C4A-BAD2-6DDB5433A32D">Change the background color of the pop-up’s title pane to blue (#2196F3).</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.esriPopup .titlePane {
+  background-color: #2196F3;
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-A16F2ACE-FC64-4D2B-9749-8DE61AFDED32-web.png" purpose="img" alt="New style for map pop-up" title="New style for map pop-up"></td></tr></table></div></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_D5E3BE8B8F23496E9988F7B5C575AD3E" purpose="section1"><h2> Use a different font family</h2><p id="GUID-12008CC6-DCBB-4F90-B696-C2BC813A00AA"> Change the default font to <span class="usertext">Open Sans</span>. The <span class="usertext">jimu-main-font</span> is the class name from the Jimu class framework.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_41152917955346A19CDA74BE7D823178"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_4B03E731BAD44E9FBC42349983ECB51C"><span purpose="cmd" id="GUID-20FC6801-19F5-4015-A92E-012CEA925CFB">By default, the<span class="usertext">Open Sans</span> font is not available on many devices.  To import it, add the following line of code at the beginning of the style.css file in myStyle:</span><div class="stepexample" purpose="stepexample"><p id="GUID-3EC83B42-5CD8-4FF6-9225-4E500CDEF9D3"><span class="usertext">@import url(//fonts.googleapis.com/css?family=Open+Sans);</span></p></div></li><li purpose="step" id="ESRI_STEP_210CF1C8BB6E4888A6498C009A07A405"><span purpose="cmd" id="GUID-2CDEA162-8F1D-41B6-B68A-652426998EC3">Override the default font in .jimu-main-font.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-main-font {
+  font-family: &#39;Open Sans&#39;;
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-AE6F799A-97FB-488A-8AC9-1A6FE26C23BE-web.png" purpose="img" alt="New font" title="New font"></td></tr></table></div></div></li></ol></div></div><div class="wfsummary" id="GUID-9AD6B1E7-F132-4917-ADA3-F92C04E8E185" purpose="wfsummary">        
+
+</div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,97 @@
+<div style="position:relative;width:100%;height:100%;">
+	<div class="map-setting-tab-container" style="width:100%;height:100%;">
+		<div data-dojo-attach-point="tabNode"></div>
+
+		<div class="tab-content mycontent-tab" data-dojo-attach-point="mycontentTabNode">
+			<div class="tab-content-main mycontent-tab-content-main">
+				<div class="search-section">
+					<div data-dojo-attach-point="mycontentSearch" data-dojo-type="jimu/dijit/Search" data-dojo-props='searchWhenInput:false' data-dojo-attach-event="onSearch:_onMyContentSearch" class="jimu-float-leading"></div>
+					<div class="refresh-icon jimu-float-trailing" data-dojo-attach-event="click:_onMyContentRefreshIconClicked"></div>
+					<select data-dojo-type="dijit/form/Select" data-dojo-attach-point="mycontentSelect" data-dojo-attach-event="change:_onMyContentSearch" class="jimu-float-trailing restrict-select-width">
+						<option value="modified" selected="true">${nls.mostRecent}</option>
+						<option value="numviews">${nls.mostViewed}</option>
+						<option value="avgrating">${nls.highestRated}</option>
+						<option value="title">${nls.title}</option>
+						<option value="owner">${nls.owner}</option>
+					</select>
+				</div>
+				<div data-dojo-attach-point="mycontentMapTable" data-dojo-type="builder/plugins/map-config/MapTable" data-dojo-props="type:'${type}'"  style="top:65px;"></div>
+			</div>
+		</div>
+
+		<div class="tab-content organization-tab" data-dojo-attach-point="organizationTabNode">
+			<div class="tab-content-main organization-tab-content-main">
+				<div class="search-section">
+					<div data-dojo-attach-point="organizationSearch" data-dojo-type="jimu/dijit/Search" data-dojo-props='searchWhenInput:false' data-dojo-attach-event="onSearch:_onOrganizationSearch" class="jimu-float-leading"></div>
+					<div class="refresh-icon jimu-float-trailing" data-dojo-attach-event="click:_onOrgRefreshIconClicked"></div>
+					<select data-dojo-type="dijit/form/Select" data-dojo-attach-point="organizationSelect" data-dojo-attach-event="change:_onOrganizationSearch" class="jimu-float-trailing restrict-select-width">
+						<option value="modified" selected="true">${nls.mostRecent}</option>
+						<option value="numviews">${nls.mostViewed}</option>
+						<option value="avgrating">${nls.highestRated}</option>
+						<option value="title">${nls.title}</option>
+						<option value="owner">${nls.owner}</option>
+					</select>
+				</div>
+				<div data-dojo-attach-point="organizationMapTable" data-dojo-type="builder/plugins/map-config/MapTable" data-dojo-props="type:'${type}'" style="top:65px;"></div>
+			</div>
+		</div>
+
+		<div class="tab-content group-tab" data-dojo-attach-point="groupTabNode">
+			<div class="tab-content-main group-tab-content-main">
+				<div class="groups-section" style="position:absolute;width:100%;top:70px;" data-dojo-attach-point="groupsSection">
+					<span>${nls.groups}:</span>
+					<select class="groups-select" data-dojo-attach-point="groupsSelect">
+						<option value="nodata">${nls.noneGroups}</option>
+					</select>
+				</div>
+				<div class="search-section" data-dojo-attach-point="groupSearchSection">
+					<div data-dojo-attach-point="groupSearch" data-dojo-type="jimu/dijit/Search" data-dojo-props='searchWhenInput:false' data-dojo-attach-event="onSearch:_onGroupSearch" class="jimu-float-leading"></div>
+					<div class="refresh-icon jimu-float-trailing" data-dojo-attach-event="click:_onGroupRefreshIconClicked"></div>
+					<select data-dojo-type="dijit/form/Select" data-dojo-attach-point="groupSelect" data-dojo-attach-event="change:_onGroupSearch" class="jimu-float-trailing restrict-select-width">
+						<option value="modified" selected="true">${nls.mostRecent}</option>
+						<option value="numviews">${nls.mostViewed}</option>
+						<option value="avgrating">${nls.highestRated}</option>
+						<option value="title">${nls.title}</option>
+						<option value="owner">${nls.owner}</option>
+					</select>
+				</div>
+				<div data-dojo-attach-point="groupMapTable" data-dojo-type="builder/plugins/map-config/MapTable" data-dojo-props="type:'${type}'" style="top:113px;"></div>
+			</div>
+		</div>
+
+		<div class="tab-content public-tab" data-dojo-attach-point="publicTabNode">
+			<div class="tab-content-main public-tab-content-main">
+				<div class="search-section">
+					<div data-dojo-attach-point="publicSearch" data-dojo-type="jimu/dijit/Search" data-dojo-props='searchWhenInput:false' data-dojo-attach-event="onSearch:_onPublicSearch" class="jimu-float-leading"></div>
+					<div class="refresh-icon jimu-float-trailing" data-dojo-attach-event="click:_onPublicRefreshIconClicked"></div>
+					<select data-dojo-type="dijit/form/Select" data-dojo-attach-point="publicSelect" data-dojo-attach-event="change:_onPublicSearch" class="jimu-float-trailing restrict-select-width">
+						<option value="modified">${nls.mostRecent}</option>
+						<option value="numviews" selected="true">${nls.mostViewed}</option>
+						<option value="avgrating">${nls.highestRated}</option>
+						<option value="title">${nls.title}</option>
+						<option value="owner">${nls.owner}</option>
+					</select>
+				</div>
+				<div class="public-search-radios">
+					<fieldset id="publicSearchRaido">
+						<input data-dojo-attach-point="portalPublicRaido" data-dojo-type="dijit/form/RadioButton" 
+							id="portalPublicRaido" name="publicSearchRaido" class="jimu-float-leading portal-public-radio" />
+						<label data-dojo-attach-point="portalNameLabel" for="portalPublicRaido" class="jimu-float-leading portal-name">Portal</label>
+
+						<input data-dojo-attach-point="onlinePublicRaido" data-dojo-type="dijit/form/RadioButton"
+							id="onlinePublicRaido" name="publicSearchRaido" class="jimu-float-leading online-public-radio" />
+						<label data-dojo-attach-point="onlineNameLabel" for="onlinePublicRaido" class="jimu-float-leading online-name">ArcGIS Online</label>
+					</fieldset>
+				</div>
+				<div data-dojo-attach-point="publicMapSection" class="public-map-section">
+					<div data-dojo-attach-point="publicPortalMapTable" data-dojo-type="builder/plugins/map-config/MapTable" data-dojo-props="type:'${type}'"></div>
+					<div data-dojo-attach-point="publicOnlineMapTable" data-dojo-type="builder/plugins/map-config/MapTable" data-dojo-props="type:'${type}'"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="signin-section hidden" data-dojo-attach-point="signinSection">
+		<div class="signin-tip">${nls.signInTip}</div>
+	</div>
+</div>

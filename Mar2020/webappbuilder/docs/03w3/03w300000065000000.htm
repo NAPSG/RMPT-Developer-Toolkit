@@ -1,0 +1,138 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="This replaces the existing Geocoder widget with additional capability for configuring feature search."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Search widget
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-22B84161-192B-4573-B8D5-F52B37FB03CE]--><body><div id="content"><div class="header"><h1>
+Search widget
+</h1><div id="breadcrumb"></div></div>
+    <p id="GUID-7324F8FB-8FA0-4694-871D-01411FF1DC40"> The Search widget 
+enables end users to find locations or  search  features on the map. By default,  the widget uses  the geocoding service from your organization or portal and displays searchable layers configured   in the map, if available. See <a class="xref" target="_blank" rel="http://enterprise.arcgis.com/en/portal/latest/use/configure-feature-search.htm" href="http://enterprise.arcgis.com/en/portal/latest/use/configure-feature-search.htm">Configure feature search</a> for more information. Further, you can add more geocoding services or  configure specific layers within your map to be searchable using the widget's configuration window.</p>
+    <p id="GUID-CF295166-EB53-4EA4-8F62-1849CA78A2EA">The following methods of finding a location are supported, given that they are supported in the geocoding services:</p>
+    <ul purpose="ul" id="UL_4DF6CA2116E1451382C647BCBDF65228">
+      <li purpose="li" id="LI_8B5E2CA5989A4B8DB4D31FADC422F21F"> Place-name</li>
+      <li purpose="li" id="LI_40F9333E6C0C44C687D42808ED941F57">Point of interest</li>
+      <li purpose="li" id="LI_AF96309512004865B7E872A30BA77BA2">Address</li><li purpose="li" id="LI_79A28C381A9841D88B0E75532F889106">UTM Coordinates</li><li purpose="li" id="LI_C6EF7632E3F540FA9E0F6C34D61F055F">Coordinates in a spatial reference specified by a well-known ID (<a target="_blank" class="xref" href="https://developers.arcgis.com/javascript/3/jshelp/ref_coordsystems.html" rel="https://developers.arcgis.com/javascript/3/jshelp/ref_coordsystems.html">WKID</a>)<p id="GUID-C4605F7A-853A-4EE1-AC5C-12B5476A90BB"> The supported format is: <span class="usertext">X, Y: WKID</span>. For example: <span class="usertext">-13046165.572, 4036389.847 : 102100</span>.</p></li>
+    </ul>
+    <p id="GUID-B03B0062-C415-4E50-800B-866478E11457">If using <a class="xref" target="_blank" rel="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm" href="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm">Esri World Geocoding Service</a> as the search source, the Search widget also allows users to directly input coordinates to locate the point on the map. Supported coordinates include those listed in the <a class="xref" target="_blank" rel="https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm#ESRI_SECTION1_CF39B0C8FC2547C3A52156F509C555FC" href="https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm#ESRI_SECTION1_CF39B0C8FC2547C3A52156F509C555FC">Search for Coordinates</a> topic. </p><p id="GUID-DA002EBB-1358-40F8-8C7D-4DF20D6D68B2">The following layers are searchable with Query capability enabled:</p>
+    <ul purpose="ul" id="UL_917134AAE4BB4EECA973F79D71C30730">
+      <li purpose="li" id="LI_7CF52D2ACA0C4C8F9CAA59F395D2E244">Hosted feature layers</li>
+      <li purpose="li" id="LI_055057EE01294A50A45910424B9C9882">
+        <span purpose="ph" varid="ArcGISforServer" translate="no">ArcGIS Server</span> feature service layers</li>
+      <li purpose="li" id="LI_984B04FF207C41A8BE4C9FF5A4676AC8">
+        <span purpose="ph" varid="ArcGISforServer" translate="no">ArcGIS Server</span> map service layers</li>
+    </ul>
+    <div class="section1" id="GUID-C88275B6-E366-45E3-B505-B7FAE535F71D" purpose="section1"><h2>
+Configuring the Search widget</h2><p id="GUID-55D9919F-592D-41E7-9BAC-AA13906A3DA3">The widget configuration window allows you to specify the geocoding services and searchable layers you want the widget to work with.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-F0ABBE7C-BEAE-4491-B34F-219F714676EA"><div class="step_title">Steps:</div><ol>
+        <li purpose="step" id="GUID-B25C843B-7E76-4463-9C82-DA485CED02CC">
+          <span purpose="cmd" id="GUID-7BD1896E-5199-46A6-BEAA-667D9937AF37">
+Hover over the Search widget and click the small eye icon <img purpose="img" placement="inline" alt="Show or hide" title="Show or hide" src="03w3/GUID-19F26705-0506-4405-801F-B7897D824705-web.png"> to show or hide this widget in your application.
+</span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_699671E5AAF6434EA6BEF7783F40EF41"><span purpose="cmd">Hover over the widget and click the <span class="uicontrol">Configure this widget</span> button <img purpose="img" placement="inline" alt="Configure this widget" title="Configure this widget" src="03w3/GUID-3600D9F6-693B-4060-9B74-32E4275F0C31-web.png"> to open the configuration properties dialog box. </span></li>
+        <li purpose="step" id="ESRI_STEP_17225FE0374B47CDA4CAB8280AF88074">
+          <span purpose="cmd" id="GUID-3BA5A5F5-42F3-4CCC-B942-EE410FCB126E">By default, the widget uses  the geocoding service from your organization or portal and displays searchable layers  configured in the map, if available. All the existing search sources are listed on  the table. You can add new search sources or modify the existing ones. You'll add new search sources first.</span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_0EB2E9D3AB5D43178F4BF25C9B576FE2">
+          <span purpose="cmd" id="GUID-11DDE090-7097-4102-BE02-66B68D0F4AE9">Click <span class="uicontrol">Add Search Source</span>. There are two options: Geocoder and Feature Layer. </span>
+          <div class="info" purpose="info"><p id="GUID-64ADC63A-E4A4-4E60-8E3A-C49070652E57"></p></div><ul purpose="choices" id="ESRI_CHOICES_D0B9B74BEE22401783B18BCBBBBBD462">
+            <li purpose="choice" id="ESRI_CHOICE_099E113272664B0B944658CB20025BB5">Choose <span class="uicontrol">Feature Layer</span>.</li>
+          </ul>
+          <div class="substeps" id="ESRI_SUBSTEPS_E8338F5EFAE84D56A5D17887C15F3717" purpose="substeps"><ol>
+            <li purpose="substep" id="ESRI_SUBSTEP_F3B90095E0BB46209C7B195A3C789BD8">
+              <span purpose="cmd" id="GUID-74CB68A4-8CC4-4B40-ABA6-7CABB51F57A9">
+                Select from the three options: Map, <span purpose="ph" varid="ArcGISOnline" translate="no">ArcGIS Online</span>, or Service URL, and  click <span class="uicontrol">OK</span> to close the window. </span>
+            <div class="info" purpose="info"><p id="GUID-92FC8707-5250-47D6-9E01-391131F3EAD6"><div class="notes" id="GUID-0D06ADF0-2EC0-413C-9B66-EE4E4FEB539F"><div class="caution"><img class="note_img" src="rsrc/caution.png" alt="Caution" title="Caution"><span>Caution:</span></div><div class="tipbody">The <span class="uicontrol">Service URL</span> option has limitations when the URL you provide is not from the  current map. For example, some feature actions on the pop-up, such as editing and showing an attribute table, are unavailable if the result is a graphic. </div></div></p></div></li>
+            <li purpose="substep" id="ESRI_SUBSTEP_1A882996010E44C9B17DF458E2DC7C82">
+              <span purpose="cmd" id="GUID-815FC6FA-978C-4FC8-AC2E-E11455302B43">The new layer source is automatically listed on the table. You can change the searchable layer name  in the <span class="uicontrol">Name</span> text box. </span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_96823E5431704CE6ADFE3A6B2B423B86">
+              <span purpose="cmd" id="GUID-7E332F71-299C-4602-8C36-23965D0EE6AC">Optionally type the text in the <span class="uicontrol">Placeholder Text</span> text box.</span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_1E6280C5A1C44266B0DAAA067385335D">
+              <span purpose="cmd" id="GUID-E24A4ED7-4467-483F-A423-BD3804883C9B">Click the pencil icon to  add search fields. This opens the <span class="uicontrol">Set Search Fields</span> window. Choose one or multiple fields. Numerical fields and  string fields, including coded domains, are searchable. Click <span class="uicontrol">OK</span> to close the window. You should see  all the selected fields  listed in the <span class="uicontrol">Search Fields</span> text box.</span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_E6961E9CE9C0400DA7D3A3933A5928BF">
+              <span purpose="cmd" id="GUID-6E286C33-14FF-4B32-B387-A2319CE53B9F">Click the drop-down list to choose the display field in  the search suggestion.</span>
+            <div class="info" purpose="info"><div class="notes" id="GUID-130CB2D3-060A-4197-B34E-33256B6BAA1C"><div class="caution"><img class="note_img" src="rsrc/caution.png" alt="Caution" title="Caution"><span>Caution:</span></div><div class="tipbody"><p id="GUID-D8E4D6B2-47D3-40E3-AFFD-870DB1195FF8">A
+geocode service must meet the following requirements to support the
+ suggest operation:</p><ul purpose="ul" id="UL_A98B0419FE5C49BFAFA03C7D2263CF61">
+<li purpose="li" id="LI_59FB72C70457423C8BB120A892EA8BB1">The address locator from which the geocode service was
+published must support suggestions. Only address locators created
+using ArcGIS 10.3 for Desktop and later can support suggestions.
+See the <a class="xref" target="_blank" rel="http://desktop.arcgis.com/en/arcmap/latest/tools/geocoding-toolbox/create-address-locator.htm" href="http://desktop.arcgis.com/en/arcmap/latest/tools/geocoding-toolbox/create-address-locator.htm">Create Address Locator</a>  geoprocessing tool
+help topic for more information.</li>
+<li purpose="li" id="LI_809473CA68CE46BC9D5DE1CDE48D2DC1">The geocode service must have the Suggest capability
+enabled. Only geocode services published using ArcGIS 10.3 for
+Server or later support the Suggest capability.</li>
+</ul>
+<p id="GUID-24FF0EE7-A25B-4F17-8D35-40520BB578AA">
+
+</p>
+</div></div></div></li><li purpose="substep" id="ESRI_SUBSTEP_639A6BE333F54928A74D085601ED3883"><span purpose="cmd" id="GUID-0AA0424F-558A-4AE0-B4A6-53689ED9344D">By default, 6 is the maximum suggestions  returned for a searchable layer.  Change it if necessary.</span></li>
+            <li purpose="substep" id="ESRI_SUBSTEP_7A79180C04D146BDBBED9D403477D182">
+              <span purpose="cmd" id="GUID-D2D7DA56-585D-4C59-AE51-AC5133BE1D01">By default, 6 is the maximum results  returned for a searchable layer.  Change it if necessary.</span>
+            </li><li purpose="substep" id="ESRI_SUBSTEP_D9C7B2A5E1E247AC98905DC61AB9E43A"><span purpose="cmd" id="GUID-18FC4B22-9B3F-4519-9798-E622F9364B72">Be default, zoom scale is defined as 1:50,000. Change it if necessary.</span></li><li purpose="substep" id="ESRI_SUBSTEP_33480CD1C626416B96922D6D01535E9D">
+              <span purpose="cmd" id="GUID-5C404211-4301-4318-A6D2-AD340EC56F33">Optionally check the <span class="uicontrol">Exact Match</span> box if  needed.</span>
+            </li><li purpose="substep" id="ESRI_SUBSTEP_C465D2BDB91B4CCB8B91182A3D41C3F0"><span purpose="cmd" id="GUID-606DC4A1-EF14-4701-8142-BF0EB978EBFE">Optionally check the <span class="uicontrol">Only search in current map extent</span> box if needed.</span></li>
+            
+          </ol></div>
+          <ul purpose="choices" id="ESRI_CHOICES_BF1B1DECBA7A4C9DBA0896943E294884">
+            <li purpose="choice" id="ESRI_CHOICE_34DB6B0F0C3E4507BCCF09C8D5B5241D">Choose <span class="uicontrol">Geocoder</span>.</li>
+          </ul>
+          <div class="substeps" id="ESRI_SUBSTEPS_F0D34706B60C41BF987D6CD1BAAE6B6D" purpose="substeps"><ol>
+            <li purpose="substep" id="ESRI_SUBSTEP_938AA00F45DF4BFCBC5EEDDBA9EABE9B">
+              <span purpose="cmd" id="GUID-C5A6B270-5937-4155-8F87-8740BED25835">The new Geocoder source is automatically listed on the table. </span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_C990F1DFF17D4B0F97F039D3C32F1B58">
+              <span purpose="cmd" id="GUID-7CB52368-9DF2-482E-AF50-ED3FCA95AD12">Click the <span class="uicontrol">Set</span> button to open the <span class="uicontrol">Set Geocoder URL</span> window.</span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_86CFF00E94DD44A6BF553007B05F813E">
+              <span purpose="cmd" id="GUID-FFE68873-3ADB-406D-9D78-1FFC28C704F9">Provide a valid URL for the geocoding service you want to use, click <span class="uicontrol">Validate</span> to load the service, choose the service, and click <span class="uicontrol">OK</span>.</span>
+            <div class="stepresult" purpose="stepresult"><p id="GUID-28D08E31-2BD7-4D8C-B8C3-13AE98FDB621">The geocoder URL is  automatically added in the <span class="uicontrol">Geocoder URL</span> text box.   You can change the geocoder name in the <span class="uicontrol">Geocode Name</span> text box.</p></div></li>
+            <li purpose="substep" id="ESRI_SUBSTEP_DC10ABBE490E4CC7852DFBC70EEFD093">
+              <span purpose="cmd" id="GUID-D7298C2A-ACB5-4092-AB0C-6044C528AB01">Optionally type text in the <span class="uicontrol">Placeholder Text</span> text box.</span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_0BA0F02090EC496388D3F9096C8F6918">
+              <span purpose="cmd" id="GUID-6547E487-9D55-4BC1-9AF7-A01D62B79E7B">Optionally type the country code to limit the search area if applicable. See <a target="_blank" class="xref" href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm" rel="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Geocode coverage</a> for a country code list.</span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_50E94205B65144F29882B475B96EDE21">
+              <span purpose="cmd" id="GUID-4C027027-7EFE-4B8A-B461-09905C700291">By default, 6 is the maximum suggestions and results  returned.  Change it if necessary.</span>
+            </li><li purpose="substep" id="ESRI_SUBSTEP_BF3B750D64864D5283E4EFFA20A1EA66"><span purpose="cmd" id="GUID-4C456A95-6D72-4B79-8B23-0410142E6896">Define the scale to zoom to when geocoder does not return an extent.  </span><div class="info" purpose="info"><div class="notes" id="GUID-CD2F263A-D8E8-4D04-AD1E-6EC67D844856"><div class="caution"><img class="note_img" src="rsrc/caution.png" alt="Caution" title="Caution"><span>Caution:</span></div><div class="tipbody"> The zoom scale set in the widget only takes effect when the result does not have an associated extent. If the result returns an extent, it will be ignored.</div></div><p id="GUID-7D0E7286-DC1C-4A61-9112-2EAF071D8154"></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_F199DA58A28249B8BEB717294FD2FE67"><span purpose="cmd" id="GUID-4462B373-A2CE-476B-A9B7-79534425F2B1">Check the <span class="uicontrol">Enable local search</span> box if needed  .  It allows you to define when to enable the local search by setting   the map scale and specify a search distance around the current map center so the candidates closest to the location are returned first. </span></li><li purpose="substep" id="ESRI_SUBSTEP_78EB277B9394470090FB486855341488"><span purpose="cmd" id="GUID-C4BB6236-87CA-4F5C-A0E9-6EA5BEE9E787">Optionally check the <span class="uicontrol">Only search in current map extent</span> box if needed.</span></li>
+          </ol></div>
+        </li>
+        <li purpose="step" id="ESRI_STEP_40ECD88B88D1423484B9CCABF2720D28">
+          <span purpose="cmd" id="GUID-6ECB76FD-D81B-472B-8F96-BDD1832CBFFC">Repeat step 4 to add more feature layers and geocoder  search sources.</span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_FAC45D17FF4B40AF95BA74CDD8F6446A">
+          <span purpose="cmd" id="GUID-D97DD620-B5B8-4D6C-913B-7B9A8095446C">To modify the existing search sources, click the source on the table.</span>
+        </li><li purpose="step" id="ESRI_STEP_3B18EC3A9AB54FF99A4E0880208F86BA"><span purpose="cmd" id="GUID-B767F460-996D-40DA-9CEC-046407B65ACD">Under <span class="uicontrol">General Settings</span>, set the placeholder text for searching all of the  layers and geocoders.</span></li><li purpose="step" id="ESRI_STEP_9F3DC6F137894289AB800A5598611BB2"><span purpose="cmd" id="GUID-510EC279-221A-4B08-842C-B9DF5B92A4F0">By default, the pop-up displays when    the feature or location  is found on the map. Uncheck the box  to disable the pop-up.</span></li>
+        <li purpose="step" id="ESRI_STEP_D282ADEBF9964234867D51EF4C6D788E">
+          <span purpose="cmd" id="GUID-D0370B9A-149B-46CF-968C-2F07FD5272DF">Click <span class="uicontrol">OK</span> to close the configuration window.</span>
+        </li>
+      </ol></div></div></div>
+    
+    <div class="section1" id="ESRI_SECTION1_A5706BF472D643F28B19B51A5CC6BDA9" purpose="section1"><h2>Using the Search widget</h2><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_D114D1268EF749F4B62F519F23BED09D"><div class="step_title">Steps:</div><ol>
+        <li purpose="step" id="ESRI_STEP_650165B942EB49D2AEE57C317218FE40">
+          <span purpose="cmd" id="GUID-2BE892F0-0154-4EF0-A751-39EEE8F22AE9"> When you enter  a place-name or a keyword in the search box, you see suggestions as you type. If you see an arrow in the search box, you can search on all sources, or click the arrow and choose a locator or layer from the drop-down list.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-69F0BA51-54AC-4617-AEF0-381D1CD7D755-web.png" purpose="img" alt="List of geocoding services and searchable layers" title="List of geocoding services and searchable layers"></td></tr></table></div></span>
+        <div class="stepresult" purpose="stepresult"><p id="GUID-1688175B-0AC0-4C73-A073-AC9DB24F073A">A pop-up appears at the location  of the place-name or the feature and displays any available attribute information.</p></div></li>
+        <li purpose="step" id="ESRI_STEP_0171AB97674A48DBAFB9C33D515B0F44">
+          <span purpose="cmd" id="GUID-4187C913-5AC3-4949-9775-EFA490CE6F44">Click the ellipsis <span class="uicontrol">…</span> button under the low right of the pop up, a list of actions displays including adding or removing a marker from the map. If the Directions widget presents in the app, you can set <span class="uicontrol">Directions from Here</span> or <span class="uicontrol">Directions to here</span> to open the Directions widget automatically.</span>
+        </li>
+      </ol></div></div></div>
+    
+  <div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

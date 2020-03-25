@@ -1,0 +1,175 @@
+@import url("../VizCards/css/VizCards.css");
+.jimu-widget-viz {
+  color: #ffffff;
+  background-color: rgba(0,0,0,0.8);
+  left: 0px !important;
+  right: 0px !important;
+  bottom: 0px;
+  height: 160px !important;
+  display: block;
+  z-index: 100 !important;
+  overflow: hidden;
+}
+
+.jimu-widget-viz .labelCanvas {
+  position: absolute;
+  top: -50px;
+  height: 50px;
+}
+
+.jimu-widget-viz .panelBottom {
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  color: #ffffff;
+  padding: 0px;
+}
+
+.jimu-widget-viz .panelFooter {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  background-color: #393939;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid #353535;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.jimu-widget-viz .panelFooterContent {
+  position: absolute;
+  left: 10px;
+  right: 24px;
+  top: 8px;
+  height: 24px;
+  line-height: 24px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  width: auto;
+}
+
+.jimu-rtl .jimu-widget-viz .panelFooterContent {
+  position: absolute;
+  left: 24px;
+  right: 10px;
+}
+
+.jimu-widget-viz .panelTitle {
+  float: left;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.jimu-rtl .jimu-widget-viz .panelTitle {
+  float: right;
+  margin-right: 10px;
+}
+
+.jimu-widget-viz .panelPages {
+  float: right;
+}
+
+.jimu-rtl .jimu-widget-viz .panelPages {
+  float: left;
+}
+
+.jimu-widget-viz .pages {
+  list-style-type: none;
+  height: 24px;
+  margin: auto;
+  padding: 2px;
+  display: block;
+  cursor: pointer;
+}
+
+.jimu-widget-viz .pages li {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: url(images/dot.png);
+  margin: 0;
+}
+
+.jimu-widget-viz .pages li:hover {
+  background: url(images/doton.png);
+}
+
+.jimu-widget-viz .pages li.active {
+  background: url(images/doton.png);
+}
+
+.jimu-widget-viz .btnPlay {
+  float: left;
+  width: 24px;
+  height: 24px;
+  display: block;
+  cursor: pointer;
+  background-image: url('images/play.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 24px;
+}
+
+.jimu-rtl .jimu-widget-viz .btnPlay {
+  float: right;
+}
+
+.jimu-widget-viz .playing {
+  background-image: url('images/pause.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 24px;
+}
+
+.jimu-widget-viz .btnClose {
+  position: absolute;
+  left: auto;
+  right: 0px;
+  width: 24px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  background-image: url('images/x.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 18px;
+}
+
+.jimu-rtl .jimu-widget-viz .btnClose {
+  position: absolute;
+  left: 0px;
+  right: auto;
+}
+
+.jimu-widget-viz .panelContainer {
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  display: block;
+}
+
+.jimu-widget-viz .panelInner {
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  right: 0px;
+  height: 117px;
+  display: block;
+  overflow: hidden;
+}
+
+.jimu-widget-viz .loading {
+  background-image: url('images/loading.gif');
+  background-repeat: no-repeat;
+  background-position: center 10px;
+}

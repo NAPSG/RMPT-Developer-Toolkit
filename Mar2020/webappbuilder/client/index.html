@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <title>Web AppBuilder for ArcGIS</title>
+    <link rel="shortcut icon" href="builder/images/shortcut.ico">
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css"  href="stemapp/jimu.js/css/jimu-ie.css" />
+    <![endif]-->
+    <style type="text/css">
+      *{box-sizing: border-box;}
+      body,html {
+        width:100%;
+        height:100%;
+        margin:0;
+        padding:0;
+        overflow:hidden;
+      }
+      #main-loading{
+        width: 100%;
+        height: 100%;
+        background-color: #666;
+        text-align: center;
+        overflow: hidden;
+      }
+      #main-loading #app-loading, #main-loading #ie-note{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      #main-loading #app-loading{
+        width: 480px;
+        height: 330px;
+      }
+      #main-loading .app-name{
+        font: 36px arial;
+        font-weight: bold;
+        margin-top: 25px;
+      }
+      #main-loading .loading-gif{
+        position: relative;
+        display: block;
+        margin: auto;
+      }
+      #main-loading .loading-info{
+        font: 14px 'arial';
+        margin-top: 25px;
+        overflow: hidden;
+        position: relative;
+      }
+      #main-loading .loading-info .loading{
+        width: 200px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: #444;
+        margin: auto;
+      }
+      #main-loading .loading-info .loading-progress{
+        height: 6px;
+        border-radius: 3px;
+        background-color: #999;
+      }
+      #main-loading #ie-note {
+        width: 586px;
+        height: 253px;
+        background: url('builder/images/notes.png');
+        padding: 0 30px 40px 30px;
+        font-size: 14px;
+        color: #596679;
+      }
+      #ie-note .hint-title{
+        height: 40px;
+        line-height: 48px;
+        text-align: left;
+        font-weight: bold;
+      }
+      #ie-note .hint-img{
+        background-image: url('builder/images/hint.png');
+        background-position: left;
+        padding-left: 40px;
+        margin-top: 20px;
+        background-repeat: no-repeat;
+        height: 30px;
+        text-align: left;
+        line-height: 30px;
+        font-weight: bold;
+      }
+      #ie-note span{
+        display: block;
+        line-height: 14px;
+      }
+      #main-page, #un-signin-page{
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <script>
+      //jshint unused:false
+      /*******************************
+      * This is the function you can modify to customize the loading page
+      * This function will be invoked when one resource is loaded.
+      ********************************/
+      var progress, rotationTimer, rotationDeg=0, rotationContainer;
+      function loadingCallback(url, i, count) {
+        var loading = document.getElementById('main-loading-bar');
+        loading.setAttribute('title', url);
+        if(!progress){
+          progress = document.createElement('div');
+          progress.setAttribute('class', 'loading-progress');
+          progress.style.backgroundColor = '#00BACC';
+          loading.appendChild(progress);
+        }
+        var progressNum = (((i - 1)/count) * 100);
+        progress.style.width = progressNum + '%';
+        // if (progressNum == 100) {
+        //   rotationTimer && clearInterval(rotationTimer);
+        // }
+      }
+
+      // function onBackLoadingLoaded(){
+      //   setTimeout(function(){
+      //     document.getElementById('loading-gif-back').style.display = 'block';
+      //     document.getElementById('loading-gif-front').style.display = 'block';
+      //     rotationTimer = setInterval(function() {
+      //       rotationDeg += 4;
+      //       if (!rotationContainer) {
+      //         rotationContainer = document.getElementById('loading-gif-front');
+      //       }
+      //       rotationContainer.style.transform = 'rotate(' + rotationDeg + 'deg)';
+      //     }, 16);
+      //   }, 500);
+      // }
+
+    </script>
+  </head>
+  <body class="claro">
+    <div id="main-loading">
+      <div id="app-loading">
+        <!--
+        <img id="loading-gif-back" class="loading-gif" src="builder/images/loading_back.gif" onload="onBackLoadingLoaded()">
+        <img id="loading-gif-front" class="loading-gif" src="builder/images/loading_front.gif" style="display: none">
+      -->
+        <img id="loading-gif-back" class="loading-gif" src="builder/images/logo128.png">
+        <!-- <img id="loading-gif-front" class="loading-gif" src="builder/images/loading_front.svg" style="display: block; top: -78px;"> -->
+        <div class="app-name" style="margin-top:20px;">
+          <img src="stemapp/images/app-name.svg">
+        </div>
+        <div class="loading-info">
+          <div id="main-loading-bar" class="loading"></div>
+        </div>
+      </div>
+
+      <div id="ie-note" style="display:none;">
+        <div class="hint-title">Error</div>
+        <div class="hint-img">Your browser is currently not supported.</div>
+        <p class="hint-text">
+          <span>
+            Please note that creating presentations is not supported in Internet Explorer versions 6, 7.
+          </span>
+          <br>
+          <span>
+            We recommend upgrading to the latest Internet Explorer, Google Chrome, or Firefox.
+          </span>
+          <br>
+          <span>
+            If you are using IE 8 or later, make sure you turn off "Compatibility View".
+          </span>
+        </p>
+      </div>
+    </div>
+    <div id="pre-main-page">
+      <div id="portal-url-div"></div>
+      <div id="signin-div"></div>
+    </div>
+    <div id="main-page">
+
+    </div>
+    <script src="stemapp/env.js"></script>
+    <script type="text/javascript" src="stemapp/simpleLoader.js"></script>
+    <script type="text/javascript" src="builder/init.js"></script>
+  </body>
+</html>

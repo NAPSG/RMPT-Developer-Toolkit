@@ -1,0 +1,30 @@
+{
+  "widgetOnScreen": {
+    "widgets": {
+      "widgets/ZoomSlider/Widget": {
+        "position": {
+          "right": 10,
+          "bottom": 25
+        }
+      },
+      "widgets/Home/Widget": {
+        "position": {
+          "right": 10,
+          "bottom": 99
+        }
+      },
+      "widgets/MyLocation/Widget": {
+        "position": {
+          "right": 10,
+          "bottom": 137
+        }
+      },
+      "widgets/Navigate/Widget": {
+        "position": {
+          "right": 10,
+          "bottom": 175
+        }
+      }
+    }
+  }
+}

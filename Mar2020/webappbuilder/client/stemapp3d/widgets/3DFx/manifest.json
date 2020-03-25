@@ -1,0 +1,21 @@
+{
+  "name": "3DFx",
+  "label": "3DFx",
+  "2D": false,
+  "3D": true,
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "platform": "HTML3D",
+  "version": "2.11",
+  "wabVersion": "2.11",
+  "author": "@SpatialAgent",
+  "description": "",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+      "inPanel": false,
+      "hasConfig": true,
+      "hasUIFile": true,
+      "supportMultiInstance": true,
+      "keepConfigAfterMapSwitched": false
+    }
+}

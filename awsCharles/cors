@@ -1,0 +1,1 @@
+aws s3api put-bucket-cors --bucket sitaware-webapp3 --cors-configuration file://cors.json

@@ -1,0 +1,261 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to create a new modal styled panel."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Create a new panel</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-9F977519-D48E-4214-A1F3-811FF28B679A]--><body><div id="content"><div class="header"><h1>
+Create a new panel</h1><div id="breadcrumb"></div></div>
+<p id="GUID-2DE51CCB-F0DC-4BA8-96EF-BDF2464B83E3">Create a modal panel to grab your user's attention on a critical step in your app. This can include alerting a user of a task that must be completed or to save important data.  A modal view typically includes completion and cancel buttons that exit the view.   </p><div class="section1" id="GUID-AF3A0213-F2E0-473C-B540-060838D85EC0" purpose="section1"><h2>
+Create a new panel widget folder structure</h2><p id="GUID-1EDEC062-D88F-4942-B3E6-046423185E70">Learn how to create the folder structure for your new modal panel.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-7C72CD58-2A2D-45D6-9858-6EF16201822C"><div class="step_title">Steps:</div><ol>
+
+<li purpose="step" id="GUID-2069194C-F72A-4BCD-B0ED-9547CB0A02D4">
+<span purpose="cmd" id="GUID-12FA7022-F060-4DD2-B078-FB94003916EE">
+Browse to the <span class="usertext">~/client/stemapp/themes/YourTheme/panels</span> folder and create the ModalPanel folder with the following structure:</span>
+<div class="stepexample" purpose="stepexample"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-5FB04517-6AC7-442F-8B21-122D62DD9A47-web.png" purpose="img" alt="Panels folder structure" title="Panels folder structure"></td></tr></table></div></div></li><li purpose="step" id="GUID-24D4DA98-4D57-4F3B-88A2-4D8BBEEE4878"><span purpose="cmd" id="GUID-52A4A4D2-6BE3-486A-8FA6-851844173897">Register ModalPanel in the panels section in the manifest.json file.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;name&quot;: &quot;ModalPanel&quot;,
+  &quot;description&quot;: &quot;This is a panel that appears as a modal dialog&quot;
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-CE45F893-EB4B-4D1A-BEE6-B5EABACB4A16"><span purpose="cmd" id="GUID-0603E4E7-7196-4D7F-A0C4-D4C0B5A73E15">Import the panel’s style.css file in common.css.</span><div class="stepexample" purpose="stepexample"><p id="GUID-3123B0C2-7A7C-44DE-A303-773186E476DB"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>@import url(&quot;panels/ModalPanel/style.css&quot;);
+</code></pre></div>
+</div></p></div></li></ol></div></div></div>
+<div class="section1" id="GUID-83AA4993-A897-461C-B33F-9F4EB285167F" purpose="section1"><h2>Set the HTML template in Panel.html</h2><p id="GUID-8FE00811-BFDA-44F9-8A78-5900018C414E">Below is the HTML template for the panel.html file that is in your folder structure. </p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-1F62EE6B-543D-4A46-9AB3-A9BF2801A85D"><div class="step_title">Steps:</div><ol><li purpose="step" id="GUID-F9B72A62-04A0-4F80-9CA2-7FF2ADD3CDCC"><span purpose="cmd" id="GUID-2D32C558-3FFF-4DE5-B22B-124C929E8F2C">Open the Panel.html file from the <span class="usertext">~/client/stemapp/themes/ YourTheme /panels/ModalPanel/Panel.html</span> folder.</span></li><li purpose="step" id="GUID-5A0C82DB-882D-4D66-AD9F-ED5C0D39D38F"><span purpose="cmd" id="GUID-99C7A81E-27CA-4BFD-AFA8-09EE8CD27710">Paste the following HTML structure that contains a title panel and a content panel into the Panel.html file:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&lt;div&gt;
+  &lt;div&gt;
+  &lt;div class=&quot;jimu-panel-title&quot; data-dojo-attach-point=&quot;titleNode&quot;&gt;
+    &lt;div class=&quot;widget-icon&quot;&gt;
+      &lt;img data-dojo-attach-point=&quot;titleIconNode&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;title-label&quot; data-dojo-attach-point=&quot;titleLabelNode&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;close-icon jimu-float-trailing&quot; data-dojo-attach-point=&quot;closeButtonNode&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;jimu-panel-content&quot; data-dojo-attach-point=&quot;containerNode&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+</div><div class="notes" id="GUID-D9C4387B-15E2-4390-91FD-D759A0B716B8"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-F48FC1C1-39BF-40EA-A498-181E32D85A05">Some of the class  names are taken from <a class="xref" rel="03w3/03w30000006t000000.htm" href="03w3/03w30000006t000000.htm">the Jimu CSS framework</a>, which provides a set of predefined CSS styles.  </p></div></div></div></li></ol></div></div></div><div class="section1" id="GUID-E581F2AC-B995-4E1F-AD84-A942DFC58190" purpose="section1"><h2>Add minimal required code to Panel.js</h2><p id="GUID-8D27B73B-7B6B-447B-BFF8-8EA2224CD4D0">Add some code to your new js file so it functions as expected.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-7A805760-82E1-4D7F-AD24-D8920BCCDC85"><div class="step_title">Steps:</div><ol><li purpose="step" id="GUID-B6BD46DF-5DDA-4735-913F-BEB11007AB8F"><span purpose="cmd" id="GUID-82802270-C9E9-49FC-B85E-8509AA0EF923">Open the Panel.js file from the <span class="usertext">~/client/stemapp/themes/ YourTheme /panels/ModalPanel</span> folder.</span></li><li purpose="step" id="GUID-41FF848D-7E42-4A06-8ABF-704E6489EA11"><span purpose="cmd" id="GUID-3C379093-449B-4114-B347-17E9DBC00D97">Copy and paste the following code into the Panel.js file:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;dojo/_base/declare&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;jimu/BaseWidgetPanel&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;dijit/_TemplatedMixin&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;dojo/text!./Panel.html&#39;</span>
+<span class="p">],</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">declare</span><span class="p">,</span> <span class="nx">BaseWidgetPanel</span><span class="p">,</span> <span class="nx">_TemplatedMixin</span><span class="p">,</span> <span class="nx">template</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="k">return</span> <span class="nx">declare</span><span class="p">([</span><span class="nx">BaseWidgetPanel</span><span class="p">,</span> <span class="nx">_TemplatedMixin</span><span class="p">],</span> <span class="p">{</span>
+    <span class="nx">templateString</span><span class="o">:</span> <span class="nx">template</span><span class="p">,</span>
+    <span class="nx">baseClass</span><span class="o">:</span> <span class="s1">&#39;jimu-panel jimu-modal-panel&#39;</span><span class="p">,</span>
+
+    <span class="nx">postCreate</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+    <span class="p">},</span>
+
+    <span class="nx">startup</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div><p id="GUID-4C624328-4E25-4112-8F2F-443A150130E7">The following classes are required:</p><ul purpose="ul" id="UL_35A79FDA624E46D193B55DF4C6259521"><li purpose="li" id="GUID-BE651F0F-2BAA-43CC-B2CF-96C189E2658B"><span class="usertext">	jimu/BaseWidgetPanel</span>—The base class for a panel widget. It is located at <span class="usertext">~/client/stemapp/jimu.js</span>.</li><li purpose="li" id="GUID-821F19B5-31D1-45AB-AB7F-EDF94A727995"><span class="usertext">	dijit/_TemplatedMixin</span>—A Dojo mixin to compose a widget that takes an HTML template to create its DOM tree. See <a target="_blank" class="xref" rel="https://dojotoolkit.org/documentation/tutorials/1.10/templated/index.html" href="https://dojotoolkit.org/documentation/tutorials/1.10/templated/index.html">Create template-based widgets</a> for more information. </li></ul></div></li></ol></div></div></div><div class="section1" id="GUID-2CCF3DA1-8034-4EB3-AE72-0BEACAD1BF05" purpose="section1"><h2>Set the panel position</h2><p id="GUID-BF78FAA3-FA61-4518-8FA8-D3304881AB4A">The ModalPanel widget has a default width of 450 pixels and height of 400 pixels, and it is placed in the center of the screen. If a position property is set in the layout configuration associated with ModalPanel, it  overrides the default position properties.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-22EC7CEA-5C14-4933-814F-9D4FA10F54B0"><div class="step_title">Steps:</div><ol><li purpose="step" id="GUID-9B836113-8956-43DF-86B7-FB9229395BBB"><span purpose="cmd" id="GUID-73A9F613-22C7-4F6F-95D9-E1A729C25DAA">Open the Panel.js file and add a new widget attribute <span class="usertext">DEFAULT_POSITION</span> with a width property of 450 pixels and a height property of 400 pixels.</span><div class="stepexample" purpose="stepexample"><p id="GUID-E2E6F438-0F0F-44F9-9F88-7AF4E3E5DB51"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>...
+baseClass: &#39;jimu-panel jimu-modal-panel&#39;,
+
+DEFAULT_POSITION: {
+  width: 450,
+  height: 400
+},
+...
+</code></pre></div>
+</div></p></div></li><li purpose="step" id="GUID-042DE25B-E089-4BAF-A333-AA46DC223C9B"><span purpose="cmd" id="GUID-B4F87393-DE08-48B6-AE32-EED98CA2A636">Add a new method named <span class="usertext">_setPosition</span>.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_setPosition</span><span class="o">:</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-554B2F91-1E86-404A-A301-6CB10B13BD61"><span purpose="cmd" id="GUID-9ADFC5B0-7C88-4C86-91B7-DE946190DE3B">	Read the position configuration for the panel.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>_setPosition: function() {
+  var positionConfig = this.config.panel.position;
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-30FEFA4B-BE6A-460A-87F6-8FD207C3B8EB"><span purpose="cmd" id="GUID-6FB7477C-BF53-43B4-83FE-D3B1D6CF7295">Add  code snippets to do the following:</span><div class="substeps" id="GUID-04CE1DCB-D30E-435B-8FEA-0C693C8EA3F6" purpose="substeps"><ol><li purpose="substep" id="GUID-641577A7-FA40-4EB7-99F5-BE68BACD798A"><span purpose="cmd" id="GUID-8783487F-EA5F-4ECC-B0FE-570091AE336C">Use the default width if the width is not defined.</span></li><li purpose="substep" id="GUID-2A07DD22-425F-44AD-B20B-5EA6B8750FF2"><span purpose="cmd" id="GUID-3187B225-1991-41C8-843F-B73EBB3F8F92">Use the default height if the height is not defined.</span></li><li purpose="substep" id="GUID-A793F82C-D260-402C-84B5-1D7334DC922D"><span purpose="cmd" id="GUID-930030F2-6915-4538-8F9A-059A5893207C">Horizontally center the panel if both the left and right properties are not defined.</span></li><li purpose="substep" id="GUID-6C9C7986-5445-40E8-82A6-4565A457B6E5"><span purpose="cmd" id="GUID-7D40DECD-0F54-466E-BBBB-E160C8468BC4">Vertically center the panel if both the top and bottom properties are not defined.</span></li></ol></div><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_setPosition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">positionConfig</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">panel</span><span class="p">.</span><span class="nx">position</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">positionConfig</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+  <span class="c1">// use default width if no width is set</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="s1">&#39;width&#39;</span> <span class="k">in</span> <span class="nx">positionConfig</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">domNode</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">DEFAULT_POSITION</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="c1">// use default height if no height is set</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="s1">&#39;height&#39;</span> <span class="k">in</span> <span class="nx">positionConfig</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">domNode</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">DEFAULT_POSITION</span><span class="p">.</span><span class="nx">height</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="c1">// horizontally position the panel in the center</span>
+  <span class="c1">// if no left and right properties are set</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="s1">&#39;left&#39;</span> <span class="k">in</span> <span class="nx">positionConfig</span> <span class="o">||</span> <span class="s1">&#39;right&#39;</span> <span class="k">in</span> <span class="nx">positionConfig</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">domNode</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="s1">&#39;50%&#39;</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">domNode</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">marginLeft</span> <span class="o">=</span> <span class="o">-</span><span class="k">this</span><span class="p">.</span><span class="nx">DEFAULT_POSITION</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="c1">// vertically position the panel in the center</span>
+  <span class="c1">// if no top and bottom properties are set</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="s1">&#39;top&#39;</span> <span class="k">in</span> <span class="nx">positionConfig</span> <span class="o">||</span> <span class="s1">&#39;bottom&#39;</span> <span class="k">in</span> <span class="nx">positionConfig</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">domNode</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="s1">&#39;50%&#39;</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">domNode</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">marginTop</span> <span class="o">=</span> <span class="o">-</span><span class="k">this</span><span class="p">.</span><span class="nx">DEFAULT_POSITION</span><span class="p">.</span><span class="nx">height</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-166E0ABC-9FD8-489E-926F-392E73477E50"><span purpose="cmd" id="GUID-2A45BABA-F6D2-4B17-AB1A-C90FCFAB8709">Call the <span class="usertext">_setPosition</span> method in <span class="usertext">startup()</span>.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">startup</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_setPosition</span><span class="p">();</span>
+<span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_C07983B4CFB74185B9A70DD86C487024"><span purpose="cmd">In the layout config.json file, use ModalPanel as the default panel for the widget pool without defining its position property.</span><div class="stepexample" purpose="stepexample"><p id="GUID-D5DE2376-A3EF-42E2-86DF-E0FB080041EF"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+  &quot;panel&quot;: {
+    &quot;uri&quot;: &quot;themes/DemoTheme/panels/ModalPanel/Panel&quot;
+  }
+}
+</code></pre></div>
+</div></p></div></li><li purpose="step" id="ESRI_STEP_AA0A928637354A1E91D9610BE65694DF"><span purpose="cmd">In <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span>, create a new app, and select the theme that has the ModalPanel widget. Click the widget you added from the widget pool. </span><div class="info" purpose="info"><p id="GUID-09CA143F-311B-449F-8B91-B7658EAD5056">It should be wrapped in a modal panel and displayed in the center of the screen as shown below.</p><p id="GUID-89950911-ABF7-42B6-92AB-D95485854A4B"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-DC868801-A826-4D33-8EA3-875B2A301BA8-web.png" purpose="img" alt="ModalPanel widget" title="ModalPanel widget"></td></tr></table></div></p></div></li><li purpose="step" id="ESRI_STEP_F065CE6B670F4FA2B4B09B01E31F57A1"><span purpose="cmd">Add position properties to ModalPanel in the layout config.json file as shown in the following example:</span><div class="stepexample" purpose="stepexample"><p id="GUID-22AA4F87-59A3-43A2-8963-61E4D2948CA0"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+  &quot;panel&quot;: {
+    &quot;uri&quot;: &quot;themes/DemoTheme/panels/ModalPanel/Panel&quot;,
+    &quot;position&quot;: {
+      &quot;top&quot;: 50,
+      &quot;bottom&quot;: 0,
+      &quot;width&quot;: 650,
+     &quot;zIndex&quot;: 101
+    }
+  }
+}
+</code></pre></div>
+</div></p></div><div class="stepresult" purpose="stepresult"><p id="GUID-386EB24C-2F69-4842-BDCD-5E21553C2E45">The panel should honor these properties.</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-9F07A31C-D717-44AD-A930-433596CFD671-web.png" purpose="img" alt="Properties honored by the panel" title="Properties honored by the panel"></td></tr></table></div></div></li></ol></div></div></div><div class="section1" id="GUID-F22B121D-0B67-48D0-B817-2E8BA6F0D5C9" purpose="section1"><h2>Create the title pane</h2><p id="GUID-A257B069-2C2E-42D8-BD23-AFD2A2BF990D">The widget icon, its name, and a close button are added to the title pane in this section.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-6B7832C1-DC9D-4AB8-850C-0E4C6678ED15"><div class="step_title">Steps:</div><ol><li purpose="step" id="GUID-925353CB-6FC2-4B54-99C9-7FC148F26916"><span purpose="cmd" id="GUID-8AFE83D7-7593-4602-AD7E-4CB0E092BC41">Create a new method named <span class="usertext">_initTitlePane</span> in the Panel.js file.</span><div class="stepresult" purpose="stepresult"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_initTitlePane</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-71F7072C-412D-40C6-BB8E-A1BC350A8F17"><span purpose="cmd" id="GUID-820F47F3-A51B-425D-921E-16A6D59FC1B9">Get the app’s config file.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_initTitlePane</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">appConfig</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-FDCDB1C2-12BD-487E-AFC2-2486420DEFB9"><span purpose="cmd" id="GUID-336D827F-254E-4CD2-8A9B-EC5FEEE1EB6A">Populate the icon and label in the title pane.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_initTitlePane</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">appConfig</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">appConfig</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+  <span class="c1">// add icon</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">appConfig</span><span class="p">.</span><span class="nx">icon</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleIconNode</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">appConfig</span><span class="p">.</span><span class="nx">icon</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleIconNode</span><span class="p">.</span><span class="nx">alt</span> <span class="o">=</span> <span class="nx">appConfig</span><span class="p">.</span><span class="nx">icon</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">titleIconNode</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// add label</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">appConfig</span><span class="p">.</span><span class="nx">label</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleLabelNode</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">appConfig</span><span class="p">.</span><span class="nx">label</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">titleLabelNode</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-656AD353-3BFC-4339-87B9-CEC3F1718BEF"><span purpose="cmd" id="GUID-41173A7B-2594-4D67-B4B2-A1F62AD689E7">Attach the close button node to an onclick event handler in  the <span class="usertext">_initTitlePane</span> method, and make a call to the <span class="usertext">closePanel</span> method from the <span class="usertext">panelManager</span> instance provided by jimu/BaseWidgetPanel to close the panel.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_initTitlePane</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="c1">// close button event handler</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">own</span><span class="p">(</span><span class="nx">on</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">closeButtonNode</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">panelManager</span><span class="p">.</span><span class="nx">closePanel</span><span class="p">(</span><span class="nx">self</span><span class="p">);</span>
+  <span class="p">}));</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><div class="notes" id="GUID-F0BB7BA5-8078-44F7-896B-C4A7552A3036"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-52A0C81B-0E9D-4CAA-9079-C09D5D8E78C1">The dojo/on is to attach the onclick event. Make sure this class has been included in the class declaration.</p></div></div></div></li><li purpose="step" id="GUID-3A5E8D0A-1E2A-4C14-835C-AD2B0503F760"><span purpose="cmd" id="GUID-9DFBC7EA-C612-4669-8D1A-777FA800FBAC">Add the following styles to the style.css file in the ModalPanel folder:</span><div class="substeps" id="GUID-BD8762F5-87B1-4676-B76F-B6F707A34656" purpose="substeps"><ol><li purpose="substep" id="GUID-B1C40061-31A5-4725-B764-B35465B3B2A5"><span purpose="cmd" id="GUID-70857CC1-8779-4E5D-88D9-6DA02A53C680">Align elements in the title pane properly.</span></li><li purpose="substep" id="GUID-8BED2B57-99A4-4B97-A612-56C44B215CE4"><span purpose="cmd" id="GUID-CCC9E8D6-EFC1-4DC6-A54C-9A50915E92CA">Use an image as the background image of the close button. </span><div class="info" purpose="info"><p id="GUID-78B26DE1-3F6F-4282-AA60-B8BEA50E1D21">An image named x.png is added to the <span class="usertext">~/client/stemapp/themes/YourTheme/panels/ModalPanel/images</span> folder. Use any image as the close icon.</p></div></li></ol></div><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">.</span><span class="nx">jimu</span><span class="o">-</span><span class="nx">modal</span><span class="o">-</span><span class="nx">panel</span> <span class="p">.</span><span class="nx">jimu</span><span class="o">-</span><span class="nx">panel</span><span class="o">-</span><span class="nx">title</span> <span class="p">{</span>
+  <span class="nx">padding</span><span class="o">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nx">jimu</span><span class="o">-</span><span class="nx">modal</span><span class="o">-</span><span class="nx">panel</span> <span class="p">.</span><span class="nx">jimu</span><span class="o">-</span><span class="nx">panel</span><span class="o">-</span><span class="nx">title</span> <span class="o">&gt;</span> <span class="o">*</span> <span class="p">{</span>
+  <span class="nx">display</span><span class="o">:</span> <span class="nx">inline</span><span class="o">-</span><span class="nx">block</span><span class="p">;</span>
+  <span class="nx">vertical</span><span class="o">-</span><span class="nx">align</span><span class="o">:</span> <span class="nx">middle</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nx">jimu</span><span class="o">-</span><span class="nx">modal</span><span class="o">-</span><span class="nx">panel</span> <span class="p">.</span><span class="nx">widget</span><span class="o">-</span><span class="nx">icon</span> <span class="p">{</span>
+  <span class="nx">margin</span><span class="o">-</span><span class="nx">right</span><span class="o">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nx">jimu</span><span class="o">-</span><span class="nx">modal</span><span class="o">-</span><span class="nx">panel</span> <span class="p">.</span><span class="nx">widget</span><span class="o">-</span><span class="nx">icon</span> <span class="nx">img</span> <span class="p">{</span>
+  <span class="nx">height</span><span class="o">:</span> <span class="mi">24</span><span class="nx">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nx">jimu</span><span class="o">-</span><span class="nx">modal</span><span class="o">-</span><span class="nx">panel</span> <span class="p">.</span><span class="nx">close</span><span class="o">-</span><span class="nx">icon</span> <span class="p">{</span>
+  <span class="nx">width</span><span class="o">:</span> <span class="mi">24</span><span class="nx">px</span><span class="p">;</span>
+  <span class="nx">height</span><span class="o">:</span> <span class="mi">24</span><span class="nx">px</span><span class="p">;</span>
+  <span class="nx">background</span><span class="o">-</span><span class="nx">image</span><span class="o">:</span> <span class="nx">url</span><span class="p">(</span><span class="s1">&#39;images/x.png&#39;</span><span class="p">);</span>
+  <span class="nx">background</span><span class="o">-</span><span class="nx">repeat</span><span class="o">:</span> <span class="nx">no</span><span class="o">-</span><span class="nx">repeat</span><span class="p">;</span>
+  <span class="nx">background</span><span class="o">-</span><span class="nx">position</span><span class="o">:</span> <span class="nx">center</span> <span class="nx">center</span><span class="p">;</span>
+  <span class="nx">cursor</span><span class="o">:</span> <span class="nx">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_400EB5C85CF142219DDF232FBC16796E"><span purpose="cmd">Call the <span class="usertext">_initTitlePane</span> method before <span class="usertext">_setPosition</span> in startup():</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>startup: function() {
+  this.inherited(arguments);
+  this._initTitlePane();
+  this._setPosition();
+},
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-22C2A183-7ABF-42FB-9C25-5953314A2EA4">Your result will look similar to the following:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-CFC20325-A155-4051-A0FA-3995D153E1DF-web.png" purpose="img" alt="Title pane with widget name, icon, and close button" title="Title pane with widget name, icon, and close button"></td></tr></table></div></div></li></ol></div></div></div><div class="section1" id="GUID-7422A806-99AA-408A-A7BE-C70517EA4B04" purpose="section1"><h2>Add an overlay element</h2><p id="GUID-BF299F10-C67A-4010-AB1D-B6D61B962F45">Add a DOM element that covers the entire screen when the panel is open.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-8D4CEC12-4E64-41B6-9B0F-AC905BB322A3"><div class="step_title">Steps:</div><ol><li purpose="step" id="GUID-301455B1-ADE7-420D-87D3-5EA1733668D8"><span purpose="cmd" id="GUID-FD01A76D-E735-4BA7-9B46-B36CA9343FDE">Add a new method named <span class="usertext">_toggleOverlay</span> in the Panel.js file to show or hide the overlay. Also add logic to add or remove a DIV element under the panel.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>_toggleOverlay: function(isShow) {
+  // create overlay
+  if(!this.overlayNode) {
+    this.overlayNode = document.createElement(&#39;DIV&#39;);
+    this.overlayNode.className = &#39;jimu-modal-panel-overlay hidden&#39;;
+    if(this.domNode.parentNode) {
+      this.domNode.parentNode.insertBefore(this.overlayNode, this.domNode);
+    }
+  }
+  // add/remove class &#39;hidden&#39; to/from the overlay
+  if(isShow) {
+    domClass.remove(this.overlayNode, &#39;hidden&#39;);
+  } else {
+    domClass.add(this.overlayNode, &#39;hidden&#39;);
+  }
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-F43BE67D-6997-4A34-BC24-89BCD0ED4182"><span purpose="cmd" id="GUID-C57C5284-B00A-4E4B-8B7E-06F4B24BC799">Add a method named <span class="usertext">onOpen</span>  to extend the method in the <span class="usertext">jimu/BaseWidgetPanel</span> class. It will be called when the panel is opened. Call the <span class="usertext">_toggleOverlay</span> method and pass true as its argument.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">onOpen</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_toggleOverlay</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-DF9AEF3B-217B-49DF-92FE-F98B08B87263"><span purpose="cmd" id="GUID-513DFA02-EF17-47F1-8A43-753ABA5E03C3">Add a method named <span class="usertext">onClose</span> to extend the method in the <span class="usertext">jimu/BaseWidgetPanel</span> class. It will be called when the panel is closed. Call the  <span class="usertext">_toggleOverlay</span> method and pass false as its argument.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">onClose</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_toggleOverlay</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-675FF794-47E8-4853-BAB6-FDDE2D5D1454"><span purpose="cmd" id="GUID-8B35B782-7ADF-4BE3-8570-92D4D1134D8C">Add CSS styles to the style overlay node in the style.css file.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-modal-panel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.65;
+  z-index: 101;
+}
+.jimu-modal-panel-overlay.hidden {
+  display: none;
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-13A8D265-18F0-4AE6-9BC0-C1CB233F18A3">Your result will look similar to the following:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-9E29D185-CEAB-4EB7-A6EF-7A37E4CFC270-web.png" purpose="img" alt="Title pane with added DOM element" title="Title pane with added DOM element"></td></tr></table></div></div></li></ol></div></div></div><div class="section1" id="GUID-40F4C17F-0343-4C49-BEE2-A8FC4125BAB8" purpose="section1"><h2>Configure the content pane to fill remaining space</h2><p id="GUID-02425733-B954-40CC-98EB-A3ABDC228FA8">The content pane does not fill the remaining space after the title pane, and the content of the widget can be cut off when  it is too long. In this section, you'll position the content pane to automatically fill the remaining space.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-91D09464-25CD-426D-A810-AB75D55402EC"><div class="step_title">Steps:</div><ol><li purpose="step" id="GUID-ABBAB4BD-2401-426D-AAB8-5F7EB2FD9DB1"><span purpose="cmd" id="GUID-90A9D44A-7A2C-42C4-934E-DF2E0C5FB18C">Use the absolute position for the content pane in CSS. Open the style.css file and add the following styles:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-panel-content {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+}
+</code></pre></div>
+</div><div class="notes" id="GUID-159D8C43-7CF7-4A2E-9192-122FE3A912E4"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-92F9D521-2A2B-4217-AF13-13C88160555C">You can also use other methods to accomplish this, such as <span class="usertext">flex box</span>, or <span class="usertext">calc()</span> in CSS.</p></div></div></div></li><li purpose="step" id="GUID-33A1C893-B415-41A9-9C09-48F96B95F7FE"><span purpose="cmd" id="GUID-F502425C-6152-4CE8-9333-0BAA6B92AB70">Create a new method named <span class="usertext">_repositionContent</span>. </span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_repositionContent</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-C2AEF53E-C6E3-43FC-BB3C-9544A6E391BC"><span purpose="cmd" id="GUID-E10B78C5-B617-42F4-BE36-7987D4EAEF4C">Add the following code to calculate the distance between  the top of the content pane and  the top of the ModalPanel widget’s DOM node (this number equals the height of the title pane). Set the number to the top property  in the content pane’s style.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_repositionContent</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">newTop</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">titleNode</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">containerNode</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="nx">newTop</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-1B14872B-FE8A-4FDE-BC9C-30B253E34B09"><span purpose="cmd" id="GUID-9702B1B9-BBDB-4C42-8BAF-982A543C038D">Call <span class="usertext">_repositionContent</span>  in the <span class="usertext">onOpen</span> method.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>onOpen: function() {
+  this.inherited(arguments);
+  this._toggleOverlay();
+  this._repositionContent();
+},
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-3D9B7E0D-F670-464C-96E1-5557DDBD30E9">The content pane uses all available space in the ModalPanel widget, and the scroll bar appears.</p><p id="GUID-63C83873-72D5-428F-9031-104D088C6D45">Your result will look similar to the following:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-53D50B77-4B05-4E60-A3D1-20090F54EE38-web.png" purpose="img" alt="Title pane using available space with scroll bar" title="Title pane using available space with scroll bar"></td></tr></table></div></div></li></ol></div></div></div> 
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

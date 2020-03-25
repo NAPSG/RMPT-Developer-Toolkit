@@ -1,0 +1,35 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Use the command utility to upgrade apps created in a previous version to a newer version."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Upgrade apps
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-48E34D98-0B32-4023-AA08-7FFEF22C87B0]--><body><div id="content"><div class="header"><h1>
+Upgrade apps
+</h1><div id="breadcrumb"></div></div>
+
+<div class="wfsteps" purpose="wfsteps"><h4></h4><div class="context" id="GUID-231494E7-0F21-46E3-845E-F3EAB63AE3D7" purpose="context">
+<p id="GUID-729BC888-A836-4857-BDB1-DB71F482B0FB">To upgrade apps created in a previous version of <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> (Developer Edition) to a newer version, use the command utility.
+</p>
+</div><div class="steps" id="GUID-09A15D8C-82BA-4CDB-9E4C-787994FD54AD"><div class="step_title">Steps:</div><ol>
+<li purpose="step" id="GUID-CAE2E7CC-A39C-4DCC-A3C4-CD8A46468A57">
+<span purpose="cmd" id="GUID-1FCA8B16-814A-4EF1-956A-69B0334D07F0">Stop all running instances of <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> (Developer Edition), if there are any.</span>
+</li><li purpose="step" id="ESRI_STEP_960DC1CB28454C849C9489B70C70F16D"><span purpose="cmd" id="GUID-F60D4AE4-7CE5-4FE6-B35E-A0969885D116">Open  the command prompt window.</span></li><li purpose="step" id="ESRI_STEP_8AA163913A4745F5A065DC83F8F5748A"><span purpose="cmd" id="GUID-DA5CDB10-25DB-42B0-88A6-FB82D61D9D34">Browse to the <span class="usertext">\server</span>   directory of your newer version of the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> installation.</span></li><li purpose="step" id="ESRI_STEP_640B9364EE244F66834E4F91FDC82833"><span purpose="cmd" id="GUID-54ED355D-A3C3-4D2F-BB41-4547E80EA513">You have the option to upgrade an individual app or all of your apps. </span><ul purpose="choices" id="ESRI_CHOICES_A92FC7D39285472982E8BE08738B3609"><li purpose="choice" id="ESRI_CHOICE_D9B3F7372C7D4ECFB64A827E2642D0AD">To upgrade an individual app, type the following:<ul purpose="ul" id="UL_A0FA51E673724223847DEA2295E2CF8F"><li purpose="li" id="LI_CAC2881FCA0D4B24AC75852C55C4908B">Type <span class="usertext">node_x64 upgrade &lt; your_previous_version_Web_AppBuilder_installation_directory &gt; &lt;app_ id&gt;</span> for a 64-bit operating system, and press <span class="shortcut">Enter</span>.</li><li purpose="li" id="LI_F9BBB24A98E44510AF20359781F2FB29">Type <span class="usertext">node_x86 upgrade &lt; your_previous_version_Web_AppBuilder_installation_directory &gt; &lt;app_ id&gt;</span> for a 32-bit operating system, and press <span class="shortcut">Enter</span>.</li></ul>  </li><li purpose="choice" id="ESRI_CHOICE_7BC88232019E416FAEF1F6C0A38625D5">To upgrade all of your apps, type the following:<ul purpose="ul" id="UL_724AD743B6A14851BCC3F9277D75C33F"><li purpose="li" id="LI_86DBC57AC46F4646BF4B33104DE50424">Type <span class="usertext">node_x64 upgrade &lt; your_previous_version_Web_AppBuilder_installation_directory &gt;</span> for a 64-bit operating system, and press <span class="shortcut">Enter</span>. </li><li purpose="li" id="LI_2FFA73D7236E4841B623F2CD5B31BCAC">Type <span class="usertext">node_x32 upgrade &lt; your_previous_version_Web_AppBuilder_installation_directory &gt;</span> for a 32-bit operating system, and press <span class="shortcut">Enter</span>. </li></ul></li></ul><div class="stepexample" purpose="stepexample"><p id="GUID-64362F66-189C-4677-9DD5-329E7D09C412">Your previous version of the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> installation directory is similar to <span class="usertext">C:\arcgis-web-appbuilder-1.0</span>. The app ID is 2  for the app at <span class="usertext">http://[your host name:port number]/webappbuilder/apps/2/</span>. </p></div></li><li purpose="step" id="ESRI_STEP_711AC5A6DEDF42568AA8DC30F8CB2F32"><span purpose="cmd" id="GUID-6AECFB88-0C6E-40B2-BED9-5DF05146A0D1">Once the upgrade is complete, start the new version of <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> to check the result. You should  see all your upgraded apps.</span><div class="info" purpose="info"><p id="GUID-67000D6F-3B5D-45EB-9D01-63D11BE63500"> If the upgrade failed, see the upgrade.log file in the <span class="usertext">\server\logs</span> directory of the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> installation.</p></div></li>
+</ol></div></div>
+<div class="wfsummary" id="GUID-F76E3BE6-BE56-4922-8C46-10D95F89D603" purpose="wfsummary"><p id="GUID-3E5E7317-49BA-44A2-ACA4-6E85289CB9CB"> Running the command multiple times will upgrade and import apps multiple times into the new version of <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>. This is by design.</p><p id="GUID-75D57174-1124-453E-A142-50FEF3DB1F5B">If you have custom widgets and themes in the app that were created in the previous version of <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>, the command utility will import them into the new version as well, without automatically checking them. You need to make sure these custom widgets are compiled with the version of <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span> and version of <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> to which you import the app. See the <a class="xref" rel="03w3/03w3000000nm000000.htm" href="03w3/03w3000000nm000000.htm">version comparison chart</a>.</p>
+
+</div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

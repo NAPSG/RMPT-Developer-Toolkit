@@ -1,0 +1,1 @@
+This plugin is for config template parameter.

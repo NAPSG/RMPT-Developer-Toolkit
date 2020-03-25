@@ -1,0 +1,32 @@
+<div>
+  <div class="ds-header">
+    <span class="ds-title ds-title-box textOverFlow" title="${nls.dataSource}">${nls.dataSource}</span>
+    <div class="dataSource-add-box dataSource-add margin-right-10" data-dojo-attach-point="addNewDs" data-dojo-attach-event="click:_onAddNewClick" title="${nls.addNew}">
+      <div class="img_add"></div>
+      <div class="text_add textOverFlow" title="${nls.addNew}">${nls.addNew}</div>
+    </div>
+  </div>
+
+  
+
+  <div data-dojo-attach-point="dsOptions" class="ds-suspension ds-options ds-options-lr jimu-float-trailing hide">
+    <div nowrap class="option-item textOverFlow" data-dojo-attach-point="btnAddLayer" data-dojo-attach-event="click:_onAddNewLayerClick" title="${nls.layer}">${nls.layer}</div>
+    <div nowrap class="option-item textOverFlow" data-dojo-attach-point="btnAddStatistics" data-dojo-attach-event="click:_onAddNewStatisticsClick" title="${nls.statistics}">${nls.statistics}</div>
+  </div>
+
+  <div data-dojo-attach-point='tabelHeader'>
+    <div class="table-header">
+      <div class="textOverFlow" title="${nls.name}">${nls.name}</div>
+      <div class="textOverFlow" title="${nls.type}">${nls.type}</div>
+      <div></div>
+    </div>
+    <div class="horizontial-line"></div>
+  </div>
+  <div class="no-data-source-tip no-data-source-tip-box" data-dojo-attach-point="noDataSourceTip"></div>
+  <div class="sourcesList" data-dojo-attach-point="sourcesList">
+  </div>
+
+  <div style="margin-top: 30px;" data-dojo-attach-point="refreshIntervalDiv">
+  </div>
+  
+</div>

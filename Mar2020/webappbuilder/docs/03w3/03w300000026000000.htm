@@ -1,0 +1,138 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn about the configurable attributes of the Query
+widget."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Query</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-29A34C83-3279-4E93-B4F9-2ABAE947412A]--><body><div id="content"><div class="header"><h1>
+Query</h1><div id="breadcrumb"></div></div>
+<p id="GUID-5DD4D1AE-83F2-4159-950A-D32106003416">
+The Query widget enables you to query information from a map service, a feature service, or an image service by executing a predefined query. It is performed on a single layer.
+</p><p id="GUID-2459EE26-A84B-4020-875B-858BFC158A21">The following table describes the configurable attributes of the Query widget:</p>
+<p id="GUID-D81D0C8B-FE11-4BBB-8C2D-3AD4F6E4ADBD"><div class="block_table" id="TABLE_DFCCB594718349C586E15BC15FF311A8" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.00*"></colgroup><colgroup width="1.85*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-B45DD3C9-D2EA-48A8-AB61-6AF1BCFDC4D1">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-2FD4DDB5-351F-421F-9C85-F3B461551496">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-11D5548F-00CA-4FD0-A75B-7E339163BD79"><span class="usertext">queries</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-48FF2AE6-D909-4C0C-9C8A-6CC372030EBB">Array of query task. Each element has the following child attributes:<ul purpose="ul" id="UL_DD9BA14209D646C2A3CDD55B40300400"><li purpose="li" id="LI_7570FC84D6534B5FBDD5B142F93D8E21"><span class="usertext">name</span>—String. The name of the query task. There is no default.</li><li purpose="li" id="LI_E96E57F1554E48659D69386294AF6945"><span class="usertext"> url</span>—String. A feature layer or an image service URL for the layer you want to query. There is no default.</li><li purpose="li" id="LI_4DE27FDCFF73487B99193931F933A606"><span class="usertext">icon</span>—String. The icon of the query task. It is a Base64 string. If empty, the default icon is applied.</li><li purpose="li" id="LI_FC99DFD0C77641B08E06D0958F757578"><span class="usertext"> filter</span>—Object. The <span class="usertext">expr</span> attribute of <span class="usertext">filter</span>  takes the form of a basic SQL statement and uses it to filter features. There is no default.</li><li purpose="li" id="LI_7C9F5174221B4A298E7EBF897DDEE5C7"><span class="usertext">showSQL</span>—Boolean. If true, the Query widget will display an SQL expression for end users. There is no default.</li><li purpose="li" id="LI_C9D49F9D060A4AF7BFA96EC6BCD95FCD"><span class="usertext">spatialFilter</span>—Object. There is no default. This object has the following four attributes: <ul purpose="ul" id="UL_8EFED934BFC6490E98C172008A763753"><li purpose="li" id="LI_EA3AB01AFA444BB5A77D759579F54E64">currentMapExtent—Returns features within current map extent </li><li purpose="li" id="LI_E7A21264AE504DE7A2200F178EDDB1E4">drawing—Returns features that intersect the shape drawn on the map</li><li purpose="li" id="LI_2858C01D86F44649977E0EF3669EE4AB">useFeatures—Returns features that have a spatial relationship with features in another layer</li><li purpose="li" id="LI_D111F69AC6E8442B9C6300CE71351CE4">fullLayerExtent—Returns features within the full extent of the map</li></ul> </li><li purpose="li" id="LI_7552030338034FB7A47EA12E41F6EF79"><span class="usertext">popupInfo</span>—Object. This object is used for PopupTemplate. If the subattribute readFromWebMap is true, the Query widget will use the pop-up defined in the web map. There is no default. See <a target="_blank" class="xref" href="https://developers.arcgis.com/javascript/3/jshelp/intro_popuptemplate.html" rel="https://developers.arcgis.com/javascript/3/jshelp/intro_popuptemplate.html">Format Popup Content</a> for more information.</li><li purpose="li" id="LI_6832A33C899341B4991A5723002DF8E4"><span class="usertext">useLayerSymbol</span>—Boolean. If true, <span class="usertext">resultsSymbol</span> is ignored and the renderer defined by the REST service is used as the symbol of query results. There is no default.</li><li purpose="li" id="LI_2C2029DBC845486E9D0F77E072D69219"><span class="usertext">resultsSymbol</span>—Object. This is the symbol of query results. There is no default.</li><li purpose="li" id="LI_4B5F5581F64E4D1282DDDB74A138E4A5"><span class="usertext">enableExport</span>—Boolean. If true, query results can be exported as CSV, FeatureCollection, and GeoJSON files. There is no default.</li><li purpose="li" id="LI_0BAEBDEB8B8B46ADA248C41F8BEFB08F"><span class="usertext">singleResultLayer</span>—Boolean. If true, only one result layer is created regardless of the number of times the query task executes. If false, the Query widget creates a new result layer each time the query task executes. There is no default.</li><li purpose="li" id="LI_F3AD46CF7E34452885761A18D23C11E9"><span class="usertext">webMapLayerId</span>—String. If the query layer exists in the web  map, <span class="usertext">webMapLayerId</span> is the layer ID. If the query layer doesn’t exist in the web map, <span class="usertext">webMapLayerId</span> is empty. There is no default.</li><li purpose="li" id="LI_A70DD07D7A2A46FD80A518D63D860EB9"><span class="usertext">orderByFields</span>—String array. Use one or more field names to order  the query results. There is no default.</li></ul>  </p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-03DA6609-A296-4227-8B5F-2F104F7C3BB1">Example: <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+    <span class="err">Example:</span>
+<span class="err">{</span>
+  <span class="nt">&quot;queries&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SampleWorldCities - Cities&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;logicalOperator&quot;</span><span class="p">:</span> <span class="s2">&quot;AND&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;parts&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;fieldObj&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;POP_CLASS&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;POP_CLASS&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;shortType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriFieldTypeString&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;stringOperatorIs&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;valueObj&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;isValid&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;unique&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;250,000 to 499,999&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;interactiveObj&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;caseSensitive&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;expr&quot;</span><span class="p">:</span> <span class="s2">&quot;POP_CLASS = &#39;250,000 to 499,999&#39;&quot;</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;expr&quot;</span><span class="p">:</span> <span class="s2">&quot;POP_CLASS = &#39;250,000 to 499,999&#39;&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;showSQL&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;spatialFilter&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;currentMapExtent&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;drawing&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;geometryTypes&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;POINT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;POLYLINE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EXTENT&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;buffer&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;defaultDistance&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="nt">&quot;defaultUnit&quot;</span><span class="p">:</span> <span class="s2">&quot;MILES&quot;</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;useFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;relationship&quot;</span><span class="p">:</span> <span class="s2">&quot;SPATIAL_REL_INTERSECTS&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;intersect&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;relationship&quot;</span><span class="p">:</span> <span class="s2">&quot;SPATIAL_REL_WITHIN&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;contain&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;relationship&quot;</span><span class="p">:</span> <span class="s2">&quot;SPATIAL_REL_CONTAINS&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;within&quot;</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;buffer&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;defaultDistance&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="nt">&quot;defaultUnit&quot;</span><span class="p">:</span> <span class="s2">&quot;MILES&quot;</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;fullLayerExtent&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;popupInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;readFromWebMap&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;orderByFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;useLayerSymbol&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;resultsSymbol&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="mi">0</span><span class="p">,</span>
+          <span class="mi">0</span><span class="p">,</span>
+          <span class="mi">128</span><span class="p">,</span>
+          <span class="mi">128</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+        <span class="nt">&quot;angle&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;xoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;yoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMS&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMSCircle&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;outline&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">128</span><span class="p">,</span>
+            <span class="mi">255</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLS&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLSSolid&quot;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;keepResultsOnMapAfterCloseWidget&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;enableExport&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;singleResultLayer&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;webMapLayerId&quot;</span><span class="p">:</span> <span class="s2">&quot;SampleWorldCities_3008&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></p></td></tr></tbody><caption class="table_desc"></caption></table></div></p>
+
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

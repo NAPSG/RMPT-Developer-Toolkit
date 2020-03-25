@@ -1,0 +1,54 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Filter class constructs complicated SQL query statements by UI operations to filter features from the  feature layer or stream layer."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - Filter
+class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-3F5389AD-205E-40E4-A611-74FA40112139]--><body><div id="content"><div class="header"><h1>Filter
+class</h1><div id="breadcrumb"></div></div>
+
+
+
+
+    
+    <p id="GUID-5149147B-A902-4946-9865-C2559A218C0B">The <span class="usertext">Filter</span> class constructs complicated SQL query statements by UI operations to filter features from the  feature layer or stream layer. It supports String, Number, and Date fields.</p><div class="section1" id="ESRI_SECTION1_807C7483A6F0479BBCC41FD4369E4D74" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-24CCA061-E3FC-43EC-9ACD-99323CC9365B"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/dijit/Filter&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Filter</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_06017ABBC87A4794861EE78C001F9816" purpose="section1"><h2>Constructor</h2><p id="GUID-0D5AC952-442A-4970-AC3F-3AB590A3F3A5"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext">new Filter(params, srcNodeRef)</span></p><p id="GUID-FB97692F-C7CC-4B82-94CE-515F58AF4239">  Creates a new Filter dijit.</p><p id="GUID-66547053-0F13-493E-B31A-DBA963576D1A">Parameters:</p><p id="GUID-AE1CFE7F-AEBD-4722-957D-DA174231A482"><span class="usertext"> &lt;Object&gt; params</span>—Optional.   Parameters for the Filter dijit. </p><p id="GUID-F2636975-00BD-4405-B615-071686016CBF"> <span class="usertext">&lt;DOMNode | String&gt; srcNodeRef</span>—Optional.  HTML element where <span class="usertext">Filter</span>  is rendered.</p><p id="GUID-DF796DDC-B6C2-4471-A43E-98CF25A94587"> params properties:</p><p id="GUID-A3CD2FCD-3379-4952-9444-E5BC83AC5ACA"><span class="usertext">&lt;String&gt; noFilterTip</span>—Optional. Shows the ToolTip when no filters are added.</p>
+
+
+<p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/Filter&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Filter</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0&quot;</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Filter</span><span class="p">();</span>
+        <span class="nx">filter</span><span class="p">.</span><span class="nx">placeAt</span><span class="p">(</span><span class="nx">filterDiv</span><span class="p">);</span>
+        <span class="nx">filter</span><span class="p">.</span><span class="nx">buildByExpr</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="s2">&quot;1=1&quot;</span><span class="p">);</span>
+      <span class="p">});</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div>
+</p></div><div class="section1" id="ESRI_SECTION1_98E55201E2304D1385462AC8A099F90F" purpose="section1"><h2>Methods</h2><p id="GUID-B8C64F46-D82B-40F7-8052-5A5E8116F3FE"><div class="block_table" id="TABLE_24FF40BE05DE40F6A5C535C77134EE88" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EEE49C78-836E-432C-8912-543E74A1EC53"><span class="usertext">reset()</span></p><p id="GUID-7D73802A-8E23-4704-8B3F-5736753E16A9">Removes all filters and resets the Filter dijit to the original status.</p>
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_B7FC2CEBC6BA4B7C9CF743B95969C644" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B0A1B792-588F-4E4A-AD41-7B9F26847305"><span class="usertext">toJson()</span></p><p id="GUID-CE498133-B962-4D3C-AA62-CF074A45F441">Gets the filter JSON information using the UI settings.</p>
+<p id="GUID-25E34538-F68C-4731-8607-4F40A66D8497">Return type: Object. The returned value contains the SQL query statement.</p><p id="GUID-50122061-7009-4908-BE87-46B89790DA02">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="kd">var</span> <span class="nx">partsObj</span> <span class="o">=</span> <span class="nx">filter</span><span class="p">.</span><span class="nx">toJson</span><span class="p">();</span>
+ <span class="k">if</span><span class="p">(</span><span class="nx">partsObj</span> <span class="o">&amp;&amp;</span> <span class="nx">partsObj</span><span class="p">.</span><span class="nx">expr</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;SQL query statement:&quot;</span><span class="p">,</span> <span class="nx">partsObj</span><span class="p">.</span><span class="nx">expr</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div>
+
+<div class="block_table" id="TABLE_DB92988E224542E48B6881BBF7F131F9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BBF3EB9-3720-4AB0-BB91-0B574C737BB4"><span class="usertext">buildByExpr(url,sql)</span></p><p id="GUID-6278B44B-06E3-4D1F-89C4-D3BBF1151367">Parses the SQL query statement and builds the UI for the Filter dijit.</p><p id="GUID-6EE8EA91-14D1-483E-B539-1C2CD1A79198">Return type: Deferred object. When it resolves, the build process is done.</p><p id="GUID-C33A77C2-CB2C-4A95-B78C-2DD580176B9F">Parameters:</p><p id="GUID-85EC72BA-0CA3-4611-A327-CF264609E527"> <span class="usertext">&lt;String&gt; url</span>—Required.   The REST service URL.</p><p id="GUID-4667695C-65F1-4A6B-BC55-816AD682BE39"><span class="usertext"> &lt;String&gt; sql</span>—Optional.  The SQL query statement the Filter dijit will parse. If you don't pass it, the default value is '1=1', which means no filters. If you pass an invalid SQL query statement, it may throw an exception. To make sure you pass a valid SQL query statement, get the SQL expression from the <span class="usertext">toJson</span> method of the Filter dijit.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_9C3883CCC7E84733B69F1444BC43A4D8" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC64F70A-95C7-480E-95F8-FEEE39466787"><span class="usertext">buildByFilterObj (url, partsObj)</span></p><p id="GUID-9B80005E-1AA1-4BB0-B7AD-AAA4DD273215">Builds the UI for the Filter dijit by JSON, which includes the filter information.</p><p id="GUID-DC669B6B-A6C4-45B6-80FA-64492A9B79D5">Return type: Deferred object. When it resolves, the build process is done.</p><p id="GUID-97ECBAB0-5C63-4706-AFD0-D0B74563159E">Parameters:</p><p id="GUID-52F217B5-C96C-4A23-9DF5-658D83FF46AD"><span class="usertext"> &lt;String&gt; url</span>—Required.   The REST service URL.</p><p id="GUID-BE61E2E7-02B6-4A4F-B0CC-4997B272C065"> <span class="usertext">&lt;String&gt; partsObj</span>—Required.  The <span class="usertext">partsObj</span> format is the same as the returned value of the <span class="usertext">toJson</span> method. Practically, you should not construct this object by yourself, but call the  <span class="usertext">toJson</span> method to get the <span class="usertext">partsObj</span> parameter and save it in memory or a  file. In this way,  you can pass <span class="usertext">parsObj</span> into the method and build the UI for the Filter dijit so that a user can see the same Filter UI again.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

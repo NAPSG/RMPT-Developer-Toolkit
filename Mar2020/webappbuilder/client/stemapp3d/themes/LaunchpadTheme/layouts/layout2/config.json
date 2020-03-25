@@ -1,0 +1,60 @@
+{
+  "widgetOnScreen": {
+    "widgets": {
+      "widgets/Compass/Widget": {
+        "position": {
+          "right": 10,
+          "top": 12
+        }
+      },
+      "widgets/FullScreen/Widget": {
+        "position": {
+          "right": 10,
+          "top": 54
+        }
+      },
+      "widgets/ZoomSlider/Widget": {
+        "position": {
+          "right": 10,
+          "bottom": 26
+        }
+      },
+      "widgets/Home/Widget": {
+        "position": {
+          "right": 10,
+          "bottom": 100
+        }
+      },
+      "widgets/MyLocation/Widget": {
+        "position": {
+          "right": 10,
+          "bottom": 136
+        }
+      },
+      "widgets/Navigate/Widget": {
+        "position": {
+          "right": 10,
+          "bottom": 172
+        }
+      },
+      "ph_11": {
+        "position": {
+          "left": 17,
+          "top": 73
+        }
+      },
+      "ph_12": {
+        "position": {
+          "left": 17,
+          "top": 115
+        }
+      },
+      "ph_13": {
+        "position": {
+          "left": 17,
+          "top": 157
+        }
+      }
+    }
+  }
+}

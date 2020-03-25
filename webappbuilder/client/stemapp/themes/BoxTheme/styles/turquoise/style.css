@@ -1,0 +1,39 @@
+.box-bgcolor {
+  background-color: #2faacd;
+}
+
+.box-simple-panel {
+  background-color: #ffffff;
+}
+
+.esriSimpleSlider {
+  text-align: center;
+  color: #ffffff;
+  background-color: #2faacd;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.jimu-widget-zoomslider .zoom,
+.jimu-widget-homebutton .HomeButton .home,
+.jimu-widget-mylocation .place-holder,
+.jimu-widget-extent-navigate .operation,
+.jimu-widget-mylocation .place-holder.nohttps,
+.jimu-widget-mylocation .place-holder.nohttps:hover,
+.jimu-widget-extent-navigate .operation.jimu-state-disabled,
+.jimu-widget-extent-navigate .operation.jimu-state-disabled:hover,
+.jimu-widget-fullScreen .fullScreen {
+  background-color: #2faacd;
+  opacity: 0.8;
+}
+.jimu-widget-zoomslider .zoom:hover,
+.jimu-widget-homebutton .HomeButton .home:hover,
+.jimu-widget-mylocation .place-holder:hover,
+.jimu-widget-extent-navigate .operation:hover,
+.jimu-widget-fullScreen .fullScreen:hover{
+  background-color: #2faacd;
+  opacity: 1;
+}
+.esriPopup .titlePane {
+  background-color: #2faacd;
+}

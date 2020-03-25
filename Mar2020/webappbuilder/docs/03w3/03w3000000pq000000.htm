@@ -1,0 +1,74 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Visibility widget determines what is visible from an observer location based on a given distance, an observer height, and a field of view."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help -  Visibility widget </title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-31ABDC7F-9D0A-42BA-8455-0D014F2095BC]--><body><div id="content"><div class="header"><h1> Visibility widget </h1><div id="breadcrumb"></div></div>
+		
+		<p id="GUID-5A3F7A62-0607-441B-B191-01D77E5E2DEF"> The Visibility widget determines what is visible from an observer location based on a given distance, an observer height, and a field of view.</p>
+		<p id="GUID-8F6CACA4-0A6C-4967-A5AD-BA7B7454CB36"></p>
+		<div class="section1" id="GUID-9DE7CD3B-9A24-43ED-86AB-3E30356B533E" purpose="section1"><h2>Configure the Visibility widget</h2><p id="GUID-9F179588-FE2E-4E70-8128-E652836C57D6"> This widget can be set to open automatically when
+an app starts. To enable this feature, click the <span class="uicontrol">Open this widget automatically when
+the app starts</span> button <img purpose="img" placement="inline" alt="Open this widget automatically when the app starts" title="Open this widget automatically when the app starts" src="03w3/GUID-FE658549-5B6E-4BA5-89FA-A0A0C72810FC-web.png"> on the widget, which turns it dark
+green.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-059363AF-3A62-430D-9C8E-2EB97202EF9D"><div class="step_title">Steps:</div><ol>
+					<li purpose="step" id="ESRI_STEP_D56C9CB04DA444818E2103A201BC3D6B"><span purpose="cmd">Hover over the widget and click the <span class="uicontrol">Configure this widget</span> button <img purpose="img" placement="inline" alt="Configure this widget" title="Configure this widget" src="03w3/GUID-3600D9F6-693B-4060-9B74-32E4275F0C31-web.png"> to open the configuration properties dialog box. </span></li>
+					<li purpose="step" id="ESRI_STEP_189CBB131C294ACBBEAF882D3BD27094">
+						<span purpose="cmd" id="GUID-CE2B0305-59C2-44C7-AC6D-B3662E3D2B1A">Optionally click <span class="uicontrol">Change widget icon</span> to replace the default icon for this widget.</span>
+						<div class="info" purpose="info"><p id="GUID-CEF5B9EE-1AAF-448E-99B1-0AB941C28176">A file explorer window appears, allowing you to upload a local image file to use as the widget icon.</p></div>
+					</li>
+					
+					<li purpose="step" id="ESRI_STEP_7C8C2A0BDF3F4E2993DCEC2249A678CA">
+						<span purpose="cmd">In the <span class="uicontrol">URL</span> text box, specify the URL to your <span purpose="ph" varid="ArcGISOnline" translate="no">ArcGIS Online</span>  organization or <span purpose="ph" varid="PortalForArcGIS" translate="no">Portal for ArcGIS</span> to allow the tool to consume an elevation service.</span>
+					</li>
+					<div class="stepinfo" purpose="stepinfo"><div class="notes" id="GUID-AB8F5E66-91C8-4112-B913-D188D79C20C8"><div class="caution"><img class="note_img" src="rsrc/caution.png" alt="Caution" title="Caution"><span>Caution:</span></div><div class="tipbody"><p id="GUID-DC9068F6-AC80-4308-9ABD-E98C87CCA942">If you are using  <span purpose="ph" varid="PortalForArcGIS" translate="no">Portal for ArcGIS</span>, you will need to  <a class="xref" target="_blank" rel="http://enterprise.arcgis.com/en/portal/latest/administer/windows/configure-default-elevation-service.htm" href="http://enterprise.arcgis.com/en/portal/latest/administer/windows/configure-default-elevation-service.htm">configure a default elevation service</a>.</p></div></div></div><li purpose="step" id="ESRI_STEP_230C2FB6883142FF9B54A0A3C1B3B497">
+						<span purpose="cmd">Click <span class="uicontrol">Set</span>.</span>
+					</li>
+					
+					<li purpose="step" id="ESRI_STEP_CF259961EB924404B806AC06CEEFB5E2">
+						<span purpose="cmd">Click <span class="uicontrol">OK</span> to close the <span class="uicontrol">Configure Visibility</span> dialog box.</span>
+					</li>
+				</ol></div></div></div>
+		<div class="section1" id="ESRI_SECTION1_32BCF64BC65245ADAE6D7EEE03A133B6" purpose="section1"><h2>Use the Visibility widget</h2><p id="GUID-3709CB48-353F-4A99-83B3-6DE5B3717F48">Learn how to conduct a Radial Line of Sight (RLOS) analysis with the widget.<div class="notes" id="GUID-EFE31431-3936-46FD-B3C2-699053570EDA"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-BB7D8309-FA03-403D-866F-0C730F12F1F0">The Visibility widget uses the CreateViewshed module and requires at least publisher <a class="xref" target="_blank" rel="http://enterprise.arcgis.com/en/portal/latest/administer/windows/roles.htm#GUID-68A6B1E5-55FB-45A7-A0D3-708F0D9488CD" href="http://enterprise.arcgis.com/en/portal/latest/administer/windows/roles.htm#GUID-68A6B1E5-55FB-45A7-A0D3-708F0D9488CD">privileges</a>. Using the tool consumes <a class="xref" target="_blank" rel="http://doc.arcgis.com/en/arcgis-online/reference/credits.htm" href="http://doc.arcgis.com/en/arcgis-online/reference/credits.htm">credits</a>.</p></div></div></p><div class="section2" id="ESRI_SECTION2_3BF311CD694C498DBC30C6B4FE570446" purpose="section2"><h3>Create an RLOS analysis with the Visibility widget</h3><p id="GUID-243425FF-039C-4A0E-B01A-6C0D79C47E1F">You can conduct an RLOS analysis from a user-defined point and visibility parameters. </p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_781FF0D0FCBC4F38BB4063E6DEA77E3A"><div class="step_title">Steps:</div><ol>
+						<li purpose="step" id="ESRI_STEP_435F9BC789CF4D8EA6E4668561508B69">
+							<span purpose="cmd">Set the observer location by providing coordinates in the <span class="uicontrol">Observer Location</span> text box and pressing <span class="shortcut">Enter</span>, or click the <span class="uicontrol">Add Observer Location</span> button <img purpose="img" placement="inline" alt="Add Observatory Location" title="Add Observatory Location" src="03w3/GUID-EF33D35B-ED88-4D24-A2D4-3CAF9447CDF5-web.png"> to interactively select a point.</span>
+						</li>
+						<li purpose="step" id="ESRI_STEP_87FCA8E2B47D4D399B31FF612599F8B4">
+							<span purpose="cmd">Optionally click the <span class="uicontrol">Format Input</span> button <img purpose="img" placement="inline" alt="Format Input" title="Format Input" src="03w3/GUID-28218888-54F8-4058-A4DF-886BF399868A-web.png"> to open the <span class="uicontrol">Set Coordinate Format String</span> dialog box.</span>
+						</li>
+						<li purpose="step" id="ESRI_STEP_3F95B58FAE6A4226815C8B91827EE5AF">
+							<span purpose="cmd" id="GUID-78480FAA-44DE-4FBC-82C9-B2421A5791BA">Optionally double-click the number in the center of the <span class="uicontrol">Field of View</span> ring to type an angle to specify the width of the field of view. </span>
+						</li>
+						
+						<div class="stepinfo" purpose="stepinfo">A segment of the ring corresponding to that angle will turn green to indicate the observer's field of view, and the remainder of the ring will turn red. If you do not set an angle, the widget will use a full 360-degree field of view.</div><li purpose="step" id="ESRI_STEP_2B767BA70BBE430DB84D3F74A0C3DE25">
+							<span purpose="cmd">Click and drag the green segment of the <span class="uicontrol">Field of View</span> control to specify the bearing of the center of the observer's field of view.</span>
+						</li>
+						<div class="stepinfo" purpose="stepinfo">The bearing angle will be displayed as you drag the field of view.</div><li purpose="step" id="ESRI_STEP_0C2A4EC5B76E4637B212418AE9B1BF05"><span purpose="cmd">Angle measurements are in degrees by default. Optionally click the toggle button to the right position to use mils for angles and type a new value in mils for the <span class="uicontrol">Field of View</span>.</span></li><li purpose="step" id="ESRI_STEP_41A7B26B6A6443E78608B2821080E750">
+							<span purpose="cmd" id="GUID-46212E9B-B87D-4455-BFDB-00A2BD77C1F0">Enter a value for <span class="uicontrol">Observer Height</span> and use the drop-down menu to set the units of measurement.</span>
+						</li>
+						<li purpose="step" id="ESRI_STEP_CB78D33740B1421AB6E1207051A37217">
+							<span purpose="cmd">Enter a value for <span class="uicontrol">Min Observable Distance</span> and use the drop-down menu to set the units of measurement.</span>
+						</li>
+						<li purpose="step" id="ESRI_STEP_A512EB6845D642DF9AE1D5592D62CCD8">
+							<span purpose="cmd">Enter a value for <span class="uicontrol">Max Observable Distance</span>.</span>
+						</li>
+						<li purpose="step" id="ESRI_STEP_DA4270D06F5640728FE8781E68A34F56">
+							<span purpose="cmd">Click <span class="uicontrol">Create</span>.</span>
+						</li>
+						
+						<li purpose="step" id="ESRI_STEP_DA167408B5654703BBD382F6BC1ADE3E">
+							<span purpose="cmd" id="GUID-85BFE659-33C4-4372-B207-62B45D85836E">Optionally click <span class="uicontrol">Clear</span> to clear the results.</span>
+						</li>
+					</ol></div></div></div></div>
+	<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

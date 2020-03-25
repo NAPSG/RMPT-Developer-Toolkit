@@ -1,0 +1,506 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to create a custom Web AppBuilder for ArcGIS in-panel widget."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Create a ListView widget
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-C91066D8-5423-4E56-9CD4-D9A306D52361]--><body><div id="content"><div class="header"><h1>
+Create a ListView widget
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-DF8D95E6-0221-4ED8-804E-956DBCE153D0">This tutorial describes how to create a custom <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> <a class="xref" rel="03w3/03w300000034000000.htm" href="03w3/03w300000034000000.htm">in-panel widget</a> that does the following:<ul purpose="ul" id="UL_9A1B73A5E46342B2A8AB1AE6373EEB10"><li purpose="li" id="LI_726A1A02A3954084A41A96610E4920C4">Displays features from a feature layer in a list view</li><li purpose="li" id="LI_481DA7934E3A4B86979C91B12C1146F8">Displays each list item with several preconfigured fields</li></ul><div class="notes" id="GUID-587EDA10-8F7A-4D62-95AA-357EB614FA16"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-DCCF1E32-7796-49FA-A1F4-CF21DD512BC4">The web map used in this tutorial contains a <a target="_blank" class="xref" href="https://services1.arcgis.com/4yjifSiIG17X0gW4/ArcGIS/rest/services/JoshuaTreeImages/FeatureServer/0" rel="https://services1.arcgis.com/4yjifSiIG17X0gW4/ArcGIS/rest/services/JoshuaTreeImages/FeatureServer/0">feature layer</a>  that has a thumbnail image for each feature.</p></div></div></p><div class="section1" id="GUID-6B30170C-FFC4-4F93-88CC-C93EBA3370E4" purpose="section1"><h2>
+Create a widget folder structure
+</h2><p id="GUID-6AE4F570-D01A-42C3-A4FC-9424ABE908E2">
+You can either use the Widget Generator in this <a target="_blank" class="xref" href="https://github.com/Esri/generator-esri-appbuilder-js" rel="https://github.com/Esri/generator-esri-appbuilder-js">Web AppBuilder generator tool</a>, or complete the following steps to create a simple widget as your starting point.
+<div class="notes" id="GUID-C5B49FBC-64D6-492B-A4CB-D61EE4E82992"><div class="caution"><img class="note_img" src="rsrc/caution.png" alt="Caution" title="Caution"><span>Caution:</span></div><div class="tipbody"><p id="GUID-F57C701C-615A-4CBC-878A-AA6FE55E4AC7">You may use the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> generator tool in this sample; however, it is not supported.</p></div></div></p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="context" id="GUID-C2C338B2-C943-4BB0-8F83-3041031DEBC1" purpose="context">
+
+</div><div class="steps" id="GUID-28D7C3A7-B97F-49CD-9A0D-CA1F2833F59D"><div class="step_title">Steps:</div><ol>
+<li purpose="step" cid="1gDCQi" id="ESRI_STEP_FB8AB52079A14C00A32EAA3735E28BA2">
+<span purpose="cmd">
+Make a copy of the Demo folder at <span class="usertext">path/to/WAB/client/stemapp/ widgets/samplewidgets</span>.</span>
+</li><li purpose="step" id="ESRI_STEP_D12AF7E891F643448C60CFA2DB21599F"><span purpose="cmd">Paste it to the widgets under stemapp or (stemapp3d if you're developing a widget for 3D apps).</span></li><li purpose="step" id="ESRI_STEP_BB78A1E6DA614D60953406D58D42D50F"><span purpose="cmd">Rename the folder <span class="usertext">ListView</span>.</span></li><li purpose="step" id="ESRI_STEP_596BDAF4CEAE4530BBDF9BC19479D135"><span purpose="cmd">In manifest.json, update the widget’s general information, such as the name and author.   The value of the name field should be the same as the widget folder name, in this case, ListView. And in the nls folder, update the value of the _widgetLabel variable to <span class="usertext">ListView</span> in the strings.js files (you can remove unused i18n folders as needed).</span><div class="info" purpose="info"><p id="GUID-5CEC5D8C-EBD8-4E80-AB9A-8CF66647F989"><div class="notes" id="GUID-006A48F3-F643-4174-AF0C-354056B0D254"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody">See <a class="xref" rel="03w3/03w30000000v000000.htm" href="03w3/03w30000000v000000.htm">Add i18n support</a> for more information on adding i18n support.</div></div></p></div></li><li purpose="step" id="ESRI_STEP_03BE52B524DB43F1B212D1C28D1E1E92"><span purpose="cmd">Replace the widget icon.png file with a different image to use as the icon.</span></li><li purpose="step" id="ESRI_STEP_E95797ED1CB549EDB689A701E96CE494"><span purpose="cmd">Open <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> and click <span class="uicontrol">New App</span>. </span><div class="stepresult" purpose="stepresult"><p id="GUID-70FAAF5F-1174-4CD7-B107-C34B5B0BD5C4">The ListView widget appears as a member of the widgets on the <span class="uicontrol">Choose Widget</span> dialog box.</p><p id="GUID-A6BEDF35-AAAD-49C1-B341-F1FC87A5FE0F"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-CB1F6FB9-1D2E-40AF-AB55-57EE8E9549A1-web.png" purpose="img" alt="ListView" title="ListView"></td></tr></table></div></p></div></li>
+</ol></div><div class="result" id="ESRI_RESULT_BEAD93D8A9FE4F32BD25648A8F217111" purpose="result"><p id="GUID-BE234EE9-F02C-4E9C-AC79-98FA2A1BC68F">The configuration page of the ListView widget now only has a sample text box.</p><p id="GUID-5E92879C-E065-4588-AD1C-7944D5E222CA"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-35669367-756E-4DC3-BB1F-F3BBD7483DA5-web.png" purpose="img" alt="Sample text" title="Sample text"></td></tr></table></div></p><p id="GUID-8F005EEF-55F5-405D-9E64-CACD5D64D1D9">The UI of the widget contains some sample UI components. </p><p id="GUID-17F7E13D-AB3C-44F4-BC3C-90009F7C8422"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-EAC78417-3F56-4C99-9F21-02FA153228EE-web.png" purpose="img" alt="Sample UI components" title="Sample UI components"></td></tr></table></div></p><p id="GUID-438374C2-BA4B-4482-BDDC-ED2BDB54E728">You will update these pages later in this tutorial.</p></div></div></div>
+
+<div class="section1" id="ESRI_SECTION1_00EB34721F58451495E6BFF860F43B53" purpose="section1"><h2>Customize the settings page</h2><p id="GUID-168493BC-5B0F-42FE-A46C-B75ADF0439A8">For the ListView widget, the widget’s header text should be configurable. The list should be populated from a user-selected feature layer and allow the user to define which feature attributes to use to populate the list items.</p><div class="section2" id="ESRI_SECTION2_90A9E07CF9214FC4B15EEE409F6D46DB" purpose="section2"><h3>Update the config.json file</h3><p id="GUID-EB287B07-0C3F-475E-8E83-D7B19A6E6633">The config.json file in a widget folder provides optional default settings to initialize a widget. You can configure these setting options.</p><p id="GUID-37282DE6-BF0B-448E-BDC0-1537B5C9605D">In the following steps, the sample configuration that comes with the Demo widget will be removed, and a new attribute will be added to populate the header section of the widget:</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_A1BEC50C62C141C3AA2005ED68A98D9F"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_5991F5598CC04488AF0734EDEA046A9C"><span purpose="cmd">Open config.json at <span class="usertext">path/to/WAB/client/stemapp/widgets/ListView</span>. </span></li><li purpose="step" id="ESRI_STEP_8283E4622071443D841DD478752B5EE7"><span purpose="cmd">Replace everything with the following: </span><div class="info" purpose="info"><p id="GUID-3A006113-5086-4468-BF1C-CCE3FA4AFCEB"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+	&quot;widgetHeaderText&quot;:&quot;Please select a feature:&quot;
+}
+</code></pre></div>
+</div></p></div></li></ol></div></div></div><div class="section2" id="ESRI_SECTION2_AD03D38E605046668E2A3603BA490D4A" purpose="section2"><h3>Update the settings (configuration) page UI</h3><p id="GUID-0FF54953-0C69-4650-8AF5-F7D1DC3E635C">In the following steps, you will update the UI of the settings page by adding the following:<ul purpose="ul" id="UL_4CC125CC6C124E0C9881F4547F873BDF"><li purpose="li" id="LI_539240B16C5744EA97B5FBF042DB7305">A text box to enter text for the header</li><li purpose="li" id="LI_CF09751A68BE49E49C543E151B8B2FAD">A drop-down list to select a feature layer from the map</li><li purpose="li" id="LI_B571DC00644E48FAB6B495405A4E6636">A set of drop-down lists to map attributes from the feature layer to UI elements</li></ul></p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_582932405AB9438A90857931F7E977DE"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_4D5EF83B10574DF68EB1E8E6555F1F03"><span purpose="cmd">Open strings.js at <span class="usertext">path/to/WAB/client/stemapp/widgets/ListView/setting/nls</span>.</span></li><li purpose="step" id="ESRI_STEP_245F6903CFE74BC69C0A728BDC97B207"><span purpose="cmd">Remove <span class="usertext">configText</span> and add the following attributes:</span><div class="info" purpose="info"><p id="GUID-45A7C1A2-33AF-4216-A21C-C329A0C89072"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>define({
+	root: ({
+		headerText: &quot;Set header text:&quot;,
+		selectLayerText: &quot;Select a layer:&quot;,
+		pickAttributeText: &quot;Map the following UI components to attributes:&quot;,
+		UIElementNames: {
+			thumbnail: &quot;thumbnail&quot;,
+			title: &quot;title&quot;
+		}
+  })
+});
+</code></pre></div>
+</div></p></div></li><li purpose="step" id="ESRI_STEP_5233EAD8C5B54E82A1E75D0371EA1215"><span purpose="cmd">Open Setting.html at <span class="usertext">path/to/WAB/client/stemapp/widgets/ListView/setting</span>. </span></li><li purpose="step" id="ESRI_STEP_7A30B98E787945B4B611F0C51EE896F3"><span purpose="cmd">Replace the entire page with the following:</span><div class="info" purpose="info"><p id="GUID-0895CC2B-07F8-425F-8E96-BB5C2EA75B55"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&lt;div&gt;
+	&lt;div&gt;
+		&lt;label&gt;${nls.headerText}&lt;/label&gt;
+		&lt;input class=&quot;jimu-input&quot; data-dojo-attach-point=&quot;headerTextNode&quot;&gt;
+	&lt;/div&gt;
+	&lt;div&gt;
+		&lt;label&gt;${nls.selectLayerText}&lt;/label&gt;
+		&lt;select data-dojo-type=&quot;dijit/form/Select&quot; data-dojo-attach-point=&quot;layerSelect&quot;&gt;&lt;/select&gt;
+	&lt;/div&gt;
+	&lt;hr&gt;
+	&lt;h3&gt;${nls.pickAttributeText}&lt;/h3&gt;
+	&lt;div&gt;
+		&lt;label&gt;${nls.UIElementNames.thumbnail}&lt;/label&gt;
+		&lt;select data-dojo-type=&quot;dijit/form/Select&quot; data-dojo-attach-point=&quot;thumbnailSelect&quot;&gt;&lt;/select&gt;
+	&lt;/div&gt;
+	&lt;div&gt;
+		&lt;label&gt;${nls.UIElementNames.title}&lt;/label&gt;
+		&lt;select data-dojo-type=&quot;dijit/form/Select&quot; data-dojo-attach-point=&quot;titleSelect&quot;&gt;&lt;/select&gt;
+	&lt;/div&gt;	
+&lt;/div&gt;
+</code></pre></div>
+</div></p><div class="notes" id="GUID-9996B048-818D-42F8-8C02-35C6352B555B"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-7821346B-CC24-423B-91EF-D5926277EC8C">The <span class="usertext">jimu-input</span> class name  is added to the text input to restyle its look. This class is provided by the <a class="xref" rel="03w3/03w30000006t000000.htm" href="03w3/03w30000006t000000.htm">Jimu CSS framework</a>, which also provides CSS styles for other UI elements. You can view the <span class="usertext">.css</span> files at <span class="usertext">path/to/WAB/client/stemapp/jimu.js/css</span> for details. You can also preview some of the <span class="usertext">jimu</span> UI components by going to the following local test pages:<ul purpose="ul" id="UL_76769D8AAE374D42863A225BA4BA4B29"><li purpose="li" id="LI_28C5A23D6A724C0492CE34E9160C3AE3">CSS test: <span class="usertext">http://&lt;server&gt;[:port]/webappbuilder/stemapp/jimu.js/tests/test-css.html</span></li><li purpose="li" id="LI_4E309C60351140B7A69C2334706721C9">Dijit test: <span class="usertext">http://&lt;server&gt;[:port]/webappbuilder/stemapp/jimu.js/demo/dijit.html</span></li></ul></p></div></div></div></li><li purpose="step" id="ESRI_STEP_A31969B95127495FB4C4482B1E0B796E"><span purpose="cmd">Open Setting.js at <span class="usertext">path/to/WAB/client/stemapp/widgets/ListView/setting</span>.</span></li><li purpose="step" id="ESRI_STEP_4E13B75975024D1FA2089EAFD072A1D2"><span purpose="cmd">Add the following classes to the array of class declarations:</span><div class="info" purpose="info"><p id="GUID-9ECD2878-1875-4033-99CC-31DF5FD58A39"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">define</span><span class="p">([</span>
+  <span class="s1">&#39;dojo/_base/declare&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;jimu/BaseWidgetSetting&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;dojo/_base/lang&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;dojo/_base/array&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;dijit/_WidgetsInTemplateMixin&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;jimu/LayerInfos/LayerInfos&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;dijit/form/Select&#39;</span>
+<span class="p">],</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">declare</span><span class="p">,</span> <span class="nx">BaseWidgetSetting</span><span class="p">,</span> <span class="nx">lang</span><span class="p">,</span> <span class="nx">array</span><span class="p">,</span> <span class="nx">_WidgetsInTemplateMixin</span><span class="p">,</span> <span class="nx">LayerInfos</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">declare</span><span class="p">([</span><span class="nx">BaseWidgetSetting</span><span class="p">,</span> <span class="nx">_WidgetsInTemplateMixin</span><span class="p">],</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div></p></div></li><li purpose="step" id="ESRI_STEP_873D8FEAE921404E8CA044DEACE852A9"><span purpose="cmd">Change the baseClass value to <span class="usertext">jimu-widget-listview-setting</span>.</span></li><li purpose="step" id="ESRI_STEP_59D2AA5A23854BE68DED31F342845CB7"><span purpose="cmd">In the <span class="usertext">setConfig</span> method, remove the sample code and add the following line of code to populate the header node with the default string defined in the nls folder at <span class="usertext">path/to/WAB/client/stemapp/widgets/ListView</span>:</span><div class="info" purpose="info"><p id="GUID-2D5EC5E2-1C05-4A3A-99ED-6A8C103DFDCB"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">setConfig</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">){</span>
+      <span class="c1">// Update header text</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">headerTextNode</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">widgetHeaderText</span><span class="p">;</span>
+<span class="p">},</span>
+</code></pre></div>
+</div></p><p id="GUID-DAF8CBD2-9EBD-4EBE-95E1-077B568C57A7">Get all the feature layer information from the map using the <span class="usertext">LayerInfos</span> class from the Jimu framework, and populate the feature layer drop-down list as follows:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">setConfig</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">){</span>
+      <span class="c1">// Update header text</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">headerTextNode</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">widgetHeaderText</span><span class="p">;</span>
+
+      <span class="c1">// Get all feature layers from the map</span>
+      <span class="nx">LayerInfos</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">itemInfo</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">layerInfosObj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">infos</span> <span class="o">=</span> <span class="nx">layerInfosObj</span><span class="p">.</span><span class="nx">getLayerInfoArray</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">infos</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">info</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">originOperLayer</span><span class="p">.</span><span class="nx">layerType</span> <span class="o">===</span> <span class="s1">&#39;ArcGISFeatureLayer&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">options</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+              <span class="nx">label</span><span class="o">:</span> <span class="nx">info</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
+              <span class="nx">value</span><span class="o">:</span> <span class="nx">info</span><span class="p">.</span><span class="nx">id</span>
+            <span class="p">});</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="k">this</span><span class="p">.</span> <span class="nx">layerSelect</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+      <span class="p">}));</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_9981EBDF82A44BDAA06D0861941B9853"><span purpose="cmd">Attach an onChange event handler to the layerSelect dijit. When the selection in the <span class="uicontrol">layerSelect</span> drop-down list changes, get a list of all attributes from the newly selected feature layer and use it to populate the attribute drop-down lists as follows:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">setConfig</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">){</span>
+<span class="p">...</span>
+      <span class="c1">// Get all feature layers from the map</span>
+      <span class="nx">LayerInfos</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">itemInfo</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">layerInfosObj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">...</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">layerSelect</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">layerSelect</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">selectedLayer</span> <span class="o">=</span> <span class="nx">layerInfosObj</span><span class="p">.</span><span class="nx">getLayerInfoById</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">selectedLayer</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">fieldOptions</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">selectedLayer</span><span class="p">.</span><span class="nx">layerObject</span><span class="p">.</span><span class="nx">fields</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">field</span><span class="p">)</span> <span class="p">{</span>
+              <span class="k">return</span> <span class="p">{</span>
+                <span class="nx">label</span><span class="o">:</span> <span class="nx">field</span><span class="p">.</span><span class="nx">alias</span> <span class="o">||</span> <span class="nx">field</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="nx">field</span><span class="p">.</span><span class="nx">name</span>
+              <span class="p">}</span>
+            <span class="p">});</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">thumbnailSelect</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="nx">fieldOptions</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">titleSelect</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="nx">fieldOptions</span><span class="p">);</span>
+          <span class="p">}</span>
+
+        <span class="p">}));</span>
+      <span class="p">}));</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_B4497296DEC8435DABAAF67430EBE10B"><span purpose="cmd">Go to the <span class="usertext">getConfig</span> method in the <span class="uicontrol">return</span> section, remove <span class="usertext">configText</span>, and add the following code:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>getConfig: function(){
+      //WAB will get config object through this method
+      return {
+        widgetHeaderText: this.headerTextNode.value,
+        layerId: this.layerSelect.get(&#39;value&#39;),
+        thumbnailField: this.thumbnailSelect.get(&#39;value&#39;),
+        titleField: this.titleSelect.get(&#39;value&#39;)
+      };
+    }
+</code></pre></div>
+</div><p id="GUID-20F334DF-EF3C-4476-99E0-F862A933E21E">These configurations will be consumed by the ListView widget to access  the feature layer object from the map and update the list with the defined fields.</p></div></li><li purpose="step" id="ESRI_STEP_F94295C221B14F9F9C25394BFDE1C172"><span purpose="cmd">Add CSS styles in the style.css file at <span class="usertext">path/to/WAB/client/stemapp/widgets/ListView/setting/css</span> to style the settings page as follows:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-listview-setting &gt; * {
+  margin-bottom: 10px;
+}
+
+.jimu-widget-listview-setting label {
+  display: inline-block;
+  min-width: 150px;
+  margin-right: 10px;
+}
+.jimu-widget-listview-setting h3 {
+  color: #999;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.jimu-widget-listview-setting hr {
+  margin: 30px 0;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: #ddd;
+}
+.jimu-widget-listview-setting .jimu-input,
+.jimu-widget-listview-setting .dijitSelect {
+  width: 300px;
+}
+.jimu-widget-listview-setting .dijitSelect .dijitButtonContents {
+  width: 100%;
+}
+</code></pre></div>
+</div><p id="GUID-CA60DD53-921D-4DDC-A013-72EEFC30FAB7">The settings page now looks like the following:</p><p id="GUID-0484E5ED-A4FC-472C-9BE2-1D725E6666CC"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-2D43EA5E-AD85-4301-A8D0-608757F46AF7-web.png" purpose="img" alt="Settings page" title="Settings page"></td></tr></table></div></p></div></li></ol></div></div></div></div><div class="section1" id="ESRI_SECTION1_0C58434EB4404A3B8C2A5ABB22CA43A8" purpose="section1"><h2>Create the widget's HTML template</h2><p id="GUID-08C009A0-5518-4EC4-B6D0-EC316786076F">The sample widget used in this tutorial is a <a target="_blank" class="xref" href="https://dojotoolkit.org/documentation/tutorials/1.10/templated/index.html" rel="https://dojotoolkit.org/documentation/tutorials/1.10/templated/index.html">template-based Dojo widget</a> that contains a widget.html file as its HTML structure. In this section, you will remove any unused sample code from widget.html, and add two DOM nodes for the following UI components:<ul purpose="ul" id="UL_D8818E92F2464D718D8FE34B71A32B35"><li purpose="li" id="LI_1D3E3B07148843F4AB96F6BBA0D4D583">Header</li><li purpose="li" id="LI_D4AD94568DEE44FBADF894A3116B2B66">List</li></ul></p><p id="GUID-A39B5929-B7D0-43A7-A6E9-3072E98E8B24">These components will be populated with live data in later sections.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_51F6F9A239524CCAB3BB5127A433B8BE"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_7D878F13A6F347C8A93D413B68051113"><span purpose="cmd">Open <span class="usertext">path/to/WAB/client/stemapp/widgets/ListView/widget.html</span>.</span></li><li purpose="step" id="ESRI_STEP_B4BBA2DBB8324BFE98F103C824E1A62A"><span purpose="cmd">Replace the content with the following HTML string:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&lt;div&gt;
+	&lt;div class=&quot;list-header&quot; data-dojo-attach-point=&quot;headerNode&quot;&gt;&lt;/div&gt;
+	&lt;div data-dojo-attach-point=&quot;ListNode&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+</div></div></li></ol></div></div></div><div class="section1" id="ESRI_SECTION1_638BE5BF9FD7456092356DB74F8C12E3" purpose="section1"><h2>Modify widget.js</h2><p id="GUID-33D6869B-A683-45EB-A490-B7B44FA2175F">Developing a <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> widget is similar to developing a Dojo template widget. The widget.js file contains the basic widget life cycle methods, such as <span class="usertext">postCreate</span> and <span class="usertext">startup</span>, and additional methods customized for the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> environment, such as <span class="usertext">onOpen</span>, <span class="usertext">onClose</span>, and <span class="usertext">onMinimized</span>. Visit the <a class="xref" rel="03w3/03w300000066000000.htm" href="03w3/03w300000066000000.htm">Widget life cycle</a> page  for details on the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> widget life cycle.</p><div class="section2" id="ESRI_SECTION2_B50D322ABA83462D84C7F62ADDF52A3F" purpose="section2"><h3>Set the widget's base class name</h3><p id="GUID-83BC70BB-D0D8-4BAF-BF22-6A14E2476F42">The <span class="usertext">baseClass</span> property in the widget.js file is required. This string will be appended to the class attribute on the root HTML node of the widget when it is initialized. Multiple class names can be added by separating them with spaces. To rename <span class="usertext">baseClass</span> to <span class="usertext">jimu-widget-listview</span>, see the following:<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>baseClass: &#39;jimu-widget-listview&#39;,
+</code></pre></div>
+</div></p></div><div class="section2" id="ESRI_SECTION2_FFC4A758C4664FB597C878C078C0D953" purpose="section2"><h3>Remove unused sample code</h3><p id="GUID-1B21E5B8-181B-4DBF-956D-9E634CB06DA2">Remove the following line of code from the <span class="usertext">startup</span> method:<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>this.mapIdNode.innerHTML = &#39;map id:&#39; + this.map.id;
+</code></pre></div>
+</div></p><p id="GUID-44F33766-0849-4583-BAFA-AC882025FCC2">Now, the <span class="uicontrol">ListView</span> pane appears empty in <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>.</p><p id="GUID-A92D7F3D-955F-4F3F-9E84-EC23A1FA2FA8"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-EAB2982D-9CF6-4C01-9682-315C5E23F729-web.png" purpose="img" alt="Empty ListView" title="Empty ListView"></td></tr></table></div></p></div><div class="section2" id="ESRI_SECTION2_CC10B37463B54B848B361E0AC83C71D7" purpose="section2"><h3>Add a list UI component using dGrid OnDemandList</h3><p id="GUID-09FB50DE-C192-4EF0-9F7E-11E7D2FAFB41">Visit the  <a target="_blank" class="xref" href="http://dgrid.io/" rel="http://dgrid.io/">dGrid</a> page and the <a target="_blank" class="xref" href="https://github.com/SitePen/dgrid/blob/master/doc/components/core-components/OnDemandList-and-OnDemandGrid.md" rel="https://github.com/SitePen/dgrid/blob/master/doc/components/core-components/OnDemandList-and-OnDemandGrid.md">OnDemandList</a>  on <span class="usertext">OnDemandList</span>.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_3BD06B5BDD2D4E0F915CB2D8AA7B93CA"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_92BEB919DEED4491A1E5A143A8095545"><span purpose="cmd">Add the following to the array of class declarations: </span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;dojo/_base/declare&#39;</span><span class="p">,</span>
+<span class="s1">&#39;jimu/BaseWidget&#39;</span><span class="p">,</span>
+<span class="s1">&#39;dojo/_base/lang&#39;</span><span class="p">,</span>
+<span class="s1">&#39;dojo/Deferred&#39;</span><span class="p">,</span>
+<span class="s1">&#39;dgrid/OnDemandList&#39;</span><span class="p">,</span>
+<span class="s1">&#39;dgrid/Selection&#39;</span><span class="p">,</span>
+<span class="s2">&quot;dojo/store/Memory&quot;</span><span class="p">],</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">declare</span><span class="p">,</span> <span class="nx">BaseWidget</span><span class="p">,</span>
+  <span class="nx">lang</span><span class="p">,</span> <span class="nx">Deferred</span><span class="p">,</span>
+  <span class="nx">OnDemandList</span><span class="p">,</span> <span class="nx">Selection</span><span class="p">,</span> <span class="nx">Memory</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_09BF62E2314540F9A14788BE9E1A49F8"><span purpose="cmd">Declare a new method named <span class="usertext">getDataStore</span>, which will return a dataset to populate the list. Add some sample data to test the widget as follows:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">getDataStore</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">def</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Deferred</span><span class="p">();</span>
+      <span class="c1">// SAMPLE DATA</span>
+      <span class="kd">var</span> <span class="nx">SAMPLEDATA</span> <span class="o">=</span> <span class="p">[{</span>
+        <span class="s1">&#39;id&#39;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;title&#39;</span><span class="o">:</span> <span class="s1">&#39;Feature 1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;thumbnailImg&#39;</span><span class="o">:</span> <span class="s1">&#39;http://placehold.it/120x90&#39;</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="s1">&#39;id&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;title&#39;</span><span class="o">:</span> <span class="s1">&#39;Feature 2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;thumbnailImg&#39;</span><span class="o">:</span> <span class="s1">&#39;http://placehold.it/120x90&#39;</span>
+      <span class="p">}];</span>
+      <span class="nx">def</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="k">new</span> <span class="nx">Memory</span><span class="p">({</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="nx">SAMPLEDATA</span>
+      <span class="p">}));</span>
+      <span class="k">return</span> <span class="nx">def</span><span class="p">;</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_B4738287F2F84145AFD0C4C105DFC647"><span purpose="cmd">Declare another method named <span class="usertext">createList</span>, which consumes the data store returned from the <span class="usertext">getDataStore</span> method and creates a new <span class="usertext">OnDemandList</span> as follows:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">createList</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">getDataStore</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">datastore</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">declare</span><span class="p">([</span><span class="nx">OnDemandList</span><span class="p">,</span> <span class="nx">Selection</span><span class="p">]))({</span>
+          <span class="s1">&#39;store&#39;</span><span class="o">:</span> <span class="nx">datastore</span><span class="p">,</span>
+          <span class="s1">&#39;selectionMode&#39;</span><span class="o">:</span> <span class="s1">&#39;single&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;renderRow&#39;</span><span class="o">:</span> <span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_createListItem</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span>
+          <span class="p">})</span>
+        <span class="p">},</span> <span class="k">this</span><span class="p">.</span><span class="nx">ListNode</span><span class="p">);</span>
+        <span class="nx">list</span><span class="p">.</span><span class="nx">startup</span><span class="p">();</span>
+      <span class="p">}));</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_79E45801058D4E3593D510248CB8C566"><span purpose="cmd">Note that the <span class="usertext">_createListItem</span> method is called when rendering rows for the dGrid list. To create this method, do the following:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_createListItem</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">featureObj</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">listItemRoot</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;DIV&#39;</span><span class="p">);</span>
+      <span class="nx">listItemRoot</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">&#39;list-item&#39;</span><span class="p">;</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">featureObj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">thumbnailImgWrapper</span><span class="p">,</span> <span class="nx">thumbnailImg</span><span class="p">,</span> <span class="nx">listItemTitle</span><span class="p">;</span>
+        <span class="c1">// Create thumbnail</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">featureObj</span><span class="p">.</span><span class="nx">thumbnailImg</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">thumbnailImgWrapper</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+          <span class="nx">thumbnailImgWrapper</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">&#39;thumbnail-wrapper&#39;</span><span class="p">;</span>
+          <span class="nx">thumbnailImg</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">);</span>
+          <span class="nx">thumbnailImg</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">featureObj</span><span class="p">.</span><span class="nx">thumbnailImg</span><span class="p">;</span>
+          <span class="nx">thumbnailImgWrapper</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">thumbnailImg</span><span class="p">);</span>
+          <span class="nx">listItemRoot</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">thumbnailImgWrapper</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="c1">// Create title</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">featureObj</span><span class="p">.</span><span class="nx">title</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">featureObj</span><span class="p">.</span><span class="nx">title</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">listItemTitle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;H4&#39;</span><span class="p">);</span>
+          <span class="nx">listItemTitle</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">featureObj</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
+          <span class="nx">listItemRoot</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">listItemTitle</span><span class="p">);</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">thumbnailImg</span><span class="p">)</span>
+            <span class="nx">thumbnailImg</span><span class="p">.</span><span class="nx">alt</span> <span class="o">=</span> <span class="nx">featureObj</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">listItemRoot</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;NO DATA AVAILABLE&#39;</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span> <span class="nx">listItemRoot</span><span class="p">;</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_E37AA38EAA294B4CBADC4BE7507505B5"><span purpose="cmd">Call the createList method from postCreate.</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">postCreate</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;postCreate&#39;</span><span class="p">);</span>
+  
+  <span class="k">this</span><span class="p">.</span><span class="nx">createList</span><span class="p">();</span>
+<span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_9E17C11436D347C0A775320872451BC0"><span purpose="cmd">Restart <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> and re-add the ListView widget to the app. The following two sample results appear in the list:</span><div class="info" purpose="info"><p id="GUID-E8250623-84C8-4775-B86F-C6905C72B53C"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-FB0E59F3-5E87-4C6B-B65D-83424C7633D3-web.png" purpose="img" alt="ListView re-added" title="ListView re-added"></td></tr></table></div></p><p id="GUID-898CD4BC-17DC-41B3-B9BF-60847EA33564">Now you have the major pieces of the widget in place.</p></div></li></ol></div></div></div><div class="section2" id="ESRI_SECTION2_DB6E078D7B3C4DABABF4D205AE1EFD44" purpose="section2"><h3>Read configuration and update UI elements</h3><p id="GUID-85566C06-A2E8-4D83-B400-6CF6F4473120">In this section, you'll read the configuration from the settings page and populate the list with real data.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_CA46CCF241B04FF2B577DAA7B31512AE"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_A1499A1F372347A8BEB8EF7B9D6331AD"><span purpose="cmd">Update <span class="usertext">headerNode</span> in the <span class="usertext">postCreate</span> method.</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">postCreate</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;postCreate&#39;</span><span class="p">);</span>
+
+      <span class="k">this</span><span class="p">.</span><span class="nx">headerNode</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">widgetHeaderText</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">createList</span><span class="p">();</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_ECEC82BB9E4947758215822FB74977A1"><span purpose="cmd">Populate the list with data from the feature layer.</span><div class="substeps" id="ESRI_SUBSTEPS_CE10C417279E44AC8FED2C37CAEB4BF9" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_3EE031EFBB1D47859818411EF0B2C0FD"><span purpose="cmd">Get the feature layer from the map.</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">postCreate</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;postCreate&#39;</span><span class="p">);</span>
+
+      <span class="k">this</span><span class="p">.</span><span class="nx">headerNode</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">widgetHeaderText</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">featureLayer</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">getLayer</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">layerId</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">createList</span><span class="p">();</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_FC7EE836B4E1481692DF507031ABC895"><span purpose="cmd">Add the query functionality from <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span> to the widget.</span><div class="info" purpose="info"><p id="GUID-48D3B830-EFE7-44BC-98FB-F994FCAACFAB"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;dojo/_base/declare&#39;</span><span class="p">,</span>
+<span class="s1">&#39;jimu/BaseWidget&#39;</span><span class="p">,</span>
+<span class="s1">&#39;dojo/_base/lang&#39;</span><span class="p">,</span>
+<span class="s1">&#39;dojo/Deferred&#39;</span><span class="p">,</span>
+<span class="s1">&#39;dgrid/OnDemandList&#39;</span><span class="p">,</span>
+<span class="s1">&#39;dgrid/Selection&#39;</span><span class="p">,</span>
+<span class="s2">&quot;dojo/store/Memory&quot;</span><span class="p">,</span>
+<span class="s2">&quot;esri/tasks/query&quot;</span><span class="p">],</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">declare</span><span class="p">,</span> <span class="nx">BaseWidget</span><span class="p">,</span>
+  <span class="nx">lang</span><span class="p">,</span> <span class="nx">Deferred</span><span class="p">,</span>
+  <span class="nx">OnDemandList</span><span class="p">,</span> <span class="nx">Selection</span><span class="p">,</span> <span class="nx">Memory</span><span class="p">,</span>
+  <span class="nx">Query</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_D1FFC2340BE64A2C9603BEC00E65DB79"><span purpose="cmd">In the <span class="usertext">getDataStore</span> method, get the selected feature layer from the map using the configuration information.</span><div class="info" purpose="info"><p id="GUID-9DCC49A7-330F-4C3B-AC31-71C13AE7103E"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>getDataStore: function() {
+      var def = new Deferred();
+      var layer = this.map.getLayer(this.config.layerId);
+  ...
+},
+</code></pre></div>
+</div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_E8141EDA242A48AA96D7573700FB602E"><span purpose="cmd">Query all features from the feature layer.</span><div class="info" purpose="info"><p id="GUID-1B13D3E1-77A6-4E13-9A6C-63A8B1B30225"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">getDataStore</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="p">...</span>
+      <span class="c1">// Query features</span>
+      <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Query</span><span class="p">();</span>
+      <span class="nx">query</span><span class="p">.</span><span class="nx">returnGeometry</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="nx">query</span><span class="p">.</span><span class="nx">outFields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">];</span>
+      <span class="nx">query</span><span class="p">.</span><span class="nx">where</span> <span class="o">=</span> <span class="s1">&#39;1=1&#39;</span><span class="p">;</span>
+      <span class="nx">layer</span><span class="p">.</span><span class="nx">queryFeatures</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">featureSet</span><span class="p">)</span> <span class="p">{</span>
+        
+<span class="p">}));</span>
+<span class="p">...</span>
+<span class="p">},</span>
+</code></pre></div>
+</div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_CD919157F8BA4D6EB4FA00660A3AB354"><span purpose="cmd">Remove the sample data and use the returned feature set instead.</span><div class="info" purpose="info"><p id="GUID-1C5753A3-C262-4865-B294-F80173047F90"><ol purpose="ol" id="OL_E2C9E82906AE4989A961F25017CE6343"><li purpose="li" id="LI_83F31A11AD9E45779D175C0297227249">Remove the SAMPLEDATA variable.</li><li purpose="li" id="LI_826090A040F046CBB4518DC1E14177FE">Remap the feature data to a new array named <span class="usertext">featureSetRemapped</span>, and use it to create the data store. <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">getDataStore</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="p">...</span>
+<span class="nx">layer</span><span class="p">.</span><span class="nx">queryFeatures</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">featureSet</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">featureSetRemapped</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">featureSet</span><span class="p">.</span><span class="nx">features</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">featureSet</span><span class="p">.</span><span class="nx">features</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+          <span class="nx">featureSetRemapped</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+            <span class="s1">&#39;id&#39;</span><span class="o">:</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">attributes</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">featureLayer</span><span class="p">.</span><span class="nx">objectIdField</span><span class="p">],</span>
+            <span class="s1">&#39;title&#39;</span><span class="o">:</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">attributes</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">titleField</span><span class="p">],</span>
+            <span class="s1">&#39;thumbnailImg&#39;</span><span class="o">:</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">attributes</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">thumbnailField</span><span class="p">]</span>
+          <span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="nx">def</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="k">new</span> <span class="nx">Memory</span><span class="p">({</span>
+          <span class="nx">data</span><span class="o">:</span> <span class="nx">featureSetRemapped</span>
+        <span class="p">}));</span>
+      <span class="p">}));</span>
+
+      <span class="k">return</span> <span class="nx">def</span><span class="p">;</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></li></ol></p></div></li></ol></div></li></ol></div><div class="result" id="ESRI_RESULT_A78E3523CD7742C68EA82CA799A18FD6" purpose="result"><p id="GUID-DDADAC46-8DA5-47A3-A33A-9C9BBEC67CB5">The ListView widget now shows the correct results from the configured feature layer without any applied styles.</p><p id="GUID-6BEFD2A4-2A67-4808-8447-4D4C832CD038"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-72ED7441-6250-4DAF-839F-D409942BF4DA-web.png" purpose="img" alt="ListView correct results" title="ListView correct results"></td></tr></table></div></p></div></div></div><div class="section2" id="ESRI_SECTION2_BF542AB455B34153AE1A8D5C6D22A19F" purpose="section2"><h3>Add CSS styles to change the widget's look</h3><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_47688E7F2ABA4ABDA03165530CC03BEB"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_BED27D0A7AD74308B03DB81AAFE6C986"><span purpose="cmd">Open the style.css file from <span class="usertext">path/to/WAB/client/stemapp/widgets/ListView /css</span> and add the following CSS styles:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-widget-listview {
+  background-color: #f1f1f1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+.jimu-widget-listview .dgrid-list {
+  height: auto;
+  border: 0;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.jimu-widget-listview .dgrid-scroller {
+  padding: 10px 10px;
+  overflow: auto;
+}
+.jimu-widget-listview .dgrid-row {
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+.jimu-widget-listview .list-item {
+  -moz-transition: all, 0.2s, ease-out;
+  -o-transition: all, 0.2s, ease-out;
+  -webkit-transition: all, 0.2s, ease-out;
+  transition: all, 0.2s, ease-out;
+}
+.jimu-widget-listview .list-item:after {
+  content: &quot;&quot;;
+  display: table;
+  clear: both;
+}
+.jimu-widget-listview .list-item h4 {
+  color: #00a8e1;
+  line-height: 2;
+  letter-spacing: 1px;
+  margin: 0 15px;
+}
+.jimu-widget-listview .list-item .thumbnail-wrapper {
+  float: left;
+  width: 80px;
+  height: 50px;
+  margin-right: 15px;
+  overflow: hidden;
+}
+.jimu-widget-listview .list-item .thumbnail-wrapper img {
+  width: 100%;
+}
+.jimu-widget-listview .list-item.dgrid-selected {
+  border: 1px solid #00a8e1;
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  cursor: default;
+}
+.jimu-widget-listview .list-item.simple.dgrid-selected {
+  margin-bottom: 0;
+}
+.jimu-widget-listview .list-header {
+  padding: 10px;
+  padding-bottom: 0;
+  font-size: 14px;
+  overflow: hidden;
+  *zoom: 1;
+}
+.jimu-widget-listview .list-header &gt; h3 {
+  margin: 0;
+  margin-top: 4px;
+  padding: 0 10px;
+  float: left;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #ed1c25;
+}
+.jimu-widget-listview .list-header &gt; h3 strong {
+  margin: 0 5px;
+}
+.jimu-widget-listview .list-header label {
+  color: #93999e;
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_6E5CC0E4363049F18270B8E4C678EE86"><span purpose="cmd">Refresh <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> and add the ListView widget again to the app. The widget now has the new CSS styles applied.</span><div class="info" purpose="info"><p id="GUID-E446B267-7641-432F-B2DD-1BC2811DF378"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-080FA8BF-A270-485A-B2E9-58E35D634C09-web.png" purpose="img" alt="New CSS style" title="New CSS style"></td></tr></table></div></p></div></li></ol></div></div></div></div><div class="section1" id="ESRI_SECTION1_88B1205CCA424E04A72A9958D405BE58" purpose="section1"><h2>Communicate with the map</h2><p id="GUID-74811C80-E2FD-48C4-89C5-06B16FC60B12">You'll now see how a widget can communicate with the map by adding the ability to highlight map graphics when a row in the list is selected. Learn how to <a class="xref" rel="03w3/03w300000027000000.htm" href="03w3/03w300000027000000.htm">access a map</a>.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_F40C90F5A6E340F1A678FF7C4AD226E8"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_CD8115267B3947CB8B728777E24A9811"><span purpose="cmd">Go to the <span class="usertext">createList</span> method and add an onclick event handler to the rows of the list.</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>createList: function() {
+      this.getDataStore().then(lang.hitch(this, function(datastore) {
+        ...
+        list.startup();
+        list.on(&#39;.dgrid-row:click&#39;, lang.hitch(this, function(evt) {
+        }));
+      }));
+    },
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_64C346DF0F924B6782A10007438AD989"><span purpose="cmd">Use list.row(evt) to access the feature data from the selected row, query the feature layer to get the selected feature from the map, and bring it to the center of the map.</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">createList</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">getDataStore</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">datastore</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">...</span>
+        <span class="nx">list</span><span class="p">.</span><span class="nx">startup</span><span class="p">();</span>
+        <span class="nx">list</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;.dgrid-row:click&#39;</span><span class="p">,</span> <span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">row</span><span class="p">(</span><span class="nx">evt</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Query</span><span class="p">();</span>
+          <span class="nx">query</span><span class="p">.</span><span class="nx">objectIds</span> <span class="o">=</span> <span class="p">[</span><span class="nx">row</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">];</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">featureLayer</span><span class="p">.</span><span class="nx">selectFeatures</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">esri</span><span class="p">.</span><span class="nx">layers</span><span class="p">.</span><span class="nx">FeatureLayer</span><span class="p">.</span><span class="nx">SELECTION_NEW</span><span class="p">,</span> <span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+              <span class="kd">var</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+              <span class="nx">newMapCenter</span><span class="p">,</span>
+              <span class="nx">geometry</span> <span class="o">=</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">geometry</span><span class="p">,</span>
+              <span class="nx">extent</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">.</span><span class="nx">getExtent</span><span class="p">(),</span>
+              <span class="nx">shape</span> <span class="o">=</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">getShape</span><span class="p">();</span>
+              <span class="k">if</span><span class="p">(</span><span class="nx">extent</span> <span class="o">&amp;&amp;</span> <span class="nx">extent</span><span class="p">.</span><span class="nx">getCenter</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">newMapCenter</span> <span class="o">=</span> <span class="nx">extent</span><span class="p">.</span><span class="nx">getCenter</span><span class="p">();</span> <span class="c1">// polygon &amp; polyline</span>
+              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">newMapCenter</span> <span class="o">=</span> <span class="nx">geometry</span><span class="p">;</span> <span class="c1">// point</span>
+              <span class="p">}</span>
+              <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">centerAt</span><span class="p">(</span><span class="nx">newMapCenter</span><span class="p">);</span> <span class="c1">// move to the feature</span>
+              <span class="k">if</span><span class="p">(</span><span class="nx">shape</span><span class="p">)</span> <span class="nx">shape</span><span class="p">.</span><span class="nx">moveToFront</span><span class="p">();</span> <span class="c1">// move the feature to front</span>
+            <span class="p">}</span>
+          <span class="p">}));</span>
+        <span class="p">}));</span>
+      <span class="p">}));</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_9764302D018B4B089308D4CD2B1573CF"><span purpose="cmd">Highlight the selected feature on the map.</span><div class="substeps" id="ESRI_SUBSTEPS_D73BADB6862442DA910651D16CE90EC5" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_0B8FF90088724E1DA859B75BA8919076"><span purpose="cmd">Add the following to the array of class declarations:</span><div class="info" purpose="info"><p id="GUID-E419873A-AFC7-4E08-93EE-D621EACEED4E"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;dojo/_base/declare&#39;</span><span class="p">,</span>
+<span class="p">...</span>
+<span class="s2">&quot;esri/tasks/query&quot;</span><span class="p">,</span>
+<span class="s2">&quot;esri/symbols/SimpleMarkerSymbol&quot;</span><span class="p">,</span>
+<span class="s2">&quot;esri/symbols/SimpleLineSymbol&quot;</span><span class="p">,</span>
+<span class="s2">&quot;esri/symbols/SimpleFillSymbol&quot;</span>
+<span class="p">],</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">declare</span><span class="p">,</span> <span class="nx">BaseWidget</span><span class="p">,</span>
+  <span class="nx">lang</span><span class="p">,</span> <span class="nx">Deferred</span><span class="p">,</span>
+  <span class="nx">OnDemandList</span><span class="p">,</span> <span class="nx">Selection</span><span class="p">,</span> <span class="nx">Memory</span><span class="p">,</span>
+  <span class="nx">Query</span><span class="p">,</span> <span class="nx">SimpleMarkerSymbol</span><span class="p">,</span> <span class="nx">SimpleLineSymbol</span><span class="p">,</span> <span class="nx">SimpleFillSymbol</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_903F7070FF9A428CB2A2E7E78E7D241B"><span purpose="cmd">In <span class="usertext">PostCreate</span>, add code to the custom feature layer’s highlight symbol based on its geometry type.</span><div class="info" purpose="info"><p id="GUID-433B60FC-8D7E-489D-8F72-D54848D250DF"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">postCreate</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="p">...</span>
+
+      <span class="k">this</span><span class="p">.</span><span class="nx">featureLayer</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">getLayer</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">layerId</span><span class="p">);</span>
+
+      <span class="kd">var</span> <span class="nx">highlightSymbol</span><span class="p">;</span>
+      <span class="k">switch</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">featureLayer</span><span class="p">.</span><span class="nx">geometryType</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s1">&#39;esriGeometryPoint&#39;</span><span class="o">:</span>
+        <span class="nx">highlightSymbol</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimpleMarkerSymbol</span><span class="p">(</span><span class="nx">SimpleMarkerSymbol</span><span class="p">.</span><span class="nx">STYLE_CIRCLE</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s1">&#39;#e74c3c&#39;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s1">&#39;esriGeometryPolyline&#39;</span><span class="o">:</span>
+        <span class="nx">highlightSymbol</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimpleLineSymbol</span><span class="p">(</span><span class="nx">SimpleLineSymbol</span><span class="p">.</span><span class="nx">STYLE_SOLID</span><span class="p">,</span> <span class="s1">&#39;#e74c3c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s1">&#39;esriGeometryPolygon&#39;</span><span class="o">:</span>
+        <span class="nx">highlightSymbol</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimpleFillSymbol</span><span class="p">(</span><span class="nx">SimpleFillSymbol</span><span class="p">.</span><span class="nx">STYLE_SOLID</span><span class="p">,</span>
+          <span class="k">new</span> <span class="nx">SimpleLineSymbol</span><span class="p">(</span><span class="nx">SimpleLineSymbol</span><span class="p">.</span><span class="nx">STYLE_SOLID</span><span class="p">,</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+          <span class="s1">&#39;#e74c3c&#39;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">featureLayer</span><span class="p">.</span><span class="nx">setSelectionSymbol</span><span class="p">(</span><span class="nx">highlightSymbol</span><span class="p">);</span>
+
+      <span class="k">this</span><span class="p">.</span><span class="nx">createList</span><span class="p">();</span>
+    <span class="p">},</span>
+</code></pre></div>
+</div></p></div></li></ol></div></li></ol></div></div></div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,69 @@
+
+.jimu-widget-layerList .layer-list-operations .jimu-dropmenu {
+}
+
+.jimu-widget-layerList .layer-row-mouseover{
+  background-color: #666666;
+}
+
+.jimu-widget-layerList .jimu-widget-row-selected{
+  background-color: #666666;
+}
+
+.jimu-widget-layerList .layer-row:hover {
+  background-color: #666666;
+}
+
+.jimu-widget-layerList .layers-list-popupMenu-div{
+  background: url(../images/more-horiz.svg) no-repeat center;
+}
+
+.jimu-widget-layerList .layers-list-popupMenu-div:hover{
+  background: url(../images/more-horiz.svg) no-repeat center;
+}
+
+.jimu-widget-layerList .layer-filter .search-button{
+  background-image: url(../images/sprite.png);
+  background-position: -0px -268px;
+}
+
+.jimu-widget-layerList .layer-filter .search-button:hover{
+  background-image: url(../images/sprite.png);
+  background-position: -21px -268px;
+}
+
+.jimu-widget-layerList .layer-filter .cancel-button {
+  background-color: #222;
+}
+
+.jimu-widget-layerList .layer-filter .search-input-node .jimu-search .jimu-input {
+  background: #222 !important;
+}
+
+.jimu-widget-layerList .layer-filter .search-input-node .jimu-search .search-btn {
+  cursor: auto;
+}
+
+.jimu-widget-layerList .layer-filter .search-input-node .jimu-search .search-btn:hover {
+  background-position: -0px -270px;
+}
+.jimu-widget-layerList .layer-filter .search-input-node .clear-input-button{
+  background-image: url("../images/clear_white.svg");
+}
+
+.jimu-widget-layerList .layer-filter .search-input-node .clear-input-button:hover{
+  background-image: url("../images/clear_white_hover.svg");
+}
+
+.jimu-widget-layerList .popup-menu-transparency-body,
+.jimu-widget-layerList .popup-menu-visible-scale-range-body {
+  outline: none !important;
+  outline-style: 1px solid transparent !important;
+  background-color: #131313;
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  color: #fff;
+}
+
+.jimu-widget-layerList .popup-menu-visible-scale-range-body .esriCurrentScaleIndicator{
+  border-top: 8px solid white;
+}

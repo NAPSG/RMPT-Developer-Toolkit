@@ -1,0 +1,46 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="TThe FeaturelayerServiceBrowser class
+
+allows you to filter layers by feature layer from a map service or feature service, and construct the service tree by specified service URL."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - FeaturelayerServiceBrowser class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-D2809EFC-198A-4F75-90EE-20DA0CA4D0F5]--><body><div id="content"><div class="header"><h1>FeaturelayerServiceBrowser class</h1><div id="breadcrumb"></div></div>
+
+
+
+<p id="GUID-62D965C0-F2EB-44EB-A6EF-2D1C763BC81F">The <span class="usertext">FeaturelayerServiceBrowser</span> class allows you to filter layers by feature layer from a map service or feature service, and construct the service tree by specified service URL.</p><div class="section1" id="ESRI_SECTION1_0F42C555B915460E912E9937776C126C" purpose="section1"><h2>AMD Module Require</h2><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/dijit/FeaturelayerServiceBrowser&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">FeaturelayerServiceBrowser</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></div><div class="section1" id="ESRI_SECTION1_AD91D0B983E14993BB7A555B5D7EBE9E" purpose="section1"><h2>Constructor</h2><p id="GUID-B16AD303-4478-42AD-977C-504F61927451"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext">new FeaturelayerServiceBrowser (params, srcNodeRef)</span></p><p id="GUID-FB97692F-C7CC-4B82-94CE-515F58AF4239">  Creates a new FeaturelayerServiceBrowser dijit.</p><p id="GUID-66547053-0F13-493E-B31A-DBA963576D1A">Parameters:</p><p id="GUID-AE1CFE7F-AEBD-4722-957D-DA174231A482"> <span class="usertext">&lt;Object&gt; params</span>—Required.   Parameters for the FeaturelayerServiceBrowser dijit. </p><p id="GUID-F2636975-00BD-4405-B615-071686016CBF"><span class="usertext"> &lt;DOMNode | String&gt; srcNodeRef</span>—Optional.  HTML element where <span class="usertext">FeaturelayerServiceBrowser</span> is rendered.</p><p id="GUID-DF796DDC-B6C2-4471-A43E-98CF25A94587"> params properties:</p><p id="GUID-B04DB5E4-4818-452F-A2F7-FB5F568D1C75"><span class="usertext"> &lt;String&gt; url</span>—Optional.    The URL to the filter. It must be a REST service URL. </p><p id="GUID-C4BF3FB2-918B-4093-93D1-3B0BF8039760"><span class="usertext">   &lt;Boolean&gt; multiple</span>—Optional.    The default is false. By default, a user can select only one feature layer. If set to true, a user can select multiple feature layers.</p>
+<p id="GUID-135912EE-A906-4777-8C76-131C49724DF2"><span class="usertext"> &lt;String&gt;[] types</span>—Optional.  <span class="usertext">FeaturelayerServiceBrowser</span> supports  filtering a feature layer by geometry type. The available values are point, polyline, and polygon. By default, the value types are ['point','polyline','polygon'], and the dijit doesn't filter a feature layer by geometry type.</p><p id="GUID-3CDA80AC-BDD6-487A-A9AA-20582D4DFA26"> <span class="usertext">&lt;Boolean&gt; isSupportQuery</span>—Optional. By default, only query-enabled services  show.</p><p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/FeaturelayerServiceBrowser&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">FeaturelayerServiceBrowser</span><span class="p">){</span>
+					<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://sampleserver1.arcgisonline.com/ArcGIS/rest/services&quot;</span><span class="p">;</span>
+					<span class="c1">//it also supports the following format urls</span>
+				    <span class="c1">//folder url:  http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics</span>
+				    <span class="c1">//service url: http://tryitlive.arcgis.com/arcgis/rest/services/GeneralPurpose/MapServer</span>
+				    <span class="c1">//group layer url: http://tryitlive.arcgis.com/arcgis/rest/services/GeneralPurpose/MapServer/0</span>
+				    <span class="c1">//group layer url: http://tryitlive.arcgis.com/arcgis/rest/services/GeneralPurpose/MapServer/1</span>
+				    <span class="c1">//layer url: http://tryitlive.arcgis.com/arcgis/rest/services/GeneralPurpose/MapServer/2</span>
+					<span class="kd">var</span> <span class="nx">browser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FeaturelayerServiceBrowser</span><span class="p">({</span>
+						<span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
+						<span class="nx">multiple</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+				  		<span class="nx">types</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;point&quot;</span><span class="p">]</span>
+					<span class="p">},</span> <span class="nx">srcNodeRef</span><span class="p">);</span>
+					<span class="p">...</span>
+				<span class="p">});</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div>
+</p></div><div class="section1" id="ESRI_SECTION1_CE0B3CD7C2B84179B2FF3B4A02D148BB" purpose="section1"><h2>Methods</h2><p id="GUID-23E36369-F020-46D9-A1F7-8352D0DF0027"><div class="block_table" id="TABLE_24FF40BE05DE40F6A5C535C77134EE88" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EEE49C78-836E-432C-8912-543E74A1EC53"><span class="usertext">setUrl(url)</span></p><p id="GUID-7D73802A-8E23-4704-8B3F-5736753E16A9"> Uses the specified URL to filter feature layers.</p>
+<p id="GUID-1D36AC6D-21BA-403C-919B-9C690C2562F1">Parameters:</p><p id="GUID-C352FD90-20FC-4164-827A-83345E4B17A1">&lt;String&gt; url: Required. The REST service URL to the  filter.</p></td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_B7FC2CEBC6BA4B7C9CF743B95969C644" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B0A1B792-588F-4E4A-AD41-7B9F26847305"><span class="usertext">getSelectedItems()</span></p><p id="GUID-CE498133-B962-4D3C-AA62-CF074A45F441">Gets information for selected layers. </p>
+<p id="GUID-25E34538-F68C-4731-8607-4F40A66D8497">Return type:  Object array. Each element is in the form {name, url, definition}.</p></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

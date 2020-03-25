@@ -1,0 +1,23 @@
+<div>
+  <div class="actions jimu-float-trailing" data-dojo-attach-point="actionsNode">
+    <span class="actions-label jimu-ellipsis" title="${nls.actionsLabel}" data-dojo-attach-event="onclick:_onActionsLabelClick">${nls.actionsLabel}</span>
+    <div class="actions-menu" data-dojo-attach-point="actionsMenu">
+      <div class="actions-menu-item item-import" data-dojo-attach-point="itemImportBtn" data-dojo-attach-event="onclick:_onMenuItemClick">
+        <div class="import-button jimu-ellipsis" title="${nls.importAction}" data-dojo-attach-event="onclick:_onImportClick">${nls.importAction}</div>
+      </div>
+      <div class="actions-menu-item item-upload" data-dojo-attach-event="onclick:_onMenuItemClick">
+        <div class="upload-button-div">
+          <div class="upload-button jimu-ellipsis" title="${nls.uploadAction}">${nls.uploadAction}</div>
+          <form enctype="multipart/form-data" title="${nls.uploadAction}" method="post" action="/webappbuilder/rest/apps/upload" data-dojo-attach-point="uploadAppFileFormNode">
+            <input class="file-input" title="${nls.uploadAction}" name="app" type="file" accept=".zip" style="width:100%;height:100%;"
+              data-dojo-attach-point="appFileInputNode" data-dojo-type="dojox/form/Uploader" data-dojo-attach-event="onChange:_onAppFileChange,onError:_onAppFileUploadError,onComplete:_onAppFileUploadComplete">
+            <input name="creator" type="text" value="1234" style="display:none;" data-dojo-attach-point="appFileCreatorInputNode">
+            <input name="portalUrl" type="text" style="display:none" data-dojo-attach-point="appPortalUrlInputNode">
+            <input name="fromList" type="text" style="display:none" data-dojo-attach-point="fromListNode">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

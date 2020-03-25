@@ -1,0 +1,34 @@
+.box-bgcolor {
+  background-color: #2faacd;
+}
+
+.box-simple-panel {
+  background-color: #ffffff;
+}
+
+.esriSimpleSlider {
+  text-align: center;
+  color: #ffffff;
+  background-color: #2faacd;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+/*.jimu-widget-zoomslider,
+.jimu-widget-homebutton,
+.jimu-widget-mylocation {
+  background-color: #2faacd;
+}
+.esriPopup .titlePane {
+  background-color: #2faacd;
+}*/
+
+.jimu-main-background,
+.jimu-widget-home,
+.jimu-widget-navigate,
+.jimu-widget-zoom .esri-zoom .esri-widget,
+.jimu-widget-mylocation,
+.jimu-widget-search .esri-search-button.esri-submit,
+.jimu-widget-placeholder{
+  background-color: #2faacd;
+}

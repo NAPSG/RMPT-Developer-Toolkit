@@ -1,0 +1,46 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The FeatureActionManager class manages feature actions."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+FeatureActionManager
+class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-514D0451-82B7-4E4F-858C-79A07495BB01]--><body><div id="content"><div class="header"><h1>
+FeatureActionManager
+class</h1><div id="breadcrumb"></div></div>
+<p id="GUID-249767FF-355D-4631-A3DD-42F1197F49E3">
+The <span class="usertext">FeatureActionManager</span> class manages feature actions. A feature action is a piece of code that executes on one feature or a set of features. Since <span class="usertext">FeatureActionManager</span> is extensible, you can create your own feature actions.
+</p>
+
+<div class="section1" id="ESRI_SECTION1_5C005B83EC2A452F9AC73DE67170F91F" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-AB6D36F5-C369-4EFD-88CA-4EA75B868BC6"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/FeatureActionManager&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">FeatureActionManager</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_B02627056D81422A9A0659C887ECCAFF" purpose="section1"><h2>Constructor</h2><p id="GUID-94BA7FF8-99C6-443B-B1F2-D9CD0E829581"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6">  <span class="usertext">FeatureActionManager</span> has no constructor. Use <span class="usertext">FeatureActionManager.getInstance()</span>  to get the  <span class="usertext">FeatureActionManager</span> instance.</p><p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="err">&#39;</span><span class="nx">jimu</span><span class="o">/</span><span class="nx">dijit</span><span class="o">/</span> <span class="nx">FeatureActionManager</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">FeatureActionManager</span><span class="p">){</span>
+          <span class="kd">var</span> <span class="nx">featureActionManager</span> <span class="o">=</span> <span class="nx">FeatureActionManager</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+          <span class="p">...</span>
+        <span class="p">});</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="section1" id="ESRI_SECTION1_25C60123A06C4D5ABEAAA6BA8609511A" purpose="section1"><h2>Methods</h2><p id="GUID-51F45509-00F3-44F6-A1B8-F94B502C8814"><div class="block_table" id="TABLE_DB92988E224542E48B6881BBF7F131F9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BBF3EB9-3720-4AB0-BB91-0B574C737BB4"><span class="usertext">  getSupportedActions (featureSet)</span></p><p id="GUID-6278B44B-06E3-4D1F-89C4-D3BBF1151367">  Gets the feature actions that the feature set supports.</p><p id="GUID-6EE8EA91-14D1-483E-B539-1C2CD1A79198">Return type: Deferred object that resolves a list of actions.</p><p id="GUID-C33A77C2-CB2C-4A95-B78C-2DD580176B9F">Parameters:  <span class="usertext">&lt;FeatureSet&gt; featureSet</span>—Required.</p><p id="GUID-85EC72BA-0CA3-4611-A327-CF264609E527"> See <a target="_blank" class="xref" rel="https://developers.arcgis.com/javascript/3/jsapi/featureset-amd.html" href="https://developers.arcgis.com/javascript/3/jsapi/featureset-amd.html">Feature set</a> for details. </p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_385BC7C98B264619A77045403B3410CF" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B33F09A2-511E-4E58-B6D7-2C81EDC17956"><span class="usertext"> getAllActions()</span></p><p id="GUID-16D534E7-9F29-432D-BC2E-34070D0339A3"> Gets all the feature actions that are registered in the app.</p><p id="GUID-B3AB4001-5693-4E9C-9FD8-79941DC217B4">Return type:  Feature action array.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_89D361B2929041DF9AD4BC0F284CBE10" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5E8427D2-EEE8-489E-B37E-D4E3EA7220FA"><span class="usertext"> getActionsByWidgetId (widgetId)</span></p><p id="GUID-867A5B91-5062-41A7-9C36-492505E556F1">   Gets feature actions contained in a widget that are registered in the app.</p><p id="GUID-ADB082CF-0F2E-4B5B-9BBB-0165B8862588">Return type:  Feature action array.</p><p id="GUID-121E1A74-1FB5-483A-A11C-A6C01E8DF60C">Parameters:<span class="usertext">   &lt;String&gt; widgetId</span>—Required. The widget ID.</p><p id="GUID-8831F7A9-88D4-450A-826D-6E6275A8F36E"> </p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_0DB835D6DB4342F289999489FB614FB1" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E352F20D-17EF-47DC-8792-CF8C44CD9DCE"><span class="usertext">  getActionsByActionName (actionName)</span></p><p id="GUID-D4F2A0F4-DDBA-4EC3-A647-9B70DDDDA87A"> Gets feature action instances created from the same feature action class.</p><p id="GUID-A61F6DB8-113D-425E-B62C-48BE5C4B8943">Return type:  Feature action array.</p><p id="GUID-0180ED0C-0337-44D2-BB2C-4D88B19E6254">Parameters:   <span class="usertext">&lt;String&gt;actionName</span>—Required. The feature action name. </p><p id="GUID-4D2AB5E3-D6A9-469B-854A-B534CE633A2B"></p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

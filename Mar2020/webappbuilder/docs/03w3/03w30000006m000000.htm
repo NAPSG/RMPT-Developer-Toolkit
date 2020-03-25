@@ -1,0 +1,91 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The LayerInfos class enables you to access each operational layer in the  web map."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+LayerInfos class
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-83829C1A-D6AC-4C06-86E8-89B4BBC0848B]--><body><div id="content"><div class="header"><h1>
+LayerInfos class
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-B97583EE-F0F3-4C60-8D40-ED368A6EAE3A">
+The <span class="usertext">LayerInfos</span> class enables you to access each operational layer in the  web map.
+</p>
+<div class="notes" id="GUID-4818FA4B-0C28-4C36-A048-D376D07101CA"><div class="caution"><img class="note_img" src="rsrc/caution.png" alt="Caution" title="Caution"><span>Caution:</span></div><div class="tipbody"><p id="GUID-EED6D892-9356-4C40-BEAC-CCDDA10E1F00">The <span class="usertext">LayerInfos</span> class is deprecated. Use the <span class="usertext"><a class="xref" rel="03w3/03w3000000n7000000.htm" href="03w3/03w3000000n7000000.htm">LayerStructure</a></span> class instead.</p></div></div><div class="section1" id="ESRI_SECTION1_C92798E79D9B4E0D940FA5056A5810F0" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-E5B5C593-B641-4038-A3B9-284E277558C1"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/LayerInfos/LayerInfos&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">LayerInfos</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_D90FB66F375C473BB6B921D7416E5430" purpose="section1"><h2>Constructor</h2><p id="GUID-B0DE5E9F-2CDB-4035-94CF-7233845203BC"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext"> LayerInfos.getInstance(webmap, webmapItemInfo).then(lang.hitch(this,
+function(layerInfosObject){}));</span></p><p id="GUID-D1F0FA7B-9393-45BA-B8C6-A31FC7C55E86"> .then(lang.hitch(this,
+function(layerInfosObject) {</p>
+<p id="GUID-F194B6F0-DFED-4D71-8538-41F5B84EC3C7"> }));</p>
+<p id="GUID-FB97692F-C7CC-4B82-94CE-515F58AF4239"> Creates a new layerInfos object.</p><p id="GUID-66547053-0F13-493E-B31A-DBA963576D1A">Parameters:</p><p id="GUID-AE1CFE7F-AEBD-4722-957D-DA174231A482"><span class="usertext"> &lt;Object&gt; webmap</span>—Required. The map.</p><p id="GUID-F2636975-00BD-4405-B615-071686016CBF"><span class="usertext">  &lt;Object&gt; webmapItemInfo</span>—Required. The itemInfo of the map.</p>
+
+
+<p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/LayerInfos/LayerInfos &quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">LayerInfos</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">LayerInfos</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">itemInfo</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">layerInfosObject</span><span class="p">){</span>
+<span class="nx">layerInfosObject</span><span class="p">.</span><span class="nx">getLayerInfoArray</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">layerInfo</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">layerInfo</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span> <span class="nx">layerInfo</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+     <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="section1" id="ESRI_SECTION1_77C5BE1169F3422BB20E6276528DB8A8" purpose="section1"><h2>Methods</h2><p id="GUID-45FD8EC0-26D3-4B1A-AE8A-CBECAE91BFDB"><div class="block_table" id="TABLE_B7FC2CEBC6BA4B7C9CF743B95969C644" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B0A1B792-588F-4E4A-AD41-7B9F26847305"><span class="usertext"> getLayerInfoArray()</span></p><p id="GUID-CE498133-B962-4D3C-AA62-CF074A45F441">  Gets the layerInfo array corresponding to all of the operational layers.</p>
+<p id="GUID-25E34538-F68C-4731-8607-4F40A66D8497">Return type: Object[&lt;LayerInfo&gt; layerInfo, …]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div>
+
+<div class="block_table" id="TABLE_DB92988E224542E48B6881BBF7F131F9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BBF3EB9-3720-4AB0-BB91-0B574C737BB4"><span class="usertext">  getLayerInfoById(layerId)</span></p><p id="GUID-E14022E6-BB21-4553-8AD6-824258D0FEC8"> Gets the  layerInfo by the layer ID. Returns null if  the layer ID does not exist.</p>
+
+
+<p id="GUID-6EE8EA91-14D1-483E-B539-1C2CD1A79198">Return type: &lt;LayerInfo&gt;</p>
+
+
+<p id="GUID-03EA8FB1-7120-48D7-8095-569BDA4BBF22">Parameters:</p><p id="GUID-EF47D8DC-2922-4DF6-AA72-2DB4DA54E898"><span class="usertext">&lt;String&gt; layerId</span>—Required. The layer
+ID.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_B211CCB380C54813A93F503A24496D65" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-506E71B5-6ACA-446B-88C0-D38F74898EFB"><span class="usertext">  getTableInfoArray()</span></p><p id="GUID-A14AF735-769C-4C8A-B5D9-7E423E44654C">  Gets the layerInfo array corresponding to all the  tables in  the map.</p>
+
+
+<p id="GUID-933A1BCC-2D1B-4750-A103-A8CFA8299446">Return type: Object[&lt;LayerInfo&gt; layerInfo, …]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_D6560917C6674E49967D13C05DA6D24B" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC176113-EDE2-4D84-99DE-CE3B4BE595B4"><span class="usertext"> moveDownLayer(layerId)</span></p><p id="GUID-6D5929BE-A102-4F25-8EA9-55B70352A817">  Moves the layer  down in the map.</p>
+
+
+
+
+
+<p id="GUID-E948A697-28A1-4E11-B854-F407DCDD46C0">Return type: &lt;String&gt;.  Returns the layer ID  that has been changed.</p><p id="GUID-2AA9AF39-69A4-40D4-A300-405D20A77604">Parameters: </p><p id="GUID-6DDC12D2-57B4-4618-9F1D-C93858374CF6"><span class="usertext">&lt;String&gt; layerId</span>—Required. The layer ID.</p></td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_1FCCE8FF18DB4BCEBA27E69F1414C7B3" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A879B6EF-AEF7-48F1-B7C5-32056CEF93CD"><span class="usertext"> moveUpLayer(layerId)</span></p><p id="GUID-24DBB6EF-64F4-41B1-AC72-01D8E28454DB"> Moves the layer  up in the map.</p>
+
+
+
+
+
+<p id="GUID-D5CE9F19-4EC7-4CC9-BAEB-4405710AA98A">Return type: &lt;String&gt;.  Returns the layer ID  that has been changed.</p><p id="GUID-EB9CE588-EFE2-45B1-B35C-113B1F827801">Parameters: </p><p id="GUID-FCA7FD5C-CD1F-4E5B-B333-944193511642"><span class="usertext">&lt;String&gt; layerId</span>—Required. The layer ID.</p></td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_9C3883CCC7E84733B69F1444BC43A4D8" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC64F70A-95C7-480E-95F8-FEEE39466787"><span class="usertext"> traversal(callback)</span></p><p id="GUID-9B80005E-1AA1-4BB0-B7AD-AAA4DD273215">Traverses all  the layers and the sublayers with Depth-First-Search.</p><p id="GUID-7B068C92-215A-4D53-8C05-66ED611027E5">Return type: &lt;Boolean&gt;</p><p id="GUID-E2F3B40E-F280-447B-8D47-BEF103398977">Return value:<ul purpose="ul" id="UL_195B480DAE594876A7D381D41C6DAE61"><li purpose="li" id="LI_5B86E9494FB44038B775C42DA9AC0CC3">If true, the  interrupted traversal by callback condition is satisfied.</li><li purpose="li" id="LI_42AFDC8CF87846109FE6DA630F89C057">If false,  it traverses all the layers and sublayers, and the callback condition is not satisfied.</li></ul></p><p id="GUID-97ECBAB0-5C63-4706-AFD0-D0B74563159E">Parameters:</p><p id="GUID-52F217B5-C96C-4A23-9DF5-658D83FF46AD"><span class="usertext">  &lt;Function&gt; callback (layerInfo)</span>—Required. Called by each layer and sends layerInfo as a parameter. The layer can be  handled  in the callback.</p><p id="GUID-46C42CB0-8B67-4B8B-9937-BA3E42EA3C16">
+Callback parameters: &lt;LayerInfo&gt;</p>
+<p id="GUID-661C2738-BF56-490C-B1D7-DFC9C9257ED3">Callback return type:  &lt;Boolean&gt;</p>
+<p id="GUID-6528D5E1-BEA7-4AC4-A860-DF8EEC3F4DAD">Callback return value:<ul purpose="ul" id="UL_F80365743DC442DBA59588B27945E23A"><li purpose="li" id="LI_F56C0B0633124248B535AE76572F54ED">If  true, it is  interrupt traversal.</li><li purpose="li" id="LI_7CEB5BB4B05340519CEA00F43D7BD37D">If false, it is  continue traversal.</li></ul></p>
+
+
+<p id="GUID-BE61E2E7-02B6-4A4F-B0CC-4997B272C065"> Example:</p>
+
+
+<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">layerInfosObject</span><span class="p">.</span><span class="nx">traversal</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">layerInfo</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">layerInfo</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span> <span class="nx">layerInfo</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">})</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div>
+</p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

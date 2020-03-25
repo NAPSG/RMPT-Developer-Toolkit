@@ -1,0 +1,136 @@
+{
+  "map": {
+    "position": {
+      "left": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0
+    }
+  },
+  "widgetOnScreen": {
+    "widgets": [
+      {
+        "uri": "widgets/Search/Widget",
+        "visible": false,
+        "position": {
+          "left": 60,
+          "top": 10
+        },
+        "version": "2.11"
+      },
+      {
+        "uri": "widgets/ZoomSlider/Widget",
+        "position": {
+          "top": 10,
+          "left": 15
+        },
+        "version": "2.11"
+      },
+      {
+        "uri": "widgets/HomeButton/Widget",
+        "visible": false,
+        "position": {
+          "left": 15,
+          "top": 80
+        },
+        "version": "2.11"
+      },
+      {
+        "uri": "widgets/MyLocation/Widget",
+        "visible": false,
+        "position": {
+          "left": 15,
+          "top": 120
+        },
+        "version": "2.11"
+      },
+      {
+        "uri": "widgets/Scalebar/Widget",
+        "visible": false,
+        "position": {
+          "left": 15,
+          "bottom": 25
+        },
+        "version": "2.11"
+      },
+      {
+        "uri": "widgets/Coordinate/Widget",
+        "visible": false,
+        "position": {
+          "left": 15,
+          "bottom": 5
+        },
+        "version": "2.11"
+      },
+      {
+        "uri": "widgets/OverviewMap/Widget",
+        "visible": false,
+        "position": {
+          "right": 370,
+          "bottom": 0
+        },
+        "version": "2.11"
+      },
+      {
+        "uri": "widgets/Splash/Widget",
+        "visible": false,
+        "position": {
+          "relativeTo": "browser"
+        },
+        "version": "2.11"
+      },
+      {
+        "uri": "widgets/ExtentNavigate/Widget",
+        "visible": false,
+        "position": {
+          "left": 15,
+          "top": 160
+        },
+        "version": "2.11"
+      },
+      {
+        "uri": "widgets/FullScreen/Widget",
+        "visible": false,
+        "position": {
+          "left": 15,
+          "top": 230
+        },
+        "version": "2.11"
+      }
+    ],
+    "groups": [
+      {
+        "visible": false,
+        "panel": {
+          "uri": "themes/PocketTheme/panels/PocketPanel/Panel",
+          "position": {
+            "top": 10,
+            "right": 15,
+            "bottom": 10,
+            "width": 360,
+            "relativeTo": "browser"
+          }
+        },
+        "maxWidgets": 1
+      }
+    ]
+  },
+  "mobileLayout": {
+    "widgetOnScreen": {
+      "widgets": {
+        "widgets/Scalebar/Widget": {
+          "position": {
+            "left": 15,
+            "bottom": 25
+          }
+        },
+        "widgets/Coordinate/Widget": {
+          "position": {
+            "left": 15,
+            "bottom": 5
+          }
+        }
+      }
+    }
+  }
+}

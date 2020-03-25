@@ -1,0 +1,145 @@
+{
+  "theme": {
+    "name": "FoldableTheme",
+    "styles": ["default", "black", "blue", "cyan", "green", "purple", "red", "yellow"]
+  },
+  "portalUrl": "",
+  "appId": "",
+  "authorizedCrossOriginDomains": [],
+  "title": "ArcGIS Web Application",
+  "subtitle": "with Web AppBuilder for ArcGIS",
+  "keepAppState": false,
+  "logo": "images/app-logo.png",
+  "httpProxy": {
+    "useProxy": true,
+    "url": "/proxy.js"
+  },
+
+  "isWebTier": false,
+
+  "geometryService": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
+
+  "links": [{
+    "label": "ArcGIS Online",
+    "url": "//www.arcgis.com"
+  }],
+
+  "widgetOnScreen": {
+    "widgets": [{
+      "uri": "themes/FoldableTheme/widgets/HeaderController/Widget",
+      "position": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "height": 40,
+        "paddingRight": 0,
+        "relativeTo": "browser"
+      }
+    }, {
+      "uri": "widgets/Search/Widget",
+      "position": {
+        "left": 51,
+        "top": 10,
+        "relativeTo": "map"
+      }
+    }, {
+      "uri": "widgets/ZoomSlider/Widget",
+      "position": {
+        "left": 10,
+        "top": 10
+      }
+    }, {
+      "uri": "widgets/Home/Widget",
+      "position": {
+        "left": 10,
+        "top": 85
+      }
+    }, {
+      "uri": "widgets/MyLocation/Widget",
+      "position": {
+        "left": 10,
+        "top": 123
+      }
+    }, {
+      "uri": "widgets/Navigate/Widget",
+      "position": {
+        "left": 10,
+        "top": 161
+      }
+    }, {
+      "uri": "widgets/Compass/Widget",
+      "position": {
+        "right": 10,
+        "top": 10
+      }
+    }, {
+      "uri": "widgets/FullScreen/Widget",
+      "position": {
+        "right": 10,
+        "top": 52
+      }
+    }, {
+      "uri": "widgets/Coordinate/Widget",
+      "position": {
+        "left": 0,
+        "bottom": 16
+      }
+    }, {
+      "uri": "widgets/Splash/Widget",
+      "visible": false,
+      "position": {
+        "relativeTo": "browser"
+      }
+    }]
+  },
+
+  "map": {
+    "3D": true,
+    "2D": false,
+
+    "position": {
+      "left": 0,
+      "top": 40,
+      "right": 0,
+      "bottom": 0
+    },
+
+    "itemId": "",
+
+    "mapOptions": {
+      "initialState": null
+    }
+  },
+
+  "widgetPool": {
+    "panel": {
+      "uri": "themes/FoldableTheme/panels/FoldablePanel/Panel",
+      "position": {
+        "top": 5,
+        "right": 5,
+        "bottom": 5
+      }
+    },
+
+    "widgets": [{
+      "uri": "widgets/Daylight/Widget"
+    },{
+      "uri": "widgets/Slides/Widget"
+    }]
+  },
+
+  "loadingPage": {
+    "backgroundColor": "#508dca",
+    "backgroundImage":{
+      "visible":false
+    },
+    "loadingGif":{
+      "visible": true,
+      "uri": "configs/loading/images/predefined_loading_1.gif",
+      "width": 58,
+      "height": 29
+    }
+  },
+
+  "wabVersion": "2.11"
+}

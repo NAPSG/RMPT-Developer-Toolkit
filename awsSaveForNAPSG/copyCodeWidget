@@ -1,0 +1,4 @@
+
+aws s3 sync /Users/charlesletcher/Documents/GitHub/NAPSG_ESRI/src/SituationAwareness s3://sitaware-widget --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+
+

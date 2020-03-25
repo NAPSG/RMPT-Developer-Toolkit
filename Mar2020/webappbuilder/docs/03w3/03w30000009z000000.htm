@@ -1,0 +1,32 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The FilterManager class manages the filters to avoid filter conflict between widgets."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+FilterManager
+class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-685FDD01-C8F6-4C4B-A72D-89EBF7CF6251]--><body><div id="content"><div class="header"><h1>
+FilterManager
+class</h1><div id="breadcrumb"></div></div>
+<p id="GUID-EA50A55E-7443-4CF8-B41F-F5BF4B4A84A9">The <span class="usertext">FilterManager</span> class manages the filters to avoid filter conflict between widgets.</p>
+<div class="section1" id="ESRI_SECTION1_D04EE717B17D4A23A5B710FC0F0884E5" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-64D390D2-9C09-4136-B414-9EABC0106A8B"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/FilterManager&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">FilterManager</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_579AE6779E5E49DABD3C79B32112355E" purpose="section1"><h2>Constructor</h2><p id="GUID-CBE6019C-D700-4DE0-9EC0-28EF4FAD9050"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext">FilterManager</span> has no constructor. Use <span class="usertext">FilterManager.getInstance()</span>  to get the <span class="usertext">FilterManager</span> instance.</p><p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/dijit/FilterManager&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">FilterManager</span><span class="p">){</span>
+          <span class="kd">var</span> <span class="nx">filterManager</span> <span class="o">=</span> <span class="nx">FilterManager</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+          <span class="p">...</span>
+        <span class="p">});</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="section1" id="ESRI_SECTION1_268888413F5245F4B116DE54024DCC63" purpose="section1"><h2>Methods</h2><p id="GUID-DEFDB041-0CFE-4CCC-A446-876B62941197"><div class="block_table" id="TABLE_DB92988E224542E48B6881BBF7F131F9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BBF3EB9-3720-4AB0-BB91-0B574C737BB4"><span class="usertext">  applyWidgetFilter (layerId, widgetId, expression)</span></p><p id="GUID-6278B44B-06E3-4D1F-89C4-D3BBF1151367"> Applies a filter to a layer.</p><p id="GUID-6EE8EA91-14D1-483E-B539-1C2CD1A79198">Return type: Undefined.</p><p id="GUID-C33A77C2-CB2C-4A95-B78C-2DD580176B9F">Parameters:<ul purpose="ul" id="UL_3D85EB18A9BD4EFE9D76FBFF2B448B93"><li purpose="li" id="LI_4DD158019E094EBBBEC269C3ED38D409"><span class="usertext"> &lt;String&gt; layerId</span>—Required. The ID of the layer where the filter is to be applied. </li><li purpose="li" id="LI_268103DC79B045ACA2E1DA9589FBF47C"><span class="usertext">&lt;String&gt; widgetId</span>—Required.  The ID of the widget where the  filter is to be applied.</li><li purpose="li" id="LI_7B9C47A3912A4487B469C46B935DDA0D"><span class="usertext"> &lt;String&gt; expression</span>—Required. The filter expression. </li></ul></p></td></tr></tbody><caption class="table_desc"></caption></table></div>
+<div class="block_table" id="TABLE_97BC2F9414C2413883545328C3AA2FF4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8B6CCA74-18A1-4D11-9A17-C1835B4A4288"><span class="usertext"> getWidgetFilter (layerId, widgetId)</span></p><p id="GUID-613CBACF-AC01-438F-90B3-B2284378598F">  Gets the filter expression that a widget has applied to a layer.</p><p id="GUID-2B3AF589-2FB5-406B-8394-9CFDC3B947FA">Return type:  The filter expression string.</p><p id="GUID-90E9A96B-A4B0-4724-AADE-099F3CBD3BCD">Parameters:<ul purpose="ul" id="UL_DBDBC09F8EA94FF0A3617DA71382B6D8"><li purpose="li" id="LI_590B9966F0FB47B597B9EEF810836D37"> <span class="usertext">&lt;String&gt; layerId</span>—Required. The ID of the layer where the filter is from. </li><li purpose="li" id="LI_F32FF71F9960459F840D7423287C0168"><span class="usertext"> &lt;String&gt; widgetId</span>—Required.  The ID of the widget where the  filter is from.</li></ul></p></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

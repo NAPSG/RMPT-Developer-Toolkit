@@ -1,0 +1,70 @@
+{
+  "widgetOnScreen": {
+    "widgets": [{
+      "uri": "themes/DartTheme/widgets/DartController/Widget",
+      "position": {
+        "left": 0,
+        "right": 0,
+        "bottom": 20
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Coordinate/Widget",
+      "position": {
+        "left": "50%",
+        "top": 10,
+        "marginLeft": -187
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Compass/Widget",
+      "position": {
+        "right": 10,
+        "top": 10
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/FullScreen/Widget",
+      "position": {
+        "right": 10,
+        "top": 52
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Splash/Widget",
+      "visible": false,
+      "position": {
+        "relativeTo": "browser"
+      },
+      "version": "2.11"
+    }]
+  },
+
+  "map": {
+    "position": {
+      "left": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0
+    }
+  },
+
+  "widgetPool": {
+    "panel": {
+      "uri": "themes/DartTheme/panels/DartPanel/Panel"
+    },
+    "widgets": [{
+      "uri": "widgets/ZoomSlider/Widget",
+      "version": "2.11"
+    }, {
+      "uri": "widgets/MyLocation/Widget",
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Navigate/Widget",
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Home/Widget",
+      "version": "2.11"
+    }]
+  }
+}

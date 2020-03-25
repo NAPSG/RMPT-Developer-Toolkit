@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
+//>>built
+define("dojo/_base/declare dojo/Evented dojo/on dojo/_base/lang dojo/_base/html jimu/dijit/Popup ./DataSourceConfig".split(" "),function(c,d,a,b,e,f,g){return c([f,d],{width:830,height:580,titleLabel:"",dijitArgs:null,postCreate:function(){this.inherited(arguments);e.addClass(this.domNode,"data-source-config-popup");this._initDataSourceConfig()},_initDataSourceConfig:function(){this.dataSourceConfig=new g(this.dijitArgs);this.dataSourceConfig.placeAt(this.contentContainerNode);this.dataSourceConfig.startup();
+this.own(a(this.dataSourceConfig,"ok",b.hitch(this,function(a){this.emit("ok",a)})));this.own(a(this.dataSourceConfig,"cancel",b.hitch(this,function(){this.emit("cancel")})))}})});

@@ -1,0 +1,36 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Oblique Viewer widget allows you to pan in the oblique mode, pan in a single viewing angle, or switch angles to view an area of interest from different angles."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Oblique Viewer</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-3C6AEE99-0762-4D2F-BF28-E3BB65C1DB94]--><body><div id="content"><div class="header"><h1>
+Oblique Viewer</h1><div id="breadcrumb"></div></div>
+
+<p id="GUID-5DD4D1AE-83F2-4159-950A-D32106003416"> The Oblique Viewer widget displays images in a native coordinate system using an image coordinate system (ICS). Oblique images are displayed in a native ICS to avoid distortion caused by projecting them in a geographic coordinate system or projected coordinate system. The Oblique Viewer widget allows you to pan in the oblique mode, pan in a single viewing angle, or switch angles to view an area of interest from different angles.</p><p id="GUID-2459EE26-A84B-4020-875B-858BFC158A21">The following table describes the configurable attributes of the Oblique Viewer widget:</p>
+<p id="GUID-D81D0C8B-FE11-4BBB-8C2D-3AD4F6E4ADBD"><div class="block_table" id="TABLE_DFCCB594718349C586E15BC15FF311A8" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-B45DD3C9-D2EA-48A8-AB61-6AF1BCFDC4D1">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-2FD4DDB5-351F-421F-9C85-F3B461551496">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-11D5548F-00CA-4FD0-A75B-7E339163BD79"><span class="usertext">layerTitle</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-48FF2AE6-D909-4C0C-9C8A-6CC372030EBB"> Title of the image service layer containing oblique imagery data in the web map.  There is no default. </p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-137C42AB-80BB-4078-B75D-CE63CF3CE83F"><span class="usertext"> azimuthAngle</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2B68E65E-5351-4D09-8DD2-1101EC0D1040">The azimuth angle the widget should start in. The default value is zero. </p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8E0D250C-B4BF-4A20-A037-0B4F27741432"><span class="usertext"> azimuthField</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F935AE57-8875-4DC6-A085-5C508C7E17EC"> The field in the image service that defines the sensor azimuth of an image. The azimuth field in this case is the viewing angle, clockwise from north. So, looking toward north is 0, east is 90, south is 180, and west is 270. There is no default. </p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-00A2EDD9-D429-4ACF-AF60-A652BFF64C43"><span class="usertext"> elevationField</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-113A7CB2-5E71-4FC4-A73A-8F6EC65C1EE6"> The field in the image service that defines the sensor elevation of an image. This can vary from 0 (horizon) to 90 (completely nadir). There is no default. </p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-073D4374-573D-47E1-8C96-29042B260BF5"><span class="usertext"> rasterInfoFields</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-084CE277-0AA6-48BA-93A1-3E7A7BFAA422">An array of field names to be shown in the list of rasters in the chosen direction. OBJECTID and Azimuth are selected by default. </p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D952E44E-DC13-4E10-B3C0-E899A33AEC83"><span class="usertext"> showThumbnail</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6EC188B1-BD83-49A5-8A58-AD7F5092B84E">Boolean. Determines whether to show the thumbnail in the list. The default value is true. </p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E14ED936-F5B0-40A1-984B-25594281AC77"><span class="usertext"> autoSync</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C6E3D8B9-C1B5-4347-8630-76674A40B106">  Boolean. Determines whether to synchronize the main map when the oblique map is panned or zoomed.  The default value is true. </p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-03DA6609-A296-4227-8B5F-2F104F7C3BB1">Default state: <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="nt">&quot;ObliqueViewer&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;layerTitle&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;azimuthAngle&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;azimuthField&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;elevationField&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;rasterInfoFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;showThumbnail&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;autoSync&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></p></td></tr></tbody><caption class="table_desc"></caption></table></div></p>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

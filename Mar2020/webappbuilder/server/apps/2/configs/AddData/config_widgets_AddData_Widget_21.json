@@ -1,0 +1,30 @@
+{
+  "numPerPage": 30,
+  "scopeOptions": {
+    "MyContent": {
+      "allow": true,
+      "label": null
+    },
+    "MyOrganization": {
+      "allow": true,
+      "label": null
+    },
+    "Curated": {
+      "allow": true,
+      "label": "Core Information Needs",
+      "filter": "1be96fe19d9d48ed91a2f26126002bbe"
+    },
+    "ArcGISOnline": {
+      "allow": true,
+      "label": null
+    },
+    "defaultScope": "MyOrganization"
+  },
+  "addFromUrl": {
+    "allow": true
+  },
+  "addFromFile": {
+    "allow": true,
+    "maxRecordCount": 1000
+  }
+}

@@ -1,0 +1,56 @@
+<div>
+  <div class="separate-line" >
+    <div class="switch-app-template">
+      <div class ="switch-btn-box selected jimu-float-leading" data-dojo-attach-point="appListBtnBox" >
+        <div class="switch-btn app-list-btn" data-dojo-attach-point="appListBtn" data-dojo-attach-event="onclick:_onSwitchToAppList">${nls.apps}
+        </div>
+        <div class="blue-block"></div>
+      </div>
+
+      <div class ="switch-btn-box jimu-float-leading" data-dojo-attach-point="templateListBtnBox">
+        <div class="switch-btn template-list-btn jimu-float-leading" data-dojo-attach-point="templateListBtn" data-dojo-attach-event="onclick:_onSwitchToTemplateList">${nls.templates}
+        </div>
+        <div class="blue-block"></div>
+      </div>
+    </div>
+  </div>
+  <div class="app-content" data-dojo-attach-point="appContent">
+    <div class="head-section" data-dojo-attach-point="head-section">
+        <div class="textPart1 jimu-float-leading">${nls.welcomeMessage}</div>
+        <div class="textPart2 jimu-float-leading"></div>
+        <div data-dojo-attach-point="importBtnDiv"></div>
+        <div class="create-button-div jimu-float-trailing" data-dojo-attach-point="createBtnDiv">
+          <input class="create-button jimu-ellipsis" type="button" title="${nls.appCreate}" value="${nls.appCreate}" data-dojo-attach-event="onclick:_onCreateClick">
+        </div>
+    </div>
+
+    <div class="list-section" id="list-section" data-dojo-attach-point="listSection">
+      <table class="list-section-head">
+        <tbody>
+          <tr class="head-content">
+            <th class="name" data-dojo-attach-point="headContentName">${nls.appName}</th>
+            <th class="desc">${nls.appDesc}</th>
+            <th class="time">${nls.appTime}</th>
+            <th class="modified">${nls.appModified}</th>
+            <th class="creator">${nls.appCreator}</th>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="list-section-body-content" id="list-section-body-content" data-dojo-attach-point="listSectionBodyContent">
+        <table class="list-table" data-dojo-attach-point="listTable">
+          <tbody data-dojo-attach-point="listTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="list-section-body-content" id="template-list-section-body-content" data-dojo-attach-point="templateListSectionBodyContent">
+        <table class="list-table" data-dojo-attach-point="templateListTable">
+          <tbody data-dojo-attach-point="templateListTableBody"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+  <!--iframe style="display:none" name="downloadTargetFrame"></iframe-->
+</div>
+

@@ -1,0 +1,70 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Configure your widget by changing the attributes."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - Widget configuration
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-575F162F-CDD0-416A-A049-3DA736B9B7C6]--><body><div id="content"><div class="header"><h1>Widget configuration
+</h1><div id="breadcrumb"></div></div>
+
+
+
+
+    
+    
+<p id="GUID-41DDF99E-C172-4AB9-BD9F-BE14ECFE2BC8">The following table shows widget attributes and descriptions for widget configuration.</p><p id="GUID-6C875FCF-21EF-47A8-889E-86E0E3DD46E3"><div class="block_table" id="TABLE_6457B37042F54AEBBE609F95550AE939" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-DFB53B74-9379-4D07-BFEA-9887E643FD4D">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-08FCE9BC-0C26-40D8-8BE7-7606C5ED0E3B">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-126F1EBB-2E79-44B1-9B2E-BB427B4D6A8B"><span class="usertext">id</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-63F84A1E-2635-4B0F-A419-B1FABE4E33EF">String. If omitted, the viewer generates one.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6CC22DF8-8224-4682-A200-5122DDB4EFFB"><span class="usertext">label</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F5B55003-F96F-4771-8CAF-04A0B90D5433">String. The widget display name, such as Bookmark or Query.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C8E4082A-B003-450A-A512-C51E81F88209"><span class="usertext">uri</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0B396BD3-03F5-4D18-88AB-3A5E95340630">String. The widget main class, derived from <span class="usertext">BaseWidget</span>. For example, <span class="usertext">widgets/Bookmark/Widget</span>.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-339B9DDE-0B41-4D32-BC5D-8A84B68F7A7A"><span class="usertext">icon</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4C63213E-3AF4-44C4-BE08-8800E7720A96">String. If omitted, the default icon is <span class="usertext">images/icon.png</span>. You can set this property to point to another PNG file. For example, <span class="usertext">configs/Bookmark/icon_bookmark1.png</span>. <ul purpose="ul" id="UL_6ACB781960B7428FAAA0B593FB8056AC"><li purpose="li" id="LI_3EFA841165084A82A8B8EBDC8EAD54CB"> Do not define this property if you use a widget only once. </li><li purpose="li" id="LI_CCF801CAB55647609EACE30A9FAEE361">If you use a widget more than once, put the icon file in the  app configs folder, and name it <span class="usertext">icon_{label}.png</span>.</li></ul></p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0412B6A4-AA96-4EF3-B305-AE26813D63B0"><span class="usertext">openAtStart</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C13223A6-8739-48E7-99AE-5BC962A3AC85">Boolean. Indicates whether the widget opens when the app starts. The default value is false. This is only valid for in-panel widgets.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-54F5927E-DEEE-4DFE-A4CB-CB21552AB16F"><span class="usertext">config</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6A8D5B0E-17E9-444A-B474-982E4DB034DA">String or object. The widget configuration. The format depends on the widget. It can be one of the following:<ul purpose="ul" id="UL_20EA5632FAA8491E89C9CF33C4654F04"><li purpose="li" id="LI_B7ECFAE595B147EC9631E8C3DE32220B">URL points to the config file.</li><li purpose="li" id="LI_965E475E764E4BEBB0B8F20FD7720CA0">Config object.</li></ul></p><p id="GUID-A6E1B8E6-4689-42EA-A87E-94A133190A5B">If omitted, the default config.json file in the widget folder is used. If it points to a config file such as config_&lt;widget label&gt;.json, it is recommended to put  it in  the <span class="usertext">configs/&lt;widget name&gt;</span> folder.<ul purpose="ul" id="UL_AA1BA68A2FA74FF0940EEA84DACC9D92"><li purpose="li" id="LI_099CF66F88A5435082E739464575293A">Do not define this property if you use a widget only once.</li><li purpose="li" id="LI_3466F69A8B6047D09BAC38AAB101C9EF">If you use a widget more than once, put the configuration file in the widget folder and name it <span class="usertext">config_{label}.json</span>.</li></ul></p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6CCB8564-6E98-4814-A1C2-72AB5B59F8BC"><span class="usertext">version</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"> <p id="GUID-AD4D7D5D-0615-473A-B5E7-9D32AB6B737E">If the version is older, the framework  will run the widget's version manager to upgrade the old configuration.</p> </td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-043F9073-6B88-4277-8100-915C0B937538"><span class="usertext">closeable</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44145D8F-50D5-4094-9735-DD83172D3938">Optional—Boolean. Only valid for the off-panel widget on the screen. If false, the widget loads and is located
+at  the defined position. You can't close it. If true, the app creates an icon for the
+widget.  You can  click the icon to open and close it.</p>
+
+
+
+</td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CBC44559-EE67-4444-8B56-D2853D2A6050"><span class="usertext">position</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8C3135CB-EF51-4965-AB16-1B354908FD6E">Optional—Object. Sets the position of the widget and is only valid for the on-screen widgets. There is
+no default value. If not set,  the widget is positioned by itself. The panel and group have the same property.</p>
+
+<p id="GUID-130F0AC0-57E6-4AE9-8CC9-1235B77E48E4"> The app container (framework) provides six properties
+to define   a widget position: left, top, bottom, right, width, and
+height, although any four of them should be good enough. If one of these properties is configured, the app container applies
+it  to the widget's domNode, and other properties are  set
+to auto.</p>
+
+<p id="GUID-43C41018-2854-43CF-89AA-C67E4CE8603A">In addition, the position has four  properties to define the widget padding:   paddingRight,  paddingLeft,  paddingTop, and   paddingBottom.</p><p id="GUID-675E38FC-3D61-4DCB-9EE1-993C78069BE5">Besides the  position and padding properties for a widget specified above, the position object has two other  properties:</p><p id="GUID-5C8DF339-1B03-4336-B901-24C0F22D01E6"><ul purpose="ul" id="UL_1E9826D4229D4B78A81DFC2C7D232D99"><li purpose="li" id="LI_F1BE1A655BB2455DBA84D2CB37CE2525"> Optional—relativeTo. The value can be either map or browser. The default is map.</li><li purpose="li" id="LI_A73C2A1426C14DD092F81D41AEF4E7E6">Optional—zIndex. If not set, the widget's z-index is auto. The value  should be between 0 and 100.</li></ul></p><p id="GUID-6CC64C63-D388-44C3-816D-4CFB0D8A649F">Example: <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;position&quot;: {
+  &quot;left&quot;: 10,
+  &quot;top&quot;: 10
+}
+</code></pre></div>
+</div></p>
+
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></p><p id="GUID-F75C22AB-A853-4F36-A912-427A37B563A0">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgets&quot;: [{
+      &quot;id&quot;: &quot;bookmark1&quot;,
+      &quot;uri&quot;: &quot;widgets/Bookmark/Widget&quot;,
+      &quot;icon&quot;: &quot;configs/Bookmark/icon_Mybookmark.png&quot;,
+      &quot;label&quot;: &quot;My Bookmark&quot;,
+      &quot;openAtStart&quot;: true,
+      &quot;config&quot;: {
+          &quot;name&quot;: &quot;Test&quot;,
+          &quot;extent&quot;: []
+       },
+       &quot;version&quot;: &quot;2.0&quot;,
+       &quot;position&quot;: {
+          &quot;left&quot;: 20,
+          &quot;top&quot;: 20
+       }
+}]
+</code></pre></div>
+</div>
+
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

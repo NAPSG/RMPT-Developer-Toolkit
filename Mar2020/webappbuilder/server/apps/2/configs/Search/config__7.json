@@ -1,0 +1,37 @@
+{
+  "allPlaceholder": "",
+  "showInfoWindowOnSelect": true,
+  "sources": [
+    {
+      "layerId": "USA_Counties_4320",
+      "url": "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Counties/FeatureServer/0",
+      "name": "Base Data - USA Counties",
+      "placeholder": "",
+      "searchFields": [],
+      "displayField": "NAME",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "panToScale": false,
+      "zoomScale": null,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+    {
+      "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
+      "name": "ArcGIS World Geocoding Service",
+      "singleLineFieldName": "SingleLine",
+      "placeholder": "Find address or place",
+      "countryCode": "",
+      "panToScale": false,
+      "zoomScale": null,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "searchInCurrentMapExtent": false,
+      "enableLocalSearch": true,
+      "localSearchMinScale": 300000,
+      "localSearchDistance": 50000,
+      "type": "locator"
+    }
+  ]
+}

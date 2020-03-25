@@ -1,0 +1,120 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The ItemSelector class
+allows you to search items of specified types in ArcGIS Enterprise and ArcGIS Online."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - ItemSelector class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-7D73823A-59EB-4992-8C1A-CD1E1399A30A]--><body><div id="content"><div class="header"><h1>ItemSelector class</h1><div id="breadcrumb"></div></div>
+
+
+
+<p id="GUID-A9AE041E-6887-46A2-A642-B5F1CD8340C3">The <span class="usertext">ItemSelector</span> class allows you to search items of specified types in <span purpose="ph" varid="ArcGIS_Enterprise_long" translate="no">ArcGIS Enterprise</span> and <span purpose="ph" varid="ArcGISOnline" translate="no">ArcGIS Online</span>.</p>
+    
+    <div class="section1" id="ESRI_SECTION1_9AC00608E6D3403780A2275D122031BE" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-5477A47B-A1D3-4A35-B7EB-81DC02B1369A"><div class="codeblock" purpose="codeblock">
+      <div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/dijit/ItemSelector&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ItemSelector</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+
+    </div>
+    </p></div><div class="section1" id="ESRI_SECTION1_68CE3EC2085A4A0CBAAA0E16FF809E10" purpose="section1"><h2>Constructor</h2><p id="GUID-F3424137-70BA-43C7-B687-7C65C53E914D"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody>
+          <tr>
+            <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+              <p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6">
+                <span class="usertext">new ItemSelector (params, srcNodeRef)</span>
+              </p>
+              <p id="GUID-9C461F04-4B5D-4ECF-B31C-93DC671B693B">  Creates a new ItemSelector dijit.</p>
+              <p id="GUID-72CB8467-9B12-4623-B054-5102294D3B53">
+                Parameters:
+              </p>
+              <p id="GUID-60351FB7-EFCB-4017-BD60-24D4EC052C4A"> <span class="usertext">&lt;Object&gt; params</span>—Required.   Parameters for the ItemSelector dijit. </p>
+              <p id="GUID-2D94106B-AAD3-457E-AF32-6F19A4AA5737"><span class="usertext"> &lt;DOMNode | String&gt; srcNodeRef</span>—Optional.  HTML element where <span class="usertext">ItemSelector</span> is rendered.</p>
+              <p id="GUID-82A3ECB1-D9F2-4846-A49A-A9CF8D9F88D1">
+                 params properties:
+              </p>
+              <p id="GUID-97CCB85B-B7AF-4C7F-B1E3-24A638785008"><span class="usertext"> &lt;String&gt; portalUrl</span>—Required.    The portal URL of your portal, such as <span class="usertext">http://orgname.maps.arcgis.com</span> or <span class="usertext">http://myportal.company.com/instancename</span>. </p>
+              <p id="GUID-A8A3A3EC-306E-421B-B62C-75B0C04300D1"><span class="usertext">   &lt;String&gt;[] itemTypes</span>—Required.    <span class="usertext">ItemSelector</span> supports multiple item types to show items. Only items with specified types will show, such as ['Web Map'], ['Feature Service','Map Service'], and so on.  </p>
+              <p id="GUID-336636BF-AD91-41C8-B549-CE4DC9AFDF02"><span class="usertext"> &lt;String&gt;[] typeKeywords</span>—Optional.  <span class="usertext">ItemSelector</span> also supports search by multiple type key words. Only items with specified typeKeywords will show, such as ['Web AppBuilder'], ['Web AppBuilder','Web Map'] and so on.</p>
+              <p id="GUID-2310E324-B729-44FC-90BE-4FEDD629FB2E">Example:</p>
+              <div class="codeblock" purpose="codeblock">
+                <div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/ItemSelector&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ItemSelector</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">itemSelector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ItemSelector</span><span class="p">({</span>
+          <span class="nx">portalUrl</span><span class="o">:</span> <span class="s2">&quot;http://orgname.maps.arcgis.com&quot;</span><span class="p">,</span>
+          <span class="nx">itemTypes</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Feature Service&#39;</span><span class="p">,</span><span class="s1">&#39;Map Service&#39;</span><span class="p">]</span>
+        <span class="p">},</span> <span class="nx">srcNodeRef</span><span class="p">);</span>
+        <span class="p">...</span>
+      <span class="p">});</span>
+</code></pre></div>
+
+              </div>
+            </td>
+          </tr>
+        </tbody><caption class="table_desc"></caption></table></div>
+    </p></div><div class="section1" id="ESRI_SECTION1_58A53DB4A7C14D2D81C5F7969477DAB6" purpose="section1"><h2>Methods</h2><p id="GUID-D301A014-1249-4646-BB8B-ED70071F8913"><div class="block_table" id="TABLE_24FF40BE05DE40F6A5C535C77134EE88" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody>
+          <tr>
+            <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+              <p id="GUID-9BA97D0E-728C-482D-99E2-BD1ED882C2DE">
+                <span class="usertext"> getSelectedItem()</span>
+              </p>
+              <p id="GUID-1941547E-5FEB-4E8C-A7D8-BB3EBC316989"> Gets the selected item information.</p>
+              <p id="GUID-CB5A4726-B2CC-4F22-A07D-8EBF123F370F"> Return type: Object including item information.</p>
+            </td>
+          </tr>
+        </tbody><caption class="table_desc"></caption></table></div>
+    </p></div><div class="section1" id="ESRI_SECTION1_DA433905F2A14F3DA9264E26145AB12F" purpose="section1"><h2>Events</h2><p id="GUID-76403952-82A4-4AD9-95BC-67231988859F"><div class="block_table" id="TABLE_F91FDB3036134BCA818FB77C49B76E5C" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody>
+          <tr>
+            <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+              <p id="GUID-9730C3E0-2082-4092-8C6C-DA3744171439">
+                <span class="usertext">item-selected</span>
+              </p>
+              <p id="GUID-14585B1B-B7A2-4FFA-9EFF-10C3290C6255">Fires when you select an item.</p>
+              <p id="GUID-829D0076-20FE-4683-A9DB-67F77853E24E">Example:</p>
+              <div class="codeblock" purpose="codeblock">
+                
+                <div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/ItemSelector&#39;</span><span class="p">,</span> <span class="s1">&#39;dojo/on&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ItemSelector</span><span class="p">,</span> <span class="nx">on</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">itemSelector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ItemSelector</span><span class="p">(...);</span>
+        <span class="p">...</span>
+        <span class="nx">on</span><span class="p">(</span><span class="nx">itemSelector</span><span class="p">,</span> <span class="s1">&#39;item-selected&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">itemInfo</span><span class="p">){</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">itemInfo</span><span class="p">);</span>
+        <span class="p">});</span>
+      <span class="p">});</span>
+</code></pre></div>
+
+              </div>
+            </td>
+          </tr>
+        </tbody><caption class="table_desc"></caption></table></div>
+    <div class="block_table" id="TABLE_38B4F5FEA37B41CB9D13BE40A016402A" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody>
+          <tr>
+            <td outputclass="" purpose="entry" rowspan="1" colspan="1">
+              <p id="GUID-218E8635-C035-4AF6-AF6B-894BAAD9293C">
+                <span class="usertext">none-item-selected</span>
+              </p>
+              <p id="GUID-2975561C-11AA-4083-B6A5-BBEC370DEC1A">Fires when you clear all items.</p>
+              <p id="GUID-9B335DB7-D320-4930-B19A-A318879B44FE">Example:</p>
+              <div class="codeblock" purpose="codeblock">
+                
+                <div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/ItemSelector&#39;</span><span class="p">,</span> <span class="s1">&#39;dojo/on&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ItemSelector</span><span class="p">,</span> <span class="nx">on</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">itemSelector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ItemSelector</span><span class="p">(...);</span>
+        <span class="p">...</span>
+        <span class="nx">on</span><span class="p">(</span><span class="nx">itemSelector</span><span class="p">,</span> <span class="s1">&#39;none-item-selected&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;None item is selected.&quot;</span><span class="p">);</span>
+        <span class="p">});</span>
+      <span class="p">});</span>
+</code></pre></div>
+
+              </div>
+            </td>
+          </tr>
+        </tbody><caption class="table_desc"></caption></table></div>
+  </p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

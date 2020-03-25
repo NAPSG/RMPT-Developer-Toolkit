@@ -1,0 +1,167 @@
+{
+  "legend": {
+    "arrangement": 0,
+    "autoUpdate": true,
+    "respectCurrentMapScale": true
+  },
+  "layerState": {
+    "Overall_2014_Tracts_4854": {
+      "selected": true
+    },
+    "Public_Schools_4826": {
+      "selected": true
+    },
+    "Private_Schools_9071": {
+      "selected": true
+    },
+    "Prison_Boundaries_774": {
+      "selected": true
+    },
+    "NursingHomes_950": {
+      "selected": true
+    },
+    "Day_Care_Centers_4932": {
+      "selected": true
+    },
+    "Mobile_Home_Parks_9077": {
+      "selected": true
+    },
+    "Cellular_Towers_4606": {
+      "selected": true
+    },
+    "Cellular_Service_Areas_9126": {
+      "selected": true
+    },
+    "PowerPlants_4516": {
+      "selected": true
+    },
+    "Electric_Power_Transmission_Lines_1075": {
+      "selected": true
+    },
+    "Natural_Gas_Liquid_Pipelines_6684": {
+      "selected": true
+    },
+    "Electric_Holding_Company_Areas_9187": {
+      "selected": true
+    },
+    "National_Shelter_System_Facilities_3235": {
+      "selected": true
+    },
+    "Hospitals_6830": {
+      "selected": true
+    },
+    "DialysisCenters_1776": {
+      "selected": true
+    },
+    "EPA_Emergency_Response_ER_Facility_Response_Plan_FRP_Facilities_5727": {
+      "selected": true
+    },
+    "EPA_Emergency_Response_ER_Risk_Management_Plan_RMP_Facilities_6796": {
+      "selected": true
+    },
+    "Local_Law_Enforcement_Locations_812": {
+      "selected": true
+    },
+    "Local_Emergency_Operations_Centers_EOC_4980": {
+      "selected": true
+    },
+    "State_Emergency_Operations_Centers_EOC_1146": {
+      "selected": true
+    },
+    "Fire_Stations_9828": {
+      "selected": true
+    },
+    "Public_Transit_Routes_3124": {
+      "selected": true
+    },
+    "Public_Transit_Stations_6031": {
+      "selected": true
+    },
+    "Intermodal_Transit_Facilities_IPCD_1431": {
+      "selected": true
+    },
+    "IncidentLocations_active_6b07c78cc3364b4989da0c48e5d6794a_4794": {
+      "selected": true
+    },
+    "MODIS_Thermal_8555": {
+      "selected": true
+    },
+    "USA_Counties_4320": {
+      "selected": true
+    },
+    "World_Countries__Generalized__8559": {
+      "selected": false
+    },
+    "USA_Freeway_System_1417": {
+      "selected": true
+    },
+    "USA_Freeway_System_7585": {
+      "selected": true
+    },
+    "USA_Census_Populated_Places_9888": {
+      "selected": true
+    },
+    "USA_Counties_Generalized_327": {
+      "selected": true
+    },
+    "USA_States_Generalized_6644": {
+      "selected": false
+    },
+    "Wildfire_Hazard_2084": {
+      "selected": true
+    },
+    "USA_Flood_Hazard_Reduced_Set_gdb_1266": {
+      "selected": true
+    },
+    "Flood_Hazard_9536": {
+      "selected": true
+    },
+    "geomac_dyn_2976": {
+      "selected": false
+    },
+    "Active_Fire_Exposure_5475": {
+      "selected": false
+    },
+    "USDA_USFS_2014_Wildfire_Hazard_Potential_3422": {
+      "selected": false
+    },
+    "Facilities_518": {
+      "selected": false
+    },
+    "CIKRScore_8560": {
+      "selected": false
+    },
+    "obs_meteocean_insitu_sfc_time_3502": {
+      "selected": false
+    },
+    "Live_Stream_Gauges_5017": {
+      "selected": false
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_warnings_time_2416": {
+      "selected": false
+    },
+    "wwa_meteoceanhydro_shortduration_hazards_watches_time_1271": {
+      "selected": false
+    },
+    "wwa_meteoceanhydro_longduration_hazards_time_8882": {
+      "selected": false
+    },
+    "radar_meteo_imagery_nexrad_time_4358": {
+      "selected": false
+    },
+    "NationalWaterModel_Short_Anomaly_3702": {
+      "selected": false
+    },
+    "NationalWaterModel_Medium_Anomaly_1512": {
+      "selected": false
+    },
+    "NDFD_Precipitation_1862": {
+      "selected": false
+    },
+    "NGA_US_National_Grid_4485": {
+      "selected": false
+    }
+  },
+  "syncWithWebmap": false,
+  "showLegendForBasemap": false
+}

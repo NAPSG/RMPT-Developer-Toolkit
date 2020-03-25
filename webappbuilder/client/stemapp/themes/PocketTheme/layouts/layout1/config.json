@@ -1,0 +1,89 @@
+{
+  "widgetOnScreen": {
+    "widgets": {
+      "widgets/Search/Widget": {
+        "position": {
+          "right": 60,
+          "top": 10
+        }
+      },
+      "widgets/ZoomSlider/Widget": {
+        "position": {
+          "right": 15,
+          "top": 10
+        }
+      },
+      "widgets/HomeButton/Widget": {
+        "position": {
+          "right": 15,
+          "top": 80
+        }
+      },
+      "widgets/MyLocation/Widget": {
+        "position": {
+          "right": 15,
+          "top": 120
+        }
+      },
+      "widgets/Scalebar/Widget": {
+        "position": {
+          "left": 15,
+          "bottom": 30
+        }
+      },
+      "widgets/Coordinate/Widget": {
+        "position": {
+          "left": 15,
+          "bottom": 10
+        }
+      },
+      "widgets/ExtentNavigate/Widget": {
+        "position": {
+          "right": 15,
+          "top": 160
+        }
+      },
+      "widgets/FullScreen/Widget": {
+        "visible": false,
+        "position": {
+          "right": 15,
+          "top": 230
+        }
+      }
+    },
+    "groups": [
+      {
+        "visible": false,
+        "panel": {
+          "uri": "themes/PocketTheme/panels/PocketPanel/Panel",
+          "position": {
+            "top": 10,
+            "left": 15,
+            "bottom": 10,
+            "width": 360,
+            "relativeTo": "browser"
+          }
+        },
+        "maxWidgets": 1
+      }
+    ]
+  },
+  "mobileLayout": {
+    "widgetOnScreen": {
+      "widgets": {
+        "widgets/Scalebar/Widget": {
+          "position": {
+            "left": 15,
+            "bottom": 25
+          }
+        },
+        "widgets/Coordinate/Widget": {
+          "position": {
+            "left": 15,
+            "bottom": 5
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="jimu-float-leading jimu-trailing-margin1" data-dojo-attach-point="logoContainer"
+ data-dojo-attach-event="onmouseenter:onMouseEnterHandler"
+ data-dojo-attach-event="onmouseleave:onMouseLeaveHandler">
+  <div data-dojo-type="jimu/dijit/ImageChooser" data-dojo-attach-point="imageChooser"
+  data-dojo-props="cropImage:false,showSelfImg:true,stretchImg:false,goldenWidth:30,goldenHeight:30,format:['image/gif','image/png','image/jpeg']"></div>
+  <div class="add-logo" data-dojo-attach-point="addLogoNode">
+    <div class="image"></div>
+  </div>
+
+  <div class="masker-node" data-dojo-attach-point="maskerNode"></div>
+
+  <div class="remove-logo" data-dojo-attach-point="removeLogoNode" data-dojo-attach-event="onclick:onRemoveLogoHandler"></div>
+</div>

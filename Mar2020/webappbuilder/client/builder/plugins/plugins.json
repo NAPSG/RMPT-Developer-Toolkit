@@ -1,0 +1,1027 @@
+{
+  "app-actions.launch-app": {
+    "name": "app-actions.launch-app",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config.main-app-actions",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "index": 1
+        },
+        "pluginName": "app-actions.launch-app"
+      }
+    ],
+    "properties": {
+      "hasUIFile": false,
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true
+    }
+  },
+  "app-actions.preview-app": {
+    "name": "app-actions.preview-app",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config.main-app-actions",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "HTML",
+          "index": 2
+        },
+        "pluginName": "app-actions.preview-app"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "app-actions.save-app": {
+    "name": "app-actions.save-app",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config.main-app-actions",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "index": 3
+        },
+        "pluginName": "app-actions.save-app"
+      },
+      {
+        "point": "app-config.popup-app-actions",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "onClickAction": "_onClick",
+          "index": 1
+        },
+        "pluginName": "app-actions.save-app"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "app-actions.to-template-config": {
+    "name": "app-actions.to-template-config",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config.main-app-actions",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "index": 1
+        },
+        "pluginName": "app-actions.to-template-config"
+      }
+    ],
+    "properties": {
+      "hasUIFile": false,
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true
+    }
+  },
+  "app-config": {
+    "name": "app-config",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "the first plugin that builder loads.",
+    "copyright": "",
+    "license": "",
+    "extensionPoints": {
+      "config-template": {
+        "description": "Config template",
+        "parameters": {
+          "supportAppTypes": {
+            "type": "string",
+            "required": true,
+            "name": "supportAppTypes"
+          }
+        },
+        "id": "app-config.config-template",
+        "name": "config-template",
+        "extensions": [
+          {
+            "point": "app-config.config-template",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all"
+            },
+            "pluginName": "app-config-templateconfig"
+          }
+        ]
+      },
+      "config-part": {
+        "description": "The config part",
+        "parameters": {
+          "supportAppTypes": {
+            "type": "string",
+            "required": true,
+            "name": "supportAppTypes"
+          }
+        },
+        "id": "app-config.config-part",
+        "name": "config-part",
+        "extensions": [
+          {
+            "point": "app-config.config-part",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all"
+            },
+            "pluginName": "app-config-configpart"
+          }
+        ]
+      },
+      "morepreview-selction-part": {
+        "description": "The more preview selection part",
+        "parameters": {
+          "supportAppTypes": {
+            "type": "string",
+            "required": true,
+            "name": "supportAppTypes"
+          }
+        },
+        "id": "app-config.morepreview-selction-part",
+        "name": "morepreview-selction-part",
+        "extensions": [
+          {
+            "point": "app-config.morepreview-selction-part",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all"
+            },
+            "pluginName": "app-config-morepreview-selectionpart"
+          }
+        ]
+      },
+      "template-config-part": {
+        "description": "The Template config part",
+        "parameters": {
+          "supportAppTypes": {
+            "type": "string",
+            "required": true,
+            "name": "supportAppTypes"
+          }
+        },
+        "id": "app-config.template-config-part",
+        "name": "template-config-part",
+        "extensions": [
+          {
+            "point": "app-config.template-config-part",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all"
+            },
+            "pluginName": "app-config-template-configpart"
+          }
+        ]
+      },
+      "main-app-actions": {
+        "parameters": {
+          "supportAppTypes": {
+            "type": "string",
+            "required": true,
+            "name": "supportAppTypes"
+          },
+          "index": {
+            "type": "number",
+            "required": true,
+            "description": "1 based index.",
+            "name": "index"
+          }
+        },
+        "id": "app-config.main-app-actions",
+        "name": "main-app-actions",
+        "extensions": [
+          {
+            "point": "app-config.main-app-actions",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "index": 1
+            },
+            "pluginName": "app-actions.launch-app"
+          },
+          {
+            "point": "app-config.main-app-actions",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "HTML",
+              "index": 2
+            },
+            "pluginName": "app-actions.preview-app"
+          },
+          {
+            "point": "app-config.main-app-actions",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "index": 3
+            },
+            "pluginName": "app-actions.save-app"
+          },
+          {
+            "point": "app-config.main-app-actions",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "index": 1
+            },
+            "pluginName": "app-actions.to-template-config"
+          }
+        ]
+      },
+      "popup-app-actions": {
+        "parameters": {
+          "onClickAction": {
+            "type": "function",
+            "name": "onClickAction"
+          },
+          "supportAppTypes": {
+            "type": "string",
+            "required": true,
+            "name": "supportAppTypes"
+          },
+          "index": {
+            "type": "number",
+            "required": true,
+            "description": "1 based index.",
+            "name": "index"
+          }
+        },
+        "id": "app-config.popup-app-actions",
+        "name": "popup-app-actions",
+        "extensions": [
+          {
+            "point": "app-config.popup-app-actions",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "onClickAction": "_onClick",
+              "index": 1
+            },
+            "pluginName": "app-actions.save-app"
+          },
+          {
+            "point": "app-config.popup-app-actions",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "onClickAction": "onClick",
+              "index": 4
+            },
+            "pluginName": "popup-actions.configmode-switch"
+          },
+          {
+            "point": "app-config.popup-app-actions",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "onClickAction": "onClick",
+              "index": 3
+            },
+            "pluginName": "popup-actions.popup-agoltemplate"
+          },
+          {
+            "point": "app-config.popup-app-actions",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "onClickAction": "onClick",
+              "index": 2
+            },
+            "pluginName": "popup-actions.popup-saveas"
+          }
+        ]
+      }
+    },
+    "extensions": [
+      {
+        "point": "startup.app-config",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all"
+        },
+        "pluginName": "app-config"
+      }
+    ],
+    "properties": {
+      "hasLocale": false,
+      "hasClass": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "app-config-configpart": {
+    "name": "app-config-configpart",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "the config part of the config page.",
+    "copyright": "",
+    "license": "",
+    "extensionPoints": {
+      "config-sections": {
+        "description": "The config page for section of full config",
+        "parameters": {
+          "label": {
+            "type": "string",
+            "required": true,
+            "name": "label"
+          },
+          "icon": {
+            "type": "url",
+            "required": true,
+            "name": "icon"
+          },
+          "selectedIcon": {
+            "type": "url",
+            "required": true,
+            "name": "selectedIcon"
+          },
+          "supportAppTypes": {
+            "type": "string",
+            "required": true,
+            "name": "supportAppTypes"
+          },
+          "republishEvents": {
+            "type": "string",
+            "required": true,
+            "description": "The events that change app config. These events will be pushed to preview window",
+            "name": "republishEvents"
+          },
+          "index": {
+            "type": "number",
+            "required": true,
+            "description": "1 based index.",
+            "name": "index"
+          }
+        },
+        "id": "app-config-configpart.config-sections",
+        "name": "config-sections",
+        "extensions": [
+          {
+            "point": "app-config-configpart.config-sections",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "label": "${_paramLabel}",
+              "icon": "images/icon.svg",
+              "selectedIcon": "images/selected_icon.svg",
+              "republishEvents": "appAttributeChanged,loadingPageChanged,actionTriggered,appProxyForMapChanged,appProxyForUrlChanged",
+              "index": 4
+            },
+            "pluginName": "attribute-config"
+          },
+          {
+            "point": "app-config-configpart.config-sections",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "label": "${_paramLabel}",
+              "icon": "images/icon.svg",
+              "selectedIcon": "images/selected_icon.svg",
+              "republishEvents": "setAppConfig,mapChanged,mapOptionsChanged,sceneViewChanged,dataSourceChanged,mapRefreshIntervalChanged,mapContentModified",
+              "index": 2
+            },
+            "pluginName": "map-config"
+          },
+          {
+            "point": "app-config-configpart.config-sections",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "label": "${_paramLabel}",
+              "icon": "images/icon.svg",
+              "selectedIcon": "images/selected_icon.svg",
+              "republishEvents": "themeChanged,styleChanged,layoutChanged,sharedThemeChanged,layoutDefinitionChanged",
+              "index": 1
+            },
+            "pluginName": "theme-config"
+          },
+          {
+            "point": "app-config-configpart.config-sections",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all",
+              "label": "${_paramLabel}",
+              "icon": "images/icon.svg",
+              "selectedIcon": "images/selected_icon.svg",
+              "republishEvents": "widgetChanged,widgetPoolChanged,openAtStartChange,actionTriggered,groupChanged,onScreenGroupsChanged,onScreenOrderChanged",
+              "index": 3
+            },
+            "pluginName": "widget-config"
+          }
+        ]
+      }
+    },
+    "extensions": [
+      {
+        "point": "app-config.config-part",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all"
+        },
+        "pluginName": "app-config-configpart"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "app-config-morepreview-selectionpart": {
+    "name": "app-config-morepreview-selectionpart",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "the config part of the config page.",
+    "copyright": "",
+    "license": "",
+    "extensionPoints": {},
+    "extensions": [
+      {
+        "point": "app-config.morepreview-selction-part",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all"
+        },
+        "pluginName": "app-config-morepreview-selectionpart"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "app-config-template-configpart": {
+    "name": "app-config-template-configpart",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "the template config part.",
+    "copyright": "",
+    "license": "",
+    "extensionPoints": {},
+    "extensions": [
+      {
+        "point": "app-config.template-config-part",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all"
+        },
+        "pluginName": "app-config-template-configpart"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "app-config-templateconfig": {
+    "name": "app-config-templateconfig",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "the first plugin that builder loads.",
+    "copyright": "",
+    "license": "",
+    "extensionPoints": {},
+    "extensions": [
+      {
+        "point": "app-config.config-template",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all"
+        },
+        "pluginName": "app-config-templateconfig"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "app-list": {
+    "name": "app-list",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "the first plugin that builder loads.",
+    "copyright": "",
+    "license": "",
+    "extensionPoints": {},
+    "extensions": [
+      {
+        "point": "startup.app-list",
+        "description": "",
+        "pluginName": "app-list"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "attribute-config": {
+    "name": "attribute-config",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config-configpart.config-sections",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "label": "${_paramLabel}",
+          "icon": "images/icon.svg",
+          "selectedIcon": "images/selected_icon.svg",
+          "republishEvents": "appAttributeChanged,loadingPageChanged,actionTriggered,appProxyForMapChanged,appProxyForUrlChanged",
+          "index": 4
+        },
+        "pluginName": "attribute-config"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "creation-entry": {
+    "name": "creation-entry",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "the first plugin that builder loads.",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "startup.creation-entry",
+        "description": "",
+        "pluginName": "creation-entry"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "header": {
+    "name": "header",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "the first plugin that builder loads.",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "startup.header",
+        "description": "",
+        "pluginName": "header"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "map-config": {
+    "name": "map-config",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config-configpart.config-sections",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "label": "${_paramLabel}",
+          "icon": "images/icon.svg",
+          "selectedIcon": "images/selected_icon.svg",
+          "republishEvents": "setAppConfig,mapChanged,mapOptionsChanged,sceneViewChanged,dataSourceChanged,mapRefreshIntervalChanged,mapContentModified",
+          "index": 2
+        },
+        "pluginName": "map-config"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "popup-actions.configmode-switch": {
+    "name": "popup-actions.configmode-switch",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config.popup-app-actions",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "onClickAction": "onClick",
+          "index": 4
+        },
+        "pluginName": "popup-actions.configmode-switch"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": false,
+      "hasUIFile": false
+    }
+  },
+  "popup-actions.popup-agoltemplate": {
+    "name": "popup-actions.popup-agoltemplate",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config.popup-app-actions",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "onClickAction": "onClick",
+          "index": 3
+        },
+        "pluginName": "popup-actions.popup-agoltemplate"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": false
+    }
+  },
+  "popup-actions.popup-saveas": {
+    "name": "popup-actions.popup-saveas",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config.popup-app-actions",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "onClickAction": "onClick",
+          "index": 2
+        },
+        "pluginName": "popup-actions.popup-saveas"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": false,
+      "hasUIFile": false
+    }
+  },
+  "popup-actions.popup-share": {
+    "name": "popup-actions.popup-share",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "onClickAction": "onClick",
+          "index": 1,
+          "republishEvents": "SharePluginOnClickEveryone"
+        },
+        "pluginName": "popup-actions.popup-share"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": false,
+      "hasStyle": false,
+      "hasUIFile": false
+    }
+  },
+  "startup": {
+    "name": "startup",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "the first plugin that builder loads.",
+    "copyright": "",
+    "license": "",
+    "extensionPoints": {
+      "app-list": {
+        "description": "the app list page.",
+        "id": "startup.app-list",
+        "name": "app-list",
+        "extensions": [
+          {
+            "point": "startup.app-list",
+            "description": "",
+            "pluginName": "app-list"
+          }
+        ]
+      },
+      "header": {
+        "description": "the header.",
+        "id": "startup.header",
+        "name": "header",
+        "extensions": [
+          {
+            "point": "startup.header",
+            "description": "",
+            "pluginName": "header"
+          }
+        ]
+      },
+      "app-config": {
+        "description": "the app config page.",
+        "parameters": {
+          "supportAppTypes": {
+            "type": "string",
+            "required": true,
+            "name": "supportAppTypes"
+          }
+        },
+        "id": "startup.app-config",
+        "name": "app-config",
+        "extensions": [
+          {
+            "point": "startup.app-config",
+            "description": "",
+            "parameters": {
+              "supportAppTypes": "all"
+            },
+            "pluginName": "app-config"
+          }
+        ]
+      },
+      "creation-entry": {
+        "description": "The create new entry point.",
+        "id": "startup.creation-entry",
+        "name": "creation-entry",
+        "extensions": [
+          {
+            "point": "startup.creation-entry",
+            "description": "",
+            "pluginName": "creation-entry"
+          }
+        ]
+      },
+      "stemapps": {
+        "description": "the stemapp.",
+        "parameters": {
+          "appType": {
+            "type": "string",
+            "required": true,
+            "name": "appType"
+          },
+          "appPath": {
+            "type": "string",
+            "description": "By default, it's plugin's folder path",
+            "name": "appPath"
+          },
+          "appVersionManager": {
+            "type": "string",
+            "description": "path relative to app path. required if app config is old.",
+            "name": "appVersionManager"
+          },
+          "index": {
+            "type": "number",
+            "required": true,
+            "description": "1 based index.",
+            "name": "index"
+          }
+        },
+        "id": "startup.stemapps",
+        "name": "stemapps",
+        "extensions": [
+          {
+            "point": "startup.stemapps",
+            "description": "",
+            "parameters": {
+              "appType": "HTML",
+              "appPath": "../../../../stemapp/",
+              "appVersionManager": "jimu.js/shared/AppVersionManager.js",
+              "index": 1
+            },
+            "pluginName": "stemapps.web2d"
+          },
+          {
+            "point": "startup.stemapps",
+            "description": "",
+            "parameters": {
+              "appType": "HTML3D",
+              "appPath": "../../../../stemapp3d/",
+              "appVersionManager": "jimu.js/shared/AppVersionManager.js",
+              "index": 2
+            },
+            "pluginName": "stemapps.web3d"
+          }
+        ]
+      }
+    },
+    "extensions": [],
+    "properties": {
+      "hasLocale": false,
+      "hasClass": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "stemapps.web2d": {
+    "name": "stemapps.web2d",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "startup.stemapps",
+        "description": "",
+        "parameters": {
+          "appType": "HTML",
+          "appPath": "../../../../stemapp/",
+          "appVersionManager": "jimu.js/shared/AppVersionManager.js",
+          "index": 1
+        },
+        "pluginName": "stemapps.web2d"
+      }
+    ],
+    "properties": {
+      "hasClass": false,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "stemapps.web3d": {
+    "name": "stemapps.web3d",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "startup.stemapps",
+        "description": "",
+        "parameters": {
+          "appType": "HTML3D",
+          "appPath": "../../../../stemapp3d/",
+          "appVersionManager": "jimu.js/shared/AppVersionManager.js",
+          "index": 2
+        },
+        "pluginName": "stemapps.web3d"
+      }
+    ],
+    "properties": {
+      "hasClass": false,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "theme-config": {
+    "name": "theme-config",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config-configpart.config-sections",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "label": "${_paramLabel}",
+          "icon": "images/icon.svg",
+          "selectedIcon": "images/selected_icon.svg",
+          "republishEvents": "themeChanged,styleChanged,layoutChanged,sharedThemeChanged,layoutDefinitionChanged",
+          "index": 1
+        },
+        "pluginName": "theme-config"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  },
+  "widget-config": {
+    "name": "widget-config",
+    "type": "plugin",
+    "version": "2.0.1",
+    "author": "Esri R&D Center Beijing",
+    "description": "",
+    "copyright": "",
+    "license": "",
+    "extensions": [
+      {
+        "point": "app-config-configpart.config-sections",
+        "description": "",
+        "parameters": {
+          "supportAppTypes": "all",
+          "label": "${_paramLabel}",
+          "icon": "images/icon.svg",
+          "selectedIcon": "images/selected_icon.svg",
+          "republishEvents": "widgetChanged,widgetPoolChanged,openAtStartChange,actionTriggered,groupChanged,onScreenGroupsChanged,onScreenOrderChanged",
+          "index": 3
+        },
+        "pluginName": "widget-config"
+      }
+    ],
+    "properties": {
+      "hasClass": true,
+      "hasLocale": true,
+      "hasStyle": true,
+      "hasUIFile": true
+    }
+  }
+}

@@ -1,0 +1,151 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The LayerStructure class reflects the structure of the operational layers in the current map."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+LayerStructure
+class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-4BE27F92-696D-41DA-AA09-5A362CC3448A]--><body><div id="content"><div class="header"><h1>
+LayerStructure
+class</h1><div id="breadcrumb"></div></div>
+<p id="GUID-C5971392-115B-402B-BC14-A175FD68FD1A">
+The <span class="usertext">LayerStructure</span> class reflects the structure of the operational layers in the current map. It is used to traverse and operate each layer and sublayer abstracted as a LayerNode in the LayerStructure.
+</p>
+<div class="section1" id="GUID-D73E44C0-2742-4287-A557-F19378BBFEFE" purpose="section1"><h2>
+AMD Module Require
+</h2><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/LayerStructure&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">LayerStructure</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></div>
+<div class="section1" id="ESRI_SECTION1_50A88BE294644B828E7F5BE547FBE32E" purpose="section1"><h2>Constructor</h2><p id="GUID-B0DE5E9F-2CDB-4035-94CF-7233845203BC"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6">There is a single instance of <span class="usertext">LayerStructure</span> in the Web AppBuilder environment.</p>
+
+<span class="usertext"> var layerStructureInstance = LayerStructure.getInstance();</span>
+
+
+<p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example:</p><p id="GUID-0EE05420-7A3B-4E64-8F63-51F9B1C7DF56"> Prints the tree structure of the operational layers in the current map in the console window.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="kd">var</span> <span class="nx">layerStructure</span> <span class="o">=</span> <span class="nx">LayerStructure</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+        <span class="kd">function</span> <span class="nx">printLayerTree</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">layerStructure</span><span class="p">.</span><span class="nx">traversal</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">layerNode</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">indent</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">layerNode</span><span class="p">.</span><span class="nx">getNodeLevel</span><span class="p">();</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span><span class="nx">indent</span> <span class="o">+=</span> <span class="s2">&quot;  &quot;</span><span class="p">;}</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">indent</span><span class="p">,</span> <span class="nx">layerNode</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
+          <span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="nx">printLayerTree</span><span class="p">();</span>
+
+        <span class="nx">layerStructure</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">LayerStructure</span><span class="p">.</span><span class="nx">EVENT_STRUCTURE_CHANGE</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">eventObject</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// reprint the layer tree if the layer structure has been changed;</span>
+          <span class="nx">printLayerTree</span><span class="p">();</span>
+        <span class="p">});</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="section1" id="ESRI_SECTION1_DB370AC9317E4434A455356ECBF8112E" purpose="section1"><h2>Constants</h2><p id="GUID-40AAEE1F-A17D-47F5-A3D7-FDBCFED4A66D"><div class="block_table" id="TABLE_3A6963890B714B6B80D6A4EF33288B6C" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> STRUCTURE_CHANGE_ADD</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-74600BC4-C10E-4BA3-8EE7-699E2782B81D">  Type of structure change event when layerNodes are added.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">  STRUCTURE_CHANGE_REMOVE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B6344A68-D94A-4E54-B23E-4D60549DA0C4"> Type of structure change event when layerNodes are removed.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">  STRUCTURE_CHANGE_SUBNODE_ADD</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6385A43A-74BD-4542-9683-720013110B4F">  Type of structure change event when subLayerNodes are added.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> STRUCTURE_CHANGE_SUBNODE_REMOVE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2CBA55BB-F10D-41FE-BD8D-797FDBFE2A3B"> Type of structure change event when subLayerNodes are removed.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">  STRUCTURE_CHANGE_NODE_UPDATE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B08306FD-E8A7-41BA-96C6-97A3A909692F">  Type of structure change event when layerNodes are updated.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> STRUCTURE_CHANGE_REORDER</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D4FFF81A-4924-4F16-81F9-B1A9FB978EB6"> Type of structure change event when layerNodes are reordered.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_STRUCTURE_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7101F6C5-720F-423C-A37C-F734A7830E89"> Event name for a structure change.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_TOGGLE_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-115A01A1-B726-4105-81EC-00CAB51D8BE4"> Event name for a toggle change.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_VISIBILITY_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8419BDC2-8FEA-42D7-A685-D3D52C2BC2DE">Event name for a visibility change.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_FILTER_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9A36F89D-96EA-45C9-87A7-5E869BC4A11F"> Event name for a filter change.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_RENDERER_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-545C6D56-D061-43C8-BBBA-3B71E3816E88">Event name for a renderer change.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_OPACITY_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0FA13D59-E7FA-49CE-ABBA-A952FABECF5E">Event name for an opacity change.</p></td></tr></tbody><caption class="table_desc"></caption></table></div> </p></div><div class="section1" id="ESRI_SECTION1_69009703311648269BBB5EAEAA5FCAC8" purpose="section1"><h2>Methods</h2><div class="block_table" id="TABLE_BDBA41B6F8614A41A716C62CBBF05A97" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0EC30D84-7EF7-4597-908D-A8E4E9C8FC47"><span class="usertext">addTable(table)</span></p><p id="GUID-BA4E0869-A156-40C2-8601-E06F5BAA71B7">Adds a table to layerStructure.</p>
+<p id="GUID-3F115B7B-5B51-4C52-8558-B0DEA6B2924F">Parameters: </p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">table</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="nx">Optional</span> <span class="nx">parameters</span><span class="p">,</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="nx">title</span> <span class="nx">of</span> <span class="k">new</span> <span class="nx">table</span><span class="p">,</span>
+      <span class="nx">url</span><span class="o">:</span> <span class="nx">alternative</span> <span class="kd">with</span> <span class="nx">featureCollectionData</span><span class="p">,</span>
+      <span class="nx">featureCollectionData</span><span class="o">:</span> <span class="nx">alternative</span> <span class="kd">with</span> <span class="nx">url</span><span class="p">,</span>
+      <span class="nx">options</span><span class="o">:</span> <span class="nx">Optional</span> <span class="nx">parameters</span><span class="p">.</span> <span class="nx">See</span> <span class="nx">options</span> <span class="nx">list</span> <span class="nx">of</span> <span class="nx">FeatureLayer</span> <span class="nx">Constructor</span> <span class="nx">from</span>
+               <span class="nx">ArcGIS</span> <span class="nx">JavaScript</span> <span class="nx">API</span> <span class="nx">reference</span><span class="p">.</span>
+  <span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-2101B87A-DA71-43F8-A0CE-AC2EA08470CB">Return value: LayerNode</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_48B1D6807CD94685BB58C0AC728941FC" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9798E80B-AEE9-43A1-AAAC-3F4E8B00C079"><span class="usertext">getBasemapLayerObjects()</span></p><p id="GUID-B6309E6B-9E5B-4D76-ADED-B445678C3261"> Gets the layerObjects from the basemap.</p>
+<p id="GUID-56BAED0E-B9DD-481B-9AF4-8B7D72BC5C7C">Parameters: null</p><p id="GUID-BBECA0D9-F2A1-4680-B7A8-3D94808B2DC2">Return value: LayerObject[]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_986E589829934806805CB4B8F3B8954C" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9A800E0A-9F32-4E9C-BB7E-A933E4834087"><span class="usertext">getLayerNodes()</span></p><p id="GUID-ABC5FE55-6E12-41C7-B598-0B7D39BE87CA"> Gets the operational layerNodes in the current map.</p>
+<p id="GUID-1A9FB8F3-9E98-4E52-A238-69FD45421E98">Parameters: null</p><p id="GUID-71480368-B06C-4860-B28F-9B106C948636">Return value: LayerNode[]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_B3E02DFAD9104AB988C8324619BCD8B3" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7F6ECDEB-B00C-455F-9A95-11F50C7250C3"><span class="usertext">getNodeById(nodeId)</span></p><p id="GUID-8EA677C3-857E-421D-A489-7272A642DBF7"> Gets the layerNode or tableNode by ID.</p>
+<p id="GUID-2C252F19-59B0-41ED-912F-BE59B6272FDB">Parameters:  nodeId—layerNode or tableNode Id.</p><p id="GUID-89334498-F555-47EF-B511-F0F965905271">Return value:  LayerNode</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_86F45072D3574B7A8FD27D7A0CE9C29D" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0292FA5B-9FD6-49A6-B3CB-B734E716FCC3"><span class="usertext">getTableNodes()</span></p><p id="GUID-39949548-8160-44CE-B32D-6B3F67C7D57B"> Gets the operational tableNodes in the current map.</p>
+<p id="GUID-51029C98-BFB7-4144-B516-4A31126AD0DD">Parameters: null</p><p id="GUID-C0623EC8-006C-486A-8B09-AF567421DB4F">Return value:  LayerNode[]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_F3B5F216367D4EE7BFBFD78491529D20" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E970F686-E280-4819-9E44-0B0BBEECFD8F"><span class="usertext">getWebmapLayerNodes()</span></p><p id="GUID-491315FE-6746-4FDB-BE74-9F960D5C66D5"> Gets the operational layerNodes that are defined in the web map.</p>
+<p id="GUID-96759F8B-BE1E-42E2-8370-B6DB9CAEBDC5">Parameters: null</p><p id="GUID-6E8E3339-C58F-4515-98C6-0FEA9F720A69">Return value: LayerNode[]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_C3DD95A48AF548B28D491398B2A4AD65" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F25937BC-4E8D-44C1-A8DB-B754D9F08C7B"><span class="usertext">getWebmapTableNodes()</span></p><p id="GUID-1E2C3820-E03A-4CA1-AA61-69E7DA9EACC8"> Gets the operational tableNodes that are defined in the web map.</p>
+<p id="GUID-F5C9D2C4-A679-4C40-A1CE-3EC2198CE607">Parameters: null</p><p id="GUID-A7CFA590-7465-4EF3-B235-5FD2C9EA345F">Return value: LayerNode[]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_AE592DDBA80A416B923F469CD0AF14B8" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1A40AF05-F291-4A31-AB63-C360138DA5F1"><span class="usertext">removeTable(nodeId)</span></p><p id="GUID-D3A4E4DB-DBF2-40F4-97F8-0C52B3BFAC08"> Removes a tableNode from layerStructure by the node ID.</p>
+<p id="GUID-8309FD41-A1FE-46D7-8670-48C1D1DA7D6D">Parameters:  nodeId—The tableNode ID.</p><p id="GUID-2BC1F047-C4B5-4939-ADFC-652BEE5A96EB">Return value: null</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_E9AF06F278854D3EB01501F4E76C8B10" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D64C1A90-B959-4495-9D22-F6DE8A91606B"><span class="usertext">traversal: function(callback)</span></p><p id="GUID-C0121BCB-EE64-45CB-AE8B-29AAFD5CDC11">Traverses all nodes of the layerStructure with Depth-First-Search.</p>
+<p id="GUID-82C99112-F69C-4368-A986-7838E3A9464A">Parameters: <span class="usertext">callback: function(layerNode) {};</span></p><p id="GUID-43789C10-94F4-4624-8AB6-DAB5949FCAAD">Callback parameters: layerNode</p><p id="GUID-9F2FF90D-B7F2-4F99-AC2C-317885373518">Callback return value: Boolean—Returns true when the traversal is  interrupted; returns false when the traversal continues.</p><p id="GUID-56B537BF-ADDD-40AF-BFB3-A883AE786A1C">Return value: Boolean—Returns true when the traversal is interrupted; returns false when the traversal is complete.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_2A70D4D0C39A4EC78143088C4CBF8CA2" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F60FCE64-B9AD-4AF7-93D3-CD57424CC4E7"><span class="usertext">traversalWithNodes: function(callback, nodes)</span></p><p id="GUID-59A628AB-469F-450C-97C7-A0D52589B9DB">Traverses all nodes of nodes parameter with Depth-First-Search.</p>
+<p id="GUID-34581E0A-00A4-4772-B3D0-907E82E1C638">Parameters: <span class="usertext">callback: function(layerNode) {};</span></p><p id="GUID-E44AB007-5392-4B51-BC33-6443D3779AEB">Callback parameters: layerNode</p><p id="GUID-39170A5F-E11A-4149-A2A9-FC2E773AFB3A">Callback return value: Boolean— Returns true when the traversal is  interrupted; returns false when the traversal continues.</p><p id="GUID-138A3F00-74EF-4738-8EA5-1F2EEED55002">nodes—The layerNodes array</p><p id="GUID-6ED225C1-B63E-407D-A0F4-69E99AD1A5FD">Return value: Boolean—Returns true when the traversal is interrupted; returns false when the traversal is complete.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></div><div class="section1" id="ESRI_SECTION1_FD7F91D366F84CFFB220F780FB7033B4" purpose="section1"><h2>Events</h2><div class="block_table" id="TABLE_045BB8BF4E3F4506BA03AAF25EECFB34" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-28B443BB-4DE4-47A9-9F40-140297EB2465"><span class="usertext">structure-change</span></p><p id="GUID-8D8D0F4D-110C-46C9-90FA-F29C34F30DF0">Fires when the structure is changed.</p>
+<p id="GUID-C2DE200D-FCF1-44FC-AC97-2F80D1B3BD43">Event object: </p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span>
+  <span class="nx">layerNodes</span><span class="o">:</span> <span class="nx">LayerNode</span><span class="p">[]</span>
+  <span class="nx">rootLayerNodes</span><span class="o">:</span> <span class="nx">LayerNode</span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-39B78CF3-8A9F-4D22-89C5-F20FDA585BD7">See also:   EVENT_STRUCTURE_CHANGE in the Constants table.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_CA992435C6084335AFED89F588A2015A" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-476CE1EA-7BE0-494B-A91D-13F25272889E"><span class="usertext">toggle-change</span></p><p id="GUID-4607FD6F-FF15-4D27-849B-1C6EC82BA7F9"> Fires when the layerNodes toggle is changed.</p>
+<p id="GUID-4C16A196-3A77-4FBF-9949-9E49E68E38BD">Event object:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="nx">layerNodes</span><span class="o">:</span> <span class="nx">LayerNode</span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-C0F8B64F-7784-42B6-ACE8-56EC61113918">See also:  EVENT_TOGGLE_CHANGE in the Constants table</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_79396DE889A1490895602832C589FFA4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4FD30FA3-7032-4245-9A2A-3FCFB1CF1397"><span class="usertext">visibility-change</span></p><p id="GUID-7CE19C78-43AE-4D91-BEF8-A56AD36101E3">Fires when the visibility of layerNodes is changed.</p>
+<p id="GUID-3D832920-D0DB-426E-9F25-4A80074C1A7F">Event object: </p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="nx">layerNodes</span><span class="o">:</span> <span class="nx">LayerNode</span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-13413675-7B32-4206-AA3B-BB49333B96E6">See also:  EVENT_TOGGLE_CHANGE in the Constants table.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_FB0774518AB94635A2669F588F8084C1" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-91A3C8F9-03E2-4AC1-99E7-A177FFCCDE35"><span class="usertext">filter-change</span></p><p id="GUID-043D1508-8E21-4AB1-B756-3C75B1BA4E13">  Fires when the layerNodes filter is changed.</p>
+<p id="GUID-42704625-40C5-45AF-BE87-7BCFC82C27DC">Event object:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="nx">layerNodes</span><span class="o">:</span> <span class="nx">LayerNode</span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-9F289ABF-D831-4A9E-8CA3-C2788C58EE43">See also:   EVENT_FILTER_CHANGE in the Constants table.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_9171959E4129490AB8C5EC46AB52C33E" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A72E2380-5A46-4893-9BB3-A1806492E7C9"><span class="usertext">renderer-change</span></p><p id="GUID-F0653E4F-A388-4405-A3F1-B24AC01E10DD">Fires when the layerNodes renderer is changed.</p>
+<p id="GUID-EB4F521F-50E0-41A8-85EC-2B8934D88B84">Event object:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="nx">layerNodes</span><span class="o">:</span> <span class="nx">LayerNode</span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-B2F7EC0B-2904-4F2F-8DB7-F1F78CC0AEF1">See also:   EVENT_RENDERER_CHANGE in the Constants table.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_CCABDB329C654AE18AB569ACBD89FEBB" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AF5E5CB1-17D1-4A83-A6F3-B88CF6CA5CC2"><span class="usertext">opacity-change</span></p><p id="GUID-1B3079F5-B998-4B58-BF6D-7FD174DF57B5">Fires when the layerNodes opacity is changed.</p>
+<p id="GUID-01DE6890-D404-42C2-B7CC-CF3D53A2E014">Event object:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="nx">layerNodes</span><span class="o">:</span> <span class="nx">LayerNode</span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-55DEA3BD-1E07-48B2-A842-F57E7BD1A3BE">See also:   EVENT_OPACITY_CHANGE in the Constants table.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

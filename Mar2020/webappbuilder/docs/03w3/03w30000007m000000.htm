@@ -1,0 +1,62 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn about the Report Feature widget's configurable attributes."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Report Feature</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-D2397140-1EC3-469F-B02E-A7A45870897F]--><body><div id="content"><div class="header"><h1>
+Report Feature</h1><div id="breadcrumb"></div></div>
+<p id="GUID-EBB4ADF5-4B0A-40C0-8D9E-9DC7552FBC47">
+The Report Feature widget enables you to collect and manage data quality feedback from users of your web app. Users can report existing features from the map that are in error or require additional review. They can also identify missing features by sketching them on the map. Feedback is stored in your geodatabase as a reviewer result where it is assessed and managed through a defined life cycle workflow.
+</p>
+<p id="GUID-B1002779-F8ED-4F30-A0D0-4F8C391A07B2">The following table lists the configurable attributes of the Report Feature widget:</p><div class="block_table" id="TABLE_0C79918A705044FE9BCD0E59B550ABE2" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-A77BDF12-B0FB-4048-828B-8AB2850A5341">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-16E658FB-C8CB-40F0-84DC-CF4720F240A4">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97268B88-43D8-412D-8F01-98E810710232"><span class="usertext">  layers</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-02FFBACD-015A-4E0D-903B-F03E7C20BDC1">Object[]. There is no default. The properties of the array item
+are as follows:</p>
+<ul purpose="ul" id="UL_88060DF0C3F04A50A950B7306C53AC0F"><li purpose="li" id="LI_9205F055406545CCA46E542B014321E4"> 
+<span class="usertext">label</span>—String. Name of the layer.</li><li purpose="li" id="LI_6890F24796FD4BCDB11BC9F79C66BB89"> <span class="usertext">id</span>—String. ID of the layer in the web map.</li><li purpose="li" id="LI_68363057BE35462CA2E02DA88FB01119"><span class="usertext"> alias</span>—String. Alias name of the layer.</li><li purpose="li" id="LI_72C78552264F47CDB47AF29F0A2810CE"> <span class="usertext">show</span>—Boolean. Indicates if the layer is visible in the
+widget.</li><li purpose="li" id="LI_DB93F7715A3240EE909BD98845F8CCB2"><span class="usertext"> layerType</span>—String. Identifies whether the layer is a feature layer from a feature service or map service.</li><li purpose="li" id="LI_34FF92D6F96F41A5B2FA486951F663BE"><span class="usertext"> url</span>—String. The layer URL.</li></ul>
+
+
+
+
+
+</td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A76C7DEA-509C-4EBB-85AE-C3604555D826"><span class="usertext"> drsUrl</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F59ECDCC-3D12-4277-92D6-87EDB03E8596">String. The URL of the Data Reviewer service.</p>
+
+</td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A59C70C3-8BA4-41F7-B6E1-76535AB4C238"><span class="usertext">  sessionId</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-22386F4A-05BF-4E68-847F-D8D7641924B1"> Number. The default is 1. The reviewer result is written to the session ID set here.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CF992E35-6C78-4C42-9EFC-3D0F6D4C6F7D"><span class="usertext">   includeReportedBy</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B92B0CD4-52E6-4DE8-A40A-146DF6265C0A"> String. The default value is logon. Defines how the user reporting the feature is tracked. Available values are logon, default, and user. Logon means the current logged-in user name will be saved. Default means a default name can be set in the configuration. User means the end user will enter a name for the reported feature by field in the widget.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-46C1AEA0-49F0-4B2E-A7A1-FFAEBC4C941B"><span class="usertext">   defaultUserName</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E793B5D5-27FA-49BF-A5B5-6B82FD916D79"> String. The default value is "". If the default value is used for the <span class="usertext">includeReportedBy</span> attribute, the default name can be set here.</p></td></tr></tbody><caption class="table_desc"></caption></table></div><p id="GUID-AC0D260C-F408-46BF-93B4-3D1F92104346">Example:</p><p id="GUID-A7DDB027-8751-46AF-8BC8-07B771E59642"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;layers&quot;: [
+    {
+      &quot;label&quot;: &quot;DataReviewer_AddressDataManagement - Facilities - Parks&quot;,
+      &quot;id&quot;: &quot;DataReviewer_AddressDataManagement_3201&quot;,
+      &quot;alias&quot;: &quot;DataReviewer_AddressDataManagement - Facilities - Parks&quot;,
+      &quot;show&quot;: true,
+      &quot;layerType&quot;: &quot;ArcGISFeatureLayer&quot;,
+      &quot;url&quot;: &quot;http://services3.arcgis.com/NAtujcNttU5clhmX/arcgis/rest/services/DataReviewer_AddressDataManagement/FeatureServer/9&quot;
+    },
+    {
+      &quot;label&quot;: &quot;DataReviewer_AddressDataManagement - Facilities - Points&quot;,
+      &quot;id&quot;: &quot;DataReviewer_AddressDataManagement_8753&quot;,
+      &quot;alias&quot;: &quot;Facilities - Points&quot;,
+      &quot;show&quot;: true,
+      &quot;layerType&quot;: &quot;ArcGISFeatureLayer&quot;,
+      &quot;url&quot;: &quot;http://services3.arcgis.com/NAtujcNttU5clhmX/arcgis/rest/services/DataReviewer_AddressDataManagement/FeatureServer/7&quot;
+    },
+  ],
+  &quot;drsUrl&quot;: &quot;http://datareviewer.arcgisonline.com/arcgis/rest/services/Samples/reviewerWriteResults/MapServer/exts/DataReviewerServer&quot;,
+  &quot;sessionID&quot;: 1,
+  &quot;includeReportedBy&quot;: &quot;logon&quot;,
+  &quot;defaultUserName&quot;: &quot;&quot;
+}
+</code></pre></div>
+</div></p>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

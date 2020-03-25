@@ -1,0 +1,44 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The
+LayerChooserFromMap class  filters layers from the map with a specified filter function and constructs a UI tree to display layers."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - LayerChooserFromMap
+class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-0CA5A07C-313C-46C9-820F-8A9BB287C06D]--><body><div id="content"><div class="header"><h1>LayerChooserFromMap
+class</h1><div id="breadcrumb"></div></div>
+
+
+
+
+    
+    <p id="GUID-1CFABC75-AE43-498D-BE21-D0196FB09C20">The
+LayerChooserFromMap class  filters layers from the map with a specified filter function and constructs a UI tree to display layers.
+</p>
+<div class="section1" id="ESRI_SECTION1_DB7A91CBD703458CBDF75EBA5D7BE70E" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-A16CEADE-D493-4D1C-8597-DFD6997808DA"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/dijit/LayerChooserFromMap&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">LayerChooserFromMap</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_C4369FB02A9D4D68A15E863B9507BE27" purpose="section1"><h2>Constructor</h2><p id="GUID-BC940738-FEA5-4A40-9844-D4BFAD014997"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext">new LayerChooserFromMap(params, srcNodeRef)</span></p><p id="GUID-FB97692F-C7CC-4B82-94CE-515F58AF4239"> Creates a new LayerChooserFromMap dijit.</p><p id="GUID-66547053-0F13-493E-B31A-DBA963576D1A">Parameters:</p><p id="GUID-AE1CFE7F-AEBD-4722-957D-DA174231A482"><span class="usertext"> &lt;Object&gt; params</span>—Required.    Parameters for the LayerChooserFromMap dijit.</p><p id="GUID-F2636975-00BD-4405-B615-071686016CBF"><span class="usertext"> &lt;DOMNode | String&gt; srcNodeRef</span>—Optional.  HTML element where <span class="usertext">LayerChooserFromMap</span> is rendered.</p><p id="GUID-DF796DDC-B6C2-4471-A43E-98CF25A94587"> params properties:</p><p id="GUID-B04DB5E4-4818-452F-A2F7-FB5F568D1C75"><span class="usertext"> &lt;Object&gt; createMapResponse</span>—Required.     The callback response of the <span class="usertext">esri.arcgis.utils#createmap</span> method. You can get this object using the <span class="usertext">webMapResponse</span> property of the map.</p><p id="GUID-C4BF3FB2-918B-4093-93D1-3B0BF8039760"><span class="usertext">    &lt;Boolean&gt; multiple</span>—Optional. The default is false. By default, you can only select one layer. If set to true, you can select multiple layers.</p>
+<p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/LayerChooserFromMap&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">LayerChooserFromMap</span><span class="p">){</span>
+          <span class="kd">var</span> <span class="nx">layerChooser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LayerChooserFromMap</span><span class="p">({</span>
+            <span class="nx">createMapResponse</span><span class="o">:</span> <span class="nx">map</span><span class="p">.</span><span class="nx">webMapResponse</span><span class="p">,</span>
+            <span class="nx">multiple</span><span class="o">:</span> <span class="kc">false</span>
+          <span class="p">},</span> <span class="nx">srcNodeRef</span><span class="p">);</span>
+          <span class="p">...</span>
+    <span class="p">});</span>
+</code></pre></div>
+</div></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr></tbody><caption class="table_desc"></caption></table></div>
+</p></div><div class="section1" id="ESRI_SECTION1_46CD8B4966294551A5EE3D3B993DC9FB" purpose="section1"><h2>Methods</h2><p id="GUID-CB4282B6-9C95-4505-B85C-64DA5AE9B33E"><div class="block_table" id="TABLE_24FF40BE05DE40F6A5C535C77134EE88" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EEE49C78-836E-432C-8912-543E74A1EC53"><span class="usertext"> filter(layerInfo)</span></p><p id="GUID-7D73802A-8E23-4704-8B3F-5736753E16A9">  This is a callback function. The LayerChooserFromMap dijit calls this method automatically when filtering layers. Only layers that pass the filter show on the dijit. The default filter method lets all the layers pass it and shows all of them. You can override this method to filter layers as needed.</p>
+<p id="GUID-766B2427-277D-4913-9701-FB7B200D25AA"> Return type:  Deferred object that returns a Boolean value. If  true, <span class="usertext">layerInfo</span> passes the filter method.</p><p id="GUID-1D36AC6D-21BA-403C-919B-9C690C2562F1">Parameters:</p><p id="GUID-C352FD90-20FC-4164-827A-83345E4B17A1"> <span class="usertext">&lt;LayerInfo&gt; layerInfo</span>—Required. The  <span class="usertext">layerInfo</span> parameter contains the layer's information.</p></td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_B7FC2CEBC6BA4B7C9CF743B95969C644" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B0A1B792-588F-4E4A-AD41-7B9F26847305"><span class="usertext"> getSelectedItems()</span></p><p id="GUID-CE498133-B962-4D3C-AA62-CF074A45F441">Gets information for selected layers. </p>
+<p id="GUID-25E34538-F68C-4731-8607-4F40A66D8497">Return type:  Object array. Each element is in the form {name, layerInfo}.</p></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

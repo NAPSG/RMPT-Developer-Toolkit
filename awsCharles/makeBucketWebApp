@@ -1,0 +1,6 @@
+aws s3api create-bucket --bucket sitaware-webapp3 --region us-east-1
+aws s3 website s3://sitaware-webapp3/ --index-document index.html 
+aws cloudfront create-distribution --origin-domain-name sitaware-webapp3.s3.amazonaws.com --default-root-object index.html > makeBucketWebAppOut3.json
+
+
+

@@ -1,0 +1,22 @@
+<div class="app-setting">
+  <div data-dojo-type="dijit/form/Form" data-dojo-attach-point="appFormDijit">
+    <div class="form-label">${nls.title}*</div>
+    <div>
+      <input class="text-input" placeholder="${nls.titleTip}" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="name:'title', required:true">
+    </div>
+    <div class="form-label">${nls.tags}*</div>
+    <div>
+      <div class="text-input" placeholder="${nls.tagsTip}" data-dojo-type="builder/plugins/header/Tags" data-dojo-attach-point="tagsDijit"
+      data-dojo-props="name:'tags', required:true, value: ''"></div>
+    </div>
+    <div class="form-label">${nls.summary}</div>
+    <div>
+      <input class="textarea-input" placeholder="${nls.summaryTip}" data-dojo-type="dijit/form/SimpleTextarea" data-dojo-props="name:'summary'">
+    </div>
+    <div class="form-label">${nls.saveInFolder}*</div>
+    <div>
+      <select class="select-input" data-dojo-type="dijit/form/Select" data-dojo-props="name:'folder', required:true" data-dojo-attach-point="folderSelect">
+      </select>
+    </div>
+  </div>
+</div>

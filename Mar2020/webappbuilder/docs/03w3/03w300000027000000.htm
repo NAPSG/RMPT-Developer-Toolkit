@@ -1,0 +1,47 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to build a basic app with Web AppBuilder for ArcGIS."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - Build your first app</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-3510BD99-D8E4-4EBF-A10F-DC9DEE5CDCDB]--><body><div id="content"><div class="header"><h1>Build your first app</h1><div id="breadcrumb"></div></div>
+
+<p id="GUID-41FF6FD8-BDF1-4218-AFEF-AD619E023210"><span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> is a map-centric application. It provides a map property defined in the BaseWidget class to access the map. You can access the map property through this  map. The widget’s map property is a type of esri.Map from <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span>, configured in the config.json file. You can access all map features provided by <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span>. Code the widget the same as you would write a regular ArcGIS JavaScript application.</p><p id="GUID-5282D5F5-E563-49B8-91E1-1A87CA62AE46">When a widget instantiates, the map passes into it. As a result, you can access a map property in the postCreate or startup methods.</p><p id="GUID-E3031BAF-5B52-4A47-BCBF-5A7EBB4A9222">Modify the UI template and add a div tag to display the map ID property:</p>
+<p id="GUID-6A024B7C-7F4C-484F-BC69-56490A4ADF8E"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>${nls.label1}.<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>${nls.label2}.[${config.configText}]<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">data-dojo-attach-point=</span><span class="s">&quot;mapIdNode&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+</div></p><p id="GUID-ADF64D48-A6AC-46F5-B83A-39A33BC8006E">Add JavaScript code to Widget.js to access the map:<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">startup</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">mapIdNode</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;map id:&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></p>
+
+<p id="GUID-3DCDDC4A-69B0-48BE-81A1-B4209C6CE9A3"> For a 3D widget, the map property is replaced by sceneView. Use this.sceneView to access the scene in your widget.</p>
+
+
+
+
+    
+    
+
+    
+    
+    
+    
+   
+ <div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

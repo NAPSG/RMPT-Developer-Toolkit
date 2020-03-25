@@ -1,0 +1,120 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The LayerInfo class uses the unified interface to access layers in the  web map."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+LayerInfo class
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-B439872B-5DF6-419A-A449-3B329D3E6F07]--><body><div id="content"><div class="header"><h1>
+LayerInfo class
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-8CCF3E17-62EA-4349-AF46-E89647E84D39">
+ The <span class="usertext">LayerInfo</span> class uses the unified interface to access layers in the  web map.
+</p>
+<div class="notes" id="GUID-339FE655-7D11-4BE4-9F69-0C5CE40D0F42"><div class="caution"><img class="note_img" src="rsrc/caution.png" alt="Caution" title="Caution"><span>Caution:</span></div><div class="tipbody"><p id="GUID-F04FD092-EDD8-455E-9E9F-423CC770E972"> The <span class="usertext">LayerInfo</span> class is deprecated. Use the <span class="usertext"><a class="xref" rel="03w3/03w3000000n8000000.htm" href="03w3/03w3000000n8000000.htm">LayerNode</a> class instead.</span></p></div></div><div class="section1" id="ESRI_SECTION1_780DC124C7A54104B91A7875D0D7A5BF" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-4A39185D-260E-4DCC-91E3-BE54C2BCEEEA"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/LayerInfos/LayerInfo&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">LayerInfo</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_C2E9D306FC9D4E0A9C48BE1BC093302B" purpose="section1"><h2>Properties</h2><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext"> &lt;String&gt; id</span></p><p id="GUID-FB97692F-C7CC-4B82-94CE-515F58AF4239">The layer ID defined in the web map.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><p id="GUID-9126B789-03A5-456E-8D95-36026C3DAF81"><div class="block_table" id="TABLE_B732C2D8C8624D098DBDF372691C9B03" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E8E150EB-BC10-4211-8AFB-E71BE3D571EA"><span class="usertext">  &lt;esri/map&gt; map</span></p><p id="GUID-807ECECF-7B54-4F88-9339-BE1C09B33C8B">The current web map object.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></p><div class="block_table" id="TABLE_AABE0D382E3A44FDA8E0D83466A9A3FE" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5BC19DA3-ABC5-4D11-A9FE-C3B4998AABC9"><span class="usertext">  &lt;LayerInfo&gt; parentLayerInfo</span></p><p id="GUID-61C56C27-85A2-446D-8C6B-322CE65E757C">The parent LayerInfo of the current LayerInfo. The value is null if there is no parent LayerInfo.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_903CC75ED3BB4CD5A21E0BC4898A5816" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-86BE1215-569E-483A-8A42-01C0561313FE"><span class="usertext"> &lt;String&gt; title</span></p><p id="GUID-D7AE462D-F0C0-495B-9C09-D67682CF1365">The title of the layer.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></div><div class="section1" id="ESRI_SECTION1_A3933CD676A1404EA094BC923C5C8094" purpose="section1"><h2>Methods</h2><p id="GUID-3EDF9C87-C5D3-423C-8BCD-5F01B01C3764"><div class="block_table" id="TABLE_B7FC2CEBC6BA4B7C9CF743B95969C644" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B0A1B792-588F-4E4A-AD41-7B9F26847305"><span class="usertext"> findLayerInfoById(layerId)</span></p><p id="GUID-CE498133-B962-4D3C-AA62-CF074A45F441"> Recursively  finds the LayerInfo in the subLayerInfos. Returns null if the LayerInfo cannot be  found.</p>
+<p id="GUID-25E34538-F68C-4731-8607-4F40A66D8497">Return type: &lt;LayerInfo&gt;</p><p id="GUID-50122061-7009-4908-BE87-46B89790DA02">Parameters:</p><p id="GUID-85EC72BA-0CA3-4611-A327-CF264609E527"><span class="usertext"> &lt;String&gt; url</span>—Required.   The REST service URL.</p><p id="GUID-4AE560A2-E350-43A7-85AF-0BA6454969F2"><span class="usertext">&lt;String&gt; layerId</span>—Required. The layer
+ID.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div>
+
+<div class="block_table" id="TABLE_DB92988E224542E48B6881BBF7F131F9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BBF3EB9-3720-4AB0-BB91-0B574C737BB4"><span class="usertext"> getExtent()</span></p><p id="GUID-E14022E6-BB21-4553-8AD6-824258D0FEC8"> Gets the  current extent of the layer in
+ the map.</p>
+
+
+<p id="GUID-6EE8EA91-14D1-483E-B539-1C2CD1A79198">Return type: &lt;Extent&gt;</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_B211CCB380C54813A93F503A24496D65" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-506E71B5-6ACA-446B-88C0-D38F74898EFB"><span class="usertext"> getLayerObject()</span></p><p id="GUID-A14AF735-769C-4C8A-B5D9-7E423E44654C"> Gets the layer object defined in the map.</p>
+
+
+<p id="GUID-933A1BCC-2D1B-4750-A103-A8CFA8299446">Return type: &lt;Deferred&gt;</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_D6560917C6674E49967D13C05DA6D24B" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC176113-EDE2-4D84-99DE-CE3B4BE595B4"><span class="usertext">  getLayerType()</span></p><p id="GUID-6D5929BE-A102-4F25-8EA9-55B70352A817">  Gets the layer type.</p>
+
+
+<p id="GUID-AF00258F-0495-4455-985E-F536B059A7D3">Return type: &lt;Deferred&gt;</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_2D1FBD0FFFB64CD3A993FFB308673C29" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-625134E3-E558-4138-AD63-89DE3BC90DA8"><span class="usertext"> getOpacity()</span></p><p id="GUID-7434CC6E-3962-4B1F-B24A-C73E5BF29F72"> Gets the opacity or transparency of the layer in the map.</p>
+
+
+<p id="GUID-528BF036-0B1E-4A0D-8D0C-2BD5D8B865D7">Return type: &lt;Number&gt;</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_0CD7E54592044D7CA9EA45DAF4180E52" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7CD6FF48-7352-40B9-8458-5BFA8C1DC79C"><span class="usertext">  getSubLayers()</span></p><p id="GUID-2B63700A-6B30-46A9-9B12-4857A7944A1C">  Gets an array including all subLayerInfos of the current layer. Returns [] if the layer has no sublayers.</p>
+
+
+<p id="GUID-5902FEC1-4E80-4938-952F-B3F84A25C2FD">Return type: Object[&lt;LayerInfo&gt; layerInfo, …]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_481BFFC157D24A28A9EAC74A1608BE80" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D3AE8BDD-4DED-4D25-9F82-A8017B8C2483"><span class="usertext">  getUrl()</span></p><p id="GUID-6B8F616F-8199-4A6C-A1E3-1E9215FF60EE"> Gets the layer URL.  Returns null if the layer has no URL.</p>
+
+
+<p id="GUID-84AF03CE-1F07-41B3-ABFA-954766DC6221">Return type: &lt;String&gt;</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_505FB4A0B0E14CFB840CCA39ADA1EAC3" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-23971275-7726-4926-B198-345DAD20C592"><span class="usertext">  isLeaf()</span></p><p id="GUID-4C662374-A6F1-4D65-88CD-A91ECA1448C6"> Returns true if the  layer is a leaf layer. Otherwise, returns false.</p>
+
+
+<p id="GUID-12027FA8-1059-406C-B44A-DDA58C2A2EEF">Return type: &lt;Boolean&gt;</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_7ED8B018EC524A949089484EA67D2DD1" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-43981473-FC2C-4DCF-A465-263CA3A28CE3"><span class="usertext"> isRootLayer()</span></p><p id="GUID-F8588F8D-9ECF-4D8A-AA6E-FEADBC74619A"> Returns true if the layer is a root layer. Otherwise,  returns false.</p>
+
+
+<p id="GUID-70CFB2D9-4A08-4408-B853-AF3118A67BA2">Return type: &lt;Boolean&gt;</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_99E18105EDCE44EC8EAFDB9780A6CF8D" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6167B2EB-5EDA-4CAC-9289-7C810E98B301"><span class="usertext">  setOpacity(opacity)</span></p><p id="GUID-F764D3B3-F5A2-4A10-8AE4-7F46A69C3A80">  Sets layer opacity or transparency  in the map.</p>
+
+
+<p id="GUID-2E91EDFF-B807-4695-B049-7359C1EFE78C">Return type: &lt;Number&gt;</p>
+
+
+<p id="GUID-E1C83652-6BD7-4A8A-A216-8AAF3D726614">Parameters:</p><p id="GUID-40276D46-0664-456E-9F4F-62FEFFDD62F3"><span class="usertext">&lt;Number&gt; opacity</span>—The value can be from 0 to 1,
+where 0 is 100 percent transparent and 1 has no transparency.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_9C3883CCC7E84733B69F1444BC43A4D8" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC64F70A-95C7-480E-95F8-FEEE39466787"><span class="usertext"> traversal(callback)</span></p><p id="GUID-9B80005E-1AA1-4BB0-B7AD-AAA4DD273215"> Traverses all the sublayers with Depth-First-Search.</p><p id="GUID-97ECBAB0-5C63-4706-AFD0-D0B74563159E">Parameters:</p><p id="GUID-52F217B5-C96C-4A23-9DF5-658D83FF46AD"><span class="usertext">  &lt;Function&gt; callback (layerInfo)</span>—Required. Called by each layer and sends LayerInfo as a parameter. The layer can be  handled  in the callback.</p><p id="GUID-46C42CB0-8B67-4B8B-9937-BA3E42EA3C16">
+Callback parameters: &lt;LayerInfo&gt;</p>
+<p id="GUID-661C2738-BF56-490C-B1D7-DFC9C9257ED3">Callback return type:  &lt;Boolean&gt;</p>
+<p id="GUID-6528D5E1-BEA7-4AC4-A860-DF8EEC3F4DAD">Callback return value:<ul purpose="ul" id="UL_F80365743DC442DBA59588B27945E23A"><li purpose="li" id="LI_F56C0B0633124248B535AE76572F54ED">If  true, it is  interrupt traversal.</li><li purpose="li" id="LI_7CEB5BB4B05340519CEA00F43D7BD37D">If false, it is  continue traversal.</li></ul></p>
+
+
+<p id="GUID-BE61E2E7-02B6-4A4F-B0CC-4997B272C065"> Example:</p>
+
+
+<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">layerInfosObject</span><span class="p">.</span><span class="nx">traversal</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">layerInfo</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">layerInfo</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span> <span class="nx">layerInfo</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">})</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div>
+</p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
+//>>built
+define("dojo/_base/declare dojo/_base/array dojo/_base/lang dojo/Deferred ./Theme builder/serviceUtils".split(" "),function(c,d,e,f,g,h){return c(null,{themes:void 0,constructor:function(){this.currentThemeName=null;this.themes=[]},loadThemes:function(){var b=new f;h.getAllThemes().then(e.hitch(this,function(a){a.success?(d.forEach(a.themes,function(a){this.themes.push(new g(a))},this),b.resolve(this.themes)):(console.error("Gets themes failed! The response of getThemes is 'unsuccess'!"),b.reject(this.themes))}),
+function(a){console.error("Gets themes failed!"+a);b.reject(this.themes)});return b},changeCurrentTheme:function(b){this.currentThemeName=b},getCurrentTheme:function(){return this.getThemeByName(this.currentThemeName)},getThemeByName:function(b){for(var a=0;a<this.themes.length;a++)if(b===this.themes[a].getName())return this.themes[a]}})});

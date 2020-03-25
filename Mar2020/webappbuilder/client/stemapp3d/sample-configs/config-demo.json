@@ -1,0 +1,58 @@
+{
+  "theme": {
+    "name": "FoldableTheme"
+  },
+  "portalUrl": "http://www.arcgis.com",
+  "appId":"",
+  "title": "ArcGIS Web Application - Demo Widgets",
+  "subtitle": "with ArcGIS WebApp Builder",
+  "geometryService": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
+  "links":[
+    {
+      "label": "ArcGIS Online"
+    }
+  ],
+
+  "widgetOnScreen": {
+    "widgets": [{
+      "uri": "themes/FoldableTheme/widgets/HeaderController/Widget",
+      "positionRelativeTo": "browser",
+      "position": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "height": 45
+      }
+    }]
+  },
+
+  "map": {
+    "3D": true,
+    "2D": false,
+
+    "itemId": "dcc814485a9848a486f284f93681b9cb",
+
+    "position": {
+      "left": 0,
+      "top": 45,
+      "right": 0,
+      "bottom": 0
+    }
+  },
+  "widgetPool": {
+    "panel": {
+      "uri": "themes/FoldableTheme/panels/FoldablePanel/Panel",
+      "positionRelativeTo": "map",
+      "position": {
+        "top": 1,
+        "right": 1,
+        "bottom": 1
+      }
+    },
+
+    "widgets": [{
+      "label": "Demo",
+      "uri": "widgets/samplewidgets/Demo/Widget"
+    }]
+  }
+}

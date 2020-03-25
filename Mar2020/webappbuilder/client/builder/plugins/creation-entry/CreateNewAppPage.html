@@ -1,0 +1,24 @@
+<div>
+  <div class="app-select-page" data-dojo-attach-point="appSelectPage">
+    <div class="switch-btn-box-container">
+      <div class="switch-btn-box">
+        <div class="switch-btn all-app-btn selected" data-dojo-attach-point="allAppBtn"
+             data-dojo-attach-event="onclick:_onAllAppBtnClick"> ${nls.all}
+        </div>
+        <div class="separate"></div>
+        <div class="switch-btn own-app-btn" data-dojo-attach-point="ownAppBtn"
+             data-dojo-attach-event="onclick:_onOwnAppBtnClick"> ${nls.myTemplates}
+        </div>
+      </div>
+    </div>
+    <div class="app-content all-app-content" data-dojo-attach-point="allAppContent">
+      <div class="app-line" data-dojo-attach-point="defaultApps"></div>
+      <div class="app-line" data-dojo-attach-point="othersApps"></div>
+    </div>
+    <div class="app-content own-app-content" data-dojo-attach-point="ownAppContent">
+    </div>
+  </div>
+  <div class="app-info-page" data-dojo-attach-point="appInfoPage">
+    <div class="app-info-table" data-dojo-attach-point="appInfoTable"></div>
+  </div>
+</div>

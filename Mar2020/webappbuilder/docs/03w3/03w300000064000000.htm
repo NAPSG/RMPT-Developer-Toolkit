@@ -1,0 +1,138 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Visualize and control real-time data feeds from streaming feature layers."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Stream widget</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-09B5B0A7-08D3-4C1E-8739-A91F8DB1FB4A]--><body><div id="content"><div class="header"><h1>
+Stream widget</h1><div id="breadcrumb"></div></div>
+    <p id="GUID-CC43F910-C19F-4AC4-93B2-35CDDEA4BC4E"> Use the Stream widget to visualize and control real-time data feeds from streaming feature layers. You can also apply spatial and attribute filters to limit what data is sent to the layer. </p>
+    <p id="GUID-79C9A89D-D1DF-4CCE-81FB-55E9E7DE09FE">In addition to the Stream widget, Layer List, Legend, Attribute Table, and Print widgets also work with stream layers. Since certain attributes of stream layers are dynamically updated,   the attribute table only  displays the attributes with a snapshot of stream layers when it opens. </p>
+    <p id="GUID-BB704825-673C-4083-83F7-2A02BFEF4311"> Streaming feature layers connect to an ArcGIS
+server <a class="xref" target="_blank" rel="http://resources.arcgis.com/en/noweb/abc/02sq00000041000000.htm" href="http://resources.arcgis.com/en/noweb/abc/02sq00000041000000.htm">Stream Service</a> using HTML5 WebSockets. WebSockets are a new
+feature of HTML5. Most modern browsers support WebSockets; however,
+they are not supported by all versions of browsers, such as
+Internet Explorer 8 or 9. For more information about WebSockets
+and to test if a browser supports WebSockets, visit <a target="_blank" class="xref" href="http://www.websocket.org/" rel="http://www.websocket.org/">WebSocket.org</a>. </p>
+    <p id="GUID-19760906-CDDA-49D5-8FC5-FF4F0AA6A68B">
+      <div class="notes" id="GUID-8A6A5976-44F6-4946-934F-8FE9AD7B2C11"><div class="license"><img class="note_img" src="rsrc/license.png" alt="License" title="License"><span>License:</span></div><div class="tipbody">
+        <p id="GUID-866A0CF6-472E-45E8-96F1-4B59BA4777E5">
+          <a class="xref" target="_blank" rel="http://resources.arcgis.com/en/noweb/abc/02sq00000002000000.htm" href="http://resources.arcgis.com/en/noweb/abc/02sq00000002000000.htm">ArcGIS GeoEvent Server</a> is required to publish stream services. </p>
+      </div></div>
+    </p>
+    <div class="section1" id="GUID-E95AF8B9-82A3-4BE4-BCE1-13DA5CCCA8BB" purpose="section1"><h2>Configuring the Stream widget</h2><p id="GUID-C1AD1901-E0C7-4893-ACB6-3D4C6ED1E366">The Stream widget reads stream layers in the map and lists them on the stream layers table.</p><p id="GUID-EDC9377A-12C0-4C8E-A1C0-0B127087AF3C"> This widget can be set to open automatically when
+an app starts. To enable this feature, click the <span class="uicontrol">Open this widget automatically when
+the app starts</span> button <img purpose="img" placement="inline" alt="Open this widget automatically when the app starts" title="Open this widget automatically when the app starts" src="03w3/GUID-FE658549-5B6E-4BA5-89FA-A0A0C72810FC-web.png"> on the widget, which turns it dark
+green.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-D27AAA70-870A-48AE-BD16-641BD1455A4D"><div class="step_title">Steps:</div><ol>
+        <li purpose="step" id="ESRI_STEP_E6738288983B46B5952EFDC97751EF50"><span purpose="cmd">Hover over the widget and click the <span class="uicontrol">Configure this widget</span> button <img purpose="img" placement="inline" alt="Configure this widget" title="Configure this widget" src="03w3/GUID-3600D9F6-693B-4060-9B74-32E4275F0C31-web.png"> to open the configuration properties dialog box. </span></li>
+        <li purpose="step" id="ESRI_STEP_F67D2AF5A2D2460191BCD8D0EC4E8AD2">
+          <span purpose="cmd" id="GUID-D9F796C4-DA20-4F51-8297-4C5F47D84CB9">Set the title for the widget and, optionally click the <span class="uicontrol">Change widget icon</span> if you want to replace the default icon for this widget.</span>
+          <div class="info" purpose="info">
+            <p id="GUID-07034CAF-2EE5-4040-88B7-84F98AE63043">A file explorer window allows you to browse to a local image file to use it as the widget icon.</p>
+          </div>
+        </li>
+        <li purpose="step" id="GUID-D3EEF360-324F-4AE6-8683-7DE5D34FA090">
+          <span purpose="cmd" id="GUID-4BE81E66-D514-4F65-A147-10B71D9F3D01">All of the stream layers in the map are listed under the stream layers table. Select the  layer you want to configure.</span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_FEA5EB6C7A144DFCB13DF780A556C10C">
+          <span purpose="cmd" id="GUID-986E7B69-A427-41FE-AE72-7B09F7F4D94D">Under <span class="uicontrol">Stream Controls</span>, check or  uncheck the  following options to control the streaming capabilities:</span>
+          <ul purpose="choices" id="ESRI_CHOICES_52BC0E5BAC544B5D911FE1BD02AD6480">
+            <li purpose="choice" id="ESRI_CHOICE_09BA67235EF5417DA3E8421E20B559EB">
+              <span class="uicontrol">Enable Stop streaming or Start streaming option</span>
+            </li>
+            <li purpose="choice" id="ESRI_CHOICE_2FA77BBA84F540E283C162FEF8AFF25A">
+              <span class="uicontrol">Enable Clear previous observations option</span>
+            </li>
+            <li purpose="choice" id="ESRI_CHOICE_4AF90B9B4CB94ED09512F2815ABAD1C2">
+              <span class="uicontrol">Enable Draw previous observations option</span> (This is disabled if the  <span class="uicontrol">Draw previous observations</span> property is not set in the layer.)</li>
+          </ul>
+        </li>
+        <li purpose="step" id="ESRI_STEP_9A10B489D49F418DA9200E904F61AFF2">
+          <span purpose="cmd" id="GUID-373F37DA-7E1F-49ED-A89E-0D32A7AAB705">To apply spatial filters, you have the following two options:</span>
+          <ul purpose="choices" id="ESRI_CHOICES_2BB3095076394359AC700E768520AAC5">
+            <li purpose="choice" id="ESRI_CHOICE_7F0E69706A10468F8BE3940DAC637E51">
+              <span class="uicontrol"> Limit observations in the current map area</span>
+            </li>
+            <li purpose="choice" id="ESRI_CHOICE_8607BD2A883B4927B1AAA4EC97F5F8D7">
+              <span class="uicontrol">Limit observations
+in the user-defined area</span>—Only  rectangle is available for drawing on the map. Click the symbol icon next to the rectangle to  define its color, transparency, outline color, and width.</li>
+          </ul>
+        </li>
+        <li purpose="step" id="ESRI_STEP_43D5AA4DD89649F98A7C9413DBF3D7EE">
+          <span purpose="cmd" id="GUID-C7276F66-98F2-4219-B91A-0B08AF85FB89">Check <span class="uicontrol">Enable Attribute filter</span>  to open the <span class="uicontrol">Configure Stream Attribute Filter</span> window.</span>
+          <div class="substeps" id="ESRI_SUBSTEPS_813BC5A4A72D461FB69DA7E1325A9A8C" purpose="substeps"><ol>
+            <li purpose="substep" id="ESRI_SUBSTEP_307C05C521F145D9812E05BC858A2068">
+              <span purpose="cmd" id="GUID-F45494D5-FDED-4B01-AD44-DDDF9C33293F">Click <span class="uicontrol">Add Filter</span> and change the filter name in the <span class="uicontrol">Filter Name</span> text box.</span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_9E332B420A0B44A48F386E58732C991D">
+              <span purpose="cmd" id="GUID-C88163D2-4FD3-4E68-900B-F0D2F90F3ACE">Click <span class="uicontrol">Add a filter expression</span>, select a query field, an expression, and provide a value in the text box.</span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_D22879E8B782473BACDDA9521D68ADC4">
+              <span purpose="cmd" id="GUID-7FEB2C26-0627-41B6-9E3F-1A7AAB55556A">Optionally, check  <span class="uicontrol">Ask for values</span>. When this option is chosen, your input value is the default query value, and you have the choice of providing a new value to  overwrite the default value at run time. </span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_9CDFC6419D3F41219E256583F216259E">
+              <span purpose="cmd" id="GUID-24C26601-EEAB-4C65-AF2B-97E3E550EC7E">You also have the option to use  <span class="uicontrol">Add an expression set</span>, which allows you to define and apply two filters to a single query. Depending on if  <span class="uicontrol">All</span>  or <span class="uicontrol">Any</span> of the expressions in this set are true, either  features meeting all the expressions or features meeting any of the expressions in the set display on the map.</span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_4C143902D3F947A3A0A803A499737251">
+              <span purpose="cmd" id="GUID-84337260-49B0-4017-BADF-132CEAB711B4">Repeat the steps above to add other filters. </span>
+            </li>
+            <li purpose="substep" id="ESRI_SUBSTEP_8B818211472F417DA9E3F953772788A1">
+              <span purpose="cmd" id="GUID-B3099A7D-0831-452D-B0D5-9EFCC06DCE83">Click <span class="uicontrol">OK</span> to close the window.</span>
+            </li>
+          </ol></div>
+        </li>
+        <li purpose="step" id="ESRI_STEP_B842425106274540A2C7A34FF0021DCD">
+          <span purpose="cmd" id="GUID-B7838782-C903-4B82-8625-D4B6B7117649">To modify the existing attribute filters, click the small edit icon <img purpose="img" placement="inline" alt="Edit icon" title="Edit icon" src="03w3/GUID-31D329BD-BC73-4BBE-AE1D-3A1261BF912A-web.png"> to open the <span class="uicontrol">Configure Stream Attribute Filter</span> window.</span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_077DEC5E71654EA3BDE525D1AE7FDCF6">
+          <span purpose="cmd" id="GUID-2C13BBD7-7DC1-4BF9-84B3-F9CA0C1A7932">Repeat step 2–6 to configure other stream layers in the table.</span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_8B83CC9F9B0C46EF97EEEE02161B1B8F">
+          <span purpose="cmd" id="GUID-19B1DA92-7728-46F1-865A-26703E57A8BE">Click <span class="uicontrol">OK</span> to close the configuration window for the widget.</span>
+        </li>
+      </ol></div></div></div>
+    
+    <div class="section1" id="ESRI_SECTION1_05BD1C8B165D49459F5BBE435EDD68DF" purpose="section1"><h2>Using the Stream widget</h2><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_F7765D6AECDD4DF09B370C36BBA7508D"><div class="step_title">Steps:</div><ol>
+        <li purpose="step" id="ESRI_STEP_1E2A7C125FB7455F98F6C75544A031AB">
+          <span purpose="cmd" id="GUID-C42542D3-58B9-4E4E-825E-67D872FDE6BD">Click the widget icon in your application to open the widget panel. </span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_DB6F19149CC9414A847267A2FDAF27FA">
+          <span purpose="cmd" id="GUID-D7BB3217-5892-47B3-A408-8EB315B31EFE">Choose a stream layer from the drop-down list if  there is more than one layer. In this case, LABus is selected.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-3A2E4BE6-50BF-4068-88E3-B3D7CDFC6D66-web.png" purpose="img" alt="Streaming controls" title="Streaming controls"></td></tr></table></div></span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_8DF54E6A0C474B1A87A0F1BA24A34A23">
+          <span purpose="cmd" id="GUID-B9D1332F-4277-4FFD-8371-9BA5A7F7A728">Click <span class="uicontrol">Stop Streaming</span> to stop all the data feeds, or click <span class="uicontrol">Start Streaming</span> to display real time data.</span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_F77628EB79B64216914EDA7A9E3D3843">
+          <span purpose="cmd" id="GUID-9B8492F3-26D5-40A4-9093-E5F1C200D8D9">Optionally, click <span class="uicontrol">Clear previous observations</span> to clear all the existing features on the map.</span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_920F9AF0F8894C848184C4EAA1E85D78">
+          <span purpose="cmd" id="GUID-DEDDEF29-63CA-4763-95D1-C276D7EA8344">Change the numbers of previous observations you want to draw on the map if available. By default, it shows the same number defined in the map.</span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_B2F9C961F3E7407DBCC30DB6622E454E">
+          <span purpose="cmd" id="GUID-7AFB499A-3C5A-46FD-A5EC-877A2B21B3AE">Check the <span class="uicontrol">Use spatial filter to limit observations</span> option, and check <span class="uicontrol">Limit observations by drawing on the map</span>. <div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-5BC8429C-DBCD-4258-9A1A-9DF5E681DD60-web.png" purpose="img" alt="Spatial filters" title="Spatial filters"></td></tr></table></div></span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_CF0B70CC74CD4805A0447AB98D0F3F9B">
+          <span purpose="cmd" id="GUID-159D6485-BEAE-426D-B47F-68E878450C59">Click the rectangle and draw it on the map. Only the features within or intersecting   the rectangle on the map show. You can also check a different option to limit observations to the current map extent.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-E4383C17-4A64-48EF-AF59-EBA5DECED82E-web.png" purpose="img" alt="Draw rectangle on the map to limit observations" title="Draw rectangle on the map to limit observations"></td></tr></table></div></span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_AA80DE67E61B46C79F662FDEBCC6F082">
+          <span purpose="cmd" id="GUID-B4CC4EF1-D537-4BD8-8746-AB5BBF81202F">Check the <span class="uicontrol">Use attribute filter to limit observations</span> option, and check the attribute  filter you defined. Only the features meeting the requirement show on the map.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-77E51D55-E791-4171-A7BE-0C772B9AC503-web.png" purpose="img" alt="Attribute filters" title="Attribute filters"></td></tr></table></div></span>
+        </li>
+        <li purpose="step" id="ESRI_STEP_CD6D10560CED40A79544A18B121CAE22">
+          <span purpose="cmd" id="GUID-95A830C2-7E76-4692-B737-30A515ED7EE9">You can apply  spatial and attribute filters together  to limit features on the map if needed.</span>
+        </li>
+      </ol></div></div></div>
+    
+    
+  <div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

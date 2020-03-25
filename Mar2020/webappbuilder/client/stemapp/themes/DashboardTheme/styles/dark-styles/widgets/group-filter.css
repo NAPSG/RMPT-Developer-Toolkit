@@ -1,0 +1,24 @@
+.jimu-widget-map-filter .rowHeader {
+  color: #FFF;
+}
+
+.jimu-widget-map-filter .tableRow {
+  background-color: #333;
+}
+.jimu-filter-value-provider .checkBtn{
+  background-color: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  -o-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  -ms-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+.jimu-filter-value-provider .checkBtn .checkBtnDownIcon{
+  background-image: url("./../images/v-white.png");
+  background-position: 0 0;
+}

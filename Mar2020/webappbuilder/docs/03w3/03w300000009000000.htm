@@ -1,0 +1,121 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Attribute Table widget displays a tabular view of a feature
+layer's attributes."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Attribute Table
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-CB96C682-799F-44F3-88AB-E056C97E5AE9]--><body><div id="content"><div class="header"><h1>
+Attribute Table
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-80EC585B-1A5C-4C38-8635-D966B78CF77B">The Attribute Table widget displays a tabular view of a feature
+layer's attributes. </p>
+
+<p id="GUID-0914BCF1-19A6-4234-9AFA-715B666028BD"> The following table shows the descriptions of the Attribute Table widget configurable attributes.</p><p id="GUID-9DDF3000-423F-457C-8381-E59C39A3F0DF"><div class="block_table" id="TABLE_D39131F1CFDB4A9294B37B7997F9D058" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-18BDEED9-621E-4D43-93F9-DCB783D7E5FC">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-A27F0252-BCFD-434A-A5FE-CCFEBC7DD278">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0DE9FB71-A0DC-4DA6-AD88-B9285C55DB32"><span class="usertext">layerInfos</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-507050C4-3AD7-4659-AA6F-610D3299E083">Array of object. An array of feature layers. There is no default.<ul purpose="ul" id="UL_998A8AC700EB42C4AA24DE8F578D2FF8"><li purpose="li" id="LI_EC9E51916261464D88FCDAA9962632FD">name: String. The name of the feature layer. There is no default.</li><li purpose="li" id="LI_8640726DEEC84FFAB235FB97E3F86107">id: String.  The identifier of the feature layer. There is no default.</li><li purpose="li" id="LI_61D2D53666944163A32F1330D16F398C">layer: Object. Reference to the feature layer. There is no default.<ul purpose="ul" id="UL_9633089492244FECABA0E009AE683BF4"><li purpose="li" id="LI_4D183C280E7747F1B98889F98A6DDBE6">url: String. URL to the <span purpose="ph" varid="ArcGISforServer" translate="no">ArcGIS Server</span> REST resource that represents a feature service. There is no default.</li><li purpose="li" id="LI_0251472DC6A34596906B718B3921083F">fields:  Object[]. If undefined, displays all fields. There is no default.<ul purpose="ul" id="UL_FF16850292D94D29B762BC9442260EF8"><li purpose="li" id="LI_B8DF907B0CDA483D8C042B836528DB20">name:  String. The name of the field. There is no default.</li><li purpose="li" id="LI_25C87C943AD544D187E6868606118E49">alias:  String. The alias of the field. There is no default.</li><li purpose="li" id="LI_D4459C68F0104CB292D2E770B01E8541">show:  Boolean. Indicates whether the field will be shown in the table. There is no default.</li></ul></li><li purpose="li" id="LI_25F502B2341C4D42B1D7BE7389E654DE">show:  Boolean. Indicates whether the layer will be shown in the table. There is no default.</li></ul></li></ul></p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AFC7E081-48F2-4E06-BCE3-A326C2536BB4"><span class="usertext"> initiallyExpand</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-67D94BFE-2A96-404A-8D93-3C7802BBFB1E"> Boolean. Initially expands the widget. It is set to false by default.</p></td></tr></tbody><caption class="table_desc"></caption></table></div></p><p id="GUID-344028B7-3646-407A-B809-2A9801067132">Example:</p><p id="GUID-C4041D2D-34D5-454D-A153-1F78A2E64F57"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+ &quot;layerInfos&quot;: [{
+        &quot;name&quot;: &quot;USA_hostingFS - Cities&quot;,
+        &quot;id&quot;: &quot;USA_hostingFS_7710&quot;,
+        &quot;layer&quot;: {
+            &quot;url&quot;: &quot;https://services2.arcgis.com/K1Xet5rYYN1SOWtq/ArcGIS/rest/services/USA_hostingFS/FeatureServer/0&quot;,
+            &quot;fields&quot;: [{
+                &quot;show&quot;: true,
+                &quot;name&quot;: &quot;OBJECTID&quot;,
+                &quot;alias&quot;: &quot;OBJECTID&quot;
+            }, {
+                &quot;show&quot;: true,
+                &quot;name&quot;: &quot;AREANAME&quot;,
+                &quot;alias&quot;: &quot;AREANAME&quot;
+            }, {
+                &quot;show&quot;: true,
+                &quot;name&quot;: &quot;CLASS&quot;,
+                &quot;alias&quot;: &quot;CLASS&quot;
+            }, {
+                &quot;show&quot;: true,
+                &quot;name&quot;: &quot;ST&quot;,
+                &quot;alias&quot;: &quot;ST&quot;
+            }, {
+                &quot;show&quot;: true,
+                &quot;name&quot;: &quot;CAPITAL&quot;,
+                &quot;alias&quot;: &quot;CAPITAL&quot;
+            }, {
+                &quot;show&quot;: true,
+                &quot;name&quot;: &quot;POP2000&quot;,
+                &quot;alias&quot;: &quot;POP2000&quot;
+            }, {
+                &quot;show&quot;: false,
+                &quot;name&quot;: &quot;GlobalID&quot;,
+                &quot;alias&quot;: &quot;GlobalID&quot;
+            }]
+        },
+        &quot;show&quot;: true
+    }, {
+        &quot;name&quot;: &quot;USA_hostingFS - Highways&quot;,
+        &quot;id&quot;: &quot;USA_hostingFS_2758&quot;,
+        &quot;layer&quot;: {
+            &quot;url&quot;: &quot;https://services2.arcgis.com/K1Xet5rYYN1SOWtq/ArcGIS/rest/services/USA_hostingFS/FeatureServer/1&quot;,
+            &quot;fields&quot;: [{
+                &quot;name&quot;: &quot;OBJECTID&quot;,
+                &quot;alias&quot;: &quot;OBJECTID&quot;,
+                &quot;show&quot;: false,
+                &quot;format&quot;: null
+            }, {
+                &quot;name&quot;: &quot;LENGTH&quot;,
+                &quot;alias&quot;: &quot;LENGTH&quot;,
+                &quot;show&quot;: true,
+                &quot;format&quot;: {
+                    &quot;places&quot;: 2,
+                    &quot;digitSeparator&quot;: true
+                }
+            }, {
+                &quot;name&quot;: &quot;TYPE&quot;,
+                &quot;alias&quot;: &quot;TYPE&quot;,
+                &quot;show&quot;: true,
+                &quot;format&quot;: null
+            }, {
+                &quot;name&quot;: &quot;ADMN_CLASS&quot;,
+                &quot;alias&quot;: &quot;ADMN_CLASS&quot;,
+                &quot;show&quot;: true,
+                &quot;format&quot;: null
+            }, {
+                &quot;name&quot;: &quot;TOLL_RD&quot;,
+                &quot;alias&quot;: &quot;TOLL_RD&quot;,
+                &quot;show&quot;: true,
+                &quot;format&quot;: null
+            }, {
+                &quot;name&quot;: &quot;RTE_NUM1&quot;,
+                &quot;alias&quot;: &quot;RTE_NUM1&quot;,
+                &quot;show&quot;: true,
+                &quot;format&quot;: null
+            }, {
+                &quot;name&quot;: &quot;RTE_NUM2&quot;,
+                &quot;alias&quot;: &quot;RTE_NUM2&quot;,
+                &quot;show&quot;: true,
+                &quot;format&quot;: null
+            }, {
+                &quot;name&quot;: &quot;ROUTE&quot;,
+                &quot;alias&quot;: &quot;ROUTE&quot;,
+                &quot;show&quot;: true,
+                &quot;format&quot;: null
+            }]
+        },
+        &quot;show&quot;: false
+    }],
+    &quot;hideExportButton&quot;: false,
+    &quot;initiallyExpand&quot;: true,
+    &quot;filterByMapExtent&quot;: true
+}
+</code></pre></div>
+</div></p><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,44 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Measurement widget allows you to measure horizontal, vertical, and direct distance between two points."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Measurement widget</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-26049631-922F-4D35-BC25-8A19AB53371C]--><body><div id="content"><div class="header"><h1>
+Measurement widget</h1><div id="breadcrumb"></div></div>
+<p id="GUID-B61E9392-EB70-4057-A762-65B5CB4E630A">The Measurement widget in 3D apps allows you to measure horizontal, vertical, and direct distance between two points as well as  the area and perimeter of a polygon.</p><div class="notes" id="GUID-5200171D-3E8C-4F47-810A-53C46614BE92"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-0957891D-0769-4EB8-A3A7-3F619D5D80ED"> In a WGS84 or Web Mercator scene, when the distance between the points is more than 100 kilometers, the Measurement widget switches to display only the horizontal and vertical distances, taking into consideration the curvature of the earth (that is, ellipsoid-based geodesic distance).</p></div></div><div class="section1" id="GUID-FC64A5B0-3B54-4933-B6E7-7AEE61F9F053" purpose="section1"><h2>
+Configure the Measurement widget
+</h2><p id="GUID-495A4A03-F7FB-46DF-85F9-750A16D2BAE4"> This widget can be set to open automatically when
+an app starts. To enable this feature, click the <span class="uicontrol">Open this widget automatically when
+the app starts</span> button <img purpose="img" placement="inline" alt="Open this widget automatically when the app starts" title="Open this widget automatically when the app starts" src="03w3/GUID-FE658549-5B6E-4BA5-89FA-A0A0C72810FC-web.png"> on the widget, which turns it dark
+green.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="context" id="GUID-968DF834-CD85-40D2-9A7F-D948E50C0928" purpose="context">
+
+</div><div class="steps" id="GUID-0A3D2516-45F7-4369-8B9A-94D179B753BC"><div class="step_title">Steps:</div><ol>
+<li purpose="step" id="ESRI_STEP_7220F7B7F032438C82777D0BC0D438B9"><span purpose="cmd">Hover over the widget and click the <span class="uicontrol">Configure this widget</span> button <img purpose="img" placement="inline" alt="Configure this widget" title="Configure this widget" src="03w3/GUID-3600D9F6-693B-4060-9B74-32E4275F0C31-web.png"> to open the configuration properties dialog box. </span></li><div class="stepinfo" purpose="stepinfo"><p id="GUID-DBC6CD46-34A7-46C4-804A-A3C3300B1846">The configuration window for this widget appears. The <span class="uicontrol">Default length unit</span> and <span class="uicontrol">Default area unit</span> parameters allow you to configure the default unit of the measurement.</p><p id="GUID-5C1DCF22-08D6-47C8-BF1B-8CFA33A091BD">You can also decide which measurement tool will be available in the widget. Choose <span class="uicontrol">Area</span> or <span class="uicontrol">Distance</span>.</p></div><li purpose="step" cid="I0AYy" id="ESRI_STEP_87167FBF20C24F11A18EEA942F265E27">
+<span purpose="cmd">
+Click <span class="uicontrol">OK</span> to close the window when you're finished.
+</span>
+</li>
+</ol></div></div></div>
+
+
+<div class="section1" id="ESRI_SECTION1_C5EC7472C02849F79144967E7B38F1C4" purpose="section1"><h2>Use the Measurement widget</h2><p id="GUID-6A9E7C56-61A4-4FCA-996E-122527F8F4E1"> To use the widget, click the Measurement widget icon to open it. Follow the steps below when measuring distance or area and perimeter.</p><div class="section2" id="ESRI_SECTION2_68A51181E5474EA28F4DD2E6E7D3683F" purpose="section2"><h3>Distance measurement</h3><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_6E295E995BCF48E6BAC662DFE70E93D1"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_B774D94F37C8482E8B90677D2BA289F9"><span purpose="cmd">Click the <span class="uicontrol">Distance</span> tool to activate distance measurement.</span></li><li purpose="step" id="ESRI_STEP_224C12BAEBAA489A922CF270D846C5C1"><span purpose="cmd">Start to measure by clicking in the scene to place your first point.</span><div class="stepresult" purpose="stepresult">  <p id="GUID-9B03F91E-FF0C-4E1C-A0B5-57CE3151C749">A horizontal laser line is drawn to indicate the height at the
+current pointer position. This line can help in analyzing the heights
+of objects relative to each other and the terrain. A second laser
+line shows the intersection of the scene with the vertical plane
+that passes through the checkered line.</p>
+<p id="GUID-24206908-3281-48F7-BEBC-0E85B1928D25">The widget labels the direct, horizontal, and vertical orange
+distance lines and displays the same values in the UI panel.</p>
+</div></li><li purpose="step" id="ESRI_STEP_E743CEC3E08F436B95DAB80AC68F7240"><span purpose="cmd">Optionally start a new measure by clicking the <span class="uicontrol">New Measure</span> button on the widget.</span></li></ol></div></div></div><div class="section2" id="ESRI_SECTION2_B8F055B87FFB40AC84B7A2B18CED3156" purpose="section2"><h3>Area and perimeter measurement</h3><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_1B1B962826294BF999D9EB728EB56FF9"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_43A4FF3BF79540C29F8AA09E25F56B2E"><span purpose="cmd">Click the <span class="uicontrol">Area</span> tool to activate area and perimeter measurement.</span></li><li purpose="step" id="ESRI_STEP_2EDBA6233DA54F95A13050EA79C15666"><span purpose="cmd">Start to measure by clicking in the scene to place your first point.</span><div class="info" purpose="info"><p id="GUID-2470E49C-E73F-4495-9D91-E46622F232C8">When starting the area measurement, a horizontal laser line is drawn that indicates the height at the current pointer position. This line can help in analyzing the heights of objects relative to each other and the terrain.</p></div></li><li purpose="step" id="ESRI_STEP_6073FD9DF26448E2B81B2F4F3F3D5761"><span purpose="cmd">Optionally start a new measure by clicking the <span class="uicontrol">New Measure</span> button on the widget.</span></li></ol></div></div></div></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

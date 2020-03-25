@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
+//>>built
+define(["dojo/_base/declare","dojo/_base/lang","dijit/_WidgetBase"],function(a,b,c){return a([c],{baseClass:"json-editor",postCreate:function(){this.inherited(arguments)},init:function(){require(["builder/libs/ace/ace.js"],b.hitch(this,function(){this.editor=ace.edit(this.domNode);this.editor.setTheme("ace/theme/textmate");this.editor.setHighlightActiveLine(!0);this.editor.setValue(JSON.stringify(this.json,null,2));this.editor.getSession().setMode("ace/mode/json")}))},setJSON:function(a){this.json=
+a;this.editor.setValue(JSON.stringify(this.json,null,2))},getJSON:function(){return JSON.parse(this.editor.getValue())}})});

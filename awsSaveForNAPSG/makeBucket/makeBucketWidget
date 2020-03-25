@@ -1,0 +1,3 @@
+aws s3api create-bucket --bucket sitaware-widget --region us-east-1
+aws s3 website s3://sitaware-widget/ --index-document index.html 
+aws cloudfront create-distribution --origin-domain-name sitaware-widget.s3.amazonaws.com --default-root-object index.html > makeBucketwidgetOut.json

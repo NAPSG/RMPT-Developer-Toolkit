@@ -1,0 +1,55 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The SelectionManager class manages feature layer selection."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+SelectionManager
+class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-DDFCEF07-355B-411D-B046-7CD036F36E96]--><body><div id="content"><div class="header"><h1>
+SelectionManager
+class</h1><div id="breadcrumb"></div></div>
+<p id="GUID-8BA6F61F-CFAA-47A7-8E4E-FDE4C8E5A3A8">
+The <span class="usertext">SelectionManager</span> class manages feature layer selection. It enables you to update the selection by features.
+</p>
+
+
+
+<div class="section1" id="ESRI_SECTION1_CFDBE3F427454BBC869FF3C27662B39C" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-6241EB0E-2E7C-4683-8604-B20CE3B60C2C"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/SelectionManager&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">SelectionManager</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_15322E573F464DC7A5F093B6A2297000" purpose="section1"><h2>Constructor</h2><div class="block_table" id="TABLE_20A7E7BFAA804C0DB01E05088048CAEB" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-46718F54-86DD-4151-A5E7-BF48AAB2D5EB"> <span class="usertext">SelectionManager</span> has no constructor. Use <span class="usertext">SelectionManager.getInstance()</span>  to get the SelectionManager instance.</p><p id="GUID-64C4028D-0079-42C8-AF25-631C2130FB48">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="err">&#39;</span><span class="nx">jimu</span><span class="o">/</span><span class="nx">SelectionManager</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">SelectionManager</span><span class="p">){</span>
+          <span class="kd">var</span> <span class="nx">selectionManager</span> <span class="o">=</span> <span class="nx">SelectionManager</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+          <span class="p">...</span>
+        <span class="p">});</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div></div><div class="section1" id="ESRI_SECTION1_8920D3B9D9DE42828F1D859F887A6FE6" purpose="section1"><h2>Methods</h2><div class="block_table" id="TABLE_934FB9C8140340439DBE7B96BFA3AA2E" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-70CF4867-545F-4773-AA9D-FA89595D3B45"><span class="usertext"> setSelectionSymbol(layer)</span></p><p id="GUID-32C9F0D3-AC04-4E2B-8D0D-6D09841F17C2"> Sets the default selection symbol for the feature layer.</p><p id="GUID-E9C4E29D-5DE7-4383-8A2E-49F26DC8E8DB">Return type: Undefined.</p><p id="GUID-B495560C-77F2-4633-8921-CEECBC6ABC4F">Parameters:</p><p id="GUID-3DF04DB9-7DB1-4B5F-987A-46DED2FC900B"><span class="usertext">  &lt;FeatureLayer&gt; layer</span>—Required. The feature layer used to set the default selection symbol.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_A4A43A82CED4462A9182F67F551FBC0E" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-920E8FF0-F3D8-45DC-A710-8AF2367DBEA7"><span class="usertext"> setSelection(layer, features)</span></p><p id="GUID-A0525421-C15F-4D60-AAB8-FBFF8E8D9A84"> Creates a new selection set by the specified features.</p><p id="GUID-2439D87F-060E-4E08-832E-89AD79F7BABE">Return type:  Deferred.</p><p id="GUID-FD94F598-5C84-4851-AF84-CE659D613C02">Parameters:</p><p id="GUID-007EB951-BCE3-4CBD-950F-44D4F816B44F"><span class="usertext">  &lt;FeatureLayer&gt; layer</span>—Required. The feature layer used to update the selection set.</p>
+
+
+<p id="GUID-09E59F92-4430-470A-81AB-5B282C215E5A"><span class="usertext"> &lt;Feature[]&gt; features</span>—Required.  Uses the specified features as the selection set of the layer.</p></td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_74343C4B1EC24EA281ECFC926E7A11B0" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E09D44C6-1857-4D68-94A6-EEA436CD5973"><span class="usertext"> addFeaturesToSelection(layer, features)</span></p><p id="GUID-1264C38E-9B79-47F4-A446-41602F2B214A">  Adds features to the layer's current selection set.</p><p id="GUID-F9BBF4B8-5B58-4BD6-92F6-A05DFF1AE958">Return type:  Deferred.</p><p id="GUID-022DA22C-D9D5-42D3-8A8C-86561F8E1105">Parameters:</p><p id="GUID-5A0297D8-E5B0-4F0E-A6E2-EC5F0EA9242E"><span class="usertext">  &lt;FeatureLayer&gt; layer</span>—Required. The feature layer used to update the selection set.</p>
+
+
+<p id="GUID-856525F1-E8B1-4CD5-A21A-0723CF5CFA64"><span class="usertext"> &lt;Feature[]&gt; features</span>—Required.  Adds the specified features to the selection set of the layer.</p></td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_C77290CDC4DC4D948B66E16FB873B32C" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-19AADAA0-C203-4707-94F0-2AF92456BF27"><span class="usertext"> removeFeaturesFromSelection(layer, features)
+</span></p><p id="GUID-8C1DFD97-FB42-446F-95A3-EE0AE064AB3B">Removes features from the layer’s current selection.</p><p id="GUID-F2397D75-4FE6-4ED6-A651-5C6994ECE286">Return type:  Deferred.</p><p id="GUID-B4994EC3-CC4B-4F11-8194-58C7FF90B743">Parameters:</p><p id="GUID-54357A28-8FF0-440E-9FDF-29CCCD17AFCF"><span class="usertext">  &lt;FeatureLayer&gt; layer</span>—Required. The feature layer used to update the selection set.</p>
+
+
+<p id="GUID-640C855C-47B4-498C-B05A-923F013ECE4A"><span class="usertext"> &lt;Feature[]&gt; features</span>—Required.   Removes the specified features from the layer's current selection.</p></td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_87674FA556B94817808374AA65FAE9AC" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FF44B87A-6BE3-42DC-BF9E-869B635D0013"><span class="usertext">  clearSelection(layer)</span></p><p id="GUID-6193DB06-7334-4579-9C9A-524E77C715B2"> Clears the layer's current selection.</p><p id="GUID-999C69AA-5A21-4462-A121-470EF3A7C334">Return type:  Deferred.</p><p id="GUID-6F7B1D50-992F-4CF0-B82B-7D5325A4EFA0">Parameters:</p><p id="GUID-4164FE90-5BC7-4AFA-8957-EBF98F6EF8DF"><span class="usertext">  &lt;FeatureLayer&gt; layer</span>—Required. The feature layer used to clear the selection set.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_DD4D8D435A634007B78D4810C2C6C479" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E44DAC26-F19E-45BC-80C9-096FE902B0D1"><span class="usertext">   updateSelectionByFeatures(layer, features, selectionMethod)</span></p><p id="GUID-FC1D7921-2268-4D03-A4BB-25EBF12ACBE5"> Updates the layer’s current selection set by features. The other methods, such as <span class="usertext">setSelection</span>, <span class="usertext">addFeaturesToSelection</span>, <span class="usertext">removeFeaturesFromSelection</span>, and <span class="usertext">clearSelection</span>, all internally execute this method.</p><p id="GUID-F43A2BFC-155F-4D56-A08A-827F7FDA13A0">Return type:  Deferred.</p><p id="GUID-02D1E445-CA96-4CAD-BC80-B9DE6DCDCB49">Parameters:</p><p id="GUID-5A1FA97C-5215-462A-8EC0-C329E1FDFDE0">  <span class="usertext">&lt;FeatureLayer&gt; layer</span>—Required. The feature layer used to update the selection set.</p>
+
+
+<p id="GUID-289D2C07-3B43-409C-A595-4C215F53399A"><span class="usertext"> &lt;Feature[]&gt; features</span>—Required. Uses the specified features to update the selection set.</p><p id="GUID-BF7B338B-20E3-483B-95D8-6C059EBB0BDE"><span class="usertext"> &lt;Number&gt; selectionMethod</span>—Required. Defines how the rest of the selection is combined with the existing selection. Available constant values are <span class="usertext">FeatureLayer.SELECTION_ADD</span>, <span class="usertext">FeatureLayer.SELECTION_NEW</span>, and <span class="usertext">FeatureLayer.SELECTION_SUBTRACT</span>. See  <a target="_blank" class="xref" rel="https://developers.arcgis.com/javascript/3/jsapi/featurelayer-amd.html" href="https://developers.arcgis.com/javascript/3/jsapi/featurelayer-amd.html">FeatureLayer</a> for details.</p></td></tr></tbody><caption class="table_desc"></caption></table></div></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

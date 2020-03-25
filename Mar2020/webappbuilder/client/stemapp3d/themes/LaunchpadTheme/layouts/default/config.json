@@ -1,0 +1,118 @@
+{
+  "widgetOnScreen": {
+    "widgets": [{
+      "uri": "themes/LaunchpadTheme/widgets/AnchorBarController/Widget",
+      "position": {
+        "bottom": 24,
+        "height": 40,
+        "relativeTo": "map",
+        "zIndex": 0
+      },
+      "version": "2.11"
+    }, {
+      "uri": "themes/LaunchpadTheme/widgets/Header/Widget",
+      "position": {
+        "left": 9,
+        "top": 10,
+        "width": 670,
+        "height": 46,
+        "relativeTo": "map"
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Search/Widget",
+      "position": {
+        "left": 344,
+        "top": 16,
+        "zIndex": 1
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/ZoomSlider/Widget",
+      "position": {
+        "left": 17,
+        "top": 78
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Home/Widget",
+      "position": {
+        "left": 17,
+        "top": 153
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/MyLocation/Widget",
+      "position": {
+        "left": 17,
+        "top": 191
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Navigate/Widget",
+      "position": {
+        "left": 17,
+        "top": 229
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Coordinate/Widget",
+      "position": {
+        "left": 10,
+        "bottom": 24
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Compass/Widget",
+      "position": {
+        "right": 20,
+        "top": 69
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/FullScreen/Widget",
+      "position": {
+        "right": 20,
+        "top": 111
+      },
+      "version": "2.11"
+    }, {
+      "uri": "widgets/Splash/Widget",
+      "visible": false,
+      "position": {
+        "relativeTo": "browser"
+      },
+      "version": "2.11"
+    }, {
+      "position": {
+        "right": 20,
+        "top": 17
+      }
+    }, {
+      "position": {
+        "right": 62,
+        "top": 17
+      }
+    }, {
+      "position": {
+        "right": 104,
+        "top": 17
+      }
+    }]
+  },
+
+  "map": {
+    "position": {
+      "left": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0
+    }
+  },
+
+  "widgetPool": {
+    "panel": {
+      "uri": "themes/LaunchpadTheme/panels/LaunchpadPanel/Panel"
+    }
+  }
+}

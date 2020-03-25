@@ -1,0 +1,90 @@
+{
+  "widgetOnScreen": {
+    "widgets": [{
+      "uri": "widgets/ZoomSlider/Widget",
+      "position": {
+        "right": 10,
+        "bottom": 26
+      }
+    }, {
+      "uri": "widgets/Home/Widget",
+      "position": {
+        "right": 10,
+        "bottom": 99
+      }
+    }, {
+      "uri": "widgets/MyLocation/Widget",
+      "position": {
+        "right": 10,
+        "bottom": 137
+      }
+    }, {
+      "uri": "widgets/Navigate/Widget",
+      "position": {
+        "right": 10,
+        "bottom": 174
+      }
+    }, {
+      "uri": "widgets/Search/Widget",
+      "position": {
+        "left": 10,
+        "top": 10
+      }
+    }, {
+      "uri": "widgets/Compass/Widget",
+      "position": {
+        "right": 10,
+        "top": 58
+      }
+    }, {
+      "uri": "widgets/FullScreen/Widget",
+      "position": {
+        "right": 10,
+        "top": 100
+      }
+    }, {
+      "uri": "widgets/Coordinate/Widget",
+      "position": {
+        "left": "50%",
+        "top": 10,
+        "marginLeft": -187
+      }
+    }, {
+      "uri": "widgets/Splash/Widget",
+      "visible": false,
+      "position": {
+        "relativeTo": "browser"
+      },
+      "version": "2.11"
+    }, {
+      "position": {
+        "right": 136,
+        "top": 10
+      }
+    }, {
+      "position": {
+        "right": 94,
+        "top": 10
+      }
+    }, {
+      "position": {
+        "right": 52,
+        "top": 10
+      }
+    }, {
+      "position": {
+        "right": 10,
+        "top": 10
+      }
+    }]
+  },
+
+  "map": {
+    "position": {
+      "left": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0
+    }
+  }
+}

@@ -1,0 +1,212 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to create and run unit tests for Web AppBuilder for ArcGIS."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Best practices for unit testing
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-39972B46-A018-4EEE-B37C-3B8E813A9788]--><body><div id="content"><div class="header"><h1>
+Best practices for unit testing
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-F3BC4E1F-66F6-426D-A328-907160AFAE78">This workflow demonstrates the best way to create and run unit tests for <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>. Widgets and utilities of <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> are all written as Asynchronous Module Definition (AMD) modules. For this reason, this workflow uses <a target="_blank" class="xref" href="https://theintern.io/" rel="https://theintern.io/">Intern</a> as the testing framework, since it supports the Dojo loader. </p><div class="notes" id="GUID-BBED4EC1-3016-4A50-ACD8-12F131E9F48F"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-7797DEFF-CADA-49C9-820B-08DBFF43600F">This workflow is based on Intern 4.1.5.</p></div></div><p id="GUID-DB5F5646-19DE-4C99-B9D2-ADC3173D0A5E">Use the following command to install Intern:  <span class="usertext">npm install intern --save-dev</span>. </p><div class="section1" id="GUID-B05AF8DF-2605-47BB-861B-D3EA2DC72D2F" purpose="section1"><h2>
+Configure Intern
+</h2><p id="GUID-A527F6E6-9EBC-4B18-93DE-C8E69B912C32">
+Once you have installed Intern 4, you can run the Intern command under the project root using 
+ <span class="usertext">node_modules\.bin\intern</span>. <div class="notes" id="GUID-D21A41AF-2BC9-4A40-907A-897BBC2A0855"><div class="tip"><img class="note_img" src="rsrc/tip.png" alt="Tip" title="Tip"><span>Tip:</span></div><div class="tipbody"><p id="GUID-1B761C41-2491-472E-BD68-213EBC2B1597">It's highly recommended to add a script in package.json:<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;scripts&quot;: {
+    &quot;test&quot;: &quot;intern&quot;,
+    ...
+</code></pre></div>
+</div>Then you can run your unit tests by <span class="usertext">npm test</span>.</p></div></div></p><div class="section2" id="ESRI_SECTION2_7347F73D6A2647ABA63549A9B4A2AFFD" purpose="section2"><h3>dojoLoader.js</h3><p id="GUID-ECFE5B4F-1D47-4782-A2EF-A460FB18BE07">Intern includes scripts for the Dojo 1, Dojo 2, and SystemJS loaders. Use the Dojo loader included in <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span> as the custom loader.  </p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-AB63F172-F2D9-4329-B6A7-F685F4A94E16"><div class="step_title">Steps:</div><ol>
+<li purpose="step" cid="f5alO" id="ESRI_STEP_D9CE9D160F734BEAA2B96FDBDE1B6AFD">
+<span purpose="cmd">
+Create a custom loader under the 
+tests directory with the name <span class="usertext">dojoLoader.js</span>.</span>
+<div class="info" purpose="info"><p id="GUID-17ADF5A2-F036-4AC6-AF2D-E6DAC0D0AB41">The code is copied from <span class="usertext">node_modules/intern/loaders/dojo.js</span>.</p></div></li><li purpose="step" id="ESRI_STEP_FC8750039B784FF088EAFE6B9EC8DDDA"><span purpose="cmd">Change the dojo.js URL from <span class="usertext">node_modules/dojo/dojo.js</span> to <span class="usertext">client/stemapp/arcgis-js-api/dojo/dojo.js</span>.</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;use strict&quot;;
+intern.registerLoader(function (options) {
+  var globalObj = typeof window !== &#39;undefined&#39; ? window : global;
+  options.baseUrl = options.baseUrl || intern.config.basePath;
+  if (!(&#39;async&#39; in options)) {
+      options.async = true;
+  }
+  intern.log(&#39;Configuring Dojo loader with:&#39;, options);
+  globalObj.dojoConfig = options;
+  return intern.loadScript(&#39;client/stemapp/arcgis-js-api/dojo/dojo.js&#39;).then(function () {
+    var require = globalObj.require;
+    intern.log(&#39;Using Dojo loader&#39;);
+    return function (modules) {
+      var handle;
+      return new Promise(function (resolve, reject) {
+        handle = require.on(&#39;error&#39;, function (error) {
+          intern.emit(&#39;error&#39;, error);
+          reject(new Error(&quot;Dojo loader error: &quot; + error.message));
+        });
+        intern.log(&#39;Loading modules:&#39;, modules);
+        require(modules, function () {
+          resolve();
+        });
+      }).then(function () {
+        handle.remove();
+      }, function (error) {
+        handle &amp;&amp; handle.remove();
+        throw error;
+      });
+    };
+  });
+});
+</code></pre></div>
+</div></div></li>
+</ol></div></div></div><div class="section2" id="ESRI_SECTION2_ED091B0C6B3840F59C6A6298F4A201FE" purpose="section2"><h3>intern.json</h3><p id="GUID-1DD2C706-8B83-4201-B49B-6E8565FCAF8C">Intern is configured using a declarative JSON file. The default location for the configuration file is <span class="usertext">intern.json</span> in the project root. Since many components require DOM to run, it is preferable to run unit tests using Chrome WebDriver, managed by Selenium. Intern defaults to using the Selenium tunnel, making configuration efficient. </p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_927218C815DF46209D1C9C5389A28962"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_C0A7C56247DC44EB88B91C92A9E6C062"><span purpose="cmd">Add the <span class="usertext">tunnelOptions</span> property:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;tunnelOptions&quot;: {
+    &quot;drivers&quot;: [&quot;chrome&quot;]
+  }
+}
+</code></pre></div>
+</div><p id="GUID-16C628FA-E406-4A5E-996E-B312F5F7662A">For unit tests, there is no need to open a browser window to execute testing code. Intern can interact with Headless Chrome in the same fashion as regular Chrome. </p></div></li><li purpose="step" id="ESRI_STEP_D5498052DE4F4A0FB7563A51FC0A6E7A"><span purpose="cmd">Use the ChromeDriver to open a headless session by providing <span class="usertext">headless</span> and <span class="usertext">disable-gpu</span> arguments to ChromeDriver in an environment descriptor in the test configuration file.</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;environments&quot;: [{
+  &quot;browserName&quot;: &quot;chrome&quot;,
+  &quot;chromeOptions&quot;: {
+    &quot;args&quot;: [&quot;headless&quot;, &quot;disable-gpu&quot;]
+  }
+}]
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_7ECD5152FBE74B17B5B7F3787CCC3341"><span purpose="cmd">For the final step, you need to configure the custom loader that includes Dojo and custom packages. After that, the configuration file looks like the following:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;suites&quot;: [&quot;tests/unit/all&quot;],
+  &quot;tunnelOptions&quot;: {
+    &quot;drivers&quot;: [&quot;chrome&quot;]
+  },
+  &quot;loader&quot;: {
+    &quot;script&quot;: &quot;tests/dojoLoader.js&quot;,
+    &quot;options&quot;: {
+      &quot;async&quot;: true,
+      &quot;tlmSiblingOfDojo&quot;: false,
+      &quot;has&quot;: {
+        &quot;extend-esri&quot;: 1
+      },
+      &quot;packages&quot;: [{
+        &quot;name&quot;: &quot;dojo&quot;,
+        &quot;location&quot;: &quot;client/stemapp/arcgis-js-api/dojo&quot;
+      },{
+        &quot;name&quot;: &quot;dijit&quot;,
+        &quot;location&quot;: &quot;client/stemapp/arcgis-js-api/dijit&quot;
+      }, {
+        &quot;name&quot;: &quot;dojox&quot;,
+        &quot;location&quot;: &quot;client/stemapp/arcgis-js-api/dojox&quot;
+      }, {
+        &quot;name&quot;: &quot;put-selector&quot;,
+        &quot;location&quot;: &quot;client/stemapp/arcgis-js-api/put-selector&quot;
+      }, {
+        &quot;name&quot;: &quot;xstyle&quot;,
+        &quot;location&quot;: &quot;client/stemapp/arcgis-js-api/xstyle&quot;
+      }, {
+        &quot;name&quot;: &quot;dgrid&quot;,
+        &quot;location&quot;: &quot;client/stemapp/arcgis-js-api/dgrid&quot;
+      }, {
+        &quot;name&quot;: &quot;moment&quot;,
+        &quot;location&quot;: &quot;client/stemapp/arcgis-js-api/moment&quot;
+      }, {
+        &quot;name&quot;: &quot;esri&quot;,
+        &quot;location&quot;: &quot;client/stemapp/arcgis-js-api/esri&quot;
+      }, {
+        &quot;name&quot;: &quot;jimu&quot;,
+        &quot;location&quot;: &quot;client/stemapp/jimu.js&quot;
+      }, {
+        &quot;name&quot;: &quot;themes&quot;,
+        &quot;location&quot;: &quot;client/stemapp/themes&quot;
+      }, {
+        &quot;name&quot;: &quot;libs&quot;,
+        &quot;location&quot;: &quot;client/stemapp/libs&quot;
+      }, {
+        &quot;name&quot;: &quot;dynamic-modules&quot;,
+        &quot;location&quot;: &quot;client/stemapp/dynamic-modules&quot;
+      }, {
+        &quot;name&quot;: &quot;builder&quot;,
+        &quot;location&quot;: &quot;client/builder&quot;
+      }, {
+        &quot;name&quot;: &quot;stemapp&quot;,
+        &quot;location&quot;: &quot;client/stemapp&quot;
+      }, {
+        &quot;name&quot;: &quot;widgets&quot;,
+        &quot;location&quot;: &quot;client/stemapp/widgets&quot;
+      }, {
+        &quot;name&quot;: &quot;sinon&quot;,
+        &quot;location&quot;: &quot;node_modules/sinon/pkg&quot;,
+        &quot;main&quot;: &quot;sinon&quot;
+      }, {
+        &quot;name&quot;: &quot;tests&quot;,
+        &quot;location&quot;: &quot;tests&quot;
+      }]
+    }
+  },
+  &quot;environments&quot;: [{
+    &quot;browserName&quot;: &quot;chrome&quot;,
+    &quot;fixSessionCapabilities&quot;: &quot;no-detect&quot;,
+    &quot;chromeOptions&quot;: {
+      &quot;args&quot;: [&quot;headless&quot;, &quot;disable-gpu&quot;]
+    }
+  }]
+}
+</code></pre></div>
+</div></div></li></ol></div></div></div></div>
+
+
+<div class="section1" id="ESRI_SECTION1_E3DF74143D484EF291FDC925D7A96512" purpose="section1"><h2>File structure</h2><p id="GUID-FCEC8D05-686C-454C-8723-06248D5BFD83">Organize the files for unit testing as detailed below.</p><div class="section2" id="ESRI_SECTION2_C7446EF39C324B509F17D5E6468BCEDB" purpose="section2"><h3>Widgets and themes</h3><p id="GUID-1E0599F8-17DA-429C-883C-0661B67EBBF5">When testing for each widget and theme, double-check that the tests directory is placed in the same folder as other resources. Each widget's tests directory should contain a file named all.js that includes all test suites for this widget.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>define([
+  &#39;./utils&#39;,
+  &#39;./ComponentA&#39;
+], function() {});
+</code></pre></div>
+</div><p id="GUID-CEF1060A-E9D4-47C5-B179-AB11F4597617">There is a file named all_tests.js that includes all tests of widgets. The content of the all.js file is as follows:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>define([
+  &#39;./Analysis/tests/all&#39;,
+  &#39;./Infographic/tests/all&#39;
+], function() {});
+</code></pre></div>
+</div></div><div class="section2" id="ESRI_SECTION2_A7F485F18EF940BD991685989D427713" purpose="section2"><h3>Jimu</h3><p id="GUID-4E3089B9-FBFB-40E6-989E-61A5787B71A2">Unit tests for jimu are placed in  <span class="usertext">tests/unit/client/jimu</span>.</p></div><div class="section2" id="ESRI_SECTION2_073F819640C24B9D9A614BD0F0471DA6" purpose="section2"><h3>All unit tests</h3><p id="GUID-22C8A492-2606-4AE1-B3D9-4E392E653BEE">You can find all unit tests in <span class="usertext">tests/unit/client/jimu</span>.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>define([
+	&#39;../../client/builder/tests/all&#39;,
+	&#39;../../client/stemapp/widgets/all_tests&#39;,
+	&#39;./client/jimu/all&#39;
+], function() {});
+</code></pre></div>
+</div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_86451089BA914926B19F77E65A0C5481"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_387415BEF5C84B0781368C37B42719F9"><span purpose="cmd">Add the following file to the <span class="usertext">suites</span> property in the <span class="usertext">intern.json</span> configuration for all tests to be included (widgets, jimu, and builder).</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;suites&quot;: [&quot;tests/unit/all&quot;],
+  ...
+</code></pre></div>
+</div></div></li></ol></div></div></div></div><div class="section1" id="ESRI_SECTION1_814542F5CE35422F9A819AF94C312FFF" purpose="section1"><h2>Write tests</h2><p id="GUID-864B7F75-68F4-4AF9-80DE-06F2B5948D09">Follow these steps to write a unit test:</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_8FD78E086DB045DDAC9C769FF7E8A5B0"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_BA94DCF97AFC41DFB55160DAF00CB0D4"><span purpose="cmd">Get the assertion instance and test interface from the global variable <span class="usertext">intern</span>. </span><div class="info" purpose="info"><p id="GUID-10E3ACED-058D-4D6B-8EBC-8720C5257F24">See lines 1 and 2 in the code example below.</p></div></li><li purpose="step" id="ESRI_STEP_B425624B2F33466C80695AE9EE9189AC"><span purpose="cmd">Run your unit test with your own module. Use define syntax as you write your own module. </span><div class="info" purpose="info"><p id="GUID-989EC80B-2CF5-49F6-8D88-A6D06035C24D">See lines 3 through 7 in the code example below.</p></div></li><li purpose="step" id="ESRI_STEP_5D1FE7C80DEE4062803BA5A1F8FBE956"><span purpose="cmd">Write the unit test.</span><div class="info" purpose="info"><p id="GUID-7C3197CC-B6EF-4441-A40A-04985B59BBDD">The <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> team uses Object, which is the default interface  of Intern to write tests. The  <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> team also uses the assert style of chai as the assertion library.</p><p id="GUID-190032E4-B301-48EA-8EDA-8E62FCBEA01B">A simple test is shown below. For more information on how to write tests, refer to the <a class="xref" rel="03w3/03w30000006t000000.htm" href="03w3/03w30000006t000000.htm">Writing tests</a> page from the Intern website.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>//1. Get the assertion instance and test interface from the global variable `intern`.
+var assert = intern.getPlugin(&#39;chai&#39;).assert;
+var registerSuite = intern.getInterface(&#39;object&#39;).registerSuite;
+
+
+define([
+  // 2. Require necessary modules to run your unit test. Use `define` syntax as you write your own module.
+  &#39;dojo/_base/config&#39;,
+  &#39;jimu/utils&#39;, 
+  &#39;./globals&#39;
+], function(dojoConfig, utils) {
+  //3. Write unit test.
+  registerSuite(&#39;test-jimu-utils&#39;, {
+    &#39;testReplace1&#39;: function() {
+      var o1 = {
+          a: 1,
+          b: 2
+        },
+        p = {},
+        o2;
+      o2 = utils.replacePlaceHolder(o1, p);
+      assert.deepEqual(o1, o2);
+    }
+  });
+});
+</code></pre></div>
+</div></div></li></ol></div></div></div><div class="section1" id="ESRI_SECTION1_154C20A4C35648B98D1E333FC0DF1253" purpose="section1"><h2>Run tests</h2><p id="GUID-7567FCA3-1D72-4256-AFFD-AD048D9E801C">Complete the following steps to run your tests:</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_9DE5415189C14CD5B5FB326007B98D5B"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_EEBAED9F79D84FA885DC05CFF5C21703"><span purpose="cmd">Run all unit tests: <span class="usertext">npm tests</span></span></li><li purpose="step" id="ESRI_STEP_A5EA30E3CEDC483A8F7870577B666E2A"><span purpose="cmd">Run specified unit tests: <span class="usertext">npm test
+suites=tests/unit/client/jimu/test-utils</span></span><div class="info" purpose="info"><div class="notes" id="GUID-A34EDC55-E57E-4EB4-9D3C-8F5AB558498D"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-92C46563-3D30-4F6E-BF40-8932D5C7FDAD">Don't include the <span class="usertext">.js</span> suffix when you run a single suite.</p><p id="GUID-2F042E00-DCCE-4DBD-962D-658A6A023D73">You can provide multiple suite parameters to run several test suites using
+one command.</p></div></div></div></li></ol></div></div></div><div class="section1" id="ESRI_SECTION1_0CAB7FF5F74B4166836B9E2C6706B72A" purpose="section1"><h2>Reporter</h2><p id="GUID-37544C27-5023-4981-AB44-6660C1F4DB27">The <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> team uses Jenkins as its continuous integration solution. To integrate with Jenkins, use the <span class="usertext">junit</span> reporter and enable the <span class="uicontrol">Publish JUnit test result report</span> postbuild action for the best display of the test results:</p><p id="GUID-B638F47E-3187-4BA8-A99A-F3D23B70CE42"><span class="usertext">npm test reporters=junit &gt;
+tests/junitReport.xml</span></p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

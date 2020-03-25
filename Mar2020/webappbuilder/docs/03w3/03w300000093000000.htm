@@ -1,0 +1,345 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to create a new default layout."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Create a new default layout
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-772088A8-A1D9-4B29-BDC5-A83F1A7A1BB0]--><body><div id="content"><div class="header"><h1>
+Create a new default layout
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-0DE593E2-0AB2-4DA7-8C10-024641A2A214"> This topic explains how to create a new
+default layout. To  understand the basic concepts of a
+layout and its components in <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>, as well as the differences between the default and
+non-default layouts, see <a target="_blank" class="xref" rel="https://developers.arcgis.com/web-appbuilder/guide/create-a-theme.htm#esri_section1_11e962aa597e4b9caea80d15e1939e05" href="https://developers.arcgis.com/web-appbuilder/guide/create-a-theme.htm#esri_section1_11e962aa597e4b9caea80d15e1939e05">Layouts</a>.</p>
+
+<div class="section1" id="GUID-81607E92-B41B-4598-AD22-9D7E7B6E4F85" purpose="section1"><h2>Create a new default layout folder structure</h2></div>
+<div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-A0D76CDA-8AE4-4515-A70A-C296FF9C5544"><div class="step_title">Steps:</div><ol>
+<li purpose="step" id="GUID-CD3092CA-09B3-4ACF-9B14-91262998CCD2">
+<span purpose="cmd" id="GUID-2420DFD0-6D63-48F6-8379-9E440279CB55">
+Go to the layouts folder in the theme where the new layout will be created, such as <span class="usertext">~/client/stemapp/themes/&lt;YourTheme&gt;/layouts</span>.
+</span>
+</li><li purpose="step" id="ESRI_STEP_8A594E0712C6400D97A82019605E49B4"><span purpose="cmd" id="GUID-C3E529B9-BDE5-48F1-98EB-4B5CDEDC50E7">Create a new folder and name it <span class="usertext">default</span>.</span><div class="info" purpose="info"><p id="GUID-026BEA6F-4CE4-476F-9E6D-50FBC410252B"> If you create a  new default layout   for an existing theme, make a copy of the original default layout folder first.  </p></div></li><li purpose="step" id="ESRI_STEP_5A6C6062140348C3BCB822EDA984CE78"><span purpose="cmd" id="GUID-B261D352-8FCF-4BD0-AC29-3E56CA21D860">Create a new config.json file in the default folder.</span></li><li purpose="step" id="ESRI_STEP_416A43116FFD42EFBBEA2B17A3ED112F"><span purpose="cmd" id="GUID-209761B9-53B1-4657-A102-70FB1AB1A15D">Add icon images  representing the layout in <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>.</span><div class="stepresult" purpose="stepresult"><p id="GUID-E0F944D7-B90C-4885-B92F-444634F1E762">The folder structure should look like the following:</p><p id="GUID-38AB20F1-A7F6-436C-8740-678406905AA3"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-81E057E0-4885-4B25-90B4-1A988F0FC462-web.png" purpose="img" alt="New default layout folder structure" title="New default layout folder structure"></td></tr></table></div></p></div></li>
+</ol></div></div>
+<div class="section1" id="ESRI_SECTION1_83989CC391B24B849D02DE5BE422F52C" purpose="section1"><h2>Register the new layout in manifest.json</h2><p id="GUID-CF51F156-A415-4CF7-A2EA-D6E018A98627">To  show the new layout  in <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>, register it in the theme's manifest.json file.</p><div class="notes" id="GUID-255C185D-9C33-432C-A556-A9A976CE5037"><div class="tip"><img class="note_img" src="rsrc/tip.png" alt="Tip" title="Tip"><span>Tip:</span></div><div class="tipbody"><p id="GUID-C7725C39-E541-4C4D-B5C3-DF84F7275147">You can skip this section if you're creating a new default layout for an existing theme as it should have already been registered in the manifest.json file.</p></div></div></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_ED62CDBD158C4476882237E0C3E32B10"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_253EB28CEEFE4E2E83A41B3577DC1C20"><span purpose="cmd" id="GUID-9B208C62-AF04-425A-9CB6-B7999A04261F">Open the manifest.json file at<span class="usertext">~/client/stemapp/themes/YourTheme/manifest.json</span>.</span></li><li purpose="step" id="ESRI_STEP_591BFCDDB2F443019168B32D18B13CD4"><span purpose="cmd" id="GUID-10E00D44-BBFD-4C30-BAF3-7625B40ACF53">Add the following information about the default layout to the layouts:</span><ul purpose="choices" id="ESRI_CHOICES_A001925F12BA48D28C131224E457FD20"><li purpose="choice" id="ESRI_CHOICE_4C4451510B564811B7DC8687A46AB202">“name”—Must match the name of the layout folder. It is the default in this case.</li><li purpose="choice" id="ESRI_CHOICE_8C50A7990FFB46F1BF0A4C98DBC8EF47">“description”—The description of the layout.</li></ul><div class="stepexample" purpose="stepexample"><p id="GUID-FEDA3EDD-F075-44E1-9129-064EB41361E5">The code snippet in the manifest.json file should look similar to the following:<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;name&quot;: &quot;default&quot;,
+  &quot;description&quot;: &quot;this is the default layout&quot;
+}
+</code></pre></div>
+</div></p></div></li><li purpose="step" id="ESRI_STEP_1D1546B34E9D44D0921A6011031BF90A"><span purpose="cmd" id="GUID-4F68AFC0-4443-4A13-AE39-04338E428AE0">Reload <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>. </span><div class="stepresult" purpose="stepresult"><p id="GUID-079162AE-C4F5-4EF1-A4C3-5273FFB78E5A">The new layout appears under the theme as shown below:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-225E7EBF-87FC-443E-BBE0-226DAE35D3B4-web.png" purpose="img" alt="New registered layout" title="New registered layout"></td></tr></table></div></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_719FD667596A446B917765FF00DF5E0C" purpose="section1"><h2>Create a minimal layout structure in config.json</h2><p id="GUID-A78FAD71-B6BB-4D97-AF0C-F292B6E6A3BC">A typical default layout structure contains the following components:</p><ul purpose="ul" id="UL_72D5C459CDA74B9280D1DE450D467E62"><li purpose="li" id="LI_82E36677DDB546DCAA56DCE74CEA29F2"><span class="usertext">widgetOnScreen</span>—Includes layout properties for widgets placed on the UI, such as a controller, predefined widgets, and widget placeholders.</li><li purpose="li" id="LI_13CEFA6FF1EC497F8420D0F6183CDD31"><span class="usertext">map</span>—Defines the position of the map.</li><li purpose="li" id="LI_0328F5A48EEA402D977DEC0CD0FFD4B8"><span class="usertext">widgetPool</span>—Includes a list of widgets placed in the controller widget if there is a controller defined in the widgetOnScreen section.</li><li purpose="li" id="LI_B54041202F4641679BDC8D43652FE2D8"><span class="usertext">mobileLayout</span>—Optional. It provides the layout for mobile devices, overriding the  properties configured in the widgetOnScreen, map, and widgetPool sections.</li></ul></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_A0CB337147A84C6EAFF7979CEB99FE89"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_FBD4400D0CFF4365AC89E843BBF29543"><span purpose="cmd" id="GUID-0EDA8E99-F0C5-4E3E-8B29-3EC6CD6DBB3B">Open the  config.json file at <span class="usertext">~/client/stemapp/themes/YourTheme/layouts/default/config.json</span>.</span></li><li purpose="step" id="ESRI_STEP_43B900A63E5346B9A4E0FE51909FAFC0"><span purpose="cmd" id="GUID-9DA5E77E-8E12-4517-8199-D0079CB05F2C">Add the following code snippet:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: []
+  },
+  &quot;map&quot;: {},
+  &quot;widgetPool&quot;: {
+    &quot;panel&quot;: {}
+  }
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_1D3485AE7D1B46BDAF4154E48644F7E0"><span purpose="cmd" id="GUID-0DBC8F66-E244-49D4-AA7E-8E5A65B32875">In  <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>, create a new app with the new layout. </span><div class="info" purpose="info"><p id="GUID-0D341F12-B494-4443-8123-2328CED32D60">The app should show nothing but a map.</p></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_88E2A910CE214CD6AEDC4CA657A900FC" purpose="section1"><h2>Add a controller widget</h2><p id="GUID-A442EC0C-853F-43DC-B263-41C6C8FD5626">Most out-of-the-box themes come with a controller widget. In this example,  the HeaderController widget from the Foldable or Jewelry Box theme  is added to the default layout.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_6EA4B9D9F9E44A568DDEE91E3ACD4299"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_BA61FA9A3CC1446391E28E7004C215B0"><span purpose="cmd" id="GUID-8FF72149-9DDC-44D8-87D2-710411D5AD19">Make sure the widget's folder exists in the theme folder, and copy  the HeaderController widget folder  from the Foldable or Jewelry Box theme  into it.</span><div class="stepresult" purpose="stepresult"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-023CFC82-FB67-4F26-8AA0-428672974BCD-web.png" purpose="img" alt="HeaderController widget folder structure" title="HeaderController widget folder structure"></td></tr></table></div></div></li><li purpose="step" id="ESRI_STEP_BB21D09B492B472BBEC4CC4A70157E9E"><span purpose="cmd" id="GUID-DA6BE9D0-0ACB-4385-9FF1-5B54FEFE8896">In the config.json file, add the HeaderController widget to the widgetOnScreen section, and configure its properties. </span><div class="info" purpose="info"><p id="GUID-22097539-2572-4AAC-9935-FAF27C468D2D">For a full list of widget properties, see <a class="xref" rel="03w3/03w300000037000000.htm" href="03w3/03w300000037000000.htm">Widget configuration</a>.</p></div><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: [
+      {
+        &quot;uri&quot;: &quot;themes/YourTheme/widgets/HeaderController/Widget&quot;,
+        &quot;position&quot;: {
+          &quot;left&quot;: 40,
+          &quot;top&quot;: 40,
+          &quot;right&quot;: 40,
+          &quot;height&quot;: 40,
+          &quot;relativeTo&quot;: &quot;browser&quot;
+        }
+      }
+    ]
+  },
+
+  &quot;map&quot;: {},
+
+  &quot;widgetPool&quot;: {
+    &quot;panel&quot;: {}
+  }
+}
+</code></pre></div>
+</div></div><div class="info" purpose="info"><p id="GUID-8D8CF0BC-9E3F-4C04-B85C-3A86E14B5604">In this layout, the HeaderController is positioned 40 pixels away from the top and left and right sides of the screen.</p><div class="notes" id="GUID-48BF5AB6-1237-4881-B79E-9CFE173AEEFD"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"> The layout system of <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> uses absolute positioning. The top, left, right, bottom, and zIndex properties are equivalent to the top, left, right, bottom, and z-index properties in CSS.</div></div></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_DF487C365B4945BDBC0BB80884E237F2" purpose="section1"><h2>Configure position properties for the map</h2><p id="GUID-6AE15BCE-5532-426B-83D1-73DFD9272153">In this layout, the map will  use the entire screen.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_FEF22F9A7BCC4619B84A650CB581E9E5"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_320AAB1CD3174F7092ED34B91B96FCD1"><span purpose="cmd" id="GUID-5F917F8F-5026-4308-AAC5-B66F610CC0F8">Add the following code snippet for the map:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: [
+      {
+        &quot;uri&quot;: &quot;themes/YourTheme/widgets/HeaderController/Widget&quot;,
+        &quot;position&quot;: {
+          &quot;left&quot;: 40,
+          &quot;top&quot;: 40,
+          &quot;right&quot;: 40,
+          &quot;height&quot;: 40,
+          &quot;relativeTo&quot;: &quot;browser&quot;
+        }
+      }
+    ]
+  },
+
+&quot;map&quot;: {
+    &quot;position&quot;: {
+      &quot;left&quot;: 0,
+      &quot;top&quot;: 0,
+      &quot;right&quot;: 0,
+      &quot;bottom&quot;: 0
+    }
+  },
+
+  &quot;widgetPool&quot;: {
+    &quot;panel&quot;: {}
+  }
+}
+</code></pre></div>
+</div></div><div class="info" purpose="info"><p id="GUID-42ADA97D-B6CE-4DE1-BBD3-7C3603C9701D">Legend and Layer List widgets in the header are automatically added by <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>. They are not part of the layout.</p></div><div class="stepresult" purpose="stepresult"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-EAB48689-7E15-4292-82FE-7DB633A7671E-web.png" purpose="img" alt="Map uses the entire screen" title="Map uses the entire screen"></td></tr></table></div></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_250E92386C124763B248434D6E443C93" purpose="section1"><h2>Add more on-screen widgets</h2><p id="GUID-8B4A628E-DE79-4105-97B4-29E9B5E9E52B">In this step, both  the ZoomSlider and MyLocation widgets are added to the layout along with the widget placeholders.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_39D6C42979804E94A6D440BB48AD3654"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_2AD7362F6A4247B3B8F603A472F6EEF6"><span purpose="cmd" id="GUID-D2A45B89-1C67-4D85-B766-6B2D3E108F6E">Open the config.json file. Add layout properties for the ZoomSlider and MyLocation widgets in the same way you did for the HeaderController widget.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: [
+      { ... },
+      {
+        &quot;uri&quot;: &quot;widgets/ZoomSlider/Widget&quot;,
+        &quot;position&quot;: {
+          &quot;top&quot;: 70,
+          &quot;left&quot;: 20
+        }
+      },
+      {
+        &quot;uri&quot;: &quot;widgets/MyLocation/Widget&quot;,
+        &quot;position&quot;: {
+          &quot;left&quot;: 20,
+          &quot;top&quot;: 140
+        }
+      }
+    ]
+  },
+
+  &quot;map&quot;: { ... },
+
+  &quot;widgetPool&quot;: {
+    &quot;panel&quot;: {}
+  }
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_84AD62540878497D846CCCB8A4CCF3BE"><span purpose="cmd" id="GUID-F44184BC-24AE-48FA-A17F-25C5586DFB39">Add widget placeholders by defining their position properties.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: [
+      { ... },
+      { ... },
+      { ... },
+      {
+        &quot;position&quot;: {
+          &quot;left&quot;: 20,
+          &quot;top&quot;: 190
+        }
+      },
+      {
+        &quot;position&quot;: {
+          &quot;left&quot;: 20,
+          &quot;top&quot;: 240
+        }
+      },
+      {
+        &quot;position&quot;: {
+          &quot;left&quot;: 20,
+          &quot;top&quot;: 290
+        }
+      }
+    ]
+  },
+
+  &quot;map&quot;: { ... },
+
+  &quot;widgetPool&quot;: {
+    &quot;panel&quot;: {}
+  }
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-7F3A6667-90E4-4EE7-B4A5-1336258503D5">In this example, three widget placeholders are added to the layout config file.</p><p id="GUID-D37B5221-1BAD-4119-99AB-D93628C21779"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-B3B641FC-A01A-448B-AA3C-F1BAA7A4EC1C-web.png" purpose="img" alt="More on-screen widgets" title="More on-screen widgets"></td></tr></table></div></p></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_A4DD041A69264E55A7530569EA23C713" purpose="section1"><h2> Add predefined widgets to the header</h2><p id="GUID-1C719FF5-9940-4196-ABEA-D791ACAAA96B">The widgets in the widgetPool section are automatically added to the app when the layout is selected. Their
+behavior is managed by the
+controller widgets.</p><p id="GUID-B3E9EB91-3340-4195-B3B9-A4022769B4AA">The following widgets will be added to the widgetPool:<ul purpose="ul" id="UL_D26A9D1A9072430E944FD2CBF81857DE"><li purpose="li" id="LI_1072D24789D6414FA62CD6D38E6BC8B7">BasemapGallery</li><li purpose="li" id="LI_8673FD8238674152A91BAB276E2CD94B">About</li></ul></p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_2C3C72E659D84B95958D64A33752F9B6"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_58FE5D1B47BC4952983550605BF9E38A"><span purpose="cmd" id="GUID-5F3D8496-4E69-49D7-B224-8B57F861DB0D">In the widgetPool section, add a new property called <span class="usertext">widgets</span>, and give it a value of an empty array.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+  &quot;panel&quot;: {},
+  &quot;widgets&quot;: []
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_252CBA6B53FC41F89036F9AF960FC34F"><span purpose="cmd" id="GUID-199EBF18-40C7-4709-BA82-33476CAB1A25">Add layout properties for both the BasemapGallery and the About widgets in the widgets array, similar to the widgets in the widgetOnScreen section.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+    &quot;panel&quot;: {},
+    &quot;widgets&quot;: [
+      {
+        &quot;uri&quot;: &quot;widgets/BasemapGallery/Widget&quot;
+      },
+      {
+        &quot;uri&quot;: &quot;widgets/About/Widget&quot;
+      }
+    ]
+  }
+</code></pre></div>
+</div></div><div class="info" purpose="info"><p id="GUID-13E97E65-FF72-47CB-BFF1-71ADB4416B30"> The purpose of defining  properties in the widgets array is to populate  the widget icon in the header panel by  the HeaderController widget. As a result, the position properties are not defined here.</p></div></li><li purpose="step" id="ESRI_STEP_89DA0A97D8564F01BBB08FF5ED1A2AEB"><span purpose="cmd" id="GUID-23AFA253-A5F7-4B37-A9E0-27A2267DA15F">Add other optional properties. </span><div class="substeps" id="ESRI_SUBSTEPS_947EE9238100401D837D063E4F9BEFC3" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_5E5C8188B714407193ADA613C32FEE43"><span purpose="cmd" id="GUID-D83B3AA1-F668-49A8-870B-0E38768832C6">Use a different icon for the BasemapGallery widget. </span><div class="info" purpose="info"><p id="GUID-8B486EBC-6C1D-48B8-8947-D36A1634214E">By default,   <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> uses a path to the widget icon, which can be overridden by the icon property defined in a widget’s layout configuration.</p></div><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+    &quot;panel&quot;: {},
+    &quot;widgets&quot;: [
+      {
+        &quot;uri&quot;: &quot;widgets/BasemapGallery/Widget&quot;,
+        &quot;icon&quot;: &quot;uri/to/new_icon.png&quot;
+      },
+      {
+        &quot;uri&quot;: &quot;widgets/About/Widget&quot;
+      }
+    ]
+  }
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_0C47C5A9112E42AFB87DD78B1E720631"><span purpose="cmd" id="GUID-A583EC8B-8CA8-4FF8-AFB7-03E13F7698BB">Change the widget label. </span><div class="info" purpose="info"><p id="GUID-DAA35623-5F54-4CC8-9BD6-24E0BDC8A5BF">By default, <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> reads the label text from a path to the <span class="usertext">widget/nls</span> folder if  needed. The text can be overridden by adding a label property to the widget’s layout configuration. In this example, the default label “Basemap Gallery” for the BasemapGallery widget will be changed to “Select a basemap:”.</p></div><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+  &quot;panel&quot;: {},
+    &quot;widgets&quot;: [
+      {
+        &quot;uri&quot;: &quot;widgets/BasemapGallery/Widget&quot;,
+        &quot;icon&quot;: &quot;uri/to/new_icon.png&quot;,
+        &quot;label&quot;: &quot;Select a basemap:&quot;
+      },
+      {
+        &quot;uri&quot;: &quot;widgets/About/Widget&quot;
+      }
+    ]
+  }
+</code></pre></div>
+</div></div></li></ol></div><div class="stepresult" purpose="stepresult"><p id="GUID-3534087A-169D-4C80-9244-355D82DC3E9F">When the BasemapGallery widget  opens in <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>, the header text of the widget's panel is shown as follows:</p><p id="GUID-00DCFC96-7DF8-4C8A-8DDE-8DE5A24A08CD"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-DC4D3876-6DF2-47EF-A36C-DEF0FCFD6253-web.png" purpose="img" alt="Select a basemap text displays" title="Select a basemap text displays"></td></tr></table></div></p><div class="notes" id="GUID-B80DF00E-FE61-4FD1-BEB3-4AA425839EAC"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-46E8B6E0-8AAD-461C-9DB9-71A54573E094">There are other properties  that can be added to a widget’s configuration. For a full list of available properties, see <a class="xref" rel="03w3/03w300000037000000.htm" href="03w3/03w300000037000000.htm">Widget configuration</a>.  The addition of other properties is dependent on the controller widget honoring those    properties.</p></div></div></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_ACBE29E580744C0DB8285932DC53BA6B" purpose="section1"><h2> Change the default panel in the widgetPool</h2><p id="GUID-37292E34-BC62-46DA-838E-949E01C8AD1D">Widgets in  the widgetPool are wrapped in a panel when they open. The default panel is BaseWidgetPanel. In this step, you'll use the FoldablePanel to display widgets in the widgetPool.</p><div class="notes" id="GUID-AD6C622D-9478-45C4-85BD-EF02BF6F9046"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-AB75AADF-E91E-4DB7-8EAB-DA6EBBF0E49F">This also applies to the  widgets in  the widgetOnScreen section.</p></div></div></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_0019C181CE90440BA62B6F7D1C6724A0"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_A1B858361A0A4C9CA2D0E98F41970DB0"><span purpose="cmd" id="GUID-624C78D7-BF4E-4CAF-90AC-59D0A5F02761">Copy the FoldablePanel folder at <span class="usertext">~/client/stemapp/themes/FoldableTheme/panels</span>, and paste it into the <span class="usertext">~/client/stemapp/themes/YourTheme/panels</span> folder if the panel widget does not exist in the target directory.</span></li><li purpose="step" id="ESRI_STEP_7E02D2F88B0549F2A05AA5F5F48DDA93"><span purpose="cmd" id="GUID-ED0B250A-CBD7-4DC0-AB41-5112D13992AB">Import the FoldablePanel CSS style sheet into <span class="usertext">~/client/stemapp/themes/YourTheme/common.css</span> as shown below.</span><div class="stepexample" purpose="stepexample"><p id="GUID-0C1E37CC-B3A2-40DB-BA36-2D1248F8584C"> @import url ("panels/FoldablePanel/style.css"): </p></div><div class="info" purpose="info"><p id="GUID-D8B42858-72B8-4AF9-8F5E-FD779ABDF64D">This step is optional if the panel widget folder does not include its own style sheet.</p></div></li><li purpose="step" id="ESRI_STEP_38B98C1C357046F58FC9ACEB8DCE11AC"><span purpose="cmd" id="GUID-AED3E073-C407-4A3E-8ED4-904530F908AB">Add the FoldablePanel widget to the panel section.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+    &quot;panel&quot;: {
+      &quot;uri&quot;: &quot;themes/YourTheme/panels/FoldablePanel/Panel&quot;,
+      &quot;position&quot;: {
+        &quot;top&quot;: 70,
+        &quot;right&quot;: 20,
+        &quot;bottom&quot;: 10,
+        &quot;width&quot;: 300
+      }
+    },
+    &quot;widgets&quot;: [{...}, {...}]
+  }
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-7500BC23-2D2B-4393-B218-59F3DC82FD1A-web.png" purpose="img" alt="Display FoldablePanel" title="Display FoldablePanel"></td></tr></table></div></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_20153F883C584F8FBF54A647AC404F1C" purpose="section1"><h2>Use a different panel in the widgetPool</h2><p id="GUID-6539CC5C-878E-4CDA-B067-97AF9FD875DA">The panel widget added in the previous step applies to all widgets in the widgetPool. This step shows how a specific widget uses a panel other than the default. The SimpleBorderPanel will display the About widget.</p><div class="notes" id="GUID-28D67398-84CB-4933-AC46-E1E919FB995C"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-5CCFC17F-BB3A-4418-A790-8EA6487E26E3">This also applies to the widgets in the  widgetOnScreen section.</p></div></div></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_994FC67C345F4445B43C2922FE9C89ED"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_DE767DB098D240F6A9D9DA25B7D06438"><span purpose="cmd" id="GUID-1D9687F9-4F01-42F2-A6A0-6D7A503728FD">Make sure the SimpleBorderPanel folder is in the <span class="usertext">~/client/stemapp/themes/YourTheme/panels</span> folder. If not, copy one from DemoTheme at <span class="usertext"> ~/client/stemapp/themes/DemoTheme/panels</span>.</span></li><li purpose="step" id="ESRI_STEP_422F771114F04BD5A4271BDBE82D5A4E"><span purpose="cmd" id="GUID-DAFC8575-7A90-4FF8-A6D5-6696BA3D9B08">In the widgetPool, add a <span class="usertext">groups</span> property as follows:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+    &quot;panel&quot;: {...},
+    &quot;widgets&quot;: [{...}, {...}],
+    &quot;groups&quot;: []
+  }
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_316785CA39D647C19BA705BC6F3B77B8"><span purpose="cmd" id="GUID-A9E83894-D24D-4523-B290-7179EF003A9C">Add a new object in the following structure to the groups array:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+    &quot;panel&quot;: {...},
+    &quot;widgets&quot;: [{...}, {...}],
+    &quot;groups&quot;: [{
+      &quot;panel&quot;: {},
+      &quot;widgets&quot;: []
+    }]
+  }
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_CD85905C4088420AA9067A8066B6C5B2"><span purpose="cmd" id="GUID-3583273A-22CF-437D-9AEF-E3ECA3B59D57">Move the About widget configuration from the widgetPool widgets array to the widgets array in groups as follows:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+    &quot;panel&quot;: {...},
+    &quot;widgets&quot;: [{...}],
+    &quot;groups&quot;: [{
+      &quot;panel&quot;: {},
+      &quot;widgets&quot;: [{
+        &quot;uri&quot;: &quot;widgets/About/Widget&quot;
+      }]
+    }]
+  }
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_2CC6D94015B64EF9BAF3A0625B709E62"><span purpose="cmd" id="GUID-417BDB95-ADFB-4553-BACD-2AE5855AC31F">Add the SimpleBorderPanel configuration to the <span class="usertext">panel</span> property in the first object in groups as follows:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;widgetPool&quot;: {
+    &quot;panel&quot;: {...},
+    &quot;widgets&quot;: [{...}],
+    &quot;groups&quot;: [{
+      &quot;panel&quot;: {
+        &quot;uri&quot;: &quot;themes/YourTheme/panels/SimpleBorderPanel/Panel&quot;,
+        &quot;position&quot;: {
+          &quot;top&quot;: 70,
+          &quot;right&quot;: 20,
+          &quot;width&quot;: 200,
+          &quot;height&quot;: 200
+        }
+      },
+      &quot;widgets&quot;: [{
+        &quot;uri&quot;: &quot;widgets/About/Widget&quot;
+      }]
+    }]
+  }
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-D266D8D3-DE93-422E-8B9B-882E4ED2BC65-web.png" purpose="img" alt="About widget with SimpleBorderPanel" title="About widget with SimpleBorderPanel"></td></tr></table></div></div></li></ol></div></div><div class="section1" id="ESRI_SECTION1_3599402F757446C8ABF34F95673F1436" purpose="section1"><h2> Add a layout for mobile devices</h2><p id="GUID-1645D8AB-1CA6-4B02-8810-65EAC9C3BFE0">The configuration  in this step is  a subset of  what you've done in the previous steps. </p><p id="GUID-122A8874-7EBB-4B26-923B-CD7AF4793DC6"> In  a mobile layout, you can only define the positions of the widgets and groups with either array or object type as follows:<ul purpose="ul" id="UL_12F4F91325E144ACAC17F0ED084A9254"><li purpose="li" id="LI_5D3706C5E199479B890A7142BA73A633">With array, you must define the position of the widget and group individually.</li><li purpose="li" id="LI_3938BAD8C19A4E949670D2C1BEDC5217">With object, you can use both the widget URI as a key and position as a value to define the position. For the placeholder widget without a URI, use ph_&lt;i&gt; as the key, where &lt;i&gt; is the index of the placeholder defined in the widgetOnScreen section. For the group, use g_&lt;i&gt; as the key, where &lt;i&gt; is the index of the group. The index starts from 0. In this example,  you'll use the second method to override the positions.</li></ul></p><p id="GUID-BE855D56-911D-4E16-91D0-18343CB9C1B7">Do  the following to add a layout for devices:<ul purpose="ul" id="UL_4999B82C1EA245439EB22C4A65002258"><li purpose="li" id="LI_CE6C4E6B0BEF4A6085DACC103C2AF48C">Remove the spaces between  the HeaderController widget and the edges of the screen.</li><li purpose="li" id="LI_5B105D4E379B40C5B3517D6EE32CF432">Place the ZoomSlider and MyLocation widgets at the bottom right of the screen.</li><li purpose="li" id="LI_3C0C720D67064548A38640A1C6CBABA8">Place widget placeholders at the bottom left of the screen.</li></ul></p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B598220BFAD5441DAE42885645BEB591"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_A72AEAE6655F4E189A287CBA517FC9BA"><span purpose="cmd" id="GUID-C82464E1-E728-4738-8B12-4FD4AAAB3D67">In the mobileLayout, add <span class="usertext">widgetOnScreen</span> as a new property with its value as an object and widgets property inside of <span class="usertext">widgetOnScreen</span> with a value as an object as well.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;mobileLayout&quot;: {
+    &quot;widgetOnScreen&quot;: {
+      &quot;widgets&quot;: {}
+    }
+  }
+</code></pre></div>
+</div></div><div class="info" purpose="info"><div class="notes" id="GUID-C9316BED-A757-42DB-B143-60FB117C42C6"><div class="caution"><img class="note_img" src="rsrc/caution.png" alt="Caution" title="Caution"><span>Caution:</span></div><div class="tipbody"><p id="GUID-67B4D76D-4CDF-48B6-AFE3-AB311B781FBE"> For the default  layout, the widget's property inside the mobileLayout is an array. </p></div></div></div></li><li purpose="step" id="ESRI_STEP_BE24C79635974C69BF66F91DAA975193"><span purpose="cmd" id="GUID-8AB06A82-558B-4159-A350-895A6F10B075">Add the HeaderController layout configuration to the widget's object.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;mobileLayout&quot;: {
+    &quot;widgetOnScreen&quot;: {
+      &quot;widgets&quot;: {
+        &quot;themes/YourTheme/widgets/HeaderController/Widget&quot;: {
+          &quot;position&quot;: {
+            &quot;left&quot;: 0,
+            &quot;top&quot;: 0,
+            &quot;right&quot;: 0,
+            &quot;height&quot;: 40,
+            &quot;relativeTo&quot;: &quot;browser&quot;
+          }
+        }
+      }
+    }
+  }
+</code></pre></div>
+</div></div><div class="info" purpose="info"><p id="GUID-05054689-5B45-4ECB-9D28-DC04F444D9FC"> The widget configuration structure is an object, where the widget URI serves as the key of the object.</p></div></li><li purpose="step" id="ESRI_STEP_49D7721C1F5F44F28FF967CBF1820C0C"><span purpose="cmd" id="GUID-772B4D10-458F-459A-9D91-7F75B4CD3855">Move the ZoomSlider and MyLocation widgets to the bottom right.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;mobileLayout&quot;: {
+    &quot;widgetOnScreen&quot;: {
+      &quot;widgets&quot;: {
+        &quot;themes/YourTheme/widgets/HeaderController/Widget&quot;: {...},
+        &quot;widgets/ZoomSlider/Widget&quot;: {
+          &quot;position&quot;: {
+            &quot;bottom&quot;: 30,
+            &quot;right&quot;: 20
+          }
+        },
+        &quot;widgets/MyLocation/Widget&quot;: {
+          &quot;position&quot;: {
+            &quot;right&quot;: 20,
+            &quot;bottom&quot;: 100
+          }
+        }
+      }
+    }
+  }
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_5E812B4D1B8640EDAACA8A21EE4172D3"><span purpose="cmd" id="GUID-681F24E5-9150-4EAB-A758-A8B512292EFE">Move the widget placeholders to the bottom left.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;mobileLayout&quot;: {
+    &quot;widgetOnScreen&quot;: {
+      &quot;widgets&quot;: {
+        &quot;themes/DemoThemeTest/widgets/HeaderController/Widget&quot;: {...},
+        &quot;widgets/ZoomSlider/Widget&quot;: {...},
+        &quot;widgets/MyLocation/Widget&quot;: {...},
+        &quot;ph_3&quot;: {
+          &quot;position&quot;: {
+            &quot;left&quot;: 20,
+            &quot;bottom&quot;: 130
+          }
+        },
+        &quot;ph_4&quot;: {
+          &quot;position&quot;: {
+            &quot;left&quot;: 20,
+            &quot;bottom&quot;: 80
+          }
+        },
+        &quot;ph_5&quot;: {
+          &quot;position&quot;: {
+            &quot;left&quot;: 20,
+            &quot;bottom&quot;: 30
+          }
+        }
+      }
+    }
+  }
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-E504107D-8B79-413D-A98B-6DCA4E606D05">Here is the result on an iPhone 6. </p><p id="GUID-25F21A09-7427-4FB4-9F2F-65DD51CDEE74"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-A286C1C8-4BCE-42A0-B304-8D1412F9807C-web.png" purpose="img" alt="New layout on iPhone 6" title="New layout on iPhone 6"></td></tr></table></div></p></div></li></ol></div></div><div class="wfsummary" id="GUID-A9E0D22D-A431-439F-822E-EA61D4B9182E" purpose="wfsummary">
+
+
+
+</div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

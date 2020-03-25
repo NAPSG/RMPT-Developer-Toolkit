@@ -1,0 +1,77 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn about the Edit widget's 
+configurable attributes."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Edit</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-2AFCE17A-2E8B-46A6-A1C2-9A487ECC9654]--><body><div id="content"><div class="header"><h1>
+Edit</h1><div id="breadcrumb"></div></div>
+<p id="GUID-FC4B98C1-5F94-4CBE-9CE5-47EABB9FDD3B">
+The Edit widget provides editing capabilities using an editable layer in a feature service. It combines the TemplatePicker, AttachmentEditor, AttributeInspector, and GeometryService to provide feature and attribute editing.
+</p><p id="GUID-DD810B4B-93E4-41D0-89DF-CCEA90E81F3C">The following table describes the configurable attributes of the Edit widget:</p><p id="GUID-E89CEE29-A78B-4B31-95A0-B5A0084C9680"><div class="block_table" id="TABLE_385EF65607EF4BFBADDE76A8EB0D1E0E" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-645B22E5-BC65-425D-9258-29C3DEC0974B">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-DFFAC1B9-B436-4119-9EA2-8A4EB5286794">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-243EAA54-186A-4C1A-8448-A7FB47F4C71E"><span class="usertext">editor</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-48B8E169-D917-445B-955E-5F8203D4F358">An object of <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span>. See the parameters of the Editor constructor in the <a target="_blank" class="xref" href="https://developers.arcgis.com/en/javascript/jsapi/editor-amd.html#editor1" rel="https://developers.arcgis.com/en/javascript/jsapi/editor-amd.html#editor1">Constructor details</a> documentation. <ul purpose="ul" id="UL_8DDC12E3DFF044ADBC21760C51EC2196"><li purpose="li" id="LI_78B5DEA70CB5401FBB1730F87A4A55DB"><span class="usertext">layerInfos</span>—Object. Refers to the feature layer information. There is no default.<ul purpose="ul" id="UL_13BAB291DAD448A8B49C6C65BDFB03EB"><li purpose="li" id="LI_653FC071FBF045FC8F8CFF2B7B530ECF"><span class="usertext">featureLayer</span>—Object. Reference to the feature layer. There is no default.</li><li purpose="li" id="LI_2CA79AEE5442431FBC5DC2AC890478E8"><span class="usertext">id</span>—String. The ID of an editable layer in a web map. The layer is ignored if the ID does not exist in the web map. There is no default.</li></ul></li><li purpose="li" id="LI_AA71EAD955BC402DAAD33158A36E5F83"><span class="usertext">TableInfos</span>—Object. Refers to the feature table information. There is no default.<ul purpose="ul" id="UL_CB4D3BE40F8A4F209FFB1F0E8727D336"><li purpose="li" id="LI_A6091368458247F6A0A9CF438E6ED477"><span class="usertext">featureLayer</span>—Object. Reference to the feature table. There is no default.</li><li purpose="li" id="LI_2935FDE56F8F459DBB992878296F186A"><span class="usertext">id</span>—String. The ID of an editable table in a web map. The table is ignored if the ID does not exist in the web map. There is no default.</li></ul></li><li purpose="li" id="LI_62374CDA5FF34A539211D956882EED7E"><span class="usertext">useFilterEdit</span>—Boolean. Enables TemplatePicker  to filter templates.</li><li purpose="li" id="LI_F8BA0965D57A4E6686247B7CE2D7AD48"><span class="usertext">autoApplyEditWhenGeometryIsMoved</span>—Boolean. Applies the edit automatically when the geometry is moved.</li><li purpose="li" id="LI_6D9263DFDD3D440482AC496526FC1E75"><span class="usertext">snappingTolerance</span>—Number. Sets the snapping tolerance in pixels.</li><li purpose="li" id="LI_F7998793A2AE4942A79CEC890375E182"><span class="usertext">popupTolerance</span>—Number. Sets the tolerance of attribute editing in a pop-up in pixels.</li><li purpose="li" id="LI_04CC0881D6454B7FBA1787BB2FA989F5"><span class="usertext">stickyMoveTolerance</span>—Number. Sets the sticky move tolerance in pixels.</li></ul></p><p id="GUID-526985ED-8FDF-4C90-B2D7-EF27AC471EFB">Example: <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="nt">&quot;editor&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;enableUndoRedo&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;toolbarVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;toolbarOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;mergeVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;cutVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;reshapeVisible&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;layerInfos&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;featureLayer&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;Wildfire_4234&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;disableGeometryUpdate&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;fieldInfos&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;rotation&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isEditable&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;description&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isEditable&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;eventdate&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Event Date&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isEditable&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;eventtype&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Event Type&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isEditable&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">}]</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">&quot;featureLayer&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;Wildfire_6333&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;disableGeometryUpdate&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;fieldInfos&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;symbolid&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isEditable&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;description&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isEditable&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">}]</span>
+    <span class="p">}],</span>
+    <span class="nt">&quot;tableInfos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;useFilterEdit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;autoApplyEditWhenGeometryIsMoved&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;snappingTolerance&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="nt">&quot;popupTolerance&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;stickyMoveTolerance&quot;</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></p></td></tr></tbody><caption class="table_desc"></caption></table></div></p>
+
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

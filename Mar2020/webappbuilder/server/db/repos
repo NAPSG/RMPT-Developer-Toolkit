@@ -1,0 +1,24 @@
+{"k":"0000000078","o":"0000000281","v":"001"}
+{"_id":2,"_uid":2,"_dt":1564163520918,"_s":"c567c70dc2f006243d6db33d11eb1181"}
+{"name":"HTML widgets","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web2d/../../../../stemapp//widgets/","location":"D:\\Users\\NAPSG_TLawson\\webappbuilder\\WebAppBuilderForArcGIS\\client\\stemapp\\widgets","category":"widget","_id":{"$wrap":"$oid","v":2}}
+{"k":"0000000078","o":"0000000277","v":"001"}
+{"_id":3,"_uid":3,"_dt":1564163535880,"_s":"a0bf6e4ddb649c40724fe7ca60d6ea07"}
+{"name":"HTML themes","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web2d/../../../../stemapp//themes/","location":"D:\\Users\\NAPSG_TLawson\\webappbuilder\\WebAppBuilderForArcGIS\\client\\stemapp\\themes","category":"theme","_id":{"$wrap":"$oid","v":3}}
+{"k":"0000000078","o":"0000000287","v":"001"}
+{"_id":4,"_uid":4,"_dt":1564163538925,"_s":"25d9aac5140fd232b0e6499036ed9c81"}
+{"name":"HTML3D widgets","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web3d/../../../../stemapp3d//widgets/","location":"D:\\Users\\NAPSG_TLawson\\webappbuilder\\WebAppBuilderForArcGIS\\client\\stemapp3d\\widgets","category":"widget","_id":{"$wrap":"$oid","v":4}}
+{"k":"0000000078","o":"0000000283","v":"001"}
+{"_id":5,"_uid":5,"_dt":1564163542419,"_s":"5033a57efcf03f78db14fc9c807c63c2"}
+{"name":"HTML3D themes","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web3d/../../../../stemapp3d//themes/","location":"D:\\Users\\NAPSG_TLawson\\webappbuilder\\WebAppBuilderForArcGIS\\client\\stemapp3d\\themes","category":"theme","_id":{"$wrap":"$oid","v":5}}
+{"k":"0000000078","o":"0000000257","v":"001"}
+{"_id":2,"_uid":5,"_dt":1564164172317,"_s":"55e23449c83a5bc9886f771aea231541"}
+{"name":"HTML widgets","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web2d/../../../../stemapp//widgets/","location":"D:\\Users\\NAPSG_TLawson\\webappbuilder\\client\\stemapp\\widgets","category":"widget","_id":{"$wrap":"$oid","v":2}}
+{"k":"0000000078","o":"0000000253","v":"001"}
+{"_id":3,"_uid":5,"_dt":1564164185308,"_s":"13653bbec134c4ff868aa7ad48fd222f"}
+{"name":"HTML themes","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web2d/../../../../stemapp//themes/","location":"D:\\Users\\NAPSG_TLawson\\webappbuilder\\client\\stemapp\\themes","category":"theme","_id":{"$wrap":"$oid","v":3}}
+{"k":"0000000078","o":"0000000263","v":"001"}
+{"_id":4,"_uid":5,"_dt":1564164187573,"_s":"26362009633f6936d0734507b6177f38"}
+{"name":"HTML3D widgets","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web3d/../../../../stemapp3d//widgets/","location":"D:\\Users\\NAPSG_TLawson\\webappbuilder\\client\\stemapp3d\\widgets","category":"widget","_id":{"$wrap":"$oid","v":4}}
+{"k":"0000000078","o":"0000000259","v":"001"}
+{"_id":5,"_uid":5,"_dt":1564164190698,"_s":"b50e4625530f0f6f8f70505b66b83ce3"}
+{"name":"HTML3D themes","type":"local_folder","url":"/webappbuilder/builder/plugins/stemapps/web3d/../../../../stemapp3d//themes/","location":"D:\\Users\\NAPSG_TLawson\\webappbuilder\\client\\stemapp3d\\themes","category":"theme","_id":{"$wrap":"$oid","v":5}}

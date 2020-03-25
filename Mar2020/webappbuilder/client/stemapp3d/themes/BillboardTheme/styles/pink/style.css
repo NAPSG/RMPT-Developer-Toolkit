@@ -1,0 +1,10 @@
+.jimu-main-background,
+.jimu-widget-home,
+.jimu-widget-navigate,
+.jimu-widget-zoom .esri-zoom .esri-widget,
+.jimu-widget-mylocation,
+.jimu-widget-search .esri-search-button.esri-submit,
+.jimu-widget-placeholder,
+.jimu-widget-onscreen-icon{
+  background-color: #fe6960 !important;
+}

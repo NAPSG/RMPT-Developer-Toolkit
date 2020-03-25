@@ -1,0 +1,27 @@
+{
+  "widgetOnScreen": {
+    "widgets": {
+      "widgets/Coordinate/Widget": {
+        "position": {
+          "left": "50%",
+          "top": 10,
+          "marginLeft": -187
+        }
+      },
+      "widgets/Compass/Widget": {
+        "position": {
+          "right": 10,
+          "bottom": 30,
+          "zIndex": 101
+        }
+      },
+      "widgets/FullScreen/Widget": {
+        "position": {
+          "right": 52,
+          "bottom": 30,
+          "zIndex": 101
+        }
+      }
+    }
+  }
+}

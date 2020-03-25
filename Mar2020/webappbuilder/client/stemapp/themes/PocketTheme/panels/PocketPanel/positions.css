@@ -1,0 +1,15 @@
+.jimu-widget-scalebar,
+.jimu-widget-coordinate {
+    left: 380px !important;
+}
+
+.esriRtl .jimu-widget-scalebar,
+.esriRtl .jimu-widget-coordinate {
+    left: auto !important;
+    right: 380px !important;
+}
+
+.jimu-rtl .esriControlsBR {
+    left: 5px !important;
+    right: auto !important;
+}

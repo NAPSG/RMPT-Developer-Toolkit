@@ -1,0 +1,36 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The widget life cycle
+
+is described."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Widget life cycle</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-250CF5E9-9B93-4432-B4D4-F190FD8354D2]--><body><div id="content"><div class="header"><h1>
+Widget life cycle</h1><div id="breadcrumb"></div></div>
+    <p id="GUID-13E3F4BA-36A9-4230-B42C-40E7A012A0CB">Each <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> widget is managed by the app container (framework) and  has its own life cycle. When the app loads or you click a button, one or more widgets load and open. For on-screen widgets, the layout manager prompts the widget manager to load the widget in an  asynchronous process. After the widget loads, the layout manager calls the <span class="usertext">setPosition</span> method of the widget to append it to the DOM tree, places it in  the correct position, and allows the widget manager to open it. The following diagrams demonstrate how the methods are invoked regarding the widget life cycle:</p>
+    <div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-88C38343-4F59-4992-BBF9-B656CE4D20BD-web.png" purpose="img" alt="Open a widget diagram" title="Open a widget diagram"></td></tr></table></div>
+    <div class="notes" id="GUID-6244A839-A059-4574-A164-B18C8688A60F"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-FD406DFA-E27F-4F9F-B0B9-BDDB93659031">The  <span class="usertext">setPosition</span> method is invoked to append the widget to the DOM tree and place the widget in the correct position. It only applies to off-panel widgets. For in-panel widgets, a widget's position is controlled by the panel.</p></div></div><p id="GUID-473A90B3-B808-4607-BF5C-39B30AE0608A"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-02FFC82D-3EB7-4715-902E-4480B849B03A-web.png" purpose="img" alt="Invoked methods for widget life cycle" title="Invoked methods for widget life cycle"></td></tr></table></div></p><div class="notes" id="GUID-8D072E71-28BF-4B41-813A-FF59174ADB5A"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-73E1E1E6-1326-43F0-9068-BA631B176DA1"> If the app is launched outside the builder's environment, the widget will not be destroyed once it  is loaded. In the builder's environment, the widget is  destroyed and re-created when you configure the widget.</p></div></div><p id="GUID-F10DB16D-BBEB-40AF-ADAB-1E582018E079">Each widget has two properties to store its widget state: <span class="usertext">state</span> and <span class="usertext">windowState</span>. The <span class="usertext">state</span> property represents the widget's life state with three  values: active, opened, and closed. The <span class="usertext">windowState</span>   property represents the widget's window state with three values as well: normal, maximized, and minimized. The following diagram shows the state changes:<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-B0F0775D-C28F-4F3D-8D30-217C37662F73-web.png" purpose="img" alt="Widget state change diagram" title="Widget state change diagram"></td></tr></table></div></p>
+    <ul purpose="ul" id="UL_CB7CE868393144588A8094C993A7CBD8"><li purpose="li" id="LI_65290B10A8AD47769335E7316FD466F9">Active—A widget is activated when it's clicked on.<p id="GUID-45C3E8AC-99AA-4FF3-8382-0C2879DEF4C1">An active widget will be deactivated when another widget is activated.</p></li><li purpose="li" id="LI_ECB8A2F707EB4C35A5EFBA1BD3D0378E">Open—Widget can be loaded but not activated.</li><li purpose="li" id="LI_FF482BA120D246E592D2965FD3327AB5">Closed—A part of the deactivation process. </li></ul><div class="notes" id="GUID-789F84D2-B07D-4E12-BA8D-7CDB990AFE84"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody">
+      <p id="GUID-6329F955-642D-41E5-BA38-15F3493E11FA">
+        <ul purpose="ul" id="UL_E780ABC1D8384336BB228C54ADDF3D6D">
+          <li purpose="li" id="LI_ADD656457D3B4C9C8A24003D31788BDA">For the Dojo state, see <a target="_blank" class="xref" href="http://dojotoolkit.org/documentation/tutorials/1.10/understanding_widgetbase/index.html" rel="http://dojotoolkit.org/documentation/tutorials/1.10/understanding_widgetbase/index.html">Understanding_WidgetBase</a>.</li>
+          <li purpose="li" id="LI_96F5D1B08A964D639A3A17A24EC2572F">To change the widget's <span class="usertext">state</span> and <span class="usertext">windowState</span> properties, use the methods from <a class="xref" rel="03w3/03w30000005m000000.htm" href="03w3/03w30000005m000000.htm">WidgetManager class</a>.</li>
+          <li purpose="li" id="LI_7750B7DC6D204151AD9C7332173632B4">With the   opened state, the   widget is not active. When the widget is closed, it is not removed  from the DOM tree; instead, it is hidden.</li>
+          <li purpose="li" id="LI_E93216D6F20A4BE9BC8646DF1AE87DFD"> For the <span class="usertext">windowState</span> property, some widgets may have only one or two states. </li>
+        </ul>
+      </p>
+    </div></div>
+  <div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

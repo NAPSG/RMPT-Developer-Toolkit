@@ -1,0 +1,31 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Use other   libraries in Web AppBuilder for ArcGIS."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Use other   libraries</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-5B99732B-2817-4204-A959-D268EA6E8EB0]--><body><div id="content"><div class="header"><h1>
+Use other   libraries</h1><div id="breadcrumb"></div></div>
+
+<p id="GUID-C269F5BC-84F6-4359-9B42-16327DE6BA57">There are three ways to load a third-party library in <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span>.
+Depending on the  library and the  purpose of your app,  choose one of the following to load it:</p>
+
+<ul purpose="ul" id="UL_9D77E58EB61448A7B2653C10266BF96D"><li purpose="li" id="LI_1E974030B70B4B9CA922C8B414F0837E"> Put the library in the resources array defined in the init.js file. The third-party JavaScript
+library or CSS library can be loaded  in this way.  All resources in the resources
+array are loaded first by the <span class="usertext">loadResource</span> method when the app loads. Keep the following in mind:<ul purpose="ul" id="UL_04E1B60E2E14425DBBC760F46059185B"><li purpose="li" id="LI_A27D632CDEFB4E508E7A6940E9C696C8">The <span class="usertext">loadResource</span> method does not ensure the loading order. As a result, the third-party library may be loaded before or after <span purpose="ph" varid="ArcGISAPIforJavaScript" translate="no">ArcGIS API for JavaScript</span>.</li><li purpose="li" id="LI_F38E92688E684DDEB06DC4F187D989D8"> Use this approach when you want to load a non-AMD module   shared with more than one widget. However, it does not apply to AMD modules.</li></ul></li><li purpose="li" id="LI_05DCEB5136B949B7A8F189149F976B65">Put the library in the libs folder and add it to the libs/main  dependency array. Use this approach to  load a shared AMD module.</li><li purpose="li" id="LI_E1D33F79FBD04D9E9EDE8683488C826C">Put the  library in the widget or theme folder and add it to your widget or theme dependency array. Use this approach to load an AMD module that only applies to  one widget or theme.</li></ul>
+
+
+
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

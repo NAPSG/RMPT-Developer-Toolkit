@@ -1,0 +1,47 @@
+{
+  "widgetOnScreen": {
+    "widgets": [{
+      "uri": "themes/BoxTheme/widgets/BoxController/Widget",
+      "position": {
+        "left": 0,
+        "top": 0
+      }
+    }, {
+      "uri": "widgets/ZoomSlider/Widget",
+      "position": {
+        "right": 10,
+        "top": 10
+      }
+    }, {
+      "uri": "widgets/Home/Widget",
+      "position": {
+        "right": 10,
+        "top": 85
+      }
+    }, {
+      "uri": "widgets/MyLocation/Widget",
+      "position": {
+        "right": 10,
+        "top": 123
+      }
+    }, {
+      "uri": "widgets/Navigate/Widget",
+      "position": {
+        "right": 10,
+        "top": 161
+      }
+    }, {
+      "uri": "widgets/Compass/Widget",
+      "position": {
+        "right": 10,
+        "bottom": 68
+      }
+    }, {
+      "uri": "widgets/FullScreen/Widget",
+      "position": {
+        "right": 10,
+        "bottom": 26
+      }
+    }]
+  }
+}

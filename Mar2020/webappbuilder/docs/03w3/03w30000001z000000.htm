@@ -1,0 +1,268 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn about the Chart widget's configurable attributes."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Chart</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-B7AEF189-F897-4E6F-978A-CD961F64CC8F]--><body><div id="content"><div class="header"><h1>
+Chart</h1><div id="breadcrumb"></div></div>
+<p id="GUID-73166348-C73D-44D8-AE9D-F39AAF621245">
+ The Chart widget displays one or more quantitative attributes for a feature as a graphical representation of data. It is designed to make it easy for end users to observe possible patterns and trends in quantitative attribute data.</p><p id="GUID-3D6D3E61-8610-41E7-9976-63CED34114C5">The following table lists the configurable attributes of the Chart widget:</p><p id="GUID-143993B7-83CC-4681-9763-3564CDCC2C09"><div class="block_table" id="TABLE_04717C15362A48AA8611605EFCA5AF13" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-503A48E2-8B03-436C-BF50-6B9039853E24">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-F3DB49CC-954D-4331-B101-27C53F013BC2">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A42EA813-43D9-4E82-8DF0-52930ABC80F5"><span class="usertext">charts</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6ADF11DF-A59C-4B7D-9DE7-94CF9972F0AB"> Object[]. There is no default. An array of chart tasks. Depending on the chart mode, each task may have  following attributes:</p><ul purpose="ul" id="UL_D45D48C90E75488E80CC57EE1BD1CAED"><li purpose="li" id="LI_6D4E3A82ADBD4DB4897CA5525E3837D0"><span class="usertext">name</span>—String. There is no default. The name of the chart task displayed in the widget.</li><li purpose="li" id="LI_3BB9C4A106AF4CF19282035CD6E327F2"><span class="usertext">url</span>—String.  There is no default. A feature layer URL for the layer you want to perform chart task.</li><li purpose="li" id="LI_CFC64896C13540A9848336852B8A0E65"><span class="usertext">filter</span>—Object. There is no default. The <span class="usertext">'expr'</span> attribute of <span class="usertext">filter</span> takes the form of a basic SQL statement and uses it to filter features.</li><li purpose="li" id="LI_AEB8BF141E194367A3B6DFE49B7D76F5"> <span class="usertext">description</span>—String. There is no default. The description of the chart task.</li><li purpose="li" id="LI_24FF5104154946509F39288B30AA1092"><span class="usertext">mode</span>—String. There is no default. The mode of the chart task. The available values are feature, category, count, and field. If feature is selected, the chart task displays values feature by feature. If category is selected, the chart task displays values by category. If count is selected, the chart task displays feature counts by category. If field is selected, the chart task displays attribute values as charts.</li><li purpose="li" id="LI_5AC6F815B3394B66B20267E38C8D68A8"><span class="usertext"> symbol</span>—Object. There is no default. The feature symbol of the chart task.</li><li purpose="li" id="LI_F9416B6F58774E5187EB5D090BF141DF"><span class="usertext"> highLightColor</span>—String. There is no default. he highlight color of the selected features.</li><li purpose="li" id="LI_829F0A0566DA40099B7CD5901AFAA962"><span class="usertext">labelField</span>—String; There is no default. The field is used as the chart axis label. This attribute exists when the mode is feature.</li><li purpose="li" id="LI_7CE49C62D67B4F4CA43793BDD6BFCB90"><span class="usertext"> valueFields</span>—String[]. There is no default. The fields provide values to statistics. This attribute exists when the mode is feature, category, or field.</li><li purpose="li" id="LI_691212C85CFD487F9A6DD951AE9B4626"> <span class="usertext">categoryField</span>—String. There is no default. The field used to categorize the chart. This attribute exists when the mode is category or count.</li><li purpose="li" id="LI_6598DFFBAA21478CA8A7C79572AB9CFA"><span class="usertext"> operation</span>—String. There is no default. Indicates the math method the chart task uses to calculate statistics. The available values are average, sum, max, and  min. This attribute exists when the mode is category or field.</li><li purpose="li" id="LI_D6D738C68F404535884E30BCEA4BA12C"><span class="usertext">webMapLayerId</span>—String. There is no default. The ID of the source layer. If <span class="usertext">webMapLayerId</span> is set, <span class="usertext">url</span> will be ignored.</li><li purpose="li" id="LI_33E8B0489BB64F42926ED5E92CEB4796"><span class="usertext">types</span>—Object array. There is no default. Each element of the <span class="usertext">types</span> array is an object that contains two properties: type and display. The former is a string and has valid values including column, pie, bar, and line. The latter is an object. See the example below for details.</li><li purpose="li" id="LI_391503FF84774802B27C9BEB57A844F0"><span class="usertext">sortOrder</span>—Object. There is no default. It has a property named <span class="usertext">isAsc</span>. <span class="usertext">isAsc</span> is a Boolean and defines how to sort the category or label field value.  When the value is true, ascending order applies;  when false, descending order applies. This attribute exists when the display  mode is feature, category, or count.</li></ul></td></tr></tbody><caption class="table_desc"></caption></table></div></p>
+
+<p id="GUID-A1B1DF2F-DEB6-4E21-9641-FEDD63BE3A26">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+        <span class="nt">&quot;charts&quot;</span><span class="p">:</span> <span class="p">[{</span>
+          <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;logicalOperator&quot;</span><span class="p">:</span> <span class="s2">&quot;AND&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parts&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;expr&quot;</span><span class="p">:</span> <span class="s2">&quot;1=1&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;symbol&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">],</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;angle&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;xoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;yoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMS&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMSCircle&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;outline&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+              <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLS&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLSSolid&quot;</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;webMapLayerId&quot;</span><span class="p">:</span> <span class="s2">&quot;SampleWorldCities_611_0&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;feature&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Display values feature by feature&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;highLightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;types&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;column&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;pie&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">,</span> <span class="s2">&quot;#eb7b3a&quot;</span><span class="p">,</span> <span class="s2">&quot;#a5a5a5&quot;</span><span class="p">,</span> <span class="s2">&quot;#febf29&quot;</span><span class="p">,</span> <span class="s2">&quot;#4673c2&quot;</span><span class="p">,</span> <span class="s2">&quot;#72ad4c&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showDataLabel&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;line&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">}],</span>
+          <span class="nt">&quot;labelField&quot;</span><span class="p">:</span> <span class="s2">&quot;CITY_NAME&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;valueFields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;POP&quot;</span><span class="p">],</span>
+          <span class="nt">&quot;sortOrder&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;isLabelAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;isAsc&quot;</span><span class="p">:</span> <span class="kc">true</span>
+          <span class="p">}</span>
+        <span class="p">},</span> <span class="p">{</span>
+          <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;logicalOperator&quot;</span><span class="p">:</span> <span class="s2">&quot;AND&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parts&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;expr&quot;</span><span class="p">:</span> <span class="s2">&quot;1=1&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;symbol&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">],</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;angle&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;xoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;yoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMS&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMSCircle&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;outline&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+              <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLS&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLSSolid&quot;</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;webMapLayerId&quot;</span><span class="p">:</span> <span class="s2">&quot;SampleWorldCities_611_0&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Display values by category&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;highLightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;types&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;column&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;pie&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">,</span> <span class="s2">&quot;#eb7b3a&quot;</span><span class="p">,</span> <span class="s2">&quot;#a5a5a5&quot;</span><span class="p">,</span> <span class="s2">&quot;#febf29&quot;</span><span class="p">,</span> <span class="s2">&quot;#4673c2&quot;</span><span class="p">,</span> <span class="s2">&quot;#72ad4c&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showDataLabel&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;line&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">}],</span>
+          <span class="nt">&quot;categoryField&quot;</span><span class="p">:</span> <span class="s2">&quot;POP_RANK&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="s2">&quot;average&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;valueFields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;POP&quot;</span><span class="p">],</span>
+          <span class="nt">&quot;sortOrder&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;isLabelAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;isAsc&quot;</span><span class="p">:</span> <span class="kc">true</span>
+          <span class="p">}</span>
+        <span class="p">},</span> <span class="p">{</span>
+          <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;logicalOperator&quot;</span><span class="p">:</span> <span class="s2">&quot;AND&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parts&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;expr&quot;</span><span class="p">:</span> <span class="s2">&quot;1=1&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;symbol&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">],</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;angle&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;xoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;yoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMS&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMSCircle&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;outline&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+              <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLS&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLSSolid&quot;</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;webMapLayerId&quot;</span><span class="p">:</span> <span class="s2">&quot;SampleWorldCities_611_0&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Display feature counts by category&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;highLightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;types&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;column&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;pie&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">,</span> <span class="s2">&quot;#eb7b3a&quot;</span><span class="p">,</span> <span class="s2">&quot;#a5a5a5&quot;</span><span class="p">,</span> <span class="s2">&quot;#febf29&quot;</span><span class="p">,</span> <span class="s2">&quot;#4673c2&quot;</span><span class="p">,</span> <span class="s2">&quot;#72ad4c&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showDataLabel&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;line&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">}],</span>
+          <span class="nt">&quot;categoryField&quot;</span><span class="p">:</span> <span class="s2">&quot;POP_RANK&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;sortOrder&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;isLabelAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;isAsc&quot;</span><span class="p">:</span> <span class="kc">true</span>
+          <span class="p">}</span>
+        <span class="p">},</span> <span class="p">{</span>
+          <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;logicalOperator&quot;</span><span class="p">:</span> <span class="s2">&quot;AND&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parts&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;expr&quot;</span><span class="p">:</span> <span class="s2">&quot;1=1&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;symbol&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">],</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;angle&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;xoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;yoffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMS&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSMSCircle&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;outline&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+              <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLS&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;esriSLSSolid&quot;</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;webMapLayerId&quot;</span><span class="p">:</span> <span class="s2">&quot;SampleWorldCities_611_0&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;field&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Display attribute values as charts&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;highLightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;types&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;column&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;pie&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">,</span> <span class="s2">&quot;#eb7b3a&quot;</span><span class="p">,</span> <span class="s2">&quot;#a5a5a5&quot;</span><span class="p">,</span> <span class="s2">&quot;#febf29&quot;</span><span class="p">,</span> <span class="s2">&quot;#4673c2&quot;</span><span class="p">,</span> <span class="s2">&quot;#72ad4c&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showDataLabel&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;line&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#5d9cd3&quot;</span><span class="p">],</span>
+              <span class="nt">&quot;showHorizontalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;showVerticalAxis&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+          <span class="p">}],</span>
+          <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="s2">&quot;max&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;valueFields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;POP_RANK&quot;</span><span class="p">,</span> <span class="s2">&quot;LABEL_FLAG&quot;</span><span class="p">]</span>
+        <span class="p">}]</span>
+      <span class="p">}</span>
+</code></pre></div>
+</div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

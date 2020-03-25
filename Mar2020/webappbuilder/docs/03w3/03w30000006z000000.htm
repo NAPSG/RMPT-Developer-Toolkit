@@ -1,0 +1,46 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="This topic describes the Loading Page
+widget."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Loading Page</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-6D42D281-E528-441C-9DDA-457A79A4D9AE]--><body><div id="content"><div class="header"><h1>
+Loading Page</h1><div id="breadcrumb"></div></div>
+<p id="GUID-4E2B559A-EFA9-47F7-9293-31B4B056F8F6"></p><p id="GUID-BE26519A-78B1-4634-B09E-EF9C8D0ECC81">The following table lists the configurable attributes of the Loading Page widget:</p>
+
+<div class="block_table" id="TABLE_0C79918A705044FE9BCD0E59B550ABE2" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-A77BDF12-B0FB-4048-828B-8AB2850A5341">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-16E658FB-C8CB-40F0-84DC-CF4720F240A4">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97268B88-43D8-412D-8F01-98E810710232"><span class="usertext"> backgroundColor</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-450B2907-C359-4578-A5EF-F9110375CB72"> String. The background color of the loading page.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A76C7DEA-509C-4EBB-85AE-C3604555D826"><span class="usertext"> backgroundImage</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-588C9F7D-CD5C-4E00-82A1-1CD49140FE44"> Object. The background image. Its properties are as follows: </p><ul purpose="ul" id="UL_3E90FFBEB5274B0489698F264252A230"><li purpose="li" id="LI_D1CE42F074A741CD985F7CC20FFBB4C7"><span class="usertext">visible</span>—Boolean. Controls whether the background image is visible. If  false, the other <span class="usertext">backgroundImage</span> properties are ignored.</li><li purpose="li" id="LI_500ABC19F3A14274B01B632BFE05217F"><span class="usertext">uri</span>—String. The URI of the background image whose path is relative to the root of the app.</li><li purpose="li" id="LI_3AF791B92AD347219322E7527E22AC38"><span class="usertext">width</span>—Number. The width of the image.</li><li purpose="li" id="LI_4D80FE9D53674032A9058EF6867F0EA2"><span class="usertext">height</span>—Number. The height of the image.</li></ul></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A59C70C3-8BA4-41F7-B6E1-76535AB4C238"><span class="usertext"> loadingGif</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-22386F4A-05BF-4E68-847F-D8D7641924B1">Object. The GIF image. Its properties are as follows:</p><ul purpose="ul" id="UL_95E23312346D4F58B59C07342DAA3FD8"><li purpose="li" id="LI_60441B91D6614E9CAC601C5B5CAFC750"><span class="usertext">visible</span>—Boolean. Controls whether the GIF image is visible. If  false, the other <span class="usertext">loadingGif</span> properties are  ignored.</li><li purpose="li" id="LI_759BC50407194E11BF762086FB222326"><span class="usertext">uri</span>—String. The URI of the GIF image whose path is relative to the root of the app.</li><li purpose="li" id="LI_AD5E12A52BB84666B3612491A32FE3F6"><span class="usertext">width</span>—Number. The width of the image.</li><li purpose="li" id="LI_6E0B906AD4FC4598BC066850740FFEDB"><span class="usertext">height</span>—Number. The height of the image.</li></ul></td></tr></tbody><caption class="table_desc"></caption></table></div><p id="GUID-AC0D260C-F408-46BF-93B4-3D1F92104346">Example:</p><p id="GUID-A7DDB027-8751-46AF-8BC8-07B771E59642"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+				&quot;loadingPage&quot;: {
+    &quot;backgroundColor&quot;: &quot;#508dca&quot;,
+    &quot;backgroundImage&quot;:{
+      &quot;visible&quot;:false,
+      &quot;uri&quot;: &quot;configs/loading/images/background.png&quot;,
+      &quot;width&quot;: 812,
+      &quot;height&quot;: 972
+    },
+    &quot;loadingGif&quot;:{
+    //Controls whether the gif image is visible. If it is false, the other options under &quot;loadingGif&quot; will be ignored.
+      &quot;visible&quot;: true,
+      //The uri of the gif image whose path is relative to the root of your application.
+      &quot;uri&quot;: &quot;configs/loading/images/predefined_loading_1.gif&quot;,
+      //The width of the image.
+      &quot;width&quot;: 58,
+      //The height of the image.
+      &quot;height&quot;: 58
+    }
+  }
+}
+</code></pre></div>
+</div></p><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

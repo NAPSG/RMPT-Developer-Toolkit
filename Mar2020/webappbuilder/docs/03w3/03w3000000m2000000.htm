@@ -1,0 +1,125 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to create a new theme based on the Demo theme."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+ Create a new theme</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-C4E860C2-05D5-4701-9D79-4A2902B8D93E]--><body><div id="content"><div class="header"><h1>
+ Create a new theme</h1><div id="breadcrumb"></div></div>
+ <p id="GUID-490B389F-19A3-4663-B24D-E842C5E357FC">Here are the steps for creating a new theme based on the Demo theme. The style, layout, controller, layout widget, and panel created from the following tutorials will be used to  create the theme:</p><ul purpose="ul" id="UL_1563E6EA561F445DA3FEF4874FF39AF5"><li purpose="li" id="GUID-8A74DBEC-3137-43AF-A00F-4C404C834201"><a class="xref" rel="03w3/03w300000092000000.htm" href="03w3/03w300000092000000.htm">Create a style for a theme</a></li><li purpose="li" id="GUID-921EDD40-B8B8-42A6-B20D-F136D9029B95"><a class="xref" rel="03w3/03w300000093000000.htm" href="03w3/03w300000093000000.htm">Create a new default layout</a></li><li purpose="li" id="GUID-F1274972-1701-4275-842F-3B003EC932A3"><a class="xref" rel="03w3/03w3000000m0000000.htm" href="03w3/03w3000000m0000000.htm">Create a new controller widget</a></li><li purpose="li" id="GUID-5150F356-7822-4036-B50B-2098FE3A0187"><a class="xref" rel="03w3/03w300000099000000.htm" href="03w3/03w300000099000000.htm">Create a new layout widget</a></li><li purpose="li" id="GUID-DEC45FAF-8E00-41E5-928B-94CDB8D69E3A"><a class="xref" rel="03w3/03w3000000m4000000.htm" href="03w3/03w3000000m4000000.htm">Create a new panel</a></li></ul><p id="GUID-4A6DB6BF-EF96-4065-B90E-066C7F927BA2"> The themes for the 2D and 3D apps are nearly the same. If you create a 3D theme, put it  in the <span class="usertext">stemapp3d/themes</span> folder.</p><div class="section1" id="ESRI_SECTION1_2C868F6C387B4CB68522C179A1C0C719" purpose="section1"><h2> Create a theme folder structure using the Demo theme</h2><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B54B3DF1DF504FD1A731494D2EB44F81"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_FD2EDA3039E844BEA807070DD47CDF66"><span purpose="cmd" id="GUID-A2D79E58-E7C5-44A1-A108-4905E7E308F1">Go to <span class="usertext">~/client/stemapp/themes</span>, where the DemoTheme folder is located.</span></li><li purpose="step" id="ESRI_STEP_6FA69EB6E1F4426E9AEC0A404BBDAEB7"><span purpose="cmd" id="GUID-57F3B6BA-9FA3-4493-BC35-5A954B2DCC11">Make a copy of the DemoTheme folder in the same directory, and rename it <span class="usertext">NewTheme</span>.</span></li><li purpose="step" id="ESRI_STEP_A6E6C72BA33C4E3982383906C3CD88A8"><span purpose="cmd" id="GUID-58BD2357-22A2-4E8D-BE1D-5FCC5A40933C">Update the following properties in the manifest.json file:</span><div class="stepexample" purpose="stepexample"><ul purpose="ul" id="UL_F3455A2B9D1946488E921EC03CE38AB3"><li purpose="li" id="GUID-9E8299DE-7369-43E1-978D-B33F7E673A52"><span class="usertext">Name</span>: NewTheme
+<div class="notes" id="GUID-E7319E47-2942-414B-9192-44C192879250"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-BC08EBC0-B7BF-4757-AE12-AFAA530124BE">This value must be the same as the name of the theme folder.
+</p></div></div></li><li purpose="li" id="GUID-C33D0D3A-9E41-4561-A20E-1601338D5367"><span class="usertext">Label</span>: New Theme</li></ul></div></li><li purpose="step" id="ESRI_STEP_9ECF79FA1C5947B5804A488A0A165BA3"><span purpose="cmd" id="GUID-97BF4379-E81F-46DC-9B87-06D3C6498188">Update the localization files in the nls folder as needed. Make sure the <span class="usertext">_themeLabel</span> property in the strings.js file has been updated to the name of the new theme.</span></li></ol></div></div></div><div class="section1" id="ESRI_SECTION1_547C2114E74B4EDCA022C796B4AFBD46" purpose="section1"><h2>Create a new controller widget</h2><p id="GUID-E35ED3D8-BE6A-4AA8-83E6-B435466D2AFA">A controller is required to display widgets defined in
+the widget pool. See <a class="xref" rel="03w3/03w3000000m0000000.htm" href="03w3/03w3000000m0000000.htm">Create a new controller widget</a>. </p></div><div class="section1" id="ESRI_SECTION1_30424AEAC498401681C35DFD374C2F30" purpose="section1"><h2>Create a new layout widget</h2><p id="GUID-73CA885C-3E46-416F-BB4E-C4FEB1772C45">The layout widget that will be added to this theme is the Header widget. See <a class="xref" rel="03w3/03w300000099000000.htm" href="03w3/03w300000099000000.htm">Create a new layout widget</a>.</p></div><div class="section1" id="ESRI_SECTION1_E1F580B30D46450B8D80F093998ABB65" purpose="section1"><h2>Create a new default layout</h2><p id="GUID-5A537884-6CB4-4B65-8CA3-1626668E030B">In NewTheme, a new default layout contains the following widgets:</p><ul purpose="ul" id="UL_9BE63978182D4EE39FC6ED95BF033764"><li purpose="li" id="LI_45E13143C656419BB8E133786E2CFC6A">Header</li><li purpose="li" id="LI_511364F22F3C4BA5877C14254A64E271">SidebarController</li><li purpose="li" id="LI_DDADDFBCE4D74AA79BA5130BD161D1E9">ZoomSlider</li><li purpose="li" id="LI_DC892A34618947099C9CBB284C4EBD99">HomeButton</li><li purpose="li" id="LI_4EA1FB908B514C1DB4D19881924C1EF5">Two widget placeholders</li></ul><p id="GUID-3BDFAD43-896A-4E9C-B874-DF6D97D00FB4">The default panel for the widgets in widgetPool is SimpleBorderPanel that comes with the theme.</p><p id="GUID-E11A71A8-FF7D-42A3-9B65-C41780B79C17">Their positions are as follows:</p><ul purpose="ul" id="UL_A7A8F42DE2504C67A25B6633F1DC68E4"><li purpose="li" id="LI_D0C236392B814A42A65F2FED50F5106D">The Header widget is located at the top of the screen.</li><li purpose="li" id="LI_23B2C80222764D9EBC6709BE581CF314">The SidebarController widget is  located on the left side of the screen, under the Header widget.</li><li purpose="li" id="LI_5E6FFADDC03B4569ACEBB5CC25A872FE">The ZoomSlider and HomeButton widgets and the two widget placeholders are located on the right side of the screen.</li><li purpose="li" id="LI_A423CAA4D00F47EDBA82EC5D67B60E67">The SimpleBorderPanel widget is next to the SidebarController widget.</li></ul><p id="GUID-B3660A9F-77EC-4834-8173-3317C4A340BC">For details, see <a class="xref" rel="03w3/03w300000093000000.htm" href="03w3/03w300000093000000.htm">Create a new default layout</a>.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="s2">&quot;widgetOnScreen&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;widgets&quot;</span><span class="o">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;uri&quot;</span><span class="o">:</span> <span class="s2">&quot;themes/NewTheme/widgets/Header/Widget&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;left&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;height&quot;</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;relativeTo&quot;</span><span class="o">:</span> <span class="s2">&quot;browser&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;zIndex&quot;</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;uri&quot;</span><span class="o">:</span> <span class="s2">&quot;themes/NewTheme/widgets/SidebarController/Widget&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;left&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;bottom&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;width&quot;</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;relativeTo&quot;</span><span class="o">:</span> <span class="s2">&quot;browser&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;zIndex&quot;</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;uri&quot;</span><span class="o">:</span> <span class="s2">&quot;widgets/ZoomSlider/Widget&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;visible&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="o">:</span> <span class="mi">10</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;2.0beta&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;uri&quot;</span><span class="o">:</span> <span class="s2">&quot;widgets/HomeButton/Widget&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="mi">75</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="o">:</span> <span class="mi">10</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;2.0beta&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;right&quot;</span><span class="o">:</span> <span class="mi">110</span><span class="p">,</span>
+        <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;width&quot;</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span>
+        <span class="s2">&quot;height&quot;</span><span class="o">:</span> <span class="mi">240</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;right&quot;</span><span class="o">:</span> <span class="mi">60</span><span class="p">,</span>
+        <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;width&quot;</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span>
+        <span class="s2">&quot;height&quot;</span><span class="o">:</span> <span class="mi">400</span>
+      <span class="p">}</span>
+    <span class="p">}]</span>
+  <span class="p">},</span>
+
+  <span class="s2">&quot;map&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;left&quot;</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+      <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+      <span class="s2">&quot;right&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;bottom&quot;</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+
+  <span class="s2">&quot;widgetPool&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;panel&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;uri&quot;</span><span class="o">:</span> <span class="s2">&quot;themes/NewTheme/panels/SimpleBorderPanel/Panel&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;width&quot;</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>
+        <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;left&quot;</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;bottom&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;relativeTo&quot;</span><span class="o">:</span> <span class="s2">&quot;browser&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;zIndex&quot;</span><span class="o">:</span> <span class="mi">101</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-FCB16F82-A7A6-4FFC-80A0-795DF38504F2">Your result will look similar to the following:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-6F1671E2-7963-43F6-9081-0E2A4ECDD4F6-web.png" purpose="img" alt="New default layout" title="New default layout"></td></tr></table></div></div><div class="section1" id="GUID-2AD6EBD1-C239-4E66-A4AF-CD30920B98B2" purpose="section1"><h2>Create a panel</h2><p id="GUID-94BD5E75-4053-4B5F-A54F-476BFB7E1443">The new panel that will be added to this theme is the ModalPanel widget created from the <a class="xref" rel="03w3/03w3000000m4000000.htm" href="03w3/03w3000000m4000000.htm">Create a new panel</a> tutorial.</p><p id="GUID-888AD262-752C-47B4-A982-4EB196576FC8">After the panel is added to the theme, add a new group in the widgetPool section in the default layout.  Then add the About widget to this group. Use the ModalPanel widget as the panel for this group as shown in the following code sample:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="s2">&quot;widgetOnScreen&quot;</span><span class="o">:</span> <span class="p">{...},</span>
+
+  <span class="s2">&quot;map&quot;</span><span class="o">:</span> <span class="p">{...},</span>
+
+  <span class="s2">&quot;widgetPool&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;panel&quot;</span><span class="o">:</span> <span class="p">{...},</span>
+    <span class="s2">&quot;groups&quot;</span><span class="o">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;widgets&quot;</span><span class="o">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;uri&quot;</span><span class="o">:</span> <span class="s2">&quot;widgets/About/Widget&quot;</span>
+      <span class="p">}],</span>
+      <span class="s2">&quot;panel&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;uri&quot;</span><span class="o">:</span> <span class="s2">&quot;themes/NewTheme/panels/ModalPanel/Panel&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&quot;relativeTo&quot;</span><span class="o">:</span> <span class="s2">&quot;browser&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;zIndex&quot;</span><span class="o">:</span> <span class="mi">102</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-32C0D6C3-BF25-4580-9A78-09C64CDA4630">The About widget is displayed in a ModalPanel widget rather than the default SimpleBorderPanel widget as shown below.</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-D2F11564-9C5A-4512-B7B5-CB9DA5870A32-web.png" purpose="img" alt="About widget in a new panel" title="About widget in a new panel"></td></tr></table></div></div><div class="section1" id="GUID-07153E16-4931-4A8D-B738-71D387A1578D" purpose="section1"><h2>Add a new style</h2><p id="GUID-03D708C2-AE38-4BE9-A1F5-2447A6FFEBA8">For details on how to create a new style, see <a class="xref" rel="03w3/03w300000092000000.htm" href="03w3/03w300000092000000.htm">Create a style for a theme</a>.   
+</p><p id="GUID-8132E444-D2B1-4784-AB7D-62CFCDB6183F">In this theme, a style called myStyle is created by overriding the CSS in   the following widgets:</p><ul purpose="ul" id="UL_C8D4F7EE91C5446688C1F3748982F081"><li purpose="li" id="GUID-1F70D51A-E806-4730-93C5-405042FFAC69">Header</li><li purpose="li" id="GUID-7F5ACF62-DCA9-47B7-A850-399255CE8EBC">SidebarController</li><li purpose="li" id="GUID-856D8AF3-145B-458C-A81F-145C3532E26A">Panels</li><li purpose="li" id="GUID-0CC59095-FD91-4695-AF8F-3946672A4F8C">ZoomSlider</li><li purpose="li" id="GUID-44A789B7-D065-46FC-955B-7F68B0C55B2D">HomeButton</li><li purpose="li" id="GUID-F56EF513-3B05-41B9-AA1B-9407FA326220">On-screen widget icons</li><li purpose="li" id="GUID-7764DF01-7A2F-47D0-80C5-58B6A5E0DFF0">Map pop-up</li></ul><p id="GUID-08BB623C-A24F-4E51-988A-A730719FDE0C">Your result will look similar to the following:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-84ABF446-2746-4EF7-8625-0C55F00A4049-web.png" purpose="img" alt="New theme result" title="New theme result"></td></tr></table></div></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,405 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to create a  sidebar controller widget."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Create a controller
+widget</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-B46A5EA2-E414-49CE-81BA-C084336C3957]--><body><div id="content"><div class="header"><h1>
+Create a controller
+widget</h1><div id="breadcrumb"></div></div>
+<p id="GUID-125BABC9-606D-41E6-B855-96AAEF41999E">
+This topic explains how to create a sidebar controller widget in Web AppBuilder. The sidebar controller vertically displays and controls other widgets defined in widgetPool. As a result, it does not have   a logo, title, or link.</p>
+<div class="section1" id="GUID-196466C3-1465-4A20-8E81-3B1CF2E449CA" purpose="section1"><h2>Create a controller widget folder structure</h2></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-AB88F414-FC38-4A7C-BDD7-21F4824DA94A"><div class="step_title">Steps:</div><ol>
+<li purpose="step" id="GUID-F30500D2-F273-45D7-8C86-B41789E4294C">
+<span purpose="cmd" id="GUID-57E4D4C2-43B0-4EC5-B331-E5FA7C39A2D9">
+Open  the DemoTheme folder at <span class="usertext">~/client/stemapp/themes</span>.
+</span>
+</li>
+<li purpose="step" id="GUID-273038B2-0013-4976-8839-32973B2875C8"><span purpose="cmd" id="GUID-93D8C4A2-8C12-4EB9-86D1-9C8BE947B652">Create a new folder and name it <span class="usertext">widgets</span> if a widgets folder does not already exist.</span></li><li purpose="step" id="GUID-BAA8397A-B633-4EA7-99E4-79C1428A4909"><span purpose="cmd" id="GUID-18B69E01-364A-4785-A0A1-5673E50705CA">Copy the Demo widget folder from <span class="usertext">~/client/stemapp/widgets/samplewidgets</span> to the widgets folder and change its name to <span class="usertext">SidebarController</span>. The widgets folder should look similar to the following:</span><div class="stepexample" purpose="stepexample"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-65A0E8EE-01C5-46B1-9B5C-E441D61045F1-web.png" purpose="img" alt="widgets folder" title="widgets folder"></td></tr></table></div><div class="notes" id="GUID-D7A25437-2D6C-4342-8285-CD0E129A4522"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-53FFE5AF-8F42-42FD-B9D3-D166BBDE96AA">The Demo folder provides all the required files and folders to create a custom widget.</p></div></div></div></li><li purpose="step" id="GUID-09C3BF3F-48F0-4D37-8A6A-05CAC31E4F41"><span purpose="cmd" id="GUID-637AA3B6-2DD4-4D6C-866C-B596862E98E7">Update the general information for the SidebarController widget, such as its name and label in the manifest.json and nls/string.js files as needed.</span></li><li purpose="step" id="GUID-C5628D4F-99A9-4D42-A3C5-6D59A4C3DC53"><span purpose="cmd" id="GUID-529D674B-8F9F-42DA-9434-30A652ED92F2">In the manifest.json file, add the following properties to inform Web AppBuilder that this is a controller widget:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&quot;properties&quot;: {
+    &quot;inPanel&quot;: false,
+    &quot;isController&quot;: true,
+    &quot;isThemeWidget&quot;: true
+  }
+</code></pre></div>
+</div></div></li></ol></div></div>
+<div class="section1" id="GUID-BBD17FE0-0297-4112-A12A-D4B6F7F338E0" purpose="section1"><h2>Add SidebarController to the default layout</h2></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-6E158A9F-4138-4AAC-97F1-C785928A39BA"><div class="step_title">Steps:</div><ol><li purpose="step" id="GUID-90F90487-9744-45FF-B533-09765607459A"><span purpose="cmd" id="GUID-4AAE260C-3743-49D8-8822-B13F010A6726">Open the config.json file from the <span class="usertext">~/client/stemapp/themes/DemoTheme/layouts/default</span> folder.</span></li><li purpose="step" id="GUID-34D71A2D-388D-49EB-83C4-AB6C8271F850"><span purpose="cmd" id="GUID-FCF071D3-E651-4687-AC46-A1BC3977D79E">Add the following configuration to the widgets array in the widgetOnScreen section:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+      &quot;uri&quot;: &quot;themes/DemoTheme/widgets/SidebarController/Widget&quot;,
+      &quot;position&quot;: {
+        &quot;left&quot;: 0,
+        &quot;top&quot;: 0,
+        &quot;bottom&quot;: 0,
+        &quot;width&quot;: 50,
+        &quot;relativeTo&quot;: &quot;browser&quot;
+      }
+    }
+</code></pre></div>
+</div><p id="GUID-BE206D6D-DA1F-4D13-8092-B7ACA1F251D6">The controller is placed at the left of the screen with a width of 50 pixels and a height of 100 percent of the browser window.</p></div></li><li purpose="step" id="GUID-3025BC38-1220-4E43-B75F-9ED35097E602"><span purpose="cmd" id="GUID-D5D75ADA-4633-4412-88B0-809939AFE62B">Reposition other on-screen widgets and widget placeholders to make space for SidebarController by adding 60 pixels to their left values. 
+For example, the left value of the Scalebar widget is increased from 25 to 85.
+</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+      &quot;uri&quot;: &quot;widgets/Scalebar/Widget&quot;,
+      &quot;position&quot;: {
+        &quot;left&quot;: 85,
+        &quot;bottom&quot;: 25
+      }
+    }
+</code></pre></div>
+</div></div></li><li purpose="step" id="GUID-4389B843-FE1A-4028-9B1F-0748650EEBF6"><span purpose="cmd" id="GUID-F8260D56-B18D-4786-B4DC-7AA4F60DAB6E">Reload the Web AppBuilder app, and choose DemoTheme. </span><div class="stepresult" purpose="stepresult"><p id="GUID-E6857FDD-4F30-4C0E-9DA4-59C9E0057085">The SidebarController widget is added as shown below.</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-70DCF00F-57EC-4215-8DA6-0693EBF68318-web.png" purpose="img" alt="SidebarController widget" title="SidebarController widget"></td></tr></table></div><p id="GUID-8CE78E66-8464-493E-9C77-D6FA2BB61A1C">The SidebarController widget still displays the sample content from the Demo widget, and there are no styles added yet. </p><p id="GUID-5D0184C8-8443-4053-BF0E-FBEC294D4B87">In addition, the controller configuration option is available as shown below.</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-4C51C5E4-FCE9-4BEF-A49F-53C81DF879BF-web.png" purpose="img" alt="Configuration option" title="Configuration option"></td></tr></table></div></div></li></ol></div></div><div class="section1" id="GUID-A2F59CE9-F6B6-4BA1-BB12-8FFF80396FF0" purpose="section1"><h2>Customize the controller template</h2><p id="GUID-669656BA-59A3-4237-BBB7-00E520C26C14">The widget.html file contains the HTML structure of the controller. In this section, you'll remove any sample code from the Demo widget and add a new dom element to contain widget icons that will be added when the app loads.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-7DC5FDB2-BC7C-4616-9777-780A95C19AEC"><div class="step_title">Steps:</div><ol><li purpose="step" id="GUID-C734A208-B317-4E43-9979-B5ADA1CEC0C8"><span purpose="cmd" id="GUID-0185C309-91C6-4261-9385-DD986BCCEA5A">Open widget.html in the SidebarController folder and replace the content with the following:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>&lt;div&gt;
+  &lt;div data-dojo-attach-point=&quot;containerNode&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+</div><div class="notes" id="GUID-F7205647-4157-462E-B7E2-711BCA39D533"><div class="caution"><img class="note_img" src="rsrc/caution.png" alt="Caution" title="Caution"><span>Caution:</span></div><div class="tipbody"><p id="GUID-8C10E65D-FFA5-4FC9-A4E9-A5549AE679B4">Don’t reload Web AppBuilder yet,  because widget.js is still looking for the previous value of data-dojo-attach-point that was removed from the template.</p></div></div></div></li></ol></div></div><div class="section1" id="GUID-344FA5FC-7471-40A5-9BB4-4511B3B55A49" purpose="section1"><h2>Customize the controller widget</h2><p id="GUID-8E87B046-30BF-4BE7-8087-32FBA114685E">The widget.js file contains the basic widget life cycle methods and event handlers such as postCreate, startup, onSignIn, and onSignOut.</p></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_30AF50906CAB48D19782CA51B687FBC3"><div class="step_title">Steps:</div><ol><li purpose="step" id="ESRI_STEP_9D223B7C707340019692F7904534F193"><span purpose="cmd" id="GUID-88212BC4-5548-47FA-B6E8-FD056E165CCF">Set the controller’s base class name or names.</span><div class="info" purpose="info"><p id="GUID-5D7A0443-F8EF-4C74-92D5-57DF5338C467">Find the <span class="usertext">baseClass</span> property and change its name to <span class="usertext">jimu-widget-sidebar-controller</span>. This class name will help  target the controller widget when you define its CSS styles. Add another class called <span class="usertext">jimu-main-background</span> from the <span class="usertext">Jimu</span> class framework to help create multiple styles.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>baseClass: &#39;jimu-widget-sidebar-controller jimu-main-background&#39;,
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_7E783C38EC80498CA052F48AF9064693"><span purpose="cmd" id="GUID-2293D14E-36FF-4D09-8C22-0920A8E51158">Remove the following unused event handlers since they don't apply to the SidebarController widget:</span><ul purpose="choices" id="ESRI_CHOICES_92DC7928651849B29D316618AC663E4C"><li purpose="choice" id="ESRI_CHOICE_08981D9CF0054E7F9B64C9E4400855EF">onOpen</li><li purpose="choice" id="ESRI_CHOICE_B2D6C0BD5C61462CB1B54FA7313EED97">onClose</li><li purpose="choice" id="ESRI_CHOICE_3D7762D86FBD4318A137F17864F96F73">onMinimize</li><li purpose="choice" id="ESRI_CHOICE_93CC343F9E57494E976F27C4C4111A60">onMaximize</li><li purpose="choice" id="ESRI_CHOICE_1BA9832B3797409FB2CBF5FA00DA050E">onSignIn</li><li purpose="choice" id="ESRI_CHOICE_0B25C806439041F2AF36298B44758CBF">onSignOut</li></ul></li><li purpose="step" id="ESRI_STEP_663ABE9C38144A8A8203CE3622FF61F2"><span purpose="cmd" id="GUID-D7E6CC83-A370-4238-B04A-7691C8F2D412">Remove the following line of unused code from the <span class="usertext">startup</span> method:</span><div class="info" purpose="info"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="k">this</span><span class="p">.</span><span class="nx">mapIdNode</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;map id:&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_5B174CEEE4624F48808BB618808FE33B"><span purpose="cmd" id="GUID-2A9F401C-0A38-4C03-9B24-E74F91A783FB">Open Web AppBuilder, create a new app, and choose the Demo theme. </span><div class="stepresult" purpose="stepresult"><p id="GUID-7682142F-BD8B-422D-8455-43003A3D5848">The SidebarController widget appears as a red vertical bar on the left side of the screen as shown below.<div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-C73033EB-F87F-4117-A498-F5E653EAD1EE-web.png" purpose="img" alt="SidebarController widget in red" title="SidebarController widget in red"></td></tr></table></div></p><div class="notes" id="GUID-FED0ECDB-FA24-48B0-BC02-4FAB8CCB0EB0"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-42DC878E-ABEE-44A6-A48D-B5593D254A55">The red background color is from the default  style of DemoTheme that contains a CSS rule targeting the class name <span class="usertext">jimu-main-background</span>.</p></div></div></div></li><li purpose="step" id="ESRI_STEP_9C75A8A643194431BC5C8D9017B9A1A3"><span purpose="cmd" id="GUID-6E2685B0-8A7B-407F-9456-CC58E005B7C4">Read the app’s config file and populate the widget and group icons from widgetPool.</span><div class="substeps" id="ESRI_SUBSTEPS_09DECC4211DD479C8398539515601F00" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_B89A594D0D7C4B6D895211FF120A2A3A"><span purpose="cmd" id="GUID-CF5677C5-81C3-4498-9513-969E801E7EDD">Add <span class="usertext">jimu/PoolControllerMixin</span> to the array of class declarations in widget.js.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;dojo/_base/declare&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;jimu/PoolControllerMixin&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;jimu/BaseWidget&#39;</span><span class="p">],</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">declare</span><span class="p">,</span> <span class="nx">PoolControllerMixin</span><span class="p">,</span> <span class="nx">BaseWidget</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">declare</span><span class="p">([</span><span class="nx">BaseWidget</span><span class="p">,</span> <span class="nx">PoolControllerMixin</span><span class="p">],</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_F931809AAFBD4B46B0DC5DEC70A771B5"><span purpose="cmd" id="GUID-E7F1AE60-8C93-4359-8EFC-DF856E96E086">Declare a new widget property called <span class="usertext">allConfigs</span> along with an empty array as its value.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">allConfigs</span><span class="o">:</span> <span class="p">[],</span>
+</code></pre></div>
+</div><p id="GUID-CE196073-C3EC-4A51-889E-5523A7A379E0">In the <span class="usertext">postCreate</span> method, call <span class="usertext">getAllConfigs</span> provided by <span class="usertext">PoolControlerMixin</span> to get configurations for all the widgets and groups defined in the widget pool, and assign its returned value to <span class="usertext">this.allConfigs</span>.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="k">this</span><span class="p">.</span><span class="nx">allConfigs</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getAllConfigs</span><span class="p">();</span>
+</code></pre></div>
+</div><div class="notes" id="GUID-6108D59B-3D85-4025-8D35-886365A661A0"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-0BE8CB4D-63BF-4749-8DB2-89E0BB723012">See <a class="xref" rel="03w3/03w300000070000000.htm" href="03w3/03w300000070000000.htm">Create a controller widget</a> for  all the methods provided by <span class="usertext">PoolControlerMixin</span>.</p></div></div></div></li><li purpose="substep" id="ESRI_SUBSTEP_0B2D26F6FCE8442DB71C81AF8DE10532"><span purpose="cmd" id="GUID-CD3BF5F3-C25B-418E-B465-B3FE3A91ADA2">Declare a new method called <span class="usertext">_createIconNode</span>, and add logic to create HTML elements for widget and group icons in SidebarController.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_createIconNode</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">,</span> <span class="nx">targetNode</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">iconNode</span><span class="p">,</span> <span class="nx">iconImage</span><span class="p">;</span>
+      <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">targetNode</span><span class="p">)</span> <span class="nx">targetNode</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">containerNode</span><span class="p">;</span>
+
+      <span class="nx">iconNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;DIV&#39;</span><span class="p">);</span>
+      <span class="nx">iconNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">&#39;icon-node&#39;</span><span class="p">;</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">.</span><span class="nx">icon</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">iconImage</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">);</span>
+        <span class="nx">iconImage</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">iconConfig</span><span class="p">.</span><span class="nx">icon</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">.</span><span class="nx">label</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">iconNode</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">iconConfig</span><span class="p">.</span><span class="nx">label</span><span class="p">;</span>
+        <span class="nx">iconImage</span><span class="p">.</span><span class="nx">alt</span> <span class="o">=</span> <span class="nx">iconConfig</span><span class="p">.</span><span class="nx">label</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="nx">iconNode</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">iconImage</span><span class="p">);</span>
+      <span class="nx">targetNode</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">iconNode</span><span class="p">);</span>
+
+      <span class="k">return</span> <span class="nx">iconNode</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_AFC14DC9D89D470991825E7D3282C65D"><span purpose="cmd" id="GUID-FAF9CFA7-24F0-4E69-B03A-297A51A12753">Loop through <span class="usertext">this.allConfigs</span> and call <span class="usertext">_createIconNode</span> to add widget and group icons to the UI in the <span class="usertext">postCreate</span> method.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">postCreate</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;postCreate&#39;</span><span class="p">);</span>
+
+  <span class="k">this</span><span class="p">.</span><span class="nx">allConfigs</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getAllConfigs</span><span class="p">();</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">allConfigs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_createIconNode</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">allConfigs</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_5CF3E81F238540518DD8FB9EDB8A06CC"><span purpose="cmd" id="GUID-FC086BAA-203A-416A-915E-5FC02952D922">Restart Web AppBuilder, choose Demo theme, and add a few widgets and groups to SidebarController. The icons of widgets and groups display in the sidebar as shown below.</span><div class="stepexample" purpose="stepexample"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-9161CAD2-1337-4D73-8B18-7AC75A2D81FC-web.png" purpose="img" alt="Icons of widgets and groups display in SidebarController" title="Icons of widgets and groups display in SidebarController"></td></tr></table></div></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_83F0121BF27140338906A4A8B5259994"><span purpose="cmd" id="GUID-4A1A9C94-65FD-4E96-AE6D-A4A2FF775BF2">Display a widget in a panel when the widget icon is clicked.</span><div class="info" purpose="info"><p id="GUID-D99BC038-7884-4C0C-8F3A-F117830C63C5"><span class="usertext">jimu/PoolControllerMixin</span> provides an instance of <span class="usertext">jimu/PanelManger</span> that can be accessed in widget.js by  <span class="usertext">this.panelManager</span>. When you pass a widget’s configuration in the <span class="usertext">showPanel</span> method, the widget displays in the panel configured in the widget pool, or in the Jimu’s default on-screen panel.</p></div><div class="substeps" id="ESRI_SUBSTEPS_BBE4760783494E1B8F7F4244FDF03B85" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_96946A40D596417A8FBA1408BA295168"><span purpose="cmd" id="GUID-6D90D8CA-FA4A-416B-95F8-C136841FF03C">Declare a new method in widget.js and add logic to open a widget in a panel.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_showWidgetContent</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">panelManager</span><span class="p">.</span><span class="nx">showPanel</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div><div class="notes" id="GUID-592893E4-3F35-4C36-8C82-A7BBD86E1899"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-3E924E83-41BC-475A-95EA-82DCCDC1D9F3">The above code does not support off-panel widgets when the <span class="usertext">inPanel</span> property is set to false. You can use the following code to access the content of an off-panel widget and manually add its dom node to the interface. Note, however, it does not support groups.</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">iconConfig</span><span class="p">.</span><span class="nx">inPanel</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">widgetManager</span><span class="p">.</span><span class="nx">loadWidget</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">widget</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// add code to display off-panel widgets here</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">widgetManager</span><span class="p">.</span><span class="nx">openWidget</span><span class="p">(</span><span class="nx">widget</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></div></div> </div></li><li purpose="substep" id="ESRI_SUBSTEP_46BDD54281CE415898A442002EE99B27"><span purpose="cmd" id="GUID-EC48682C-362A-4A15-ABCE-96259F5E7D23">Attach the onclick event handler to icon nodes, and call  <span class="usertext">_showWidgetContent</span> to open the widget. 
+In the <span class="usertext">_createIconNode</span> method, add the following code before  return <span class="usertext">iconNode</span>:
+</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">own</span><span class="p">(</span><span class="nx">on</span><span class="p">(</span><span class="nx">iconNode</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">self</span><span class="p">.</span><span class="nx">_showWidgetContent</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">);</span>
+<span class="p">}));</span>
+</code></pre></div>
+</div><div class="notes" id="GUID-97E81698-E77D-4EE0-8B43-67BAEF0E83C9"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-AB1429D2-DF74-499F-ABE1-4B10C4EDF9FF"> Make sure that the <span class="usertext">dojo/on</span> class has been declared at the beginning of the file.</p></div></div></div></li><li purpose="substep" id="ESRI_SUBSTEP_5BF4C46F10854B1C98D1A73BB1E77169"><span purpose="cmd" id="GUID-D6B621D2-31C3-4E82-986C-B3AD04B9E67A">Use SimpleBorderPanel as the default panel in widgetPool. Open the config.json file in the default layout folder, and add the following code after the map section:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="s2">&quot;widgetPool&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;panel&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;uri&quot;</span><span class="o">:</span> <span class="s2">&quot;themes/DemoTheme/panels/SimpleBorderPanel/Panel&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;left&quot;</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;bottom&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;width&quot;</span><span class="o">:</span> <span class="mi">300</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>
+</div><p id="GUID-7A61C215-3F72-44C2-ACE3-F34C896C4D9C">The panel will be placed next to the SidebarController widget when opened.</p></div></li><li purpose="substep" id="ESRI_SUBSTEP_597CBF553EA34CD6A8ACFC57A0F9A9B6"><span purpose="cmd" id="GUID-58FAFF8B-34D0-403A-8C2E-EA47BAA0F570">Add functionality to close an open panel when a different icon is clicked.</span><div class="info" purpose="info"><ol purpose="ol" id="OL_88211613CAD249908D149F8E5A859A98"><li purpose="li" id="LI_F96F12E725904C9DA0BB23606BA29D15">Add a new widget property called <span class="usertext">openedWidgetId</span> to store the current open widget ID. <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">openedWidgetId</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</code></pre></div>
+</div></li><li purpose="li" id="LI_B8D5A82A11E4492783FE7F57B15597AF">	In the <span class="usertext">_showWidgetContent</span> method, add code to close an open panel, and update <span class="usertext">openedWidgetId</span>.<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_showWidgetContent</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">openedWidgetId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">panelManager</span><span class="p">.</span><span class="nx">closePanel</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">openedWidgetId</span> <span class="o">+</span> <span class="s1">&#39;_panel&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">panelManager</span><span class="p">.</span><span class="nx">showPanel</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">openedWidgetId</span> <span class="o">=</span> <span class="nx">iconConfig</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></li></ol></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_243E6ACB227B41DEB7E630C668B02238"><span purpose="cmd" id="GUID-43BD034A-E9A0-4CAF-826E-1E3BC3FFB829">Create a new app in Web AppBuilder and choose Demo theme. Click the legend widget. </span><div class="stepresult" purpose="stepresult"><p id="GUID-DA15A30A-8E86-4715-9A8E-2D1D4D6E6612">The panel displays next to the sidebar.</p><p id="GUID-F165E567-653F-4EC9-99BE-EFD2A63D3473"><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-7285B4C6-56A3-4B66-902D-54AD83FC01CE-web.png" purpose="img" alt="The panel displays" title="The panel displays"></td></tr></table></div></p></div></li><li purpose="step" id="ESRI_STEP_0C52DCA98D1244C1ABA4E99C3AE72AF3"><span purpose="cmd" id="GUID-C0F2B9DF-7D6A-4326-92BC-1DD905191BAD">Add or remove the active state class name to or from icon nodes.</span><div class="substeps" id="ESRI_SUBSTEPS_D14FE01135D8408AA6B869A22F7755C8" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_B8D5B4A368CA455BAAE34121DE641546"><span purpose="cmd" id="GUID-6E6DAD11-BF49-4F64-9950-872A5E60CACE">Include <span class="usertext">dojo/dom-class</span> and <span class="usertext">dojo/query</span> in the array of class declarations.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;dojo/_base/declare&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dojo/on&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dojo/query&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dojo/dom-class&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;jimu/PoolControllerMixin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;jimu/BaseWidget&#39;</span>
+  <span class="p">],</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">declare</span><span class="p">,</span> <span class="nx">on</span><span class="p">,</span> <span class="nx">query</span><span class="p">,</span> <span class="nx">domClass</span><span class="p">,</span> <span class="nx">PoolControllerMixin</span><span class="p">,</span> <span class="nx">BaseWidget</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_C5CE6972824D4AA09AD3BD1076F57B62"><span purpose="cmd" id="GUID-448D6BF2-F490-4229-A59C-3AB585C4C445">Add the <span class="usertext">jimu-state-active</span> class name to the selected icon node in the icon node’s onclick event handler.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="k">this</span><span class="p">.</span><span class="nx">own</span><span class="p">(</span><span class="nx">on</span><span class="p">(</span><span class="nx">iconNode</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">domClass</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;jimu-state-active&#39;</span><span class="p">);</span>
+  <span class="nx">self</span><span class="p">.</span><span class="nx">_showWidgetContent</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">);</span>
+<span class="p">}));</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_0CC80231C7AE415A9E6D441DF4354E01"><span purpose="cmd" id="GUID-D9C74157-472B-478D-9969-3348372B0CA6">	Remove the <span class="usertext">jimu-state-active</span> class name from any existing icon node.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="k">this</span><span class="p">.</span><span class="nx">own</span><span class="p">(</span><span class="nx">on</span><span class="p">(</span><span class="nx">iconNode</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">query</span><span class="p">(</span><span class="s1">&#39;.jimu-state-active&#39;</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">domNode</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;jimu-state-active&#39;</span><span class="p">);</span>
+  <span class="nx">domClass</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;jimu-state-active&#39;</span><span class="p">);</span>
+  <span class="nx">self</span><span class="p">.</span><span class="nx">_showWidgetContent</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">);</span>
+<span class="p">}));</span>
+</code></pre></div>
+</div></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_10B1B50B6A024C14923F3BC88B247DEE"><span purpose="cmd" id="GUID-110B0CF0-0E67-4422-BF89-38645FC35C19">Close an open panel when its active icon node is clicked.</span><div class="substeps" id="ESRI_SUBSTEPS_7AE2F941B8E8486D93022A32448BB492" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_D762BE38C57C4253B42BD481C9AD9F1C"><span purpose="cmd" id="GUID-DF911D5B-8A94-4B7F-B741-D8EC324EBD98">Add a new widget property called <span class="usertext">activeIconNode</span>.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">activeIconNode</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_274343B0C0E645C3A7A8B6A536EF6A60"><span purpose="cmd" id="GUID-25AE5F32-6EE6-4DE3-8F56-83B2B11B6F43">In the icon node’s onclick event handler, assign the currently selected icon node to <span class="usertext">activeIconNode</span>.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="k">this</span><span class="p">.</span><span class="nx">own</span><span class="p">(</span><span class="nx">on</span><span class="p">(</span><span class="nx">iconNode</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">query</span><span class="p">(</span><span class="s1">&#39;.jimu-state-active&#39;</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">domNode</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;jimu-state-active&#39;</span><span class="p">);</span>
+  <span class="nx">domClass</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;jimu-state-active&#39;</span><span class="p">);</span>
+  <span class="nx">self</span><span class="p">.</span><span class="nx">_showWidgetContent</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">);</span>
+  <span class="nx">self</span><span class="p">.</span><span class="nx">activeIconNode</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}));</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_04F4DE6ACAEF4A34B1359F033779A336"><span purpose="cmd" id="GUID-4A8116C4-134D-456A-9625-8E5BEBE09F3E">Add logic to check whether the currently clicked node is the active icon node, and close its panel if true.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="k">this</span><span class="p">.</span><span class="nx">own</span><span class="p">(</span><span class="nx">on</span><span class="p">(</span><span class="nx">iconNode</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">query</span><span class="p">(</span><span class="s1">&#39;.jimu-state-active&#39;</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">domNode</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;jimu-state-active&#39;</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">activeIconNode</span> <span class="o">===</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">panelManager</span><span class="p">.</span><span class="nx">closePanel</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">&#39;_panel&#39;</span><span class="p">);</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">activeIconNode</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">domClass</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;jimu-state-active&#39;</span><span class="p">);</span>
+  <span class="nx">self</span><span class="p">.</span><span class="nx">_showWidgetContent</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">);</span>
+  <span class="nx">self</span><span class="p">.</span><span class="nx">activeIconNode</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}));</span>
+</code></pre></div>
+</div></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_31D891D1274B4ECFB97398B6434D0E34"><span purpose="cmd" id="GUID-61FCB562-7267-4EA8-950D-7AA02A268EE3">Remove the active state from an icon node when its panel is closed</span><div class="substeps" id="ESRI_SUBSTEPS_A01960C827E94FB0A795C071B7BA1BEB" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_F0AFAC92D4DA49CF8AEBEE2E2598A144"><span purpose="cmd" id="GUID-A595CD81-C03C-401B-9B0A-CCB71D849B51">Add callback functions to <span class="usertext">this.panelManager.showPanel</span>.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_showWidgetContent</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">iconConfig</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">openedWidgetId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">panelManager</span><span class="p">.</span><span class="nx">closePanel</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">openedWidgetId</span> <span class="o">+</span> <span class="s1">&#39;_panel&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">panelManager</span><span class="p">.</span><span class="nx">showPanel</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">widget</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// the panel displays successfully</span>
+  <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// the panel failed to display</span>
+  <span class="p">});</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">openedWidgetId</span> <span class="o">=</span> <span class="nx">iconConfig</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+<span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_4736BDE7344E45398D11603C0327E238"><span purpose="cmd" id="GUID-D7317EAF-EE32-4022-8D50-4F13FAFBFDF7">In the success callback function, add an event handler to the widget’s onClose event to remove the active state from the selected icon node.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_showWidgetContent</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">iconConfig</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">openedWidgetId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">panelManager</span><span class="p">.</span><span class="nx">closePanel</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">openedWidgetId</span> <span class="o">+</span> <span class="s1">&#39;_panel&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">panelManager</span><span class="p">.</span><span class="nx">showPanel</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">widget</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// the panel displays successfully</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">own</span><span class="p">(</span><span class="nx">on</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="nx">widget</span><span class="p">,</span> <span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">domClass</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">activeIconNode</span><span class="p">,</span> <span class="s1">&#39;jimu-state-active&#39;</span><span class="p">);</span>
+      <span class="nx">self</span><span class="p">.</span><span class="nx">activeIconNode</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}));</span>
+  <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// the panel failed to display</span>
+  <span class="p">});</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">openedWidgetId</span> <span class="o">=</span> <span class="nx">iconConfig</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+<span class="p">},</span>
+</code></pre></div>
+</div><div class="notes" id="GUID-A24ED2EB-4C38-42D0-98E5-E189725E9013"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-83449345-71E6-4EDF-9512-E9D3830CEEEA">The above code removes the <span class="usertext">jimu-state-active</span> class from the currently selected icon node, which is the same icon node that opens the panel currently displaying. This may not be the case if multiple panels can be opened at the same time, such as with the Launchpad theme.</p></div></div></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_F1AEDF3F00C246529CAA9C3DDD0A850B"><span purpose="cmd" id="GUID-F198920B-C00E-4A84-9BF5-C8B8AD458C4D">Configure the widget  to open automatically when the app starts.</span><div class="info" purpose="info"><p id="GUID-2A610F4B-9763-4CF8-97DB-E6E20F833E38">A widget can open automatically when the app loads when <span class="usertext">openAtStart</span> is  true. You want this functionality with SidebarController.</p></div><div class="substeps" id="ESRI_SUBSTEPS_2B63CF2A768940E29991A031FDB369EE" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_B0AF3FB95C5B4CF3AA7F2AE3207FCBBD"><span purpose="cmd" id="GUID-DD040006-DF77-4B2C-B5DA-3888F0F755CF">Insert the following code after the icon node creation in the <span class="usertext">_createIconNode</span> method:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">_createIconNode</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">,</span> <span class="nx">targetNode</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">...</span>
+ <span class="nx">targetNode</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">iconNode</span><span class="p">);</span>
+  <span class="c1">// check if the widget is set to open at start</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">iconConfig</span><span class="p">.</span><span class="nx">openAtStart</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">activeIconNode</span> <span class="o">=</span> <span class="nx">iconNode</span><span class="p">;</span>
+    <span class="nx">domClass</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">iconNode</span><span class="p">,</span> <span class="s1">&#39;jimu-state-active&#39;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_showWidgetContent</span><span class="p">(</span><span class="nx">iconConfig</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="p">...</span>
+<span class="p">},</span>
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_4614F67A394A4F7EB7D76BEF382A4312"><span purpose="cmd" id="GUID-D4A73095-E2BE-46A2-9198-D08263B90141">Restart Web AppBuilder. Set a widget in the controller to open at start by turning on the dot to dark green. Refresh the page, and the widget should automatically open when the app loads.</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_9E409E09B6D44E1BBB3A3697E0929453"><span purpose="cmd" id="GUID-66EF3628-753D-445B-88AD-EF5806364ED4">Handle group icons.</span><div class="info" purpose="info"><p id="GUID-B0ABF253-08B0-4397-9B7B-2A7A5648AE12">Different controllers handle widget groups and opening their widgets differently. In this example, widgets in a group will have the following in common:</p><ul purpose="ul" id="UL_B6CA9A8F610441D29BF458B583EB1B84"><li purpose="li" id="GUID-ED7964ED-2235-48AB-A858-777FA7DB5D81">Their icons will be wrapped in a ToolTip container.</li><li purpose="li" id="GUID-BBA10FE3-15B4-415C-9A9F-C5E0BEC3E74C">When a widget in a group is clicked, the icon of the group will be replaced by the currently selected widget icon, and the SimpleBorderPanel is displayed with its content.</li></ul></div><div class="substeps" id="ESRI_SUBSTEPS_003EA655B9AA4FD9A94649F075E5E3CE" purpose="substeps"><ol><li purpose="substep" id="ESRI_SUBSTEP_AD122C52D0424F5C9BE2C3CF820D9685"><span purpose="cmd" id="GUID-7587FCD9-9912-4D12-9635-1B1D62376E0F">Declare a new widget property called <span class="usertext">groupTooltips</span> along with an empty object as its value. This property will store all ToolTips created for the widget group.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>groupTooltips: {},
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_4936E840DB3C40D1A1B3EE5417303185"><span purpose="cmd" id="GUID-B331510B-47BD-4909-AAD0-0FA58F480A19">Create a new method called <span class="usertext">_isGroupIcon</span> to check whether an icon is a group icon.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>_isGroupIcon: function(iconConfig) {
+  return iconConfig.widgets &amp;&amp; iconConfig.widgets.length &gt; 1;
+}
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_3E07A0D14DE2434BAECE04C82A49E713"><span purpose="cmd" id="GUID-324AB799-8AA4-4ADF-AB9D-ADA81EDDF84C">	In the <span class="usertext">_createIconNode</span> method, after the <span class="usertext">if (iconConfig.openAtStart) {}</span> statement, add a new if statement to check whether the current icon is a group icon. If it is, create a new ToolTip, loop through the widget icons and add them to the ToolTip. Then store the ToolTip in the <span class="usertext">this. groupTooltips </span>array</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>_createIconNode: function(iconConfig, targetNode) {
+  ...
+  if (iconConfig.openAtStart) {...}
+  // check if the icon is a group icon
+  if(this._isGroupIcon(iconConfig)) {
+    // if group&#39;s tooltip has not been created yet
+    if(!this.groupTooltips[iconConfig.id]) {
+      // create group tooltip and its content
+     var groupTooltip = document.createElement(&#39;div&#39;);
+      groupTooltip.className = &#39;group-tooltip&#39;;
+      document.body.appendChild(groupTooltip);
+      for(var i = 0; i &lt; iconConfig.widgets.length; i++) {
+        this._createIconNode(iconConfig.widgets[i], groupTooltip);
+      }
+      this.groupTooltips[iconConfig.id] = groupTooltip;
+    }
+  }
+  ...
+},
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_907EA8A5B2C3488084EB84E02110BFD1"><span purpose="cmd" id="GUID-21F527D5-E254-413A-8E1F-A12AFD2D3E64">In the icon node’s onclick event handler, add additional logic to handle clicking a group icon.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>this.own(on(iconNode, &#39;click&#39;, function() {
+  // remove active state from any icon node
+  query(&#39;.jimu-state-active&#39;, self.domNode).removeClass(&#39;jimu-state-active&#39;);
+  // close panel
+  self.panelManager.closePanel(self.openedWidgetId + &#39;_panel&#39;);
+  // close group tooltips
+  query(&#39;.group-tooltip&#39;).removeClass(&#39;show&#39;);
+  // if clicked on an active icon node
+  if(self.activeIconNode === this) {
+    self.activeIconNode = null;
+    return;
+  }
+  // clicking on a group icon
+  if (self._isGroupIcon(iconConfig)) {
+    self.openedWidgetId = null;
+    domClass.add(self.groupTooltips[iconConfig.id], &#39;show&#39;);
+  } else { // clicking on a widget icon
+    // show panel
+    self._showWidgetContent(iconConfig);
+  }
+    domClass.add(this, &#39;jimu-state-active&#39;);
+    self.activeIconNode = this;
+}));
+</code></pre></div>
+</div></div></li><li purpose="substep" id="ESRI_SUBSTEP_1C39CE142B054179A8BA31DA5621A9BF"><span purpose="cmd" id="GUID-2638D2B9-F362-44F0-97B4-18CF3E47475E">Reposition the ToolTip when opened.</span><div class="info" purpose="info"><ol purpose="ol" id="OL_6B60BB8E721741D1BC4587CD03F6AB95"><li purpose="li" id="LI_4977D13792BA4A18B70CC1BA5DCAB208">Add the following styles to the SidebarController widget’s style.css files: <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.group-tooltip {
+  display: none;
+  position: absolute;
+  background: #000;
+}
+.group-tooltip.show {
+  display: block;
+}
+.group-tooltip .icon-node {
+  display: inline-block;
+}
+</code></pre></div>
+</div></li><li purpose="li" id="LI_C7514B73F84343EBB3D8497F1B1107A3">Add a new method called <span class="usertext">_positionTooltip</span>.<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>_positionTooltip: function(tooltip, iconNode) {
+  var iconBoundingRect = iconNode.getBoundingClientRect();
+  tooltip.style.top = iconBoundingRect.top + &#39;px&#39;;
+  tooltip.style.left = (iconBoundingRect.width || iconNode.clientWidth) + &#39;px&#39;;
+}
+</code></pre></div>
+</div></li><li purpose="li" id="LI_7C461D93E8C64196BF33AE8173CC9BDE">Call the <span class="usertext">_positionTooltip</span> method when a group icon is clicked.<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>this.own(on(iconNode, &#39;click&#39;, function() {
+  // clicking on a group icon
+  if (self._isGroupIcon(iconConfig)) {
+    self.openedWidgetId = null;
+    self._positionTooltip(self.groupTooltips[iconConfig.id], this);
+    domClass.add(self.groupTooltips[iconConfig.id], &#39;show&#39;);
+  } else { // clicking on a widget icon
+    ...
+  }
+  ...
+}));
+</code></pre></div>
+</div></li></ol></div></li></ol></div><div class="stepresult" purpose="stepresult"><p id="GUID-BAE52BCD-E0C6-4062-A98C-FB2733FA2FF4">Your result should look similar to the following:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-4686EF8D-A198-4D19-B2E1-AEE97F628E04-web.png" purpose="img" alt="Group icon" title="Group icon"></td></tr></table></div></div></li></ol></div></div><div class="section1" id="GUID-64838CA4-A3FF-4A36-A0BB-CEC687271569" purpose="section1"><h2>Add CSS styles</h2><p id="GUID-FAA08321-C77B-406E-8A93-0CFE975B45D5">You can add the following CSS styles to the SidebarController widget:</p><ul purpose="ul" id="UL_A882BA022A584F298C5F97FD9AE1430A"><li purpose="li" id="GUID-38E40321-7181-4F7C-AB5C-AF0D67C0F9E1">style.css from the<span class="usertext">~/client/stemapp/themes/DemoTheme/widgets/SidebarController/css</span> folder—The  widget-specific style regardless of the theme or style.</li><li purpose="li" id="GUID-89B782EA-05A7-463C-BECC-505FF0683DBF">common.css from the <span class="usertext">~/client/stemapp/themes/DemoTheme</span> folder—The common CSS styles apply to all styles in the Demo theme.</li><li purpose="li" id="GUID-0743B847-8177-424E-9CA0-4DA4D176B39A">style.css from the <span class="usertext">path/to/WAB/client/stemapp/themes/DemoTheme/styles/{styleName}</span> folder—The CSS styles are only applied when a certain style is selected.</li></ul><p id="GUID-EA0D05F9-787D-4FF5-8D74-ED186B5C9B2A">For the SidebarController widget, the CSS styles will be added to the following:</p><ul purpose="ul" id="UL_6E81BC9A3D6D48B2B8FB9A5401E58E26"><li purpose="li" id="GUID-294A1975-AA0D-47FD-A9BD-75AFF0E6B28B">The style.css file in the SidebarController folder—Contains only the minimal styles for the layout purpose.</li><li purpose="li" id="GUID-2E1565C9-CB66-410B-9988-E0FCE4664440">	The style.css in the Default style folder—Defines the details of the widget UI.</li></ul></div><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-85BB701E-5A93-41FC-96B0-5ACE983EE900"><div class="step_title">Steps:</div><ol><li purpose="step" id="GUID-05FEC344-C5CF-49B8-B809-5784778CCA32"><span purpose="cmd" id="GUID-1617AA0D-A17F-4E92-A444-529B7E87F130">Open style.css from <span class="usertext">~/client/stemapp/themes/DemoTheme/widgets/SidebarController/css</span>, and replace the content with the following CSS rules:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.icon-node {
+  min-width: 50px;
+  padding: 12px 5px;
+  text-align: center;
+}
+.icon-node img {
+  width: 80%;
+  max-width: 24px;
+}
+.icon-node.jimu-state-active {
+  background: #000;
+}
+.group-tooltip {
+  display: none;
+  position: absolute;
+  background: #000;
+}
+.group-tooltip.show {
+  display: block;
+}
+.group-tooltip .icon-node {
+  display: inline-block;
+}
+</code></pre></div>
+</div><p id="GUID-EC5C6908-D24D-4129-BA4D-032480518501">Your result should look similar to the following:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-BE5B1BBD-FA9F-4F26-BBF2-00F2E585D046-web.png" purpose="img" alt="CSS rules" title="CSS rules"></td></tr></table></div></div></li><li purpose="step" id="GUID-8BC950C4-1F29-485C-A45E-A7001C0159AF"><span purpose="cmd" id="GUID-7107CC5D-5C18-4C7B-99F0-50C7212A5547">Replace the styles with the following code  in style.css from <span class="usertext">~\client/stemapp/themes/DemoTheme/styles/default</span>:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-main-background {
+  background-color: #323232;
+}
+
+.icon-node img {
+  opacity: 0.65;
+}
+
+.icon-node.jimu-state-active {
+  background-color: #111;
+  position: relative;
+}
+
+.icon-node.jimu-state-active:before {
+  content: &quot;&quot;;
+  display: block;
+  height: 100%;
+  width: 3px;
+  background-color: #2196F3;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.icon-node.jimu-state-active:after {
+  content: &quot;&quot;;
+  display: block;
+  height: 0;
+  width: 0;
+  border-width: 4px 4px 4px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  margin-top: -4px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.icon-node:hover img,
+.icon-node.jimu-state-active img,
+.group-tooltip .icon-node.jimu-state-active:hover img {
+  opacity: 1;
+}
+
+.group-tooltip {
+  background-color: #111;
+  border-left: 2px solid #fff;
+}
+
+.group-tooltip .icon-node.jimu-state-active:before,
+.group-tooltip .icon-node.jimu-state-active:after {
+  content: none;
+}
+
+.group-tooltip .icon-node.jimu-state-active img {
+  opacity: 0.65;
+}
+
+.jimu-border-panel {
+  border: 0;
+  -webkit-box-shadow: 1px 0 0.5px rgba(0,0,0,0.2), 1px 0 2px rgba(0,0,0,0.07);
+  box-shadow: 1px 0 0.5px rgba(0,0,0,0.2), 1px 0 2px rgba(0,0,0,0.07);
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-6D360D30-9165-433F-BB02-70441674A621">Your result should look similar to the following:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-F57DF804-C11E-48AB-994E-6F5F6B8F9ECF-web.png" purpose="img" alt="Final result" title="Final result"></td></tr></table></div></div></li></ol></div></div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

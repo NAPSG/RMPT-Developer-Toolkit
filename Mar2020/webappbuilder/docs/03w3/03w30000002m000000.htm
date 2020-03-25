@@ -1,0 +1,66 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn about the Draw
+widget's configurable attributes."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Draw</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-BF74D038-314A-4715-9C52-49116FA08C42]--><body><div id="content"><div class="header"><h1>
+Draw</h1><div id="breadcrumb"></div></div>
+<p id="GUID-D8B957CA-ACD5-429E-9FD7-8818FE515A1A">
+The Draw widget enables you to draw basic graphics and text on the map.
+</p><p id="GUID-523AC810-5DB9-4E94-B760-343F65EE5B98">The following table lists the configurable attributes of the Draw widget:</p><p id="GUID-BD99F4F2-BFE3-4441-AC2B-05F9E2363762"><div class="block_table" id="TABLE_96CAEB3DEA794033B2C6FB25A58FE288" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-9BD38CBA-C4B3-4F2B-97D5-C923CAFDF912">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-1087F6E4-AD2D-4F27-A65A-0E769145CC91">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2C6ACF14-EB5F-44EF-B7C9-E3EE4E834800"><span class="usertext">distanceUnits</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6AA3BB69-116D-4ED7-82AE-CCF2032C7267">Object[]. There is no default. The units used to measure distance. The properties are as follows:<ul purpose="ul" id="UL_ABE446CD14DC4621A931A2EFFC2A345E"><li purpose="li" id="LI_39D8137E6E28449F9A7CC8C3A08E8F26"><span class="usertext">unit</span>—String. There is no default. The unit name.</li><li purpose="li" id="LI_C8BABD3EB421487394AFC230BDC5E8CA"><span class="usertext">abbr</span>—String. There is no default. The unit abbreviation.</li></ul></p><p id="GUID-E52DE60E-A424-47D9-BEF1-9116C06F5D26">Example: <div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>&quot;distanceUnits&quot;: [{
+  &quot;unit&quot;: &quot;KILOMETERS&quot;,
+  &quot;abbr&quot;: &quot;km&quot;
+}, {
+  &quot;unit&quot;: &quot;MILES&quot;,
+  &quot;abbr&quot;: &quot;mi&quot;
+}, {
+  &quot;unit&quot;: &quot;METERS&quot;,
+  &quot;abbr&quot;: &quot;m&quot;
+}, {
+  &quot;unit&quot;: &quot;FEET&quot;,
+  &quot;abbr&quot;: &quot;ft&quot;
+}, {
+  &quot;unit&quot;: &quot;YARDS&quot;,
+  &quot;abbr&quot;: &quot;yd&quot;
+}]
+</code></pre></div>
+</div></p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-197C40E7-8940-42E9-A31F-591B6A6ED2CF"><span class="usertext">areaUnits</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7BD9CD7D-4992-4155-958D-52E95FA8D012">Object[]. There is no default—The units used to measure area.</p><p id="GUID-9312A1E6-0242-4EFB-B877-F9D960CBBE35">The properties are as follows:<ul purpose="ul" id="UL_D0116AC326A94CE4B3D3C6B6CCBDCA7D"><li purpose="li" id="LI_5B178CDF7FB447EEBAB288D655B3E2AA"><span class="usertext">unit</span>—String. There is no default. The unit name.</li><li purpose="li" id="LI_06E95863A9D147AB8D74E830EFA6ECF3"><span class="usertext">abbr</span>—String. There is no default. The unit abbreviation.</li></ul></p><p id="GUID-4E631906-B086-460A-94EE-C97053F126EB">Example: <div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>&quot;areaUnits&quot;: [{
+  &quot;unit&quot;: &quot;SQUARE_KILOMETERS&quot;,
+  &quot;abbr&quot;: &quot;sq km&quot;
+}, {
+  &quot;unit&quot;: &quot;SQUARE_MILES&quot;,
+  &quot;abbr&quot;: &quot;sq mi&quot;
+}, {
+  &quot;unit&quot;: &quot;ACRES&quot;,
+  &quot;abbr&quot;: &quot;ac&quot;
+}, {
+  &quot;unit&quot;: &quot;HECTARES&quot;,
+  &quot;abbr&quot;: &quot;ha&quot;
+}, {
+  &quot;unit&quot;: &quot;SQUARE_METERS&quot;,
+  &quot;abbr&quot;: &quot;sq m&quot;
+}, {
+  &quot;unit&quot;: &quot;SQUARE_FEET&quot;,
+  &quot;abbr&quot;: &quot;sq ft&quot;
+}, {
+  &quot;unit&quot;: &quot;SQUARE_YARDS&quot;,
+  &quot;abbr&quot;: &quot;sq yd&quot;
+}]
+</code></pre></div>
+</div></p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E7E61FC4-F883-421B-9210-5B0904C1A21C"><span class="usertext">isOperationalLayer</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-01DB9FFE-A5B0-4695-BE9B-52BCD0A6F056">Boolean. The default value is false. If true, drawings are saved as feature layers.</p></td></tr></tbody><caption class="table_desc"></caption></table></div></p>
+
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

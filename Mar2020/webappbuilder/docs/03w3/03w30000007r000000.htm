@@ -1,0 +1,88 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The Reviewer Dashboard widget displays data quality result statistics as infographics—pie and bar charts—to summarize data quality issues identified in your GIS data."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Reviewer Dashboard
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-7C227C6E-E1DC-431E-85FB-8E3E13170000]--><body><div id="content"><div class="header"><h1>
+Reviewer Dashboard
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-42E57071-BDE7-443B-9B3E-8AA5EB5EB1F9">
+The Reviewer Dashboard widget displays data quality result statistics as infographics—pie and bar charts—to summarize data quality issues identified in your GIS data. The statistics represent total counts of results summarized by a field that allows you to understand the number and type of results present in your data.
+</p>
+<p id="GUID-8FE7A397-B22B-4F8E-825C-6093F3DB8010">The following table shows the descriptions of the Reviewer Dashboard widget configurable attributes.</p><div class="block_table" id="TABLE_0C79918A705044FE9BCD0E59B550ABE2" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tr purpose="thead"><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-A77BDF12-B0FB-4048-828B-8AB2850A5341">Attribute</p></th><th class="th" outputclass="" purpose="th" rowspan="1" colspan="1"><p id="GUID-16E658FB-C8CB-40F0-84DC-CF4720F240A4">Description</p></th></tr><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97268B88-43D8-412D-8F01-98E810710232"><span class="usertext">  drsSOEURL</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-450B2907-C359-4578-A5EF-F9110375CB72"> String. The URL to the Data Reviewer service.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A76C7DEA-509C-4EBB-85AE-C3604555D826"><span class="usertext">  includeGeographicFilter</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-588C9F7D-CD5C-4E00-82A1-1CD49140FE44">  Boolean. Whether to include filtering by polygon layer. The default is true.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A59C70C3-8BA4-41F7-B6E1-76535AB4C238"><span class="usertext">  numberChartSections</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-22386F4A-05BF-4E68-847F-D8D7641924B1"> Number. Defines the total number of slices or bars in the pie and bar chart. The default value is 5.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7FB52175-C21D-4253-B1B6-8B71682659D0"><span class="usertext"> selectUrl</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-61C799B4-CAC8-4F0E-9513-C5BEBCF7C64E"> String. If <span class="usertext">includeGeographicFilter</span> is true, enter the URL of the polygon map service for filtering.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F5C3E61D-3213-49D0-BB5A-1CCDE1D89542"><span class="usertext">   selectMapUrl</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8D70D9BA-0E23-4C61-9535-3BAFEDFC62DE"> String. If <span class="usertext">includeGeographicFilter</span> is true, enter the map service URL for filtering.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4E3B71A1-5C8A-439B-BAA8-451AD5A864B0"><span class="usertext">   geometryServiceURL</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D928E38C-5EB2-4D09-B564-CE90EF20E459"> String. If <span class="usertext">includeGeographicFilter</span> is true, enter  the geometry service URL for filtering option.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44F1BE3E-F21F-4FDF-9972-AE847C3E31AE"><span class="usertext"> dashboardFieldNames</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-400F9124-DC35-4FDD-82DD-E73F593919F0">Object[]. Default value is empty.  The
+properties of the array item are as follows:</p>
+<ul purpose="ul" id="UL_492CEABE14144C6B8C83AA63853C0E25"><li purpose="li" id="LI_7E906F2493E24B7FB42A9AF57DEB958A"> dashboardFieldName—String. Dashboard field name.</li><li purpose="li" id="LI_473EA17153014A858AA1714E1D69977B"> alias—String. Alias name that will appear on the widget.</li><li purpose="li" id="LI_D3A4133008FA48B18CFCAE866499568F"> 
+isVisible—Boolean. Indicates whether the field will be shown in
+the widget.</li><li purpose="li" id="LI_0F94F56A92D64EDFBA2C3148DEBF0301"> isDefault—Boolean. Indicates whether the field is default</li></ul>
+
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><p id="GUID-AC0D260C-F408-46BF-93B4-3D1F92104346">Example:</p><p id="GUID-A7DDB027-8751-46AF-8BC8-07B771E59642"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;drsSOEURL&quot;: &quot;http://datareviewer.arcgisonline.com/arcgis/rest/services/Samples/reviewerDashboard/MapServer/exts/DataReviewerServer&quot;,
+  &quot;includeGeographicFilter&quot;: &quot;true&quot;,
+  &quot;numberChartSections&quot;: 5,
+  &quot;selectUrl&quot;: &quot;http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/1&quot;,
+  &quot;selectMapUrl&quot;: &quot;http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer&quot;,
+  &quot;geometryServiceURL&quot;: &quot;http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer&quot;,
+  &quot;dashboardFieldNames&quot;: [
+    {
+      &quot;dashboardFieldName&quot;: &quot;CHECKTITLE&quot;,
+      &quot;alias&quot;: &quot;CHECKTITLE&quot;,
+      &quot;isVisible&quot;: true,
+      &quot;isDefault&quot;: false
+    },
+    {
+      &quot;dashboardFieldName&quot;: &quot;FEATUREOBJECTCLASS&quot;,
+      &quot;alias&quot;: &quot;FEATUREOBJECTCLASS&quot;,
+      &quot;isVisible&quot;: true,
+      &quot;isDefault&quot;: false
+    },
+    {
+      &quot;dashboardFieldName&quot;: &quot;LIFECYCLESTATUS&quot;,
+      &quot;alias&quot;: &quot;LIFECYCLESTATUS&quot;,
+      &quot;isVisible&quot;: true,
+      &quot;isDefault&quot;: false
+    },
+    {
+      &quot;dashboardFieldName&quot;: &quot;SESSIONID&quot;,
+      &quot;alias&quot;: &quot;SESSIONID&quot;,
+      &quot;isVisible&quot;: true,
+      &quot;isDefault&quot;: false
+    },
+    {
+      &quot;dashboardFieldName&quot;: &quot;SEVERITY&quot;,
+      &quot;alias&quot;: &quot;SEVERITY&quot;,
+      &quot;isVisible&quot;: true,
+      &quot;isDefault&quot;: true
+    },
+    {
+      &quot;dashboardFieldName&quot;: &quot;SUBTYPE&quot;,
+      &quot;alias&quot;: &quot;SUBTYPE&quot;,
+      &quot;isVisible&quot;: true,
+      &quot;isDefault&quot;: false
+    },
+    {
+      &quot;dashboardFieldName&quot;: &quot;LIFECYCLEPHASE&quot;,
+      &quot;alias&quot;: &quot;LIFECYCLEPHASE&quot;,
+      &quot;isVisible&quot;: false,
+      &quot;isDefault&quot;: false
+    }
+  ]
+}
+</code></pre></div>
+</div></p>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,103 @@
+<div>
+  <div class="data-source-label">${nls.dataSource}</div>
+  <div class="source ds-text-box marginTop5" data-dojo-attach-point="sourceUrl" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props='required:true,trim:true,disabled:true'></div>
+
+
+
+  <div class="marginTop20 data-source-label">${nls.name}</div>
+  <div class="marginTop5 ds-text-box" data-dojo-props='required:true,trim:true' data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="sourceName"></div>
+
+  <div class="marginTop20 data-source-label">${nls.sourceFilterLabel}</div>
+
+  <div class="marginTop5 flex-ltr-start">
+    <input class="button" type="button" value=${nls.set} data-dojo-attach-point="btnSet"/>
+    <input class="button" type="button" value=${nls.config} data-dojo-attach-point="btnConfig"/>
+    <input class="button marginLeft15" type="button" value=${nls.remove} data-dojo-attach-point="btnRemove"/>
+    <div data-dojo-attach-point="filterExpr" class="marginLeft10 filterExpr"></div>
+  </div>
+
+  <div style="display: none;" class="layerOptionDiv" data-dojo-attach-point="layerOnlyOption">
+
+    <div class="marginTop20 data-source-label">${nls.sourceFieldsLabel}</div>
+    <input class="button visible marginTop5" type="button" value=${nls.set} data-dojo-attach-event="click:_onFeaturesFieldsClick"/>
+
+    <div class="hide fieldsOption fieldsOptionDiv fields-position-lr" data-dojo-attach-point="fieldsOptionDiv">
+      <div class="left-arrow transform"></div>
+      <div data-dojo-attach-point="fieldsOption" class="suspension">
+      </div>
+    </div>
+
+
+    <div class="marginTop20 data-source-label">${nls.sourceRecordsLabel}</div>
+    <div style="margin-top: 12px;" class="flex-ltr-start">
+      <div class="data-source-sub-label">${nls.number}</div>
+      <div class="data-source-sub-label">${nls.orbderBy}</div>
+    </div>
+
+    <div class="marginTop5 flex-ltr-start">
+
+      <div class="resultRecordType">
+        <select  data-dojo-type="dijit/form/Select" data-dojo-attach-point="resultRecordType">
+          <option value="serviceLimitation">${nls.serviceLimitation}</option>
+          <option value="all">${nls.all}</option>
+          <option value="custom">${nls.custom}</option>
+        </select>
+      </div>
+
+      <div class="marginLeft5 custom-number-div">
+          <div class="hide" data-dojo-attach-point="customNumberDiv">
+          <input type="text" class="custom-number" data-dojo-type="dijit/form/NumberTextBox" data-dojo-props='required:true,constraints:{min:1,places:0},value:1000' data-dojo-attach-point="customNumber"></input>
+        </div>
+      </div>
+
+
+      <div class="marginLeft20 orderByField">
+        <select data-dojo-type="dijit/form/Select" data-dojo-attach-point="orderFields"></select>
+      </div>
+      <div class="marginLeft20 order">
+        <div data-dojo-attach-point="ascBtn" class="order-btn selected textOverFlow" title="${nls.ASC}">${nls.ASC}</div>
+        <div data-dojo-attach-point="descBtn" style="margin-left: -1px;" class="order-btn textOverFlow" title="${nls.DESC}">${nls.DESC}</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="display: none;" class="statisticsOptionDiv" data-dojo-attach-point="statisticsOnlyOption">
+    <div class="marginTop20 data-source-label">${nls.statistics}</div>
+    <div style="margin-top: 12px;" class="flex-ltr-start">
+      <div class="data-source-sub-label">${nls.groupBy}</div>
+      <div class="data-source-sub-label">${nls.sourceFieldsLabel}</div>
+    </div>
+    <div class="marginTop5 flex-ltr-start">
+      <div class="groupFields" >
+        <select data-dojo-type="dijit/form/Select" data-dojo-attach-point="groupFields">
+          <option value="-">-</option>
+        </select>
+      </div>
+      <input class="marginLeft20 button visible" type="button" value=${nls.set} data-dojo-attach-point="statisticsFields" data-dojo-attach-event="click:_onStatisticsFieldsClick"/>
+    </div>
+  </div>
+
+  <div class="hide statisticsFieldsOption fieldsOptionDiv statisrics-fields-position-lr" data-dojo-attach-point="statisticsFieldsOptionDiv">
+      <div class="left-arrow transform"></div>
+      <div data-dojo-attach-point="statisticsFieldsOption" class="suspension">
+      </div>
+    </div>
+
+  <div class="data-source-label marginTop20">${nls.refreshInterval}</div>
+  <div class="refreshContent marginTop5">
+    <div data-dojo-type="jimu/dijit/CheckBox" data-dojo-attach-point="isDynamic"></div><label class="margin-left-10 textOverFlow">${nls.refreshDataEvery}</label>
+    <input type="text" class="timeDiv" data-dojo-type="dijit/form/NumberTextBox" data-dojo-props='required:true,constraints:{min:0},value:0.5' data-dojo-attach-point="refreshInterval"></input>
+     <span>${nls.refreshDataEvery_Minutes}</span>
+  </div>
+
+	<div class="footer">
+    <div class="jimu-float-leading data-preview textOverFlow" title="${nls.preview}" data-dojo-attach-point="btnPreview" data-dojo-attach-event="click:_onPreviewClick">${nls.preview}</div>
+    <div class="jimu-btn jimu-float-trailing cancel" data-dojo-attach-point="btnCancel">${nls.cancel}
+    </div>
+    <div class="jimu-btn jimu-float-trailing ok jimu-trailing-margin1" data-dojo-attach-point="btnOk">${nls.ok}
+    </div>
+  </div>
+
+<div data-dojo-attach-point="loading" data-dojo-type="jimu/dijit/LoadingIndicator" data-dojo-props="hidden:true"></div>
+</div>

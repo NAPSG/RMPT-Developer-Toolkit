@@ -1,0 +1,204 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to create a nondefault layout."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Create a nondefault layout
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-2148AC20-01A1-409F-AFD3-8B324807FFDE]--><body><div id="content"><div class="header"><h1>
+Create a nondefault layout
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-0DE593E2-0AB2-4DA7-8C10-024641A2A214"> This topic explains how to create a nondefault layout. The concept of a nondefault layout is the same as a mobile layout, which overrides a set of positions. </p><p id="GUID-8B7A3E23-1943-4137-A5D1-CAA18C34F309">To  understand the basic concepts of a
+layout and its components in  <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span>, as well as the differences between the default and
+nondefault layouts, see <a target="_blank" class="xref" rel="https://developers.arcgis.com/web-appbuilder/guide/create-a-theme.htm#esri_section1_11e962aa597e4b9caea80d15e1939e05" href="https://developers.arcgis.com/web-appbuilder/guide/create-a-theme.htm#esri_section1_11e962aa597e4b9caea80d15e1939e05">Layouts</a>.</p><p id="GUID-02CD3CAF-5578-4412-82DC-B65C05319641">You'll move the following:<ul purpose="ul" id="UL_BE26FD22E9934CBBA79CD7F68D2A3EC2"><li purpose="li" id="LI_21C834A42EE94D1A9D3BF60EA6A78947">The HeaderController to the bottom of the screen</li><li purpose="li" id="LI_01B2D9EB393742A089ACEBAE49E3A95F">The  on-screen widgets and widget placeholders to the bottom left of the screen</li></ul></p>
+<p id="GUID-783716F5-BE17-4DAD-8335-496682D02AEA">New positions for the widgets will be defined in an array. The mobile layout uses the default.</p><div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-E4F99EAD-3974-4F7A-9FA4-1731AAA70A44"><div class="step_title">Steps:</div><ol>
+<li purpose="step" id="GUID-CD3092CA-09B3-4ACF-9B14-91262998CCD2">
+<span purpose="cmd" id="GUID-2420DFD0-6D63-48F6-8379-9E440279CB55">
+Go to the layouts folder in the theme where the new layout will be created, such as <span class="usertext">~/client/stemapp/themes/&lt;YourTheme&gt;/layouts
+</span>.
+</span>
+</li><li purpose="step" id="ESRI_STEP_8A594E0712C6400D97A82019605E49B4"><span purpose="cmd" id="GUID-C3E529B9-BDE5-48F1-98EB-4B5CDEDC50E7">Create a folder and name it <span class="usertext">myLayout</span>.  </span></li><li purpose="step" id="ESRI_STEP_CEB622E4C200466E93FA41291195192C"><span purpose="cmd" id="GUID-EA593310-0C01-434E-B9F3-2F80C4AD5BE1">Copy the entire code from the config.json file in the default layout, and paste it into the config.json file in the myLayout folder.</span></li><li purpose="step" id="ESRI_STEP_E2880FEB8CB846FEB0F7CFA5F030A64C"><span purpose="cmd" id="GUID-F811CE9F-FE02-4109-9CAC-03A2AE74DC69">Remove the map and mobileLayout sections.</span></li><li purpose="step" id="ESRI_STEP_B49897BC9CD844658BD3CB90BD2B6C6E"><span purpose="cmd" id="GUID-FC4CA750-3E5D-4639-B437-E7FAB92EC09A">Remove the widgets sections and the groups from the widgetPool.</span></li><li purpose="step" id="ESRI_STEP_01872E39C9BC4F27B3C59FD0B419F2AF"><span purpose="cmd" id="GUID-60D83589-941D-4870-BB35-593CBA348CC6">Remove any property that is not required for the position. The new JSON structure should look like the following:</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: [{
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;top&quot;: 20,
+        &quot;right&quot;: 20,
+        &quot;height&quot;: 40
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;top&quot;: 70,
+        &quot;left&quot;: 20
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;top&quot;: 140
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;top&quot;: 190
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;top&quot;: 240
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;top&quot;: 290
+      }
+    }]
+  },
+  &quot;widgetPool&quot;: {
+    &quot;panel&quot;: {
+      &quot;position&quot;: {
+        &quot;top&quot;: 70,
+        &quot;right&quot;: 20,
+        &quot;bottom&quot;: 10,
+        &quot;width&quot;: 300
+      }
+    },
+    &quot;groups&quot;: [{
+      &quot;panel&quot;: {
+        &quot;position&quot;: {
+          &quot;top&quot;: 70,
+          &quot;right&quot;: 20,
+          &quot;width&quot;: 200,
+          &quot;height&quot;: 200
+        }
+      }
+    }]
+  }
+}
+</code></pre></div>
+</div></div><div class="info" purpose="info"><p id="GUID-CD52E1AA-E09C-4523-8AC2-9E85FBD8968E">The first object in the widgets array is for the HeaderController widget, the second  is for the ZoomSlider widget, the third  is for the MyLocation widget, and so on.</p></div><div class="stepresult" purpose="stepresult"><p id="GUID-62AE2A37-243F-40C0-9F7F-94CF076FE90C">When you open <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> and select this layout, the app should have the same layout as the default.</p></div></li><li purpose="step" id="ESRI_STEP_1414242C055640C78CF87F82DCDF4106"><span purpose="cmd" id="GUID-87DC47E0-F7D6-41B9-92F0-E69182B41296">Move the HeaderController widget to the bottom. Find the first object in the widgetOnScreen section and move its top property to  the bottom. This makes the HeaderController 20 pixels away from the bottom instead of the top of the screen.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: [{
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;bottom&quot;: 20,
+        &quot;right&quot;: 20,
+        &quot;height&quot;: 40
+      }
+    }, 
+    {...}, 
+    {...}, 
+    {...}, 
+    {...}, 
+    {...}]
+  },
+  &quot;widgetPool&quot;: {
+    &quot;panel&quot;: {...}
+    },
+    &quot;groups&quot;: [{
+      &quot;panel&quot;: {...}
+    }]
+  }
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_E58E3BFE7C5E4BABA2A91FEF682230F6"><span purpose="cmd" id="GUID-43DA0FB0-333B-4BE6-BAF4-BA7BBB9A6224">Reposition the panels to align properly with the HeaderController widget. The panels from the default layout overlap the HeaderController widget after it's moved to the bottom. To resolve this, move the FoldablePanel up by 60 pixels. Locate the first panel section in the widgetPool, and change its top property to 10 and the bottom property to 70.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: [...]
+  },
+  &quot;widgetPool&quot;: {
+   &quot;panel&quot;: {
+      &quot;position&quot;: {
+        &quot;top&quot;: 10,
+        &quot;right&quot;: 20,
+        &quot;bottom&quot;: 70,
+        &quot;width&quot;: 300
+      }
+    },
+    &quot;groups&quot;: [{
+      &quot;panel&quot;: {...}
+    }]
+  }
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_26FA45D2D9F34349AEB2141D687589CF"><span purpose="cmd" id="GUID-05434E26-10B8-49AC-837B-11BFFFE25883">To make the SimpleBorderPanel align at the bottom, locate the panel section in the groups, and replace the top property with the  bottom property.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: [...]
+  },
+  &quot;widgetPool&quot;: {
+   &quot;panel&quot;: {
+      &quot;position&quot;: {
+        &quot;top&quot;: 10,
+        &quot;right&quot;: 20,
+        &quot;bottom&quot;: 70,
+        &quot;width&quot;: 300
+      }
+    },
+   &quot;groups&quot;: [{
+      &quot;panel&quot;: {
+        &quot;position&quot;: {
+          &quot;bottom&quot;: 70,
+          &quot;right&quot;: 20,
+          &quot;width&quot;: 200,
+          &quot;height&quot;: 200
+        }
+      }
+    }]
+  }
+}
+</code></pre></div>
+</div></div></li><li purpose="step" id="ESRI_STEP_396964202EAB43C381D23A858E0C9B52"><span purpose="cmd" id="GUID-193C791A-0E22-45C0-96FD-C41056895314">Move the widgets and widget placeholders to the bottom left of the screen.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+   &quot;widgets&quot;: [{
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;bottom&quot;: 20,
+        &quot;right&quot;: 20,
+        &quot;height&quot;: 40
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;bottom&quot;: 70,
+        &quot;left&quot;: 20
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;bottom&quot;: 140
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;bottom&quot;: 290
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;bottom&quot;: 240
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 20,
+        &quot;bottom&quot;: 190
+      }
+    }]
+  },
+  &quot;widgetPool&quot;: {...}
+}
+</code></pre></div>
+</div></div><div class="stepresult" purpose="stepresult"><p id="GUID-E3EE8060-8D04-4C6E-8A6B-0DB0979AD6C2">You now have a nondefault layout.</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-CE94B016-9C43-4902-A4C1-C82F977F508B-web.png" purpose="img" alt="New nondefault layout" title="New nondefault layout"></td></tr></table></div></div></li>
+</ol></div></div>
+<div class="wfsummary" id="GUID-59507BFB-0FB0-4693-AFA9-76427B4223A0" purpose="wfsummary">
+
+</div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

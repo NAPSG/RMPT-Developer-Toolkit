@@ -1,0 +1,33 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Run Web AppBuilder as a Windows service."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - Run as a Windows service</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-E8956593-6733-44F3-9F3E-E004E8A3C420]--><body><div id="content"><div class="header"><h1>Run as a Windows service</h1><div id="breadcrumb"></div></div>
+
+
+
+
+    
+    
+
+    
+    
+    
+    
+   <p id="GUID-7A506448-9D40-4A3F-862D-4F935F1C5562">Rather than clicking the startup.bat file to start <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span>, you can run it as a Windows service.</p>
+<div class="section1" id="ESRI_SECTION1_0959C9565A2F48129BF7195837061356" purpose="section1"><h2>Run as a Windows service without a proxy</h2><p id="GUID-FB931DBC-5473-4738-9A7E-F89F9286D25C">To run <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> as a Windows service without a proxy, complete the following steps:</p><ol purpose="ol" id="OL_C8D797A8E9EF470E8B4B230CE822C4D0"><li purpose="li" id="LI_9A5ECFF4489A4C9AAF51E45CE75EA6D6">Install <a target="_blank" class="xref" href="HTTP://NODEJS.ORG/" rel="HTTP://NODEJS.ORG/">Node.js</a> on your Windows platform.</li><li purpose="li" id="LI_22B0375B89004DCA80E349B3BA9C7A65">Run the command prompt as administrator.</li><li purpose="li" id="LI_74E691C44AD34B91A9FAA5A4745261ED">Change the directory (<span class="usertext">cd</span>) to the <span class="usertext">/server</span> directory of the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> installation.
+</li><li purpose="li" id="LI_536E727DE2F745E2A8855A79F60CA470">Run the command <span class="usertext">npm run-script install-windows-service</span>.</li><li purpose="li" id="LI_7DA00DF6E5184B11A23076EF0E9186DF">Start the <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> service from the <span class="uicontrol">Services</span> window. </li><li purpose="li" id="LI_CBC6C50715C149AFAEAAE887D2E9074F">To remove the <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> service, run the command  <span class="usertext">npm run-script uninstall-windows-service</span>.</li></ol></div><div class="section1" id="ESRI_SECTION1_699CEA81514B4A32B3C6C5FAA8F9C1E4" purpose="section1"><h2>Run as a Windows service with a proxy</h2><p id="GUID-DF16048A-DDEC-44E9-A279-F37E3421BBB9">Further, you can run <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> as a Windows service with a proxy by completing the following steps:</p><ol purpose="ol" id="OL_6725A8F2292444C88766F858072B9BE6"><li purpose="li" id="LI_32A07E15D05547979B3B214778296431">Install <a target="_blank" class="xref" href="HTTP://NODEJS.ORG/" rel="HTTP://NODEJS.ORG/">Node.js</a> on your Windows platform.</li><li purpose="li" id="LI_DAFA7A5BF444466CB71C8338EE99C024">Open the <span class="usertext">/~server/package.json</span> file.</li><li purpose="li" id="LI_20F4704123604203B0B8F6FFB7334DBE">Replace the line <span class="usertext"> "start": "node server.js"</span> with <span class="usertext"> "start": "node server.js -proxy=&lt;http://your proxy&gt;"</span> and save the file.</li><li purpose="li" id="LI_60B933D824094FE893E3FF3A45BC700E">Run the command prompt as administrator.</li><li purpose="li" id="LI_B442EB18D38D4259845D33C06B2AA1CA">Change the directory (<span class="usertext">cd</span>) to the <span class="usertext">/server</span> directory of the <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> installation.
+</li><li purpose="li" id="LI_9661FE53DE484732AC796618283F8633">Run the command <span class="usertext">npm run-script install-windows-service</span>.</li><li purpose="li" id="LI_C850852E82664AD6AE8F8EE0B9B20459">Start the <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> service from the <span class="uicontrol">Services</span> window. </li><li purpose="li" id="LI_0BAFCCED17914998B3696980D034BB9A">To remove the <span purpose="ph" varid="wab" translate="no">Web AppBuilder for ArcGIS</span> service, run the command  <span class="usertext">npm run-script uninstall-windows-service</span>.</li></ol></div> <div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

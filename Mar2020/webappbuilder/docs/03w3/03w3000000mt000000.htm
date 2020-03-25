@@ -1,0 +1,136 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The SnapShot class allows you to create a web map and feature collection layers from one or more graphic arrays."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+SnapShot
+class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-A51EDC02-0FE9-4430-A036-A189DDDA2731]--><body><div id="content"><div class="header"><h1>
+SnapShot
+class</h1><div id="breadcrumb"></div></div>
+<p id="GUID-C36543F3-020E-4725-A006-CFF17E4BC2F3">The <span class="usertext">SnapShot</span> class allows you to create a web map and feature collection layers from one or more graphic arrays. Each new layer can inherit properties from a source layer such as its pop-up, rendering, and scale range.</p>
+
+<div class="section1" id="ESRI_SECTION1_BFBE350555A2480D8CA5814BB22694D3" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-BA4D57B4-BF10-493D-B803-9A55B4486B32"><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>require([&quot;jimu/dijit/SnapShot&quot;], function(SnapShot) { /* code goes here */ });
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_C193D5151A2C460BA010D9E6879CCA48" purpose="section1"><h2>Constructor</h2><p id="GUID-FEB5358F-1D82-49DB-98A5-DADA29D435FC"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext">new SnapShot(params)</span></p><p id="GUID-085A8B6D-23C4-4F8F-BA12-4B4B8214F753">Creates a new SnapShot dijit.</p><p id="GUID-AC33215F-37CD-4B9E-A0AE-1BE632C706FA">Parameters:</p><p id="GUID-A20FB57F-6A99-4BE3-8419-8CE80FFCF642"><span class="usertext">&lt;Object&gt; params</span>—Required. Parameters for the SnapShot dijit.</p><p id="GUID-0BC17BD5-C743-431B-9270-619B5415D6D7">params properties:</p><p id="GUID-CF12A78E-C52E-4C25-9B71-12BC8BF54A70"><span class="usertext"> &lt;Object&gt; appConfig</span>—Required. The applicaton configuration from the parent <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> application.</p><p id="GUID-B5E8D03A-75C9-499D-A2F7-F5E03B6B9101"><span class="usertext">&lt;Object&gt; map</span>—Required. The map instance from the parent <span purpose="ph" varid="wabshort" translate="no">Web AppBuilder</span> application.</p><p id="GUID-ECC89539-599F-4D31-A0E9-DD83AE2C6D1E">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/SnapShot&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">SnapShot</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">snapShot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SnapShot</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">appConfig</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">);</span>
+      <span class="p">...</span>
+    <span class="p">});</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="section1" id="ESRI_SECTION1_2EB0B90BD264493FB72B37E853620A4E" purpose="section1"><h2>Methods</h2><p id="GUID-7BC35376-A0FB-4B3B-BD28-210F944B6DB1"><div class="block_table" id="TABLE_B2594A24C6604F8496B8772F9BE4528B" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-041F7867-2667-48AA-A09B-D71FCD7209C7"><span class="usertext">createSnapShots(options)</span></p><p id="GUID-D785B352-EFFB-424E-B74B-DB1CA3B3A464">Creates a feature collection for each graphics array and adds it to a new web map. All items are created in a new folder under the current user's content and can be shared with the appropriate groups, organization, or the public.</p><p id="GUID-6E5BDD43-F735-4703-AADF-EB1DEF95F5F5">Parameters:</p><p id="GUID-3B1D8302-03A2-4A0B-970F-FF18378E1DC2"><span class="usertext">&lt;Object&gt; options</span>—Required. The user-defined properties and data used to create the snapshot. </p><p id="GUID-A2F0F9DB-CA82-4BD8-8810-7A9B4160194B">params properties:</p><p id="GUID-88AEC670-DAAA-4792-91BC-A708761D66BE"><span class="usertext">    &lt;Array&gt; data</span>—Required. Array of data objects that describe the feature collections to create.</p><p id="GUID-66464EC0-ECF5-4984-980B-B2C130F4FDEF"><span class="usertext">    &lt;String&gt; name</span>—Optional. Default name value.</p><p id="GUID-69EBBB78-DC72-4379-A831-A5F112A990D6">Default: <div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-DA08100C-D088-48A0-852C-7C2B5A07F0E0">&lt;Default&gt;</p></div><div class="highlight"><pre><code>&quot;&lt;map item title&gt;_&lt;time&gt;&quot;
+</code></pre></div>
+</div></p><p id="GUID-609664F3-FBE8-46A4-8B7C-B4CF68679CB9"><span class="usertext"> &lt;Object&gt; shareWith</span>—Optional. Expected to follow <a class="xref" target="_blank" rel="http://enterprise.arcgis.com/en/portal/latest/use/app-url-parameters.htm" href="http://enterprise.arcgis.com/en/portal/latest/use/app-url-parameters.htm">Share item (as item owner)</a> properties.</p><p id="GUID-8DEB9958-63AB-4609-975C-993E8576E0EF">Default: <div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-23994AD5-EDD6-41A9-974F-C78B8638F8C7">&lt;Default&gt;</p></div><div class="highlight"><pre><code><span class="p">{</span>
+  <span class="s2">&quot;everyone&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">&quot;org&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">&quot;groups&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></p><p id="GUID-B70003F7-D857-4B1D-8EB8-B018601923F3"><span class="usertext">&lt;Object&gt; folderOptions</span>—Optional. Applicable item <a target="_blank" class="xref" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Common_parameters/02r30000009v000000/" rel="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Common_parameters/02r30000009v000000/">Common Parameters</a> for a CreateFolder call.</p><p id="GUID-BD56896F-E643-4556-838D-5EF5EBCB9AFF">Default: <div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-D9CA01CE-CE6D-4CE9-916F-3A4B3F95624F">&lt;Default&gt;</p></div><div class="highlight"><pre><code>{
+  &quot;name&quot;: &lt;name&gt;,
+  &quot;title&quot;: &lt;name&gt;,
+  &quot;description&quot;: &lt;name&gt;
+}
+</code></pre></div>
+</div></p><p id="GUID-59036BB7-5C01-4EE5-8D09-914BBFB0D71C"><span class="usertext"> &lt;String&gt; mapTitle</span>—Optional. User-provided map title. </p><p id="GUID-BC9702D3-E774-446B-B421-C621B18192FF">Default:<div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-EBAE5094-BDA6-495C-90C0-9CCA57A8297C">&lt;Default&gt;</p></div><div class="highlight"><pre><code>&quot;mapTitle&quot;: &lt;name&gt;
+</code></pre></div>
+</div> </p><p id="GUID-B97B8A4E-AEB8-4D2E-8836-17D741CA558B"><span class="usertext"> &lt;Object&gt; mapExtent</span>—Optional. User-provided extent object. </p><p id="GUID-328D2624-0966-46A9-8F70-B7B636083AF5">Default:<div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-80362F63-A1E2-4707-B9D7-37FD2FF9BCA6">&lt;Default&gt;</p></div><div class="highlight"><pre><code>&quot;mapExtent&quot;: &lt;Current Map Extent&gt;
+</code></pre></div>
+</div></p><p id="GUID-2F62786E-B0C8-4EC8-B30A-DD28BE0ED5C6">Example:</p><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>require([&#39;jimu/dijit/SnapShot&#39;], function(SnapShot) {
+          //Get layer from web map
+          var mapLayer = this.getFeatureLayerFromMap();
+          //Create the snapshot class
+          var snapShot = new SnapShot(this.appConfig, this.map);
+          //Create the snapshot
+          snapshot.createSnapShot({
+            name: &quot;Hurricane Madison (Day 1)&quot;,
+            data: [          
+              {
+                name: mapLayer.name, 
+                graphics: mapLayer.graphics, 
+                renderer: mapLayer.renderer, 
+                infoTemplate: mapLayer.infoTemplate, 
+                fields: mapLayer.fields, 
+                typeIdField: mapLayer.typeIdField, 
+                types: mapLayer.types, 
+                minScale: mapLayer.minScale, 
+                maxScale: mapLayer.maxScale, 
+                tags: [&quot;Hurricane Madison&quot;], 
+                description: &quot;Detailed view of Hurricane Madison on Day 1&quot;, 
+                visibileOnStartup: true, 
+                appendTimeStamp: true, 
+              }
+            ],
+            shareWith: {
+              everyone: false, 
+              org: false, 
+              groups: &quot;c862c5643df74db68553f31136f5d1b3&quot;
+            },
+            folderOptions: {
+              name: &quot;HurricaneMadison&quot;, 
+              title: &quot; HurricaneMadison&quot;, 
+              description: &quot;Data and maps for hurricane Madison&quot;
+            }
+          });
+          ...
+    });
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="section1" id="ESRI_SECTION1_B200B5856C754F95A16CF51DFC532C61" purpose="section1"><h2>Options</h2><p id="GUID-95953B30-AB2A-43DE-BA71-F655DCE5BA60"><div class="block_table" id="TABLE_C4957EA5A7D6472CBCAE6BE60DBF28A7" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3F4D9900-E629-4E59-8DC6-C96A8717AA4A">Option Object</p><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>{
+  name: String,
+  data: [&lt;Data Object&gt;],
+  shareWith: Object,
+  folderOptions: Object,
+  mapExtent: Object,
+  mapTitle: String
+}
+
+{
+  name: “Hurricane Madison (Day 1)”,
+  data: [&lt;Data Object&gt;]
+}
+</code></pre></div>
+</div><p id="GUID-70509FB9-9804-4E7F-A140-BB80D23CDB8C">Data Object</p><div class="codeblock" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="highlight"><pre><code>{
+  graphics: [Object],
+  renderer: Object,
+  infoTemplate: Object,
+  fields: Array,
+  tags: Array,
+  description: String,
+  name: String,
+  visibleOnStartup: Boolean,
+  appendTimeStamp: Boolean,
+  typeIdField: String,
+  types: Array,
+  minScale: Integer,
+  maxScale: Integer
+}
+
+{
+  graphics: featureLayer.graphics,
+  renderer: featureLayer.renderer,
+  infoTemplate: featureLayer.infoTemplate,
+  fields: featureLayer.fields,
+  tags: [“Hurricane Madison”],
+  description: “Snapshot of Hurricane Madison on 6/12/17”,
+  name: “Hurricane Madison Points”,
+  visibleOnStartup: false,
+  appendTimeStamp: true,
+  typeIdField: featureLayer.typeIdField,
+  types: featureLayer.types,
+  minScale: featureLayer.minScale,
+  maxScale: featureLayer.maxScale
+}
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

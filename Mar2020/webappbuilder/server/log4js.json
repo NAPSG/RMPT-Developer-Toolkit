@@ -1,0 +1,17 @@
+{
+  "appenders": {
+    "console":{
+      "type": "console"
+    },
+    "file":{
+      "type": "file",
+      "filename": "logs/appbuilder.log",
+      "maxLogSize": "1024k",
+      "backups": 10
+    }
+  },
+  "categories": {
+    "default": {"appenders": [ "console", "file" ], "level": "debug"},
+    "express": {"appenders": [ "console", "file" ], "level": "warn"}
+  }
+}

@@ -1,0 +1,7 @@
+aws s3 rm s3://sitaware-webapp3 --recursive
+aws s3 sync /Users/charlesletcher/Documents/GitHub/NAPSG_ESRI/playApp s3://sitaware-webapp3 --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+
+open https://d15i17g7dd94ia.cloudfront.net
+
+
+

@@ -1,0 +1,26 @@
+<div>
+  <canvas class="labelCanvas" data-dojo-attach-point="labelCanvas"></canvas>
+  <div class="panelBottom">
+    <!--Panel Container -->
+    <div class="panelContainer">
+      <!-- Panel Inner -->
+      <div class="panelInner">
+        <!-- Panel Content -->
+        <div data-dojo-attach-point="panelMsgBlock"></div>
+        <div data-dojo-attach-point="panelContent" class="panelContent"></div>
+      </div>
+    </div>
+    <!-- Panel Footer -->
+    <div class="panelFooter" data-dojo-attach-point="footerNode" class="jimu-main-background">
+      <div class="panelFooterContent">
+        <div class="btnPlay" data-dojo-attach-point="btnPlay" data-dojo-attach-event="onclick:_toggleVizTimer"></div>
+        <div class="panelTitle" data-dojo-attach-point="titleNode">Title</div>
+        <div class="panelPages">
+          <ul class="pages" data-dojo-attach-point="pages">
+          </ul>
+        </div>
+      </div>
+      <div class="btnClose" data-dojo-attach-point="btnClose" data-dojo-attach-event="onclick:_close"></div>
+    </div>
+  </div>
+</div>

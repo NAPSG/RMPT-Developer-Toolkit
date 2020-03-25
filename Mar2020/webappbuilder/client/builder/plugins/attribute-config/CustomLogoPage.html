@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="preview-container jimu-float-leading">
+    <img data-dojo-attach-point="image" class="image-node"/>
+    <div data-dojo-attach-point="noImage" class="no-image"></div>
+  </div>
+  <div class="separator jimu-float-leading"></div>
+  <div class="setting-container jimu-float-leading">
+    <div class="setting-item">
+      <div class="label">${nls.image}</div>
+      <div class="choose-image-btn" data-dojo-attach-point="chooseImageBtn">${nls.upload}</div>
+    </div>
+    <div class="setting-item">
+      <div class="label">${nls.link}</div>
+      <input type="text" class="link-text" data-dojo-type="jimu/dijit/URLInput" data-dojo-props="required:false,rest:false"
+        placeHolder="" data-dojo-attach-point="linkText"/>
+    </div>
+  </div>
+</div>

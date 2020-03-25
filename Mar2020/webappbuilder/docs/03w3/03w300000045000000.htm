@@ -1,0 +1,251 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="You can create a theme in Web AppBuilder for ArcGIS."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Create a  theme</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-CBFD57AE-5A36-46E3-8487-6905E9B05ABB]--><body><div id="content"><div class="header"><h1>
+Create a  theme</h1><div id="breadcrumb"></div></div>
+<p id="GUID-63D070B9-412A-47AE-8F4C-A0D829FE0F0C">Web AppBuilder provides out-of-the-box themes. Use the Demo theme that comes with Web AppBuilder as an
+example of how to develop a theme.</p>
+<p id="GUID-206B4130-F4C5-407E-A895-44BC2D22F59D">The Demo theme has one panel, one widget, two styles, and two
+layouts as described in the following list:</p>
+<p id="GUID-F38558E7-5312-403A-BDFC-5BC9847F075F">
+<ul purpose="ul" id="UL_EF573BA654364B55812116E077F24CD8">
+<li purpose="li" id="LI_D82F7AF59CB44330AFA15D99261AC494">The panel is called SimpleBorderPanel and has a basic border.</li>
+<li purpose="li" id="LI_F6D8578669624BF5AF0FD002DD88BDBD">The two styles are called default and black. The main color of the default style is red, and the main color of the black style is black.</li>
+<li purpose="li" id="LI_2EC3FA7F272F46C1B0F9D94A831602DB">The two layouts are called  default and right. The default layout places a widget on the left side
+of the screen, and the right layout places a widget on the right side of the screen.</li>
+</ul>
+</p>
+<div class="notes" id="GUID-AECFB09E-054A-47A1-97F6-796C583CEED5"><div class="note"><img class="note_img" src="rsrc/note.png" alt="Note" title="Note"><span>Note:</span></div><div class="tipbody"><p id="GUID-3BBA769C-E1DD-4CFA-92A0-2CF1EBD3EEFB">
+<ul purpose="ul" id="UL_65A32342794E4F29BE223525FB6A70E4">
+<li purpose="li" id="LI_EEBFE34E6F8C460CBCEF410CDE568A75">The source code of the Demo theme is in the <span class="usertext">client/stemapp/themes/DemoTheme</span> folder. You can
+use the Demo theme from within the Web AppBuilder GUI. By default, it is disabled. To enable it, open the .repoignore file in <span class="usertext">client\stemapp\themes</span>, remove DemoTheme from the file, and restart the node server. </li>
+<li purpose="li" id="LI_64DB8696ED52437792BF6C65DBBC4783">Once you've created a custom theme, you can move the theme
+folder to any themes repository folder (<span class="usertext">client/stemapp/themes</span> by default).</li>
+</ul>
+</p>
+
+</div></div><div class="section1" id="ESRI_SECTION1_7AF6CE83D83B4BFB974EACA5FC991B1B" purpose="section1"><h2>Create files for the theme</h2><p id="GUID-4A3991C1-D728-44AF-9330-B2EF296B3B6F"> As described above, to create a theme, you need to create the necessary files under the theme folder. The following is the file structure for the Demo theme:</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-F1C76672-6225-40F8-B263-82325215F96B-web.png" purpose="img" alt="Theme file structure" title="Theme file structure"></td></tr></table></div></div><div class="section1" id="ESRI_SECTION1_5A7C59F0EAEF4EA49722C49E92C7E793" purpose="section1"><h2>Edit the manifest.json</h2><p id="GUID-0393594C-C8C0-4802-BC2B-A07A9E6D4902">The manifest.json file describes the theme’s content, and the builder reads this file to get the theme’s content. Based on the specification described above, update the manifest.json file as follows:</p><p id="GUID-E6A1A371-4C7E-4E9C-A462-042CFE810E1F"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;name&quot;: &quot;DemoTheme&quot;,
+  &quot;panels&quot;: [
+    {
+      &quot;name&quot;: &quot;SimpleBorderPanel&quot;,
+      &quot;description&quot;: &quot;This is a panel with a border&quot;
+    }
+  ],
+  &quot;styles&quot;: [
+    {
+      &quot;name&quot;: &quot;default&quot;,
+      &quot;description&quot;: &quot;this is default style&quot;,
+      &quot;styleColor&quot;: &quot;red&quot;
+    },
+    {
+      &quot;name&quot;: &quot;black&quot;,
+      &quot;description&quot;: &quot;this is black style&quot;,
+      &quot;styleColor&quot;: &quot;#000000&quot;
+    }
+  ],
+  &quot;layouts&quot;: [
+    {
+      &quot;name&quot;: &quot;default&quot;,
+      &quot;description&quot;: &quot;this is the left layout&quot;
+    },
+    {
+      &quot;name&quot;: &quot;right&quot;,
+      &quot;description&quot;: &quot;this is the right layout&quot;
+    }
+  ],
+		&quot;platform&quot;: &quot;HTML&quot;,
+  &quot;version&quot;: &quot;0.0.1&quot;,
+  &quot;author&quot;: &quot;Esri R&amp;D Center Beijing&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;copyright&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;http://www.apache.org/licenses/LICENSE-2.0&quot;,
+  &quot;wabVersion&quot;: &quot;1.1&quot;
+}
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_CB635A154ED84C5B9A3BECA45681BF9A" purpose="section1"><h2>Create the panel</h2><p id="GUID-27C0583D-EF45-4FA8-81C8-F0C2534BE474">A panel is a UI element used to display the widget’s content. Multiple widgets can use the same panel. However, the widget does not display directly on the panel. It is put in the WidgetFrame, and the widget frame displays on the panel. One widget frame holds one widget, and one panel can contain more than one widget frame. The following image gives you a general idea of the relationships of the panel, widget frame, and widget.</p><div class="image" purpose="image"><table><tr><td><img class="break" src="03w3/GUID-7B117D82-532D-4330-A5D0-093A733525B6-web.png" purpose="img" alt="Theme panel structure" title="Theme panel structure"></td></tr></table></div><p id="GUID-A577CF43-5477-4C54-AEEB-2FD15073B7A6">Developing a panel is the same as developing a web component,
+which requires JavaScript, CSS, and HTML skill and knowledge. It is
+also beneficial to understand the dojo's layout concept and
+practice.</p><p id="GUID-3C153274-5B7F-4A29-B6E0-69250551165D">To create a panel, you need to create a class that derives from
+<span class="usertext">BaseWidgetPanel</span>. If the default widget
+frame meets your requirements, create a frame class that
+derives from <span class="usertext">BaseWidgetPanel</span>.</p></div><div class="section1" id="ESRI_SECTION1_781C8C6175264FAE8D25AA7AB252A9E9" purpose="section1"><h2>Life cycle functions</h2><p id="GUID-FD5109EA-85F6-49A2-A230-4FFE5C818D99">Just as with widget development, there are life cycle functions
+that you can override to interact with the AppBuilder
+framework.</p><p id="GUID-EB4ACACD-A36F-4DBC-AEB4-C1A3031965E6">You can override the following functions when you create a
+panel:</p><p id="GUID-7A33B6D6-5976-4A52-ADEB-25748AD0A275">
+<ul purpose="ul" id="UL_BD736C4BD832461F9EB17197FBB4D591">
+<li purpose="li" id="LI_A1DF6A1FC1804876A6AD6D6D5A4728E1">createFrame—This
+function returns the widget frame object.</li>
+<li purpose="li" id="LI_1C498AA196314B3C8E71192404560C4F">reloadWidget—This
+function is called by the builder when the widget is modified.</li>
+</ul>
+</p><p id="GUID-F0FD2F2E-ABF6-4786-86CD-EF0E0DC3CC47">The following life cycle functions are the same as the widget's:</p><p id="GUID-728FCDFA-4C72-4464-8C87-63511A6829A6">
+<ul purpose="ul" id="UL_45E77D8C6DE74EF6B3D49C530C698A0C">
+<li purpose="li" id="LI_136EFFF4534A459BA5CA1EC8701844AA">onOpen</li>
+<li purpose="li" id="LI_B5448F718BA84237BCD09C640A6A241C">onClose</li>
+<li purpose="li" id="LI_15FE47EE92A84E64AAC6BACFCAA1D05A">onMaximize</li>
+<li purpose="li" id="LI_B2DCE929458F47BD92D3626BDD61DA76">onMinimize</li>
+<li purpose="li" id="LI_C00C9D6045264C9984CDFEE7EC7DF848">onNormalize</li><li purpose="li" id="LI_4FB4157F48F94B71ADD7066A15AB6DDC"> onActive</li><li purpose="li" id="LI_288A03BC1E4E4008A1DEEE8E4098BE2C"> onDeactive</li><li purpose="li" id="LI_1C85DFC4D2C944CFA16FA2C83C585247"> setPosition</li>
+</ul>
+</p></div><div class="section1" id="ESRI_SECTION1_2618E166FC194EF9853721A18B46C0F1" purpose="section1"><h2>Create SimpleBorderPanel</h2><p id="GUID-C65B326F-5A46-484E-BBD2-639F235889C2">Because the <span class="usertext">SimpleBorderPanel</span> is very basic, extend the <span class="usertext">BaseWidgetPanel</span> without adding any new features. See the following code:</p><p id="GUID-1288295C-ECA6-47B0-BF9C-722192A67794"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">define</span><span class="p">([</span><span class="s1">&#39;dojo/_base/declare&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;jimu/BaseWidgetPanel&#39;</span>
+<span class="p">],</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">declare</span><span class="p">,</span> <span class="nx">BaseWidgetPanel</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">declare</span><span class="p">([</span><span class="nx">BaseWidgetPanel</span><span class="p">],</span> <span class="p">{</span>
+    <span class="nx">baseClass</span><span class="o">:</span> <span class="s1">&#39;jimu-widget-panel jimu-border-panel&#39;</span><span class="p">,</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+</div></p><p id="GUID-7016A407-2CB1-4C3F-AB88-B75FE0398762">For more information about panels, see BaseWidgetPanel.js file in the <span class="usertext">client/stemapp/jimu.js</span> folder.</p></div><div class="section1" id="ESRI_SECTION1_257F52D9C4B44B7BB47A8F2664DFA76F" purpose="section1"><h2>Create the styles</h2><p id="GUID-A4926D97-8FAA-4AA6-A1A3-465B4278EBD2">You need to write some style (CSS) files to make the theme more
+attractive and have a consistent UI. In the style files, you can
+override the styles in jimu.css, and write
+the styles that your panel needs as well. Place the common styles
+(used by all of the styles) in the common.css file and the specific styles in the
+corresponding style.css files.</p><p id="GUID-63401065-DC90-4027-A9FD-5191A5511698">There should be a style named default,
+which is used by default from within the AppBuilder GUI.</p><div class="section2" id="ESRI_SECTION2_FF02276D22B54343814280A9D8E48493" purpose="section2"><h3>Edit the default styles</h3><p id="GUID-729ED5E0-53C3-4BD4-ABDF-49E00A1790F7">Because the default style’s main color is red, use the following style:</p><p id="GUID-302ADE2B-056A-413D-A9A4-B12106E17A07"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-border-panel{
+  border: 1px solid red;
+}
+</code></pre></div>
+</div></p></div><div class="section2" id="ESRI_SECTION2_FFFF2DC30FDE4D598619E139FC8A4908" purpose="section2"><h3>Edit the black style</h3><p id="GUID-596FE239-B9F3-4D60-882C-03EAA7CAE8EF"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>.jimu-border-panel{
+  border: 1px solid black;
+}
+</code></pre></div>
+</div></p></div></div><div class="section1" id="ESRI_SECTION1_11E962AA597E4B9CAEA80D15E1939E05" purpose="section1"><h2>Create the layouts</h2><p id="GUID-3285C4C2-8DF3-4948-A9B3-9623D738A209">A layout is a config template file. Although it uses the same format as the app’s config file, it may contain only a subset of the properties. For example, the default layout may contain the following:<ul purpose="ul" id="UL_C353B656FCDE4636905B7466E09AE6E0"><li purpose="li" id="LI_28EB687601E2448199B5CC000C351777">widgetOnScreen—Includes all of the properties</li><li purpose="li" id="LI_A8F58D5691174B529C4F0AF2B7173391">map—Includes only the position property</li><li purpose="li" id="LI_A5C42987A3624BFE936EFA725CBA60B8">widgetPool—Includes all of the properties</li></ul></p><p id="GUID-B2A00DB5-5894-4CD9-AC6B-B5292282275C">In the default layout, you can define on-screen widgets with the URI and position properties, or with the position property only. A widget with only the position property is  called a placeholder,  which allows  you to add a widget during configuration. </p><p id="GUID-17C23E21-6105-4745-86FF-08C162AC45CE"> For the non-default layouts, you can only define    the position of  the widget
+and group with either  array or
+object as described in the following:</p><ul purpose="ul" id="UL_99E36B3F603542CEA37D01112E106DF0"><li purpose="li" id="LI_BDC3413981D14D68903846DC8F8E11F6">  With array, you must define
+the position of the widget and group one by one.</li><li purpose="li" id="LI_D7D41D3272D94BCD800FA90009860328"> With  object, you can use the widget's URI as a
+key and  position as a value to define the position. For
+the placeholder widget,  since it has no URI, use <span class="usertext">ph_&lt;i&gt;</span> as
+the key, where the <span class="usertext">&lt;i&gt;</span> is the index of the placeholder. For the  group,
+ use <span class="usertext">g_&lt;i&gt;</span> as the key, where the <span class="usertext"> &lt;i&gt;</span> is the index of
+the group.</li></ul><p id="GUID-A18DBCFA-5ECA-4703-858F-9023584D1ADE">  In addition, you can define the layout that runs in the  mobile app with the <span class="uicontrol">mobileLayout</span> property. See the  mobileConfig file in the <a class="xref" rel="03w3/03w300000016000000.htm" href="03w3/03w300000016000000.htm">App configuration</a> reference.</p><p id="GUID-39104AFF-D2BC-4187-B7C4-C4F8829E9FF2">When switching the layout from A to B,  the positions defined in layout B automatically overrides the  positions defined in layout A  by the app container.. If the widget or panel's position is not defined in layout B, use layout A instead.
+
+</p><p id="GUID-D196A8F9-F979-4347-939E-18E9ACA2E446">Finally,  there should be a layout named default.
+This layout is used by default when the  theme is selected in the
+AppBuilder GUI.</p><div class="section2" id="ESRI_SECTION2_8A440DADEF2442C7AC523DE8094C0D0E" purpose="section2"><h3>Edit the default layout</h3><p id="GUID-C3F47FF3-D4A7-4396-A1A7-ED942755CAF9"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;panel&quot;: {
+      &quot;uri&quot;: &quot;themes/DemoTheme/panels/SimpleBorderPanel/Panel&quot;
+    },
+    &quot;widgets&quot;: [{
+      &quot;uri&quot;: &quot;widgets/Scalebar/Widget&quot;,
+      &quot;position&quot;: {
+        &quot;left&quot;: 25,
+        &quot;bottom&quot;: 25
+      },
+      &quot;version&quot;: &quot;1.2&quot;
+    }, {
+      &quot;uri&quot;: &quot;widgets/HomeButton/Widget&quot;,
+      &quot;position&quot;: {
+        &quot;left&quot;: 7,
+        &quot;top&quot;: 75
+      },
+      &quot;version&quot;: &quot;1.2&quot;
+    }, {
+      &quot;uri&quot;: &quot;widgets/Coordinate/Widget&quot;,
+      &quot;position&quot;: {
+        &quot;left&quot;: 200,
+        &quot;bottom&quot;: 20
+      },
+      &quot;version&quot;: &quot;1.2&quot;
+    }, {
+      &quot;uri&quot;: &quot;widgets/BasemapGallery/Widget&quot;,
+      &quot;position&quot;: {
+        &quot;left&quot;: 45,
+        &quot;top&quot;: 5,
+        &quot;width&quot;: 430,
+        &quot;height&quot;: 410
+      },
+      &quot;version&quot;: &quot;1.2&quot;
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 95,
+        &quot;top&quot;: 5,
+        &quot;width&quot;: 400,
+        &quot;height&quot;: 410
+      }
+    }, {
+      &quot;uri&quot;: &quot;widgets/ZoomSlider/Widget&quot;,
+      &quot;visible&quot;: true,
+      &quot;position&quot;: {
+        &quot;top&quot;: 5,
+        &quot;left&quot;: 7
+      },
+      &quot;version&quot;: &quot;1.2&quot;
+    }]
+  },
+
+  &quot;map&quot;: {
+    &quot;position&quot;: {
+      &quot;left&quot;: 0,
+      &quot;top&quot;: 0,
+      &quot;right&quot;: 0,
+      &quot;bottom&quot;: 0
+    }
+  }
+}
+</code></pre></div>
+</div></p></div><div class="section2" id="ESRI_SECTION2_AA626E32DD74424BB08A83B3A5C32CC8" purpose="section2"><h3>Edit the right layout</h3><p id="GUID-0F472811-068C-4D74-A40E-AC57A78149DF"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>{
+  &quot;widgetOnScreen&quot;: {
+    &quot;widgets&quot;: [{
+      &quot;position&quot;: {
+        &quot;left&quot;: 25,
+        &quot;bottom&quot;: 25
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 7,
+        &quot;top&quot;: 75
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 200,
+        &quot;bottom&quot;: 10
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;left&quot;: 45,
+        &quot;top&quot;: 5,
+        &quot;width&quot;: 430,
+        &quot;height&quot;: 410
+      }
+    }, {
+      &quot;position&quot;: {
+        &quot;right&quot;: 95,
+        &quot;top&quot;: 5,
+        &quot;width&quot;: 400,
+        &quot;height&quot;: 410
+      }
+    }]
+  }
+}
+</code></pre></div>
+</div></p></div></div><div class="section1" id="ESRI_SECTION1_BF0AB5EDBA1A42E69A6E1926316D1146" purpose="section1"><h2>Edit the main.js file</h2><p id="GUID-1C533CE0-7679-4CAB-838A-73E162057BC3"> The main.js file loads and runs when the theme loads. You can put the initialization codes in it or keep it like this: define([], function(){ });</p></div><div class="section1" id="ESRI_SECTION1_7B49D8B909584C8385CF07ED33BD6E56" purpose="section1"><h2>Add i18n support</h2><p id="GUID-B4D847A4-40FD-4ED0-B809-1CB737B86E43">Your theme may contain some strings that you want to internationalize. Similar to  the widget, you can create the string.js file in the nls folder. Refer to <a class="xref" rel="03w3/03w30000000v000000.htm" href="03w3/03w30000000v000000.htm">Add I18n support</a> under widget development. You can also internationalize display names associated with a theme, such as <span class="uicontrol">_themeLabel</span>  for the theme display name, <span class="uicontrol">_layout   _layout_[layout name]</span>   for the layout display name, and  <span class="uicontrol">_style[style name]</span> for the style display name.</p></div><div class="section1" id="ESRI_SECTION1_3C9AA880840F4DD9A160A0D98C59CAD6" purpose="section1"><h2>Support RTL</h2><p id="GUID-C37632F3-20F3-4B98-A512-6A18DAF6D982">There are some languages that read from right-to-left (RTL). In these languages, the app's layout should be  right-to-left as well. The apps created from Web AppBuilder provide the following  features for  RTL support:<ul purpose="ul" id="UL_10668A89B40F4982B0DE62C1AFF1CFAF"><li purpose="li" id="LI_ED9BA87432784B4D82674D7369CF983F">The position property configured in the  app config.json file is mirrored automatically in RTL languages. For example,  when the left  of position property is set to 10, it is changed to the  right with 10 in RTL languages.</li><li purpose="li" id="LI_5108DD5C523B4812816A719522E4C590">Programmatically you can use CSS classes in <span class="usertext"> jimu.js/css/spacing.css</span>. When these CSS classes are applied, the page layout is changed to RTL in RTL languages.</li><li purpose="li" id="LI_71894189AA724334807661E883F5A959">The <span class="uicontrol">jimu-rtl</span> class  is added to the html tag.  Use this class as a CSS selector to write CSS rules for RTL languages.</li><li purpose="li" id="LI_3A9CFE92A4054FB7BE30C1466266126A">There is a global JavaScript variable, <span class="uicontrol">isRTL</span>. It is automatically set to true in RTL languages.</li><li purpose="li" id="LI_FA7FED493EFF49D898EF4223A8BDB220">
+Each layout has an icon named <span class="uicontrol">icon.png</span>.  In RTL languages, you must  provide a different icon and name it <span class="uicontrol">icon_rtl.png</span>.</li></ul></p></div><div class="section1" id="ESRI_SECTION1_0CB5845E450144C0AD8B6F5ABECBA4B2" purpose="section1"><h2>Create a theme widget</h2><p id="GUID-864C1823-6430-4AC6-A338-8A9CD11F39C9"> Creating a theme widget is the same as creating a normal widget except for one additional property, <span class="uicontrol">isThemeWidget</span>. This property is defined in the manifest.json file and should be set to true. The theme widget is located   in the <span class="usertext">\theme name\widgets</span> folder.   </p></div><div class="section1" id="ESRI_SECTION1_E41FEC1BC2BE438694044E1553520474" purpose="section1"><h2>Try the Demo theme in the builder </h2><p id="GUID-8C14ED88-8B01-4875-9EF0-C0F7761A33A9">Once you place the Demo theme in the themes folder, start the AppBuilder and create a
+new app. The Demo theme shows on the Themes tab.</p><p id="GUID-33BFA02D-D1CD-4FAA-A21D-4B0CC81A63D1">
+<ol purpose="ol" id="OL_D163943580DB4055B0B80F2373BE7C1F">
+<li purpose="li" id="LI_898CB8813B57418EA1C39220071116CC">Click the Demo theme.</li>
+<li purpose="li" id="LI_C6F84C08130C482CA57F5B2F282D1871">Click the Layout icon to switch
+layouts.</li>
+<li purpose="li" id="LI_D6F7D8A15B064196BF79B5E2BA298AB1">Open the BasemapGallery widget.</li>
+<li purpose="li" id="LI_FCBE1CFB98F34C788D32C0D0987CB9F2">Click the style icon to switch
+styles.</li>
+</ol>
+</p><p id="GUID-EA3529E1-EE5B-49E2-BE36-B3978E8B6C74">During development, use <span class="usertext">http://your
+host/webappbuilder/?id=stemapp</span> to access your theme
+directly.</p></div><div class="section1" id="ESRI_SECTION1_575B4BCD158B43B9BE205488541E520A" purpose="section1"><h2>Best practice to create a theme</h2><ul purpose="ul" id="UL_49E2FF8563C84DF7BA9D549F87202602"><li purpose="li" id="LI_D9F5DBBEEFDD416B924564D81EB3BA51">Use an appropriate name and icon for a theme.</li><li purpose="li" id="LI_EC70EE7735ED476487ADE1249F38E718">Create more than one style and layout so users have options.</li><li purpose="li" id="LI_4645384D8CA4434C83CADD136AD4935A">Put the panel’s CSS in the panel’s folder to  make copying and reusing the  panel easy.</li><li purpose="li" id="LI_22BFE03CFF394D34B43D5D14270208E2">there is no need to override all the classes in jimu.css and jimu-theme.css.  Just override what you need.</li><li purpose="li" id="LI_AD495450513649D89C3A165964306D8B">Create more placeholders in the  layout so that  users can have options when configuring the app.</li><li purpose="li" id="LI_3D932E6A5F7F4B129E905BF8E42F1F90">Consider how the theme looks  on mobile devices when  designing the theme. <span class="uicontrol">appInfo.isRunInMobile</span>, a JavaScript global variable, and <span class="uicontrol">jimu-ismobile</span>, a CSS class, are provided to help you develop a responsive theme. You can also use the <span class="uicontrol">mobileConfig</span> property to define the layout on mobile devices.</li></ul></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

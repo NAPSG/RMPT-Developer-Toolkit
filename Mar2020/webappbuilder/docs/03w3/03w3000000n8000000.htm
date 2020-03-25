@@ -1,0 +1,241 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The LayerNode class allows you to access layers using a unified interface."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+LayerNode
+class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-0BD441BA-7070-4879-9999-E9A9A6A85291]--><body><div id="content"><div class="header"><h1>
+LayerNode
+class</h1><div id="breadcrumb"></div></div>
+<p id="GUID-8B19D606-A835-45A2-A499-DBEB41081C48">
+The <span class="usertext">LayerNode</span> class is an abstraction of the layer object from ArcGIS API for JavaScript. It contains the reference to the parent or child layers and allows you to access layers using a unified interface regardless  of the root layer, sublayer, or layer type such as FeatureLayer, ArcGISDynamicMapServiceLayer, KMLLayer, and so on.</p>
+<div class="section1" id="ESRI_SECTION1_C92798E79D9B4E0D940FA5056A5810F0" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-E5B5C593-B641-4038-A3B9-284E277558C1"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/LayerNode&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">LayerNode</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_D90FB66F375C473BB6B921D7416E5430" purpose="section1"><h2>Constructor</h2><p id="GUID-B0DE5E9F-2CDB-4035-94CF-7233845203BC"><span class="usertext"> LayerNode</span> has no constructor. It can only be retrieved from  <span class="usertext">LayerStructure</span>.</p></div><div class="section1" id="ESRI_SECTION1_DB370AC9317E4434A455356ECBF8112E" purpose="section1"><h2>Constants</h2><p id="GUID-40AAEE1F-A17D-47F5-A3D7-FDBCFED4A66D"><div class="block_table" id="TABLE_3A6963890B714B6B80D6A4EF33288B6C" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">EVENT_TOGGLE_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-74600BC4-C10E-4BA3-8EE7-699E2782B81D">Event name for a toggle change.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_VISIBILITY_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B6344A68-D94A-4E54-B23E-4D60549DA0C4">Event name for a visibility change.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_FILTER_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6385A43A-74BD-4542-9683-720013110B4F">Event name for a filter change.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_RENDERER_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2CBA55BB-F10D-41FE-BD8D-797FDBFE2A3B">Event name for a renderer change.</p></td></tr><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext"> EVENT_OPACITY_CHANGE</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B08306FD-E8A7-41BA-96C6-97A3A909692F">Event name for an opacity change.</p></td></tr></tbody><caption class="table_desc"></caption></table></div> </p></div><div class="section1" id="ESRI_SECTION1_766A05CCFCF4497196DA2575396E29D9" purpose="section1"><h2>Properties</h2><div class="block_table" id="TABLE_B732C2D8C8624D098DBDF372691C9B03" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E8E150EB-BC10-4211-8AFB-E71BE3D571EA"><span class="usertext">  &lt;esri/map&gt; map</span></p><p id="GUID-807ECECF-7B54-4F88-9339-BE1C09B33C8B">The current web map object.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_903CC75ED3BB4CD5A21E0BC4898A5816" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-86BE1215-569E-483A-8A42-01C0561313FE"><span class="usertext"> &lt;String&gt; title</span></p><p id="GUID-D7AE462D-F0C0-495B-9C09-D67682CF1365">The title of the current layerNode.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext"> &lt;String&gt; id</span></p><p id="GUID-FB97692F-C7CC-4B82-94CE-515F58AF4239">The  ID of the current layerNode.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_AABE0D382E3A44FDA8E0D83466A9A3FE" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5BC19DA3-ABC5-4D11-A9FE-C3B4998AABC9"><span class="usertext"> &lt;String&gt; subId</span></p><p id="GUID-61C56C27-85A2-446D-8C6B-322CE65E757C">The  subID of the current layerNode</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></div><div class="section1" id="ESRI_SECTION1_77C5BE1169F3422BB20E6276528DB8A8" purpose="section1"><h2>Methods</h2><p id="GUID-45FD8EC0-26D3-4B1A-AE8A-CBECAE91BFDB"><div class="block_table" id="TABLE_B7FC2CEBC6BA4B7C9CF743B95969C644" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B0A1B792-588F-4E4A-AD41-7B9F26847305"><span class="usertext"> canShowLabel()</span></p><p id="GUID-CE498133-B962-4D3C-AA62-CF074A45F441">  Returns true if the layer can show a label.</p>
+<p id="GUID-CE8B650F-A5FB-42E8-A28B-86E9742EE4BA">Parameters: null</p><p id="GUID-25E34538-F68C-4731-8607-4F40A66D8497">Return value: Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_F0309CA76D064EEBA13E9031065C9CC4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FB9F5306-3E93-47A3-A4AD-AAD92734268F"><span class="usertext"> disablePopup()</span></p><p id="GUID-3F327783-7F98-4684-86FB-CD6428DF2A45">  Disables the pop-up.</p>
+<p id="GUID-BF2CA748-FBC0-4897-963E-CE9235828641">Parameters: null</p><p id="GUID-6730E581-7B1A-46FA-9FD2-2BC8B76CD0AF">Return value: Boolean—Returns true to disable the pop-up; returns false to enable it.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_D0C0F8CD43B7480EB2A7A3ED494C5C3D" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-10D4FC5B-E5D2-4CED-BD33-FF0F460E18AE"><span class="usertext"> enablePopup()</span></p><p id="GUID-B627A282-0D84-438F-9705-AB5A25237135">  Enables the pop-up.</p>
+<p id="GUID-E8AD74E6-497C-4ABB-AA86-283AD03C0DDA">Parameters: null</p><p id="GUID-31D013DD-EDC2-4B47-AE46-18F386C56126">Return value: Boolean—Returns true to enable the pop-up; returns false to disable it.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_F319D6AADEB24237BF9EEE0C9330C77A" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-39467CD8-8A81-4D0F-A102-74492E3E3E52"><span class="usertext"> getExtent()</span></p><p id="GUID-4D18726C-7BCF-4052-83F2-A908CD6E8A95">  Gets the extent of the current layerNode.</p>
+<p id="GUID-E7F36157-4E41-414E-BBDB-C621E3ED7123">Parameters: null</p><p id="GUID-1E747A4B-AEB0-416C-9C75-8220854B66C2">Return value:</p>
+
+
+<p id="GUID-906CA5D7-D14D-44AF-8549-337E5907D150">Deferred;</p><p id="GUID-EA0BDA9A-C0F4-480D-9259-85A1B52F7748">Resolve value: Extent</p></td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_127DCBEDD4874A59A804CA0FE7455160" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-107DCB69-65C1-42B2-BE34-ED6FFD7B0522"><span class="usertext">getFilterFromWebmap()</span></p><p id="GUID-BF9D02CB-F75A-4518-90C3-B3146891A0B3">   Gets the definition expression from the web map.</p>
+<p id="GUID-68FBA5B8-8DB7-4092-ACDF-21A7FA5B14C2">Parameters: null</p><p id="GUID-322F3BF1-55AE-4E64-B6CA-530A9A5CCA92">Return value: </p>
+
+
+<p id="GUID-40ECCFE6-D371-4916-9CD0-3F049D4A8C0F">JSON;</p><p id="GUID-27EFB6B4-6A9F-4E2E-B2D6-66F1F8763500">null—Returns null if the definition expression isn't defined in the web map.</p></td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_BDBA41B6F8614A41A716C62CBBF05A97" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0EC30D84-7EF7-4597-908D-A8E4E9C8FC47"><span class="usertext">getFilter()</span></p><p id="GUID-BA4E0869-A156-40C2-8601-E06F5BAA71B7">Gets the definition expression from the current layer.</p>
+<p id="GUID-3F115B7B-5B51-4C52-8558-B0DEA6B2924F">Parameters: null</p><p id="GUID-2101B87A-DA71-43F8-A0CE-AC2EA08470CB">Return value:</p><p id="GUID-5BC3A227-B19C-4DA4-816B-F8ABD66FF782">JSON;</p><p id="GUID-9387E2E9-83D2-4121-BC7C-33E88BA713FA">null—Returns null if the layer doesn't have a definition expression.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_6294F97293E6408A981667167B2EA4AD" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FE94F480-585F-4026-8EBC-53F8B4B9D5A2"><span class="usertext"> getInfoTemplate()</span></p><p id="GUID-A9E4DD97-7733-440F-9252-744AC98F8D74">   Gets the infoTemplate from the current layer.</p>
+<p id="GUID-900705A8-5711-4087-A91A-641F41ED15C6">Parameters: null</p><p id="GUID-4868A216-02B6-4A32-B4B1-EF4D2E87D89E">Return value: </p><p id="GUID-8FCEF201-46B8-4383-A487-F8CE6C2B1D9C">JSON;</p><p id="GUID-58238530-D469-4B66-A5B3-D89B96949422">null—Returns null if the layer doesn't have an infoTemplate.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_BBC5B0002DC74ACDAB8E4227E341D1AB" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3BC1FB45-65A4-4295-94EA-F18BE3990B8A"><span class="usertext">getLayerObject()</span></p><p id="GUID-526CF12C-6711-4E4B-B513-B6B22B241CDA"> Gets the current layer object.</p>
+<p id="GUID-B37E9709-1F52-42F9-8CA2-9FA8BA29B64B">Parameters: null</p><p id="GUID-F97ED88B-FCC1-4625-89D4-7AB8CBDAE25D">Return value:</p><p id="GUID-7E7E0F6E-7316-4239-8E6C-06A92C3D9930">Deferred;</p><p id="GUID-87501298-E6BC-4FE7-BBDC-CE72C7D8D0B9">Resolve value: Layer; null—Resolves null if the layer object fails to load.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_36A506D3698C40209637DF3B09A9770F" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EF3B8DC6-7060-4D85-8CD6-790232CD25D5"><span class="usertext"> getLayerType()</span></p><p id="GUID-49D0CD60-3574-4723-812B-C44819501893"> Gets the current layer type.</p>
+<p id="GUID-B9161CD2-5E61-4588-81C6-B2F6195C3EE0">Parameters: null</p><p id="GUID-679D58ED-CB3D-4B48-A9E5-2B64C1C41785">Return value: </p><p id="GUID-2A4D08FC-DA88-48E1-907B-137681CAD650"> Deferred;</p><p id="GUID-0ED93F90-9E9B-499E-AF38-A96C01BBC195">Resolve value: String</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_A75FDF4F9E954FC9B9EA29E9A30419EA" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9A031549-37CB-4985-80B1-66DEDF79269F"><span class="usertext">getNodeById(nodeId)</span></p><p id="GUID-C37BCA19-2DB9-4372-AE63-D5A3ECC638E2">  Gets the node or subnode by ID.</p>
+<p id="GUID-39E48AAC-90D0-42FB-BBA7-F57690B51B24">Parameters:  nodeId—node or subNode ID.</p><p id="GUID-5FCE88C2-E8BD-418B-80C4-A62ED1B9FE42">Return value:  LayerNode</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div>
+
+<div class="block_table" id="TABLE_DB92988E224542E48B6881BBF7F131F9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BBF3EB9-3720-4AB0-BB91-0B574C737BB4"><span class="usertext">getOpacity()</span></p><p id="GUID-E14022E6-BB21-4553-8AD6-824258D0FEC8"> Gets the opacity of the current layer.</p>
+
+
+
+
+
+<p id="GUID-03EA8FB1-7120-48D7-8095-569BDA4BBF22">Parameters: null</p><p id="GUID-ED9445D4-60AD-439A-8CF3-0FAAB3F24427">Return value: Integer</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_1911E7B1204647C2A48742D11A8A5522" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3C973251-28BA-48A5-B94B-F6EDFC3BAE67"><span class="usertext">getParentNode()</span></p><p id="GUID-704F0294-93C8-4316-B93D-0211215DD545">  Gets the parent node of the current layerNode.</p>
+<p id="GUID-E816E192-D8DF-4419-B4F1-4116111277DF">Parameters: null</p><p id="GUID-E1F6212F-D014-4063-B91B-52F222DAC025">Return value: </p><p id="GUID-8EFA22B3-F6D0-4F09-A9BD-34C313DFDE8B"> LayerNode;</p><p id="GUID-00BA1121-F742-41BB-AF29-F92EDFDD3AF3"> null—Returns null if the current layer is a rootLayer.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_E5AD64BEF0FF46E68D0E1D88C948B67E" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F88DD7A5-A2A0-479B-A5F0-2AA1BC45A943"><span class="usertext">getPopupInfo()</span></p><p id="GUID-BF4AC967-EA41-464A-A38D-579CA40ECF68">  Gets the pop-up information from the current layer.</p>
+<p id="GUID-C3D51C67-E65B-4F88-B1B6-837AE5378314">Parameters: null</p><p id="GUID-C8D7A79E-725D-4EBA-B2EC-8A22D457CB5B">Return value: </p><p id="GUID-28408249-93B5-43E4-919D-045AA7A81EB3"> JSON;</p><p id="GUID-CE01E272-0F1B-43E3-AD80-4A84A286BC1E"> null—Returns null if the layer doesn't have pop-up information.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_3E3FCE139D484EE29300690276EF73F4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DFB94E4E-95AE-41B7-8954-6F5D15101D01"><span class="usertext">getPopupInfoFromWebmap()</span></p><p id="GUID-26C672B3-83A1-422A-9159-BF9595500059"> Gets the pop-up information from the web map.</p>
+<p id="GUID-FFB92B12-AB8B-41E2-8C70-0340970E7751">Parameters: null</p><p id="GUID-0BC3732F-9B1E-4C11-ACA5-1506358792DC">Return value: </p><p id="GUID-96BD25CD-44C2-40AC-A627-17FBF5FDB6FC"> JSON;</p><p id="GUID-9F8405A9-7C56-4EAF-8B6E-D2EFA31168F2"> null—Returns null if the pop-up information isn't defined in the web map.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_BAD040A855A54EBD9C1FAE5608C8A8A9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9D010EA2-DD12-46A6-9F11-083CFD34C0AA"><span class="usertext"> getRelatedNodes()</span></p><p id="GUID-88D7774D-10B4-4F61-BB6B-25B976B63E04"> Gets the related layerNodes array associated with the current layer.</p>
+<p id="GUID-C3DF6113-22B3-42B8-A080-D74600665BF3">Parameters: null</p><p id="GUID-3DC7A11D-F35B-4619-971C-E27825EA3C3D">Return value: </p><p id="GUID-2C17BCAD-787B-4197-B3CE-39BC7B24E99C"> Deferred;</p><p id="GUID-1752353C-FD8A-4556-A97E-0DD87DBC7822">resolve value: LayerNode[]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_1C7938FC3BDC4B29A5DDD073E519ABDB" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-90FC6385-17D9-427D-8B64-F376015E702F"><span class="usertext"> getRootNode()</span></p><p id="GUID-FA43A12D-68B8-4129-91DE-A088D934AC44"> Gets the root node of the current layerNode.</p>
+<p id="GUID-19453B59-3F07-4634-B240-456F2540CD3C">Parameters: null</p><p id="GUID-5F36C9A7-0866-4FFC-941C-48C02DEDFBE9">Return value: LayerNode</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_3B1005F379C14EAC8AB65AC849F19681" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A77A4802-CF78-4BA6-9506-69C33708246B"><span class="usertext">getServiceDefinition()</span></p><p id="GUID-753BC136-996E-4E13-A1B2-7D64224E646D">  Gets the service definition from the server.</p>
+<p id="GUID-574671ED-71DC-422F-BC33-E2E505366B45">Parameters: null</p><p id="GUID-12DE6136-A33A-4AB0-BE07-0B454A210137">Return value: </p><p id="GUID-36A5248D-76C2-4C2F-B6D2-C315E00068B1"> Deferred;</p><p id="GUID-AF750AD0-7BDF-4F4B-B014-0EA1A6FD5A85">resolve value: JSON or XML; null—Resolves null if the service definition fails to load.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_BDB025F15EB14EF18B68A8145EA92E4E" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-11586DC3-1172-4854-966F-84235DB4966F"><span class="usertext">getSubNodes()</span></p><p id="GUID-C788B0A0-8F7C-448E-9785-E17EB853EE45">  Gets the subNodes of the current layerNode.</p>
+<p id="GUID-E4FFA89D-BDD3-48C9-8AC9-DD586ED7442F">Parameters: null</p><p id="GUID-236A1609-3EEC-4F71-964E-1EBBE6E8F033">Return value: LayerNode[]</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_356CB3FD1AE24DD9BCAAD09228CA5477" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D8EC9ED6-0747-4160-AA25-16B4E2089CC4"><span class="usertext"> getUrl()</span></p><p id="GUID-D96E4F99-5BC1-4920-BF13-3B319A9EB364"> Gets the URL of the current layer.</p>
+<p id="GUID-276594E9-CB78-40F2-8418-4BFF906FE6A0">Parameters: null</p><p id="GUID-06438F3F-31D2-42A2-B4E2-0844A535524F">Return value: </p><p id="GUID-DA40DA55-506D-4981-AF2B-954ED23EBD1C"> String;</p><p id="GUID-97EAAA6E-AA8C-4D1B-BDA4-B3AAEEB62B4A"> null—Returns null if the layer doesn't have a URL.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_7AE056FB7E0D402A87008267332FFCBC" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5EC531E5-C518-4491-81C7-1E8DEFAB89F0"><span class="usertext"> hide()</span></p><p id="GUID-01F927FF-01FF-4939-8C75-5C44B90C7F23"> Makes the current layer invisible on the map.</p>
+<p id="GUID-97A4424B-99C5-4280-B3AA-DF3D0F37A865">Parameters: null</p><p id="GUID-BEA47C9B-810F-49DC-8862-A6AD6EDA957A">Return value: null</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_F3D2357EA0C74F02A5272248437DFFE2" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-725160F3-82BA-48D3-9F43-1C8F5578FC90"><span class="usertext"> hideLabel()</span></p><p id="GUID-A8C35D60-66E6-4EFD-93E7-056383136DD6"> Hides the labels on the map.</p>
+<p id="GUID-018932D5-CCE1-42B2-9A35-E7B2D8E4D499">Parameters: null</p><p id="GUID-C6CD0868-BEA8-43B4-8E7E-DAA313345B54">Return value: null </p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_F09F742A3E8940DFB22C9BAACE8CE838" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EE181D23-8733-4D1A-9E17-3067DAA0E94A"><span class="usertext"> isHostedLayer()</span></p><p id="GUID-E96489C8-3602-464A-86CF-C518912C0629"> Returns true if the layer is a hosted layer.</p>
+<p id="GUID-A8F44328-B5EA-467A-B013-183CCD1B3F24">Parameters: null</p><p id="GUID-F5A79628-2AF0-4A35-8A27-ED9EAF2D5A67">Return value: </p><p id="GUID-2515DBA5-997C-4359-94E9-03342A0CA36F"> Deferred;</p><p id="GUID-1D6ACE8B-A99D-43C5-9FA4-3C2EB6B4E146"> Resolve value: Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_29E5F20FE63E456285AD0833E52FA097" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-10330E31-6420-4ABB-AEC8-2BE9D883B65B"><span class="usertext"> isItemLayer()</span></p><p id="GUID-843E0C61-0DCF-4A16-8068-2717D888328B"> Returns basic item information if the layer is an item layer; otherwise it returns null.</p>
+<p id="GUID-086C2BD3-813C-4FE9-A852-3F90D9ED7E79">Parameters: null</p><p id="GUID-D248D1B7-9E8F-4F73-A243-E6E79F7A1004">Return value: <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">basicItemInfo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">portalUrl</span><span class="o">:</span>
+    <span class="nx">itemId</span><span class="o">:</span>
+  <span class="p">}</span>
+</code></pre></div>
+</div></p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_1414F765122849468A80C35D8D5CC78B" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-50D8456B-4240-4C02-8BD7-44CB6754A43D"><span class="usertext"> isLabelVisble()</span></p><p id="GUID-B7DB7188-1089-40E9-B89D-BFFEB5A56F13"> Returns true if the layer's label is visible.</p>
+<p id="GUID-13D08639-9053-4ADB-8A5A-10766A62FAE3">Parameters: null</p><p id="GUID-FE3F4CA2-4C77-464D-97CD-C07F99988C7A">Return value: Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_114F55F238CA4F548834783C7E421BF8" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-08EBD260-9A3B-420B-9C13-9E1BDBFA0FA3"><span class="usertext"> isLeaf()</span></p><p id="GUID-2F51D57A-EA2B-49DE-A966-E873021F5851"> Returns true if the node is a leaf node.</p>
+<p id="GUID-C366CCB3-2500-42F7-A1A0-F9454DE9EC10">Parameters: null</p><p id="GUID-75B154E9-3C9C-44B6-8E19-8F789FAAB4A7">Return value: Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_4DD6865FA14B48BC945B27DFC07246FB" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-791B5AE7-F4F4-45A8-8EE9-87BCD69FCE6A"><span class="usertext"> isPopupEnabled()</span></p><p id="GUID-D10FD328-5F5C-4B6F-A28A-39E133F6AD8E"> Returns true if the pop-up is enabled.</p>
+<p id="GUID-BDF29086-34A7-4842-8CED-25313EE04BA8">Parameters: null</p><p id="GUID-3A59B905-767A-420E-ACFD-4394EBA13D94">Return value: Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_3E64936BADC1494AAABD028E4B989D68" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2ECAB340-55C4-4569-8AAD-C051D179266E"><span class="usertext"> isRoot()</span></p><p id="GUID-2392CFD7-60A8-4E96-A7D2-E9C55B6F4216">  Returns true if the node is a root node.</p>
+<p id="GUID-AC698AE0-3BAA-4BCE-A9C3-9B5A2BA136DF">Parameters: null</p><p id="GUID-3DC31623-776B-44C9-97A7-064299D521DF">Return value: Boolean </p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_A084CD9B8AFF480088AD49806F43D7CB" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A66DF8EF-5525-43CD-A52F-C4B114656DB3"><span class="usertext">isShowLegend()</span></p><p id="GUID-A6BF335D-7E97-4E03-921A-A8D2B90CBBF3">Determines if a legend is showing in the current layer.</p>
+<p id="GUID-DA7AD38B-AA11-4C9A-8AF0-8435B92C9489">Parameters: null</p><p id="GUID-CE674212-E436-4881-B794-F5FDAC082BCF">Return value: Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_54316A213D1C4AFEAC987E7A5F99C31B" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EA1B84CD-6657-4502-B331-8EEDAEF359FD"><span class="usertext">isShowLegendFromWebmap()</span></p><p id="GUID-80F8D33F-71CE-48BF-B061-81CB5FC178C2">Determines if a legend is showing in the web map.</p>
+<p id="GUID-7E2F1E1A-B819-44AF-868E-9AAE2F4C2D97">Parameters: null</p><p id="GUID-B40E11C4-EAD7-40BD-913F-9E428C1D2409">Return value: Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_30CD0E9E4BC1477EB3DC7EF3BB38D852" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5D280F98-4876-42B1-A244-49F4C63AA3A0"><span class="usertext"> isTable()</span></p><p id="GUID-46EBE91E-78DF-4182-96A9-57EF6A26272D"> Returns true if the current layer is a table.</p>
+<p id="GUID-F7C7A985-DE06-44AA-B639-9B065B33CEC5">Parameters: null</p><p id="GUID-BC30E847-410E-4B6C-A863-207E510EAD80">Return value: Boolean </p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_56B0E1E940B343BD862DF0C0DBFCC24D" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-71D8F51C-FE4A-437B-9591-CDBBC4C8B93B"><span class="usertext"> isTiled()</span></p><p id="GUID-079FC2F3-6BFA-4A94-9B46-0AF2213FBAF0"> Returns true if the current layer is tiled. Currently, it only supports tiled map service layers.</p>
+<p id="GUID-43BF70CA-4C98-4687-A0C2-F67A9926282E">Parameters: null</p><p id="GUID-179A547D-5E1D-42BD-BF09-21A704D92C37">Return value:  Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_A597F22D31C94ABF8B8F46CFF2F3DA71" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BFC1AD8F-CDC8-40F2-9789-C1FC60195163"><span class="usertext">isToggledOn()</span></p><p id="GUID-C9DD5767-91BF-441E-B60B-41E9D907ABD0">Returns true if the layerNode is toggled on.</p>
+<p id="GUID-CFEFF99B-6E43-4B7A-ABDA-2D2C5C6A2A9B">Parameters: null</p><p id="GUID-791907B8-027A-43A9-B9B5-31964AF787B6">Return value: Boolean </p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_810563E9AF5A485F83B722C31AD1C9F3" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-73D15D13-3B1C-4477-A0BC-FF414CE1AF36"><span class="usertext"> isVisible()</span></p><p id="GUID-1AC1E3B4-231B-4BFC-A146-E12DED6F735F">Returns true if the layer is visible.</p>
+<p id="GUID-26F2D726-F9B0-45A3-B521-C1BCAF3C0303">Parameters: null</p><p id="GUID-301425CB-B765-4D29-9112-F555C28E6ED1">Return value: Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_948578810C6F4BC3BC8773483942DDC9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7A1387B9-BAA3-4C48-8A6B-3430BACAF241"><span class="usertext"> isVisibleAtMapScale()</span></p><p id="GUID-DD18041B-AE9D-420C-84F7-E7F2688E5FFB">Returns true if the layer is visible at the current map scale.</p>
+<p id="GUID-4DD3551C-C7A7-46B3-B5CC-6E6C30DD1AAE">Parameters: null</p><p id="GUID-87F6E130-8F46-49F1-A296-5143095A8F2C">Return value: Boolean</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_4B8931B40A384090A12914BCFE955C73" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6D0FE8A7-AB49-4D8B-BDD2-4E559EB97D97"><span class="usertext"> loadInfoTemplate()</span></p><p id="GUID-D74D1591-D30B-42E7-A3EC-847506F228F2">  Gets the infoTemplate from the current layer if available, and attempts to load the default infoTemplate if the layer doesn't already have it.</p>
+<p id="GUID-A95B7715-FE48-4D1C-AEA1-DF90BCA7D58D">Parameters: null</p><p id="GUID-D61F725F-BA0E-4EB2-829F-AF9151C8B9CE">Return value: </p><p id="GUID-BCA3EABA-1257-4D6A-B209-4B50EA8150AD"> Deferred;</p><p id="GUID-13296B0F-FB3A-4B10-8A86-76562517B9BB"> resolve value: JSON; null—Returns null if the infoTemplate fails to load.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_FADC332A074A46D3A48E46E6CDEA2FE9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D77D0050-0963-4033-A4F4-1ADC87B51F07"><span class="usertext"> loadPopupInfo()</span></p><p id="GUID-8549B5FA-09AF-4413-A14E-07A66FCFCC8B"> Gets the pop-up information from the current layer if available, and attempts to load the default pop-up information if the layer doesn't already have it.</p>
+<p id="GUID-4DA0F48F-DC0A-48EE-B103-5BA25B2F3A45">Parameters: null</p><p id="GUID-4B668436-8D9F-4D07-ACA7-4B93FFDD86BA">Return value: </p><p id="GUID-89992A33-B34D-499A-ABA8-3F25B8008F32"> Deferred;</p><p id="GUID-B69CD49F-A3F5-4C86-B45A-0DA9B9AF24FD">resolve value: JSON; null—Returns null if the PopupInfo fails to load.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_501B72FFFC514B61A2CBE08736A1EF58" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7B28495B-DBDB-4463-AD30-EB05AADBF60E"><span class="usertext"> setFilter(layerDefinitionExpression)</span></p><p id="GUID-55E17E0A-19D0-40E5-A5EA-CF2E2BB8FFC8"> Sets the definition expression for the current layer.</p>
+<p id="GUID-8455807F-DE27-43CD-AFEF-F7D9C04EC5BE">Parameters: String</p><p id="GUID-5C34FAE7-52D3-4051-96A4-4049CB58E402">Return value: null</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_09B10A47DBA74B7A8E49772CE9E529E4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7938AD8C-61F3-4D9C-B963-C9B90325768D"><span class="usertext"> setOpacity(opacity)</span></p><p id="GUID-AE98447B-6DF8-49FE-AF47-CD12DF58102D">  Sets the opacity for the current layer.</p>
+<p id="GUID-A1E2C941-95EF-42B0-BD8F-71ED18B19755">Parameters: </p><p id="GUID-E30D2255-AAAB-4CB1-8F25-EDB3740FB6FA">opacity: Integer</p><p id="GUID-09E1A23A-38D1-4874-9CE7-C42595DFB119">Return value: null</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_0E7D17077BB0456BAC3CC7DFE88839D9" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-348C02EE-0BDA-45E7-87F0-823D37132984"><span class="usertext">show()</span></p><p id="GUID-EDDC336D-8CFC-4F48-B4D0-C492A3FC2E1E"> Makes the current layer visible on the map.</p>
+<p id="GUID-45C58925-26F7-42BF-A35D-D52AC72BEB84">Parameters: null</p><p id="GUID-32947433-CB82-4117-9DB9-43EE196DA695">Return value: null </p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_DAA69B510EAE49B1B4CBB2E01330904E" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3E4380D4-5CBF-4FDB-A31A-F982285119CB"><span class="usertext">showLabel()</span></p><p id="GUID-1E4689B0-6592-47C4-99F6-38CB0D587EA6">Shows the labels on the map.</p>
+<p id="GUID-35810BB2-4F26-4D52-A12E-E3E301BF1B07">Parameters: null</p><p id="GUID-9DF3C5C9-CF18-4B43-A051-54113A60E208">Return value: null</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_BF1AA5C41D794F1FAB6EBE3CF5AE9FC2" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B4F24E99-182B-498C-A790-89E115DDF45C"><span class="usertext">toggle()</span></p><p id="GUID-709B42C4-E14A-470B-B77A-EC0EF6F0A4E7"> Toggle layerNode. The layer shows  if all parent nodes on the path are toggled on.</p>
+<p id="GUID-463A6657-8C17-4F18-8B92-20D76570C87E">Parameters: null</p><p id="GUID-2BC71C85-FFA0-4306-ADB4-A0FE955993F0">Return value: null</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_016E5FE6CB8D423B804B6860FCD55453" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-006E78D5-5204-404E-80D7-19AC26F6BB7E"><span class="usertext"> traversal(callback)</span></p><p id="GUID-C063D4AD-2B85-4990-AD7D-CCE4D90359CC"> Traverses all nodes of the current layerNode with Depth-First-Search.</p>
+<p id="GUID-82C99112-F69C-4368-A986-7838E3A9464A">Parameters: <span class="usertext">callback: function(layerNode) {};</span></p><p id="GUID-43789C10-94F4-4624-8AB6-DAB5949FCAAD">Callback parameters: layerNode</p><p id="GUID-9F2FF90D-B7F2-4F99-AC2C-317885373518">Callback return value: Boolean—Returns true when the traversal is  interrupted; returns false when the traversal continues.</p><p id="GUID-56B537BF-ADDD-40AF-BFB3-A883AE786A1C">Return value: Boolean—Returns true when the traversal is interrupted; returns false when the traversal is complete.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div>
+</p></div>
+<div class="section1" id="ESRI_SECTION1_FD7F91D366F84CFFB220F780FB7033B4" purpose="section1"><h2>Events</h2><div class="block_table" id="TABLE_045BB8BF4E3F4506BA03AAF25EECFB34" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-28B443BB-4DE4-47A9-9F40-140297EB2465"><span class="usertext">toggle-change</span></p><p id="GUID-8D8D0F4D-110C-46C9-90FA-F29C34F30DF0"> Fires when the layerNode toggle is changed.</p>
+<p id="GUID-C2DE200D-FCF1-44FC-AC97-2F80D1B3BD43">Event object: null</p><p id="GUID-39B78CF3-8A9F-4D22-89C5-F20FDA585BD7">See also:  EVENT_TOGGLE_CHANGE in the Constants table</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_79396DE889A1490895602832C589FFA4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4FD30FA3-7032-4245-9A2A-3FCFB1CF1397"><span class="usertext">visibility-change</span></p><p id="GUID-7CE19C78-43AE-4D91-BEF8-A56AD36101E3">Fires when the visibility of layerNode is changed.</p>
+<p id="GUID-3D832920-D0DB-426E-9F25-4A80074C1A7F">Event object: null</p><p id="GUID-13413675-7B32-4206-AA3B-BB49333B96E6">See also:  EVENT_TOGGLE_CHANGE in the Constants table.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_FB0774518AB94635A2669F588F8084C1" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-91A3C8F9-03E2-4AC1-99E7-A177FFCCDE35"><span class="usertext">filter-change</span></p><p id="GUID-043D1508-8E21-4AB1-B756-3C75B1BA4E13">  Fires when the layerNode filter is changed.</p>
+<p id="GUID-42704625-40C5-45AF-BE87-7BCFC82C27DC">Event object: null</p><p id="GUID-9F289ABF-D831-4A9E-8CA3-C2788C58EE43">See also:   EVENT_FILTER_CHANGE in the Constants table.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_9171959E4129490AB8C5EC46AB52C33E" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A72E2380-5A46-4893-9BB3-A1806492E7C9"><span class="usertext">renderer-change</span></p><p id="GUID-F0653E4F-A388-4405-A3F1-B24AC01E10DD">Fires when the layerNode renderer is changed.</p>
+<p id="GUID-EB4F521F-50E0-41A8-85EC-2B8934D88B84">Event object: null</p><p id="GUID-B2F7EC0B-2904-4F2F-8DB7-F1F78CC0AEF1">See also:   EVENT_RENDERER_CHANGE in the Constants table.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div><div class="block_table" id="TABLE_CCABDB329C654AE18AB569ACBD89FEBB" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AF5E5CB1-17D1-4A83-A6F3-B88CF6CA5CC2"><span class="usertext">opacity-change</span></p><p id="GUID-1B3079F5-B998-4B58-BF6D-7FD174DF57B5">Fires when the layerNode opacity is changed.</p>
+<p id="GUID-01DE6890-D404-42C2-B7CC-CF3D53A2E014">Event object: null</p><p id="GUID-55DEA3BD-1E07-48B2-A842-F57E7BD1A3BE">See also:   EVENT_OPACITY_CHANGE in the Constants table.</p>
+
+
+</td></tr></tbody><caption class="table_desc"></caption></table></div></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

@@ -1,0 +1,34 @@
+# https://aws.amazon.com/premiumsupport/knowledge-center/prevent-cloudfront-from-caching-files/
+
+# update for no caching
+# https://docs.aws.amazon.com/cli/latest/reference/cloudfront/update-distribution.html
+# change id below to match listDistroOutput
+
+
+
+aws cloudfront list-distributions > listDistroOutput
+aws cloudfront get-distribution-config --id E1QZGS6T4GR4M > distroConfigOutput
+# edit the output file  MaxTTL=0   AND
+
+# --if-match  is the  etag
+
+
+# remove  {
+#    "ETag": "ETag_Value",
+#    "DistributionConfig":
+# reference https://github.com/aws/aws-cli/issues/2479
+
+
+
+aws cloudfront update-distribution --id E1QZGS6T4GR4M --if-match E1OW8BPD6ZIPZ1 --distribution-config file://distroConfigOutput
+
+#Optional: Submit a GetDistribution request to confirm that your changes have propagated. When propagation is complete, the value of Status is Deployed .
+
+aws cloudfront get-distribution-config --id E1QZGS6T4GR4M > distroConfigConfirmOutput
+
+=====================
+
+aws cloudfront get-distribution-config --id E3DKABI936ZAIC > webAppDistroConfigOutput
+aws cloudfront update-distribution --id E3DKABI936ZAIC --if-match EXNTNDGZWVIJ0 --distribution-config file://webAppDistroConfigOutput
+aws cloudfront get-distribution-config --id E3DKABI936ZAIC > webAppDistroConfigConfirmOutput
+

@@ -1,0 +1,66 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="Learn how to send a layer to the Attribute Table widget."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+Send a layer to the Attribute Table widget
+</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-1E7B5468-7FE9-40FB-86FC-B869EFAB6B4D]--><body><div id="content"><div class="header"><h1>
+Send a layer to the Attribute Table widget
+</h1><div id="breadcrumb"></div></div>
+<p id="GUID-F8FE49CE-C953-4DBC-9EC6-B36B65F356FF">The following steps explain how to send a layer from your widget to the Attribute Table widget. Since the attribute table  only displays layers  in the map, make sure  to add the layer to the map.</p>
+<div class="wfsteps" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-35713971-C5D4-4F95-B64D-4866A88CDDF6"><div class="step_title">Steps:</div><ol>
+<li purpose="step" id="GUID-404FC548-7DF6-4043-8B17-B7F55DC6DD70">
+<span purpose="cmd" id="GUID-5D513FEE-7572-4AFC-A1A8-4C57311FBFEE">
+ Import the <span class="usertext">jimu/LayerInfos/LayerInfos</span> module.
+</span>
+</li><li purpose="step" id="ESRI_STEP_E40C7CD254174399B174F9DBAE3D7271"><span purpose="cmd" id="GUID-FCA7911A-CAF9-40B0-8E59-D10CDA5DA60D"> Get the instance of LayerInfos, and bind the layerInfosChanged event.</span><div class="stepexample" purpose="stepexample"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">LayerInfos</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">(</span><span class="nx">map</span><span class="p">,</span> <span class="nx">map</span><span class="p">.</span><span class="nx">itemInfo</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">layerInfosObj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">own</span><span class="p">(</span><span class="nx">layerInfosObj</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span>
+    <span class="s1">&#39;layerInfosChanged&#39;</span><span class="p">,</span>
+    <span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">onLayerInfosChanged</span><span class="p">)));</span>
+<span class="p">}));</span>
+</code></pre></div>
+</div></div><ul purpose="choices" id="ESRI_CHOICES_B61B1138858545B8A913DBBA86691F2B"><li purpose="choice" id="ESRI_CHOICE_455E4C2DCB4A4FB29FA098894712391A">If the layer has already been added to the map,  use the instance of LayerInfos to get layerInfo by layer id.<div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code>var layerInfo = this.layerInfosObj.getLayerInfoById(fLayer.id);
+this.publishData({
+    &#39;target&#39;: &#39;AttributeTable&#39;,
+    &#39;layer&#39;: layerInfoSelf
+});
+</code></pre></div>
+</div></li><li purpose="choice" id="ESRI_CHOICE_593699499DAC40FA9789D386E1F87131">Otherwise, add a new layer to the map, get the new layerInfo from the onLayerInfosChanged function, and publish it to the attribute table. <div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">fLayer</span><span class="p">);</span>
+
+<span class="nx">onLayerInfosChanged</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">layerInfo</span><span class="p">,</span> <span class="nx">changeType</span><span class="p">,</span> <span class="nx">layerInfoSelf</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">layerInfoSelf</span> <span class="o">||</span> <span class="o">!</span><span class="nx">layerInfo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;added&#39;</span> <span class="o">===</span> <span class="nx">changeType</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">layerInfoSelf</span><span class="p">.</span><span class="nx">getSupportTableInfo</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">lang</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">supportTableInfo</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">supportTableInfo</span><span class="p">.</span><span class="nx">isSupportedLayer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">publishData</span><span class="p">({</span>
+        <span class="s1">&#39;target&#39;</span><span class="o">:</span> <span class="s1">&#39;AttributeTable&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;layer&#39;</span><span class="o">:</span> <span class="nx">layerInfoSelf</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+    <span class="p">}));</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;removed&#39;</span> <span class="o">===</span> <span class="nx">changeType</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div></li></ul></li>
+</ol></div></div>
+<div class="wfsummary" id="GUID-9DD48C1B-BBAB-466B-A536-7E5E1887F365" purpose="wfsummary">
+
+</div>
+<div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

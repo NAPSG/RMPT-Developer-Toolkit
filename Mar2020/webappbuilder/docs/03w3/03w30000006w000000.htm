@@ -1,0 +1,43 @@
+<html lang="en" xml:lang="en"><head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><META name="description" content="The FeaturelayerChooserFromMap class
+
+displays the feature layers from the map and constructs a UI tree to show the feature layers."><meta name="content-language" content="en"><link href="rsrc/htmlhelp.css" rel="stylesheet" type="text/css"><title>Web AppBuilder for ArcGIS | Help - 
+FeaturelayerChooserFromMap class</title>
+                <script type="text/javascript" language="JavaScript">
+                    var pathL  = self.location.pathname.split ("/");
+                    var fname = pathL[pathL.length-1];
+                    var i = fname.lastIndexOf (".htm");
+                    if (i>=0) {
+                    fname = fname.substring (0, i)
+                    } else {
+                    //??
+                    }
+                    if (self.location.hash) {
+				    		      fname = fname + self.location.hash;
+						        }
+                    self.location.replace ("../index.html#//" + fname);
+                </script>
+                </head><!--Publication GUID: [GUID-E7D1C130-8F87-4109-8D61-E73A46083F52]--><!--Topic GUID: [GUID-423A1DCE-AA1A-4FA1-9379-5DC8A491C196]--><body><div id="content"><div class="header"><h1>
+FeaturelayerChooserFromMap class</h1><div id="breadcrumb"></div></div>
+
+<p id="GUID-EB6023D1-EB91-4984-839E-F8AD545DC401">
+The <span class="usertext">FeaturelayerChooserFromMap</span> class  displays the feature layers from the map and constructs a UI tree to show the feature layers. It inherits <span class="usertext">LayerChooserFromMap</span> and overrides the filter method to only show the feature layers.
+</p>
+
+<div class="section1" id="ESRI_SECTION1_158CE23F77F44F60B2DAA21C2E89B51D" purpose="section1"><h2>AMD Module Require</h2><p id="GUID-CCC815C5-8132-49D9-8833-454241FFA131"><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jimu/dijit/FeaturelayerChooserFromMap&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">FeaturelayerChooserFromMap</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* code goes here */</span> <span class="p">});</span>
+</code></pre></div>
+</div></p></div><div class="section1" id="ESRI_SECTION1_9A4A89A3098A402BB9FE08277CEE2654" purpose="section1"><h2>Constructor</h2><p id="GUID-E99C9361-7726-4A12-95AC-E431C32802BB"><div class="block_table" id="TABLE_FB3E3B7A87094BBB9C30997D7B6225B4" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6B42A3F-BC35-4C1D-8B7E-94B7146A53F6"><span class="usertext">new FeaturelayerChooserFromMap(params, srcNodeRef)</span></p><p id="GUID-FB97692F-C7CC-4B82-94CE-515F58AF4239">   Creates a new FeaturelayerChooserFromMap dijit.</p><p id="GUID-66547053-0F13-493E-B31A-DBA963576D1A">Parameters:</p><p id="GUID-AE1CFE7F-AEBD-4722-957D-DA174231A482"> <span class="usertext">&lt;Object&gt; params</span>—Required. Parameters for the FeaturelayerChooserFromMap dijit.</p><p id="GUID-F2636975-00BD-4405-B615-071686016CBF"> <span class="usertext">&lt;DOMNode | String&gt; srcNodeRef</span>—Optional.  HTML element where <span class="usertext">FeaturelayerChooserFromMap</span> is rendered.</p><p id="GUID-DF796DDC-B6C2-4471-A43E-98CF25A94587"> params properties:</p><p id="GUID-B04DB5E4-4818-452F-A2F7-FB5F568D1C75"><span class="usertext">  &lt;Object&gt; createMapResponse</span>—Required.     The callback response of the <span class="usertext">esri.arcgis.utils#createmap</span> method. You can get this object using the <span class="usertext">webMapResponse</span> property of the map.</p><p id="GUID-C4BF3FB2-918B-4093-93D1-3B0BF8039760"><span class="usertext">   &lt;Boolean&gt; multiple</span>—Optional.    Default is false. By default, a user can only select one feature layer. If set to true, a user can select multiple feature layers.</p>
+ <p id="GUID-135912EE-A906-4777-8C76-131C49724DF2"><span class="usertext"> &lt;String&gt;[] types</span>—Optional.  The  <span class="usertext">FeaturelayerChooserFromMap</span> class supports  filtering a feature layer by geometry type. The available values are point, polyline, and polygon. By default, the value types are ['point','polyline','polygon'], and the dijit doesn't filter a feature layer by geometry type.</p><p id="GUID-3CDA80AC-BDD6-487A-A9AA-20582D4DFA26"><span class="usertext">&lt;Boolean&gt; showLayerFromFeatureSet</span>—Optional. The default value is false. By default, the <span class="usertext">FeaturelayerChooserFromMap</span> class doesn’t show feature layers created by FeatureCollection.</p><p id="GUID-0D51F826-D6BA-462C-8ED2-231DE1CBAC21">Example:</p><div class="codeblock" purpose="codeblock"><div class="highlight"><pre><code><span class="nx">require</span><span class="p">([</span><span class="s1">&#39;jimu/dijit/FeaturelayerChooserFromMap&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">FeaturelayerChooserFromMap</span><span class="p">){</span>
+          <span class="kd">var</span> <span class="nx">layerChooser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FeaturelayerChooserFromMap</span><span class="p">({</span>
+            <span class="nx">createMapResponse</span><span class="o">:</span> <span class="nx">map</span><span class="p">.</span><span class="nx">webMapResponse</span><span class="p">,</span>
+            <span class="nx">multiple</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nx">types</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;point&#39;</span><span class="p">],</span>
+            <span class="nx">showLayerFromFeatureSet</span><span class="o">:</span> <span class="kc">true</span>
+          <span class="p">},</span> <span class="nx">srcNodeRef</span><span class="p">);</span>
+          <span class="p">...</span>
+        <span class="p">});</span>
+</code></pre></div>
+</div></td></tr></tbody><caption class="table_desc"></caption></table></div>
+</p></div><div class="section1" id="ESRI_SECTION1_E7440A452CC54B5F9A365D815BF4647C" purpose="section1"><h2>Methods</h2><p id="GUID-66C8B8E9-642E-4449-878C-5699525A90C8"><div class="block_table" id="TABLE_B7FC2CEBC6BA4B7C9CF743B95969C644" purpose="block_table"><span class="table_title"></span><table class="table"><colgroup width="1.12*"></colgroup><tbody><tr><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B0A1B792-588F-4E4A-AD41-7B9F26847305"><span class="usertext"> getSelectedItems ()</span></p><p id="GUID-CE498133-B962-4D3C-AA62-CF074A45F441">Gets information for selected layers. </p>
+<p id="GUID-25E34538-F68C-4731-8607-4F40A66D8497">Return type:  Object array. Each element is in the form {name, layerInfo}.</p></td></tr></tbody><caption class="table_desc"></caption></table></div></p></div><div class="footer"> Copyright © 1995-2018 Esri. All rights reserved. </div></div></body></html>

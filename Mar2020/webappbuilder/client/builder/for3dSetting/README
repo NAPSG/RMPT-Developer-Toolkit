@@ -1,0 +1,6 @@
+
+The files in the 'for3dSetting' folder are used to develop 3D application's settings page. 
+
+It has some special features:
+  1, All files are built on ArcGIS API for JavaScript 3.x.
+  2, There is a 'sceneView' object in the builder environment, which is created based on ArcGIS API for JavaScript 4.x.

@@ -1,0 +1,557 @@
+{
+  "geocodeService": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+  },
+  "enableRouting": true,
+  "bufferRange": {
+    "minimum": 0,
+    "_default": 0,
+    "maximum": 100
+  },
+  "distanceUnits": "miles",
+  "distanceSettings": {
+    "miles": 9035,
+    "kilometers": 9036,
+    "feet": 9002,
+    "meters": 9001,
+    "yards": 9037,
+    "nauticalMiles": 9030
+  },
+  "maxDistance": "80",
+  "defaultZoomLevel": 13,
+  "themes": [
+    {
+      "id": 0,
+      "name": "Special Needs Populations",
+      "layers": [
+        "Overall_2014_Tracts_4854",
+        "Public_Schools_4826",
+        "Private_Schools_9071",
+        "Prison_Boundaries_774",
+        "NursingHomes_950",
+        "Mobile_Home_Parks_9077",
+        "Child_Care_Centers_1134",
+        "Child_Care_Centers_1134"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Communications",
+      "layers": [
+        "Cellular_Towers_4606",
+        "Cellular_Service_Areas_9126"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Energy",
+      "layers": [
+        "PowerPlants_4516",
+        "Electric_Holding_Company_Areas_9187"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Food, Water, Shelter",
+      "layers": [
+        "Public_Schools_4826"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Health and Medical",
+      "layers": [
+        "DialysisCenters_7546",
+        "Hospitals_1_34"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Hazardous Material",
+      "layers": [
+        "EPA_Emergency_Response_ER_Facility_Response_Plan_FRP_Facilities_5727",
+        "EPA_Emergency_Response_ER_Risk_Management_Plan_RMP_Facilities_6796"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Safety and Security",
+      "layers": [
+        "Local_Law_Enforcement_Locations_812",
+        "Local_Emergency_Operations_Centers_EOC_4980",
+        "Local_Emergency_Operations_Centers_EOC_4980",
+        "Fire_Stations_9828",
+        "Fire_Stations_9828"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Transportation",
+      "layers": [
+        "Public_Transit_Stations_6031"
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "label": "Demographics (CDC SVI)",
+      "type": "summary",
+      "layerTitle": "CDC’s Social Vulnerability Index (SVI) – 2014 overall SVI, census tract level",
+      "layers": "Overall_2014_Tracts_4854",
+      "advStat": {
+        "url": "https://services3.arcgis.com/ZvidGQkLaDJxRSJ2/arcgis/rest/services/Overall_2014_Tracts/FeatureServer/1",
+        "stats": {
+          "tabCount": false,
+          "sum": [
+            {
+              "value": 0,
+              "expression": "E_TOTPOP",
+              "label": "Estimated Total Population"
+            },
+            {
+              "value": 0,
+              "expression": "E_DAYPOP",
+              "label": "Estimated Daytime Population"
+            },
+            {
+              "value": 0,
+              "expression": "E_AGE65",
+              "label": "Est Pop Over Age 65"
+            },
+            {
+              "value": 0,
+              "expression": "E_AGE17",
+              "label": "Est Pop Under Age 17"
+            },
+            {
+              "value": 0,
+              "expression": "E_DISABL",
+              "label": "Est Pop with a Disability"
+            },
+            {
+              "value": 0,
+              "expression": "E_GROUPQ",
+              "label": "Est Pop Institutionalized"
+            },
+            {
+              "value": 0,
+              "expression": "E_LIMENG",
+              "label": "Est Spk Eng Less than Well"
+            },
+            {
+              "value": 0,
+              "expression": "E_POV",
+              "label": "Est Pop Below Poverty Line"
+            },
+            {
+              "value": 0,
+              "expression": "E_NOVEH",
+              "label": "Est HOUSEHOLDS No Vehicle"
+            }
+          ]
+        },
+        "fieldOrder": [
+          {
+            "fieldName": "E_TOTPOP",
+            "fieldType": "sum"
+          },
+          {
+            "fieldName": "E_DAYPOP",
+            "fieldType": "sum"
+          },
+          {
+            "fieldName": "E_AGE65",
+            "fieldType": "sum"
+          },
+          {
+            "fieldName": "E_AGE17",
+            "fieldType": "sum"
+          },
+          {
+            "fieldName": "E_DISABL",
+            "fieldType": "sum"
+          },
+          {
+            "fieldName": "E_GROUPQ",
+            "fieldType": "sum"
+          },
+          {
+            "fieldName": "E_LIMENG",
+            "fieldType": "sum"
+          },
+          {
+            "fieldName": "E_POV",
+            "fieldType": "sum"
+          },
+          {
+            "fieldName": "E_NOVEH",
+            "fieldType": "sum"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Public Schools",
+      "type": "summary",
+      "layerTitle": "Base Data - Public Schools (HIFLD)",
+      "layers": "Public_Schools_4826",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Public_Schools/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "OBJECTID",
+              "label": "Total # of Public Schools"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Private Schools",
+      "type": "summary",
+      "layerTitle": "Base Data - Private Schools (HIFLD)",
+      "layers": "Private_Schools_9071",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Private_Schools/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "FID",
+              "label": "Total # of Private Schools"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Prison Boundaries",
+      "type": "groupedSummary",
+      "layerTitle": "Base Data: Prison Boundaries (HIFLD)",
+      "layers": "Prison_Boundaries_774",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Prison_Boundaries/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "pre": [
+            {
+              "value": 0,
+              "expression": "SECURELVL",
+              "label": "Security Level"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Nursing Homes",
+      "type": "summary",
+      "layerTitle": "Base Data - Nursing Homes (HIFLD)",
+      "layers": "NursingHomes_950",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/NursingHomes/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "OBJECTID",
+              "label": "# of Nursing Homes"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Mobile Home Parks",
+      "type": "summary",
+      "layerTitle": "Base Data - Mobile Home Parks (HIFLD)",
+      "layers": "Mobile_Home_Parks_9077",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Mobile_Home_Parks/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "OBJECTID",
+              "label": "# of Mobile Home Parks"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Cell Towers",
+      "type": "groupedSummary",
+      "layerTitle": "Base Data - Cellular Towers (HIFLD)",
+      "layers": "Cellular_Towers_4606",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Cellular_Towers/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "pre": [
+            {
+              "value": 0,
+              "expression": "LICENSEE",
+              "label": "Licensee:"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Cellular Service Areas",
+      "type": "groupedSummary",
+      "layerTitle": "Base Data: Cellular Service Areas (HIFLD)",
+      "layers": "Cellular_Service_Areas_9126",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Cellular_Service_Areas/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "pre": [
+            {
+              "value": 0,
+              "expression": "LICENSEE",
+              "label": "Licensee:"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Power Plants",
+      "type": "summary",
+      "layerTitle": "Base Data - Power Plants (HIFLD)",
+      "layers": "PowerPlants_4516",
+      "advStat": {
+        "url": "https://services.arcgis.com/0ZRg6WRC7mxSLyKX/arcgis/rest/services/PowerPlants/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "OBJECTID",
+              "label": "# of Power Plants"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Electric Holding Company Areas",
+      "type": "groupedSummary",
+      "layerTitle": "Base Data - Electric Holding Company Areas (HIFLD)",
+      "layers": "Electric_Holding_Company_Areas_9187",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Electric_Holding_Company_Areas/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "pre": [
+            {
+              "value": 0,
+              "expression": "NAME",
+              "label": "Holding Company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Dialysis Centers",
+      "type": "summary",
+      "layerTitle": "Base Data - Dialysis Centers",
+      "layers": "DialysisCenters_7546",
+      "advStat": {
+        "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/DialysisCenters/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "FID",
+              "label": "Total # of Dialysis Centers"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "EPA Emergency Response (ER) Facility Response Plan (FRP) Facilities",
+      "type": "summary",
+      "layerTitle": "Base Data - EPA Emergency Response (ER) Facility Response Plan (FRP) Facilities",
+      "layers": "EPA_Emergency_Response_ER_Facility_Response_Plan_FRP_Facilities_5727",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/EPA_Emergency_Response_ER_Facility_Response_Plan_FRP_Facilities/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "FID",
+              "label": "# of EPA FRP Facilities"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "EPA Emergency Response (ER) Risk Management Plan (RMP) Facilities",
+      "type": "summary",
+      "layerTitle": "Base Data: EPA Emergency Response (ER) Risk Management Plan (RMP) Facilities (HIFLD)",
+      "layers": "EPA_Emergency_Response_ER_Risk_Management_Plan_RMP_Facilities_6796",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/EPA_Emergency_Response_ER_Risk_Management_Plan_RMP_Facilities/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "FID",
+              "label": "# EPA ERP Facilities"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Local Law Enforcement Locations",
+      "type": "summary",
+      "layerTitle": "Base Data - Local Law Enforcement Locations (HIFLD)",
+      "layers": "Local_Law_Enforcement_Locations_812",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Local_Law_Enforcement_Locations/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "OBJECTID",
+              "label": "# of Local Law Enforcement "
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Fire Stations",
+      "type": "summary",
+      "layerTitle": "Base Data - Fire Stations (HIFLD)",
+      "layers": "Fire_Stations_9828",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Fire_Stations/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "OBJECTID",
+              "label": "# of Fire Stations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Local Emergency Operations Centers (EOC) ",
+      "type": "summary",
+      "layerTitle": "Base Data - Local Emergency Operations Centers (EOC) (HIFLD)",
+      "layers": "Local_Emergency_Operations_Centers_EOC_4980",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Local_Emergency_Operations_Centers_EOC/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "OBJECTID_1",
+              "label": "# Local EOCs"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Public Transit",
+      "type": "summary",
+      "layerTitle": "Base Data: Public Transit Stations (HIFLD)",
+      "layers": "Public_Transit_Stations_6031",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Public_Transit_Stations/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "OBJECTID",
+              "label": "# of Public Transit Stations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Child Care Centers",
+      "type": "summary",
+      "layerTitle": "Base Data - Child Care Centers",
+      "layers": "Child_Care_Centers_1134",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Child_Care_Centers/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "count": [
+            {
+              "value": 0,
+              "expression": "OBJECTID",
+              "label": "# of Child Care Centers"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Hospitals",
+      "type": "groupedSummary",
+      "layerTitle": "Base Data - Hospitals",
+      "layers": "Hospitals_1_34",
+      "advStat": {
+        "url": "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Hospitals_1/FeatureServer/0",
+        "stats": {
+          "tabCount": true,
+          "pre": [
+            {
+              "value": 0,
+              "expression": "TYPE",
+              "label": "TYPE OF HOSPITAL"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csvAllFields": false,
+  "summaryDisplayEnabled": true,
+  "incidentLabel": "Area of Interest",
+  "locateIncidentLabel": "SET YOUR AREA OF INTEREST",
+  "bufferLabel": "Buffer Distance",
+  "disableVisibilityManagement": true,
+  "saveEnabled": false,
+  "savePoints": false,
+  "drawGeodesic": false,
+  "saveLines": false,
+  "savePolys": true,
+  "snapshotEnabled": false,
+  "reportEnabled": false,
+  "reportSettings": {
+    "printTaskURL": "https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task",
+    "footnote": "",
+    "logo": "${appPath}/widgets/SituationAwareness/images/defaultLogo.png",
+    "textColor": "#0f96cc"
+  },
+  "themeLabel": "Lifeline",
+  "polyEditLayer": "IncidentLocations_active_6b07c78cc3364b4989da0c48e5d6794a_4794"
+}

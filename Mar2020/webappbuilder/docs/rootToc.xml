@@ -1,0 +1,494 @@
+<map title='Web AppBuilder for ArcGIS'>
+<topichead title='Get started'>
+<topicref title='Welcome' path='03w3/03w30000001w000000.htm'>
+</topicref>
+<topicref title='Get started' path='03w3/03w30000005r000000.htm'>
+</topicref>
+<topicref title='Run as a Windows service' path='03w3/03w30000007n000000.htm'>
+</topicref>
+<topicref title='Build your first app' path='03w3/03w300000054000000.htm'>
+</topicref>
+<topicref title='System requirements and browser support' path='03w3/03w300000084000000.htm'>
+</topicref>
+<topicref title='Development overview' path='03w3/03w30000001q000000.htm'>
+</topicref>
+<topicref title='About release versions' path='03w3/03w3000000nm000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.11' path='03w3/03w300000062000000.htm'>
+</topicref>
+<topicref title='Frequently asked questions' path='03w3/03w30000004r000000.htm'>
+</topicref>
+</topichead>
+<topichead title='Working with app'>
+<topicref title='Home page' path='03w3/03w300000017000000.htm'>
+</topicref>
+<topicref title='Create or import an app' path='03w3/03w30000003m000000.htm'>
+</topicref>
+<topicref title='Edit  and launch an app' path='03w3/03w30000004m000000.htm'>
+</topicref>
+<topicref title='Theme' path='03w3/03w300000025000000.htm'>
+</topicref>
+<topicref title='Map and Scene' path='03w3/03w30000002t000000.htm'>
+</topicref>
+<topicref title='Widget' path='03w3/03w300000046000000.htm'>
+</topicref>
+<topicref title='Attribute' path='03w3/03w300000044000000.htm'>
+</topicref>
+<topicref title='Previews' path='03w3/03w300000036000000.htm'>
+</topicref>
+<topicref title='Export as a template' path='03w3/03w30000004s000000.htm'>
+</topicref>
+<topicref title='Edit or preview template' path='03w3/03w300000072000000.htm'>
+</topicref>
+<topicref title='Use URL parameters' path='03w3/03w300000079000000.htm'>
+</topicref>
+<topicref title='Upgrade apps' path='03w3/03w300000060000000.htm'>
+</topicref>
+</topichead>
+<topichead title='Configure 2D widgets'>
+<topicref title='Overview' path='03w3/03w300000047000000.htm'>
+</topicref>
+<topicref title='About widget' path='03w3/03w300000053000000.htm'>
+</topicref>
+<topicref title='Add Data widget' path='03w3/03w30000009t000000.htm'>
+</topicref>
+<topicref title='Analysis widget' path='03w3/03w300000061000000.htm'>
+</topicref>
+<topicref title='Attribute Table widget' path='03w3/03w30000001s000000.htm'>
+</topicref>
+<topicref title='Batch Attribute Editor widget' path='03w3/03w300000074000000.htm'>
+</topicref>
+<topicref title='Basemap Gallery widget' path='03w3/03w30000003w000000.htm'>
+</topicref>
+<topicref title='Bookmark widget' path='03w3/03w30000004n000000.htm'>
+</topicref>
+<topicref title='Chart widget' path='03w3/03w30000004t000000.htm'>
+</topicref>
+<topicref title='Controller widget' path='03w3/03w300000015000000.htm'>
+</topicref>
+<topicref title='Coordinate widget' path='03w3/03w30000003s000000.htm'>
+</topicref>
+<topicref title='Coordinate Conversion widget' path='03w3/03w3000000n3000000.htm'>
+</topicref>
+<topicref title='Cost Analysis widget' path='03w3/03w3000000n9000000.htm'>
+</topicref>
+<topicref title='Data Aggregation (Beta) widget' path='03w3/03w3000000p2000000.htm'>
+</topicref>
+<topicref title='Directions widget' path='03w3/03w30000003z000000.htm'>
+</topicref>
+<topicref title='Distance and Direction widget' path='03w3/03w3000000p4000000.htm'>
+</topicref>
+<topicref title='District Lookup widget' path='03w3/03w30000008z000000.htm'>
+</topicref>
+<topicref title='Draw widget' path='03w3/03w300000031000000.htm'>
+</topicref>
+<topicref title='Edit widget' path='03w3/03w300000021000000.htm'>
+</topicref>
+<topicref title='Emergency Response Guide widget' path='03w3/03w3000000p3000000.htm'>
+</topicref>
+<topicref title='Extent Navigate widget' path='03w3/03w3000000m6000000.htm'>
+</topicref>
+<topicref title='Filter widget' path='03w3/03w30000009s000000.htm'>
+</topicref>
+<topicref title='Full Screen widget' path='03w3/03w3000000mw000000.htm'>
+</topicref>
+<topicref title='Geocoder widget' path='03w3/03w300000012000000.htm'>
+</topicref>
+<topicref title='GeoLookup widget' path='03w3/03w30000006r000000.htm'>
+</topicref>
+<topicref title='Geoprocessing widget' path='03w3/03w300000029000000.htm'>
+</topicref>
+<topicref title='Grid Overlay widget' path='03w3/03w3000000mp000000.htm'>
+</topicref>
+<topicref title='Gridded Reference Graphic widget' path='03w3/03w3000000p5000000.htm'>
+</topicref>
+<topicref title='Group Filter widget' path='03w3/03w3000000m3000000.htm'>
+</topicref>
+<topicref title='Image Measurement widget' path='03w3/03w300000073000000.htm'>
+</topicref>
+<topicref title='Home Button widget' path='03w3/03w300000013000000.htm'>
+</topicref>
+<topicref title='Incident Analysis widget' path='03w3/03w300000063000000.htm'>
+</topicref>
+<topicref title='Infographic widget' path='03w3/03w3000000mv000000.htm'>
+</topicref>
+<topicref title='Info Summary widget' path='03w3/03w300000091000000.htm'>
+</topicref>
+<topicref title='Layer List widget' path='03w3/03w300000007000000.htm'>
+</topicref>
+<topicref title='Legend widget' path='03w3/03w30000001r000000.htm'>
+</topicref>
+<topicref title='Measurement widget' path='03w3/03w300000043000000.htm'>
+</topicref>
+<topicref title='My Location widget' path='03w3/03w30000003q000000.htm'>
+</topicref>
+<topicref title='Near Me widget' path='03w3/03w300000095000000.htm'>
+</topicref>
+<topicref title='Oblique Viewer widget' path='03w3/03w30000009r000000.htm'>
+</topicref>
+<topicref title='Overview Map widget' path='03w3/03w300000019000000.htm'>
+</topicref>
+<topicref title='Parcel Drafter widget' path='03w3/03w3000000n4000000.htm'>
+</topicref>
+<topicref title='Print widget' path='03w3/03w30000001p000000.htm'>
+</topicref>
+<topicref title='Public Notification  widget' path='03w3/03w3000000nn000000.htm'>
+</topicref>
+<topicref title='Query widget' path='03w3/03w30000000z000000.htm'>
+</topicref>
+<topicref title='Related Table Charts widget' path='03w3/03w300000094000000.htm'>
+</topicref>
+<topicref title='Report Feature widget' path='03w3/03w300000075000000.htm'>
+</topicref>
+<topicref title='Reviewer Dashboard widget' path='03w3/03w300000076000000.htm'>
+</topicref>
+<topicref title='Scalebar widget' path='03w3/03w300000032000000.htm'>
+</topicref>
+<topicref title='Screening widget' path='03w3/03w3000000n1000000.htm'>
+</topicref>
+<topicref title='Search widget' path='03w3/03w300000065000000.htm'>
+</topicref>
+<topicref title='Select widget' path='03w3/03w30000009m000000.htm'>
+</topicref>
+<topicref title='Share widget' path='03w3/03w30000009n000000.htm'>
+</topicref>
+<topicref title='Situation Awareness widget' path='03w3/03w300000077000000.htm'>
+</topicref>
+<topicref title='Smart Editor widget' path='03w3/03w3000000m5000000.htm'>
+</topicref>
+<topicref title='Splash widget' path='03w3/03w300000050000000.htm'>
+</topicref>
+<topicref title='Stream widget' path='03w3/03w300000064000000.htm'>
+</topicref>
+<topicref title='Suitability Modeler widget' path='03w3/03w3000000mm000000.htm'>
+</topicref>
+<topicref title='Summary widget' path='03w3/03w300000069000000.htm'>
+</topicref>
+<topicref title='Swipe widget' path='03w3/03w30000005z000000.htm'>
+</topicref>
+<topicref title='Threat Analysis widget' path='03w3/03w3000000pp000000.htm'>
+</topicref>
+<topicref title='Time Slider widget' path='03w3/03w30000005t000000.htm'>
+</topicref>
+<topicref title='Visibility widget' path='03w3/03w3000000pq000000.htm'>
+</topicref>
+<topicref title='Zoom Slider widget' path='03w3/03w30000006q000000.htm'>
+</topicref>
+</topichead>
+<topichead title='Configure 3D widgets'>
+<topicref title='3DFx widget' path='03w3/03w300000080000000.htm'>
+</topicref>
+<topicref title='About widget' path='03w3/03w30000008r000000.htm'>
+</topicref>
+<topicref title='Basemap Gallery widget' path='03w3/03w3000000ms000000.htm'>
+</topicref>
+<topicref title='Compass widget' path='03w3/03w300000085000000.htm'>
+</topicref>
+<topicref title='Coordinate widget' path='03w3/03w300000083000000.htm'>
+</topicref>
+<topicref title='Daylight widget' path='03w3/03w30000007z000000.htm'>
+</topicref>
+<topicref title='Full Screen widget' path='03w3/03w30000008p000000.htm'>
+</topicref>
+<topicref title='Home Button widget' path='03w3/03w30000008s000000.htm'>
+</topicref>
+<topicref title='Layer List widget' path='03w3/03w30000007t000000.htm'>
+</topicref>
+<topicref title='Legend widget' path='03w3/03w3000000m7000000.htm'>
+</topicref>
+<topicref title='Measurement widget' path='03w3/03w3000000p7000000.htm'>
+</topicref>
+<topicref title='My Location widget' path='03w3/03w30000008t000000.htm'>
+</topicref>
+<topicref title='Navigate widget' path='03w3/03w30000007s000000.htm'>
+</topicref>
+<topicref title='Search widget' path='03w3/03w30000008n000000.htm'>
+</topicref>
+<topicref title='Share widget' path='03w3/03w3000000p6000000.htm'>
+</topicref>
+<topicref title='Slides widget' path='03w3/03w30000007v000000.htm'>
+</topicref>
+<topicref title='Splash widget' path='03w3/03w30000008v000000.htm'>
+</topicref>
+<topicref title='Zoom Slider widget' path='03w3/03w30000008w000000.htm'>
+</topicref>
+</topichead>
+<topichead title='Widget development'>
+<topicref title='Get started' path='03w3/03w3000000n6000000.htm'>
+</topicref>
+<topicref title='Naming conventions' path='03w3/03w30000002s000000.htm'>
+</topicref>
+<topicref title='In-panel and off-panel widgets' path='03w3/03w300000034000000.htm'>
+</topicref>
+<topicref title='Deploy your widget' path='03w3/03w300000010000000.htm'>
+</topicref>
+<topicref title='Required files' path='03w3/03w30000001t000000.htm'>
+</topicref>
+<topicref title='Widget manifest' path='03w3/03w300000078000000.htm'>
+</topicref>
+<topicref title='Extend BaseWidget' path='03w3/03w30000002n000000.htm'>
+</topicref>
+<topicref title='Required properties' path='03w3/03w300000023000000.htm'>
+</topicref>
+<topicref title='Define the template' path='03w3/03w30000001n000000.htm'>
+</topicref>
+<topicref title='Configure the Demo widget' path='03w3/03w30000004q000000.htm'>
+</topicref>
+<topicref title='Add i18n support' path='03w3/03w30000000v000000.htm'>
+</topicref>
+<topicref title='Make widget user friendly' path='03w3/03w300000024000000.htm'>
+</topicref>
+<topicref title='Access a map' path='03w3/03w300000027000000.htm'>
+</topicref>
+<topicref title='Communication to app container' path='03w3/03w30000003p000000.htm'>
+</topicref>
+<topicref title='Widget properties' path='03w3/03w30000002v000000.htm'>
+</topicref>
+<topicref title='Make widgets responsive' path='03w3/03w30000004p000000.htm'>
+</topicref>
+<topicref title='Communication between widgets' path='03w3/03w30000001m000000.htm'>
+</topicref>
+<topicref title='Use dojo dijit' path='03w3/03w30000000n000000.htm'>
+</topicref>
+<topicref title='Make widget configurable in builder' path='03w3/03w30000003v000000.htm'>
+</topicref>
+<topicref title='Make widgets backward compatible' path='03w3/03w300000057000000.htm'>
+</topicref>
+<topicref title='Create a controller widget' path='03w3/03w300000070000000.htm'>
+</topicref>
+<topicref title='Widget life cycle' path='03w3/03w300000066000000.htm'>
+</topicref>
+<topicref title='Add help for your widget' path='03w3/03w300000096000000.htm'>
+</topicref>
+<topicref title='Create a feature action in your widget' path='03w3/03w30000009v000000.htm'>
+</topicref>
+<topicref title='Provide and consume data sources in widgets' path='03w3/03w3000000mz000000.htm'>
+</topicref>
+<topicref title='Best practices for unit testing' path='03w3/03w3000000p9000000.htm'>
+</topicref>
+</topichead>
+<topichead title='Theme development'>
+<topicref title='Concepts' path='03w3/03w300000004000000.htm'>
+</topicref>
+<topicref title='Create a theme' path='03w3/03w300000045000000.htm'>
+</topicref>
+</topichead>
+<topichead title='3D development'>
+<topicref title='3D development guide' path='03w3/03w30000007w000000.htm'>
+</topicref>
+</topichead>
+<topichead title='Sample code'>
+<topicref title='Create a custom in-panel widget' path='03w3/03w300000014000000.htm'>
+</topicref>
+<topicref title='Create a ListView widget' path='03w3/03w3000000n5000000.htm'>
+</topicref>
+<topicref title='Create a custom widget using the Report dijit' path='03w3/03w3000000mn000000.htm'>
+</topicref>
+<topicref title='Create a new theme' path='03w3/03w3000000m2000000.htm'>
+</topicref>
+<topicref title='Create a new style for a theme' path='03w3/03w300000092000000.htm'>
+</topicref>
+<topicref title='Create a new default layout' path='03w3/03w300000093000000.htm'>
+</topicref>
+<topicref title='Create a nondefault layout' path='03w3/03w300000090000000.htm'>
+</topicref>
+<topicref title='Create a new panel' path='03w3/03w3000000m4000000.htm'>
+</topicref>
+<topicref title='Create a new layout widget' path='03w3/03w300000099000000.htm'>
+</topicref>
+<topicref title='Create a controller widget' path='03w3/03w3000000m0000000.htm'>
+</topicref>
+<topicref title='Create a feature action in your widget' path='03w3/03w30000009v000000.htm'>
+</topicref>
+<topicref title='Send a layer to the Attribute Table widget' path='03w3/03w300000097000000.htm'>
+</topicref>
+<topicref title='Open multiple widgets simultaneously' path='03w3/03w300000042000000.htm'>
+</topicref>
+<topicref title='Use other JavaScript libraries' path='03w3/03w300000002000000.htm'>
+</topicref>
+<topicref title='Change URL of ArcGIS API for JavaScript' path='03w3/03w30000000m000000.htm'>
+</topicref>
+</topichead>
+<topichead title='Deployment'>
+<topicref title='Deploy app' path='03w3/03w30000004v000000.htm'>
+</topicref>
+<topicref title='Use proxy' path='03w3/03w30000004z000000.htm'>
+</topicref>
+<topicref title='Web-tier authentication' path='03w3/03w30000007q000000.htm'>
+</topicref>
+<topicref title='Deploy custom widgets and themes' path='03w3/03w30000004w000000.htm'>
+</topicref>
+<topicref title='Upgrade custom widgets and themes' path='03w3/03w30000009q000000.htm'>
+</topicref>
+</topichead>
+<topichead title='Framework reference'>
+<topicref title='CSS framework' path='03w3/03w30000006t000000.htm'>
+</topicref>
+<topicref title='FeatureActionManager class' path='03w3/03w300000098000000.htm'>
+</topicref>
+<topicref title='FilterManager class' path='03w3/03w30000009z000000.htm'>
+</topicref>
+<topicref title='LayerInfo class' path='03w3/03w300000071000000.htm'>
+</topicref>
+<topicref title='LayerInfos class' path='03w3/03w30000006m000000.htm'>
+</topicref>
+<topicref title='LayerNode class' path='03w3/03w3000000n8000000.htm'>
+</topicref>
+<topicref title='LayerStructure class' path='03w3/03w3000000n7000000.htm'>
+</topicref>
+<topicref title='PanelManager class' path='03w3/03w300000059000000.htm'>
+</topicref>
+<topicref title='SelectionManager class' path='03w3/03w3000000m1000000.htm'>
+</topicref>
+<topicref title='Utils class' path='03w3/03w30000005p000000.htm'>
+</topicref>
+<topicref title='WidgetManager class' path='03w3/03w30000005m000000.htm'>
+</topicref>
+</topichead>
+<topichead title='dijit'>
+<topicref title='FeaturelayerChooserFromMap class' path='03w3/03w30000006w000000.htm'>
+</topicref>
+<topicref title='FeaturelayerServiceBrowser class' path='03w3/03w300000055000000.htm'>
+</topicref>
+<topicref title='FeatureSetChooserForSingleLayer class' path='03w3/03w30000009p000000.htm'>
+</topicref>
+<topicref title='Filter class' path='03w3/03w30000006p000000.htm'>
+</topicref>
+<topicref title='ImageChooser class' path='03w3/03w30000006s000000.htm'>
+</topicref>
+<topicref title='ItemSelector class' path='03w3/03w300000058000000.htm'>
+</topicref>
+<topicref title='LayerChooserFromMap class' path='03w3/03w30000006n000000.htm'>
+</topicref>
+<topicref title='RendererChooser class' path='03w3/03w30000005n000000.htm'>
+</topicref>
+<topicref title='Report class' path='03w3/03w3000000m8000000.htm'>
+</topicref>
+<topicref title='SnapShot class' path='03w3/03w3000000mt000000.htm'>
+</topicref>
+<topicref title='SymbolChooser class' path='03w3/03w300000056000000.htm'>
+</topicref>
+</topichead>
+<topichead title='JSON reference'>
+<topicref title='App configuration' path='03w3/03w300000016000000.htm'>
+</topicref>
+<topicref title='Map configuration' path='03w3/03w30000000p000000.htm'>
+</topicref>
+<topicref title='Widget configuration' path='03w3/03w300000037000000.htm'>
+</topicref>
+<topicref title='Widget pool configuration' path='03w3/03w300000022000000.htm'>
+</topicref>
+<topicref title='Widget on screen' path='03w3/03w30000000w000000.htm'>
+</topicref>
+<topicref title='Panel configuration' path='03w3/03w30000000s000000.htm'>
+</topicref>
+<topicref title='Group configuration' path='03w3/03w300000048000000.htm'>
+</topicref>
+<topicref title='DataSource configuration' path='03w3/03w3000000mr000000.htm'>
+</topicref>
+<topicref title='About' path='03w3/03w300000052000000.htm'>
+</topicref>
+<topicref title='Analysis' path='03w3/03w30000005q000000.htm'>
+</topicref>
+<topicref title='Attribute Table' path='03w3/03w300000009000000.htm'>
+</topicref>
+<topicref title='Basemap Gallery' path='03w3/03w300000011000000.htm'>
+</topicref>
+<topicref title='Bookmark' path='03w3/03w30000000r000000.htm'>
+</topicref>
+<topicref title='Chart' path='03w3/03w30000001z000000.htm'>
+</topicref>
+<topicref title='Coordinate' path='03w3/03w300000018000000.htm'>
+</topicref>
+<topicref title='Directions' path='03w3/03w30000003r000000.htm'>
+</topicref>
+<topicref title='Draw' path='03w3/03w30000002m000000.htm'>
+</topicref>
+<topicref title='Edit' path='03w3/03w300000028000000.htm'>
+</topicref>
+<topicref title='Full Screen' path='03w3/03w3000000n0000000.htm'>
+</topicref>
+<topicref title='Geocoder' path='03w3/03w300000006000000.htm'>
+</topicref>
+<topicref title='Geoprocessing' path='03w3/03w30000002w000000.htm'>
+</topicref>
+<topicref title='Controller' path='03w3/03w30000002q000000.htm'>
+</topicref>
+<topicref title='Home Button' path='03w3/03w300000049000000.htm'>
+</topicref>
+<topicref title='Image Measurement' path='03w3/03w30000007p000000.htm'>
+</topicref>
+<topicref title='Infographic' path='03w3/03w3000000mq000000.htm'>
+</topicref>
+<topicref title='Layer List' path='03w3/03w30000003n000000.htm'>
+</topicref>
+<topicref title='Legend' path='03w3/03w300000041000000.htm'>
+</topicref>
+<topicref title='Loading Page' path='03w3/03w30000006z000000.htm'>
+</topicref>
+<topicref title='Measurement' path='03w3/03w30000000q000000.htm'>
+</topicref>
+<topicref title='My Location' path='03w3/03w300000005000000.htm'>
+</topicref>
+<topicref title='Near Me' path='03w3/03w3000000m9000000.htm'>
+</topicref>
+<topicref title='Oblique Viewer' path='03w3/03w30000009w000000.htm'>
+</topicref>
+<topicref title='Overview Map' path='03w3/03w300000040000000.htm'>
+</topicref>
+<topicref title='Print' path='03w3/03w300000039000000.htm'>
+</topicref>
+<topicref title='Query' path='03w3/03w300000026000000.htm'>
+</topicref>
+<topicref title='Report Feature' path='03w3/03w30000007m000000.htm'>
+</topicref>
+<topicref title='Reviewer Dashboard' path='03w3/03w30000007r000000.htm'>
+</topicref>
+<topicref title='Scalebar' path='03w3/03w300000035000000.htm'>
+</topicref>
+<topicref title='Search' path='03w3/03w30000006v000000.htm'>
+</topicref>
+<topicref title='Share' path='03w3/03w3000000n2000000.htm'>
+</topicref>
+<topicref title='Splash' path='03w3/03w300000051000000.htm'>
+</topicref>
+<topicref title='Stream' path='03w3/03w300000067000000.htm'>
+</topicref>
+<topicref title='Swipe' path='03w3/03w30000005w000000.htm'>
+</topicref>
+<topicref title='Time Slider' path='03w3/03w30000005v000000.htm'>
+</topicref>
+<topicref title='Zoom Slider' path='03w3/03w300000068000000.htm'>
+</topicref>
+</topichead>
+<topichead title='What&apos;s new archive'>
+<topicref title='What&apos;s new in version 2.10' path='03w3/03w3000000pr000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.9' path='03w3/03w3000000pn000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.8' path='03w3/03w3000000pm000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.7' path='03w3/03w3000000p8000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.6' path='03w3/03w3000000nr000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.5' path='03w3/03w3000000p0000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.4' path='03w3/03w3000000nt000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.3' path='03w3/03w3000000np000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.2' path='03w3/03w3000000nq000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.1' path='03w3/03w3000000nz000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 2.0' path='03w3/03w3000000p1000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 1.3' path='03w3/03w3000000nw000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 1.2' path='03w3/03w3000000nv000000.htm'>
+</topicref>
+<topicref title='What&apos;s new in version 1.1' path='03w3/03w3000000ns000000.htm'>
+</topicref>
+</topichead>
+</map>
