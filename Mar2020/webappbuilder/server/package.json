@@ -21,7 +21,7 @@
     "compression": "1.7.1",
     "cookie-parser": "1.4.3",
     "ejs": "2.5.7",
-    "express": "4.16.2",
+    "express": "4.17.3",
     "fs-extra": "5.0.0",
     "jszip": "^3.1.5",
     "log4js": "2.4.1",
